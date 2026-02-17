@@ -14,7 +14,7 @@ let itemsPerPage = window.innerWidth < 992 ? 16 : 30;
 const uiStrings = {
     th: {
         nav_menu: "หน้าหลัก",
-        all: "ทั้งหมด",
+        all: "6767",
         view_spec: "ดูข้อมูล",
         desc_label: "ข้อมูลทั่วไป",
         pinout_label: "ตำแหน่งขา",
@@ -860,5 +860,6 @@ function changePage(page) {
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
 }
+
 
 
