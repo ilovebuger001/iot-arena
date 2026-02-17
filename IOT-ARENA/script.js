@@ -44,7 +44,7 @@ const uiStrings = {
         apps_label: "ตัวอย่างงานจริง",
         setup_label: "ขั้นตอนการใช้งาน",
         footer_desc: "ศูนย์ข้อมูล IoT สำหรับนักพัฒนา",
-        footer_links_title: "เมนู",
+        footer_links_title: "ทางลัด",
         footer_follow_title: "ติดตามได้ที่",
         footer_copyright: "© 2026 IOT-ARENA",
         deep_dive: "ข้อมูลแบบเจาะลึก",
@@ -860,3 +860,4 @@ function changePage(page) {
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
 }
+
