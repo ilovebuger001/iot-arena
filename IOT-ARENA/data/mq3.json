@@ -1,0 +1,154 @@
+{
+    "id": "mq3",
+    "category": "sensor",
+    "image": "asset/mq3.png",
+    "title": {
+        "th": "MQ-3",
+        "en": "MQ-3 Gas Sensor"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์ตรวจจับแอลกอฮอล์",
+        "en": "Alcohol Gas Sensor"
+    },
+    "description": {
+        "th": "เซนเซอร์สำหรับตรวจจับก๊าซแอลกอฮอล์ มีความไวสูงต่อ Ethanol เหมาะสำหรับเครื่องวัดปริมาณแอลกอฮอล์ในลมหายใจ",
+        "en": "A gas sensor specifically designed to detect alcohol vapor in the air, with high sensitivity to Ethanol."
+    },
+    "specs": [
+        {
+            "label": "Target Gas",
+            "value": "Alcohol / Ethanol"
+        },
+        {
+            "label": "Output",
+            "value": "Analog & Digital"
+        },
+        {
+            "label": "Voltage",
+            "value": "5V DC"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เครื่องเป่าแอลกอฮอล์",
+            "ความปลอดภัยในโรงงาน"
+        ],
+        "en": [
+            "Breathalyzer",
+            "Industrial Safety"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "เครื่องตรวจระดับความเมาส่วนบุคคล",
+                "desc": "ใช้เป่าเพื่อเช็คค่าความเข้มข้นแอลกอฮอล์เบื้องต้น และแสดงผลเป็นระดับไฟจราจร"
+            },
+            {
+                "title": "ระบบความปลอดภัยในห้องเก็บสารเคมี",
+                "desc": "ตรวจจับการระเหยของ Ethanol หรือตัวทำละลายอินทรีย์เพื่อป้องกันการติดไฟ"
+            }
+        ],
+        "en": [
+            {
+                "title": "Personal Breathalyzer",
+                "desc": "Estimate blood alcohol concentration and display safety levels via LED indicators (Green/Yellow/Red)."
+            },
+            {
+                "title": "Chemical Storage Safety",
+                "desc": "Detect vapors from ethanol or organic solvents to prevent potential fire hazards in stockrooms."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "MQ-3 ไวต่อแอลกอฮอล์ (Ethanol) เป็นพิเศษ ภายในมีขดลวดทำความร้อน (Heater) เพื่อกระตุ้นปฏิกิริยาเคมีบนผิวเซนเซอร์ ซึ่งต้องใช้เวลาวอร์มอัพ (Preheat) นานพอสมควรเพื่อให้ค่าที่ได้มีความเสถียร",
+        "en": "The MQ-3 is highly sensitive to alcohol (Ethanol) vapors. It contains an internal heater to facilitate the chemical reaction on the sensor surface. Significant preheating time is required for stable and accurate readings."
+    },
+    "technical_specs": [
+        {
+            "label": "Target Gas",
+            "value": "Alcohol, Ethanol, Smoke"
+        },
+        {
+            "label": "Detection Range",
+            "value": "0.05 mg/L - 10 mg/L Alcohol"
+        },
+        {
+            "label": "Heater Voltage",
+            "value": "5.0V ± 0.1V (AC/DC)"
+        },
+        {
+            "label": "Loop Voltage",
+            "value": "≤ 24V DC"
+        },
+        {
+            "label": "Load Resistance",
+            "value": "Adjustable (200kΩ)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿60 - ฿100",
+        "links": [
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=mq3+sensor"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=mq-3+alcohol+sensor"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 4 ขา: VCC (5V), GND, DO (Digital Output), และ AO (Analog Output สำหรับวัดปริมาณแอลกอฮอล์)",
+        "en": "Features 4 pins: VCC (5V), GND, DO (Digital Output), and AO (Analog Output for alcohol concentration level)."
+    },
+    "tips": {
+        "th": [
+            "ต้องอุ่นเซนเซอร์อย่างน้อย 24 ชม. เพื่อความแม่นยำสูงสุด",
+            "เซนเซอร์จะร้อนขณะทำงานเนื่องจากมีขดลวดความร้อนภายใน เป็นเรื่องปกติ"
+        ],
+        "en": [
+            "Requires pre-heating (burn-in) for 24-48 hours for stable readings",
+            "The sensor shell will feel warm during operation; this is normal as it contains an internal heater"
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การ Burn-in และความร้อน",
+                "en": "Burn-in & Heater Logic"
+            },
+            "steps": {
+                "th": [
+                    "จ่ายไฟ 5V ทิ้งไว้อย่างน้อย <b>24 ชั่วโมง</b> ในครั้งแรกที่แกะกล่องเพื่อให้ค่าคงที่",
+                    "ใช้กระแสไฟประมาณ <b>150mA</b> ต่อเซนเซอร์ 1 ตัว ควรใช้แหล่งจ่ายแยก",
+                    "ค่าเซนเซอร์จะค่อยๆ ลดลงจนถึงระดับ <b>Base Level</b> (ค่าอากาศปกติ)"
+                ],
+                "en": [
+                    "Power the sensor with 5V for at least <b>24 hours</b> upon first use to stabilize the chemical layer",
+                    "Requires ~<b>150mA</b>; ensure your power supply can handle the load if using multiple MQ sensors",
+                    "The reading will gradually drop to a stable <b>Base Level</b> in clean air after sufficient pre-heating"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การสอบเทียบแอลกอฮอล์",
+                "en": "Alcohol Calibration"
+            },
+            "steps": {
+                "th": [
+                    "ใช้ <code>analogRead(A0)</code> เพื่อดูค่าความเข้มข้นของไอแอลกอฮอล์",
+                    "หาค่า R0 เพื่อเป็นค่าอ้างอิง",
+                    "เวลาเป่าลมอ้างอิง ควรเป่าผ่านท่อเพื่อป้องกันความชื้นและน้ำลายไปเกาะตัวเซนเซอร์"
+                ],
+                "en": [
+                    "Use <code>analogRead(A0)</code> to monitor gas concentrations via voltage change",
+                    "Determine <b>R0</b> (resistance in fresh air) to use as the zero-reference for your calculations",
+                    "When testing breath, blow through a small tube to prevent saliva or humidity from hitting the sensor directly"
+                ]
+            }
+        }
+    ]
+}

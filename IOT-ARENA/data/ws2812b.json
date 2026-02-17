@@ -1,0 +1,158 @@
+{
+    "id": "ws2812b",
+    "category": "module",
+    "image": "asset/ws2812b.png",
+    "title": {
+        "th": "WS2812B RGB LED",
+        "en": "WS2812B NeoPixel LED"
+    },
+    "sub_title": {
+        "th": "ไฟ LED RGB ที่ควบคุมทีละดวงได้",
+        "en": "Addressable RGB LED"
+    },
+    "description": {
+        "th": "แอดเดรสเอเบิล LED ที่ใช้เพียงสายข้อมูลเดียวในการควบคุมสีและแสงของทุุกดวงในสาย",
+        "en": "Addressable LEDs that use a single data wire to control color and brightness of every chip in the string."
+    },
+    "specs": [
+        {
+            "label": "Input Voltage",
+            "value": "5V DC"
+        },
+        {
+            "label": "Color Range",
+            "value": "16.7 Million Colors"
+        },
+        {
+            "label": "Interface",
+            "value": "Single-Wire Serial"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "ไฟตกแต่งห้อง",
+            "ป้ายไฟสถานะ"
+        ],
+        "en": [
+            "Smart Room Lighting",
+            "Indication Panels"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "โคมไฟอัจฉริยะแบบก้อนเมฆ",
+                "desc": "ใช้สำลีหุ้มสายไฟ LED เพื่อสร้างบรรยากาศและเปลี่ยนสีตามสภาพอากาศหรือเพลง"
+            },
+            {
+                "title": "แถบไฟแสดงความคืบหน้า",
+                "desc": "ใช้ติดที่โต๊ะทำงานเพื่อแสดงระดับงานที่ทำสำเร็จหรือสถานะเซนเซอร์ต่างๆ"
+            }
+        ],
+        "en": [
+            {
+                "title": "Cloud Infinity Lamp",
+                "desc": "Encase LED strips in cotton to create atmospheric lighting that reacts to music or weather."
+            },
+            {
+                "title": "Physical Progress Bar",
+                "desc": "Mount an LED strip on your desk to visualize download progress or sensor thresholds."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "WS2812B หรือที่รู้จักในชื่อ 'NeoPixel' (ชื่อทางการค้าของ Adafruit) คือหลอด RGB LED ที่ฝังชิปควบคุมไว้ภายในตัวหลอดเลย ทำให้สามารถต่อพ่วงกันได้ยาวเหยียด (Daisy Chain) โดยใช้สายสัญญาณเพียงเส้นเดียว \n\nข้อจำกัด: การส่งข้อมูลมีความไวสูงมาก (Timing-sensitive) ทำให้ไมโครคอนโทรลเลอร์ต้องทุ่มทรัพยากรไปกับการส่งข้อมูลจนอาจทำอย่างอื่นไม่ทัน (Blocking) และกินไฟมหาศาลหากเปิดสีขาวพร้อมกันทุกดวง",
+        "en": "The WS2812B integrates a driver chip inside the LED casing, allowing individual addressability over a single data line. It requires precise timing (800kHz), so interrupts often need to be disabled during data transmission.\n\nPower Warning: setting all LEDs to full white draws ~60mA per pixel. A strip of 60 LEDs can pull 3.6 Amps! Always inject power at both ends of long strips to prevent voltage drop (leds turning red/dim at the end)."
+    },
+    "technical_specs": [
+        {
+            "label": "Voltage",
+            "value": "5V DC"
+        },
+        {
+            "label": "Current",
+            "value": "60mA max / pixel"
+        },
+        {
+            "label": "Colors",
+            "value": "24-bit (16M colors)"
+        },
+        {
+            "label": "Protocol",
+            "value": "NZR (800 KHz)"
+        },
+        {
+            "label": "Refresh Rate",
+            "value": "30fps (up to 1000 LEDs)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿100 - ฿300",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=ws2812b%20strip"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=neopixel+led"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 3 ขา: 5V, GND, และ DIN (Data In) สามารถต่อพ่วงกันได้ทางขา DOUT (Data Out) ไปยังดวงถัดไป",
+        "en": "Features 3 pins: 5V, GND, and DIN (Data In). Daisy-chain multiple LEDs by connecting DOUT to the next DIN."
+    },
+    "tips": {
+        "th": [
+            "ควรต่อตัวเก็บประจุ 1000uF ที่แหล่งจ่ายไฟเพื่อกันกระแสกระชาก",
+            "ห้ามต่อไฟจากขา 5V ของบอร์ด Arduino เมื่อใช้งานจำนวนมาก เพราะกระแสจะไม่พอ"
+        ],
+        "en": [
+            "Add a large capacitor across power rails to handle peak current",
+            "Never power more than 10 LEDs directly from the MCU's 5V pin; use an external power supply."
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การคำนวณพลังงาน",
+                "en": "Power Consumption"
+            },
+            "steps": {
+                "th": [
+                    "LED หนึ่งดวงใช้กระแสสูงสุดประมาณ <b>60mA</b> เมื่อเปิดสีขาวสว่างสุด",
+                    "หากใช้ 100 ดวง ต้องใช้แหล่งจ่ายไฟที่จ่ายได้ถึง <b>6A</b>",
+                    "แนะนำให้คำนวณ <code>0.3W</code> ต่อดวง เพื่อให้แหล่งจ่ายไฟไม่ร้อนจนเกินไป"
+                ],
+                "en": [
+                    "Each pixel can draw up to <b>60mA</b> when set to full brightness white",
+                    "A string of 100 LEDs requires a massive <b>6A</b> power supply to run safely at full scale",
+                    "Budget roughly <code>0.3W</code> per LED for planning your DC adapter capacity"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การต่อสัญญาณกับบอร์ด 3.3V",
+                "en": "Logic Level Shifting"
+            },
+            "steps": {
+                "th": [
+                    "WS2812B ทำงานที่ 5V และต้องการสัญญาณข้อมูลที่ระดับ 5V เช่นกัน",
+                    "หากใช้ ESP32 (3.3V) สัญญาณอาจจะไม่นิ่งหรือไฟกระพริบเอง",
+                    "ควรใช้ <b>Logic Level Shifter</b> เพื่อดันแรงดันข้อมูลจาก 3.3V เป็น 5V"
+                ],
+                "en": [
+                    "WS2812B logic usually expects 5V data signals to function reliably without flickering",
+                    "Fast controllers like ESP32 output 3.3V, which may be below the sensor's HIGH threshold",
+                    "Use a <b>Logic Level Shifter</b> (e.g., 74HCT125) to boost your data line from 3.3V to 5V"
+                ]
+            }
+        }
+    ]
+}

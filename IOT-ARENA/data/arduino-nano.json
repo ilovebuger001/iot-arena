@@ -1,0 +1,176 @@
+{
+  "id": "arduino-nano",
+  "category": "mcu",
+  "image": "asset/arduino-nano.png",
+  "title": {
+    "th": "Arduino Nano",
+    "en": "Arduino Nano"
+  },
+  "sub_title": {
+    "th": "Arduino Uno ในขนาดจิ๋ว",
+    "en": "The Compact Version of Arduino Uno"
+  },
+  "description": {
+    "th": "Arduino Nano เป็นบอร์ดขนาดเล็กที่ใช้งานชิป ATmega328P เช่นเดียวกับ Uno แต่ตัดส่วนของช่องเสียบ DC Jack ออกและเปลี่ยนไปใช้พอร์ต Mini-USB หรือ Micro-USB แทน บอร์ดนี้ถูกออกแบบมาเพื่อเสียบลงบน Breadboard ได้ทันที เหมาะสำหรับโปรเจกต์ที่มีพื้นที่จำกัดแต่ต้องการความสามารถเท่ากับบอร์ดรุ่นใหญ่",
+    "en": "The Arduino Nano is a small, complete, and breadboard-friendly board based on the ATmega328P. It has more or less the same functionality as the Arduino Uno but in a different package. It lacks a DC power jack and works with a Mini-B or Micro-B USB cable instead, making it perfect for permanent installations in tight spaces."
+  },
+  "specs": [
+    {
+      "label": "MCU",
+      "value": "ATmega328P (8-bit)"
+    },
+    {
+      "label": "Clock Speed",
+      "value": "16 MHz"
+    },
+    {
+      "label": "Voltage",
+      "value": "5V"
+    },
+    {
+      "label": "Flash Memory",
+      "value": "32 KB"
+    },
+    {
+      "label": "Analog In",
+      "value": "8 Pins (มากกว่า Uno 2 ขา)"
+    },
+    {
+      "label": "Digital I/O",
+      "value": "14 Pins"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "โปรเจกต์ Breadboard ถาวร",
+      "ของเล่นอิเล็กทรอนิกส์",
+      "วงจรควบคุมขนาดเล็ก",
+      "เครื่องวัดแบบพกพา"
+    ],
+    "en": [
+      "Permanent Breadboard Projects",
+      "Electronic Toys",
+      "Compact Controllers",
+      "Portable Meters"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "เครื่องตรวจวัดคุณภาพน้ำพกพา",
+        "desc": "ขนาดเล็กพอที่จะใส่ลงในกล่องโปรเจกต์ขนาดจิ๋วเพื่อนำไปใช้งานนอกสถานที่"
+      },
+      {
+        "title": "ระบบควบคุมไฟประดับอัจฉริยะ",
+        "desc": "ซ่อนบอร์ดไว้ในเฟอร์นิเจอร์เพื่อควบคุมสายไฟ LED RGB ตามจังหวะเพลง"
+      }
+    ],
+    "en": [
+      {
+        "title": "Portable Water Quality Meter",
+        "desc": "Small enough to fit into a palm-sized enclosure for field testing and mobile data logging."
+      },
+      {
+        "title": "Hidden LED Decor Controller",
+        "desc": "Tuck the board away inside furniture or art pieces to drive addressable RGB strips stealthily."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "Arduino Nano คือการย่อส่วน Arduino Uno ลงมาในขนาดที่ปักลง Breadboard ได้โดยตรง โดยยังคงใช้ชิป ATmega328P ตัวเดิม ทำให้ประสิทธิภาพและความเร็วเท่ากันทุกประการ แต่สิ่งที่เพิ่มมาคือขา Analog Input อีก 2 ขา (A6, A7) เนื่องจากแพ็กเกจชิปแบบ TQFP มีขาเหลือให้ใช้งานมากกว่าแบบ DIP บน Uno \n\nข้อควรระวังคือ Nano ใช้พอร์ต Mini-B (รุ่นเก่า) หรือ Micro-B และใช้ชิปแปลง USB ต่างกันไปตามผู้ผลิต (FT232 หรือ CH340)",
+    "en": "The Arduino Nano shrinks the Uno functionality into a breadboard-friendly form factor. Powered by the same ATmega328P, it offers identical performance but gains two distinct advantages: a smaller footprint and two extra Analog Input pins (A6, A7) thanks to the TQFP surface-mount chip package.\n\nNote that while official boards use FTDI chips, most affordable clones use the CH340 USB-to-Serial chip, which may require specific drivers."
+  },
+  "technical_specs": [
+    {
+      "label": "Microcontroller",
+      "value": "ATmega328P"
+    },
+    {
+      "label": "Operating Voltage",
+      "value": "5V"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "7-12V (VIN)"
+    },
+    {
+      "label": "Digital I/O Pins",
+      "value": "14 (6 PWM)"
+    },
+    {
+      "label": "Analog Input Pins",
+      "value": "8 (A0-A7)"
+    },
+    {
+      "label": "Flash Memory",
+      "value": "32 KB"
+    },
+    {
+      "label": "SRAM",
+      "value": "2 KB"
+    },
+    {
+      "label": "EEPROM",
+      "value": "1 KB"
+    },
+    {
+      "label": "Clock Speed",
+      "value": "16 MHz"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿120 - ฿350",
+    "links": [
+      {
+        "title": "Arduino Official",
+        "url": "https://store.arduino.cc/products/arduino-nano"
+      },
+      {
+        "title": "Cytron Thailand",
+        "url": "https://www.cytron.io/p-arduino-nano-v3"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=arduino%20nano"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "บอร์ดราคาถูกมักใช้ชิป CH340 ต้องติดตั้ง Driver แยก",
+      "ใช้งานเหมือน Uno ทุกอย่าง แค่ขนาดเล็กกว่า"
+    ],
+    "en": [
+      "Budget clones use the CH340 chip — install its driver separately",
+      "Functionally identical to the Uno, just smaller"
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วย Digital I/O 14 ขา, Analog Input 8 ขา (มากกว่า Uno 2 ขา), และใช้พอร์ต Mini/Micro USB ตัวบอร์ดขนาดเล็กเหมาะสำหรับ Breadboard",
+    "en": "Features 14 Digital I/O, 8 Analog Inputs (2 more than Uno), and uses Mini/Micro USB. Breadboard-friendly compact form factor."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "<b>เตรียมอุปกรณ์:</b><br>สาย Mini-USB (รุ่นเก่า) หรือ Micro-USB (รุ่นใหม่) และเครื่องคอมพิวเตอร์",
+          "<b>ชิป USB (สำคัญ):</b><br>พลิกดูใต้บอร์ด หากไม่เห็นชิป FTDI สี่เหลี่ยมเล็กๆ แสดงว่าเป็นชิป <b>CH340</b> ให้ดาวน์โหลด Driver CH340 มาติดตั้งก่อน",
+          "<b>การเลือกบอร์ด - Arduino IDE:</b><br>ไปที่ <i>Tools > Board</i> และเลือก <b>'Arduino Nano'</b>",
+          "<b>เลือก Processor:</b><br>หากอัปโหลดไม่ผ่าน (Error) ให้เปลี่ยน <i>Tools > Processor</i> เป็น <b>'ATmega328P (Old Bootloader)'</b> ซึ่งเป็นสาเหตุหลักที่มือใหม่เจอบ่อยที่สุด",
+          "<b>ทดสอบใช้งาน:</b><br>เลือก Port ให้ถูกต้อง แล้วลองอัปโหลดโค้ดตัวอย่าง Blink"
+        ],
+        "en": [
+          "<b>Cables:</b><br>Check if your board needs a Mini-USB or Micro-USB cable.",
+          "<b>Driver Check:</b><br>If you bought a budget board, it likely uses the <b>CH340</b> chip. Download and install the CH340 driver first.",
+          "<b>Board Selection:</b><br>In Arduino IDE, select <i>Tools > Board > <b>Arduino Nano</b></i>.",
+          "<b>Processor Trick:</b><br>If upload fails, go to <i>Tools > Processor</i> and try <b>'ATmega328P (Old Bootloader)'</b>. This is the #1 fix for Nano clones.",
+          "<b>Verify:</b><br>Select your COM port and upload the Blink sketch."
+        ]
+      }
+    }
+  ]
+}

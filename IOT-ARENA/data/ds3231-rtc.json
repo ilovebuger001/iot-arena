@@ -1,0 +1,178 @@
+{
+  "id": "ds3231-rtc",
+  "category": "module",
+  "image": "asset/ds3231-rtc.png",
+  "title": {
+    "th": "DS3231 RTC",
+    "en": "DS3231 High Precision RTC"
+  },
+  "sub_title": {
+    "th": "โมดูลนาฬิกาเวลาจริงความแม่นยำสูง",
+    "en": "High Precision Real-Time Clock"
+  },
+  "description": {
+    "th": "DS3231 เป็นโมดูลนาฬิกาที่มีความแม่นยำสูงมาก เนื่องจากมีคริสตัลชดเชยอุณหภูมิ (TCXO) อยู่ภายใน ทำให้เวลาไม่คลาดเคลื่อนแม้สภาพอากาศจะเปลี่ยน มีแบตเตอรี่สำรองเพื่อรักษาเวลาแม้ไม่มีไฟเลี้ยงหลัก และยังมีเซนเซอร์วัดอุณหภูมิในตัวอีกด้วย",
+    "en": "The DS3231 is a low-cost, extremely accurate I2C real-time clock (RTC) with an integrated temperature-compensated crystal oscillator (TCXO). It maintains accurate time even when power is lost thanks to a backup battery. Unlike the DS1307, this module is highly resistant to time drift caused by temperature changes."
+  },
+  "specs": [
+    {
+      "label": "Accuracy",
+      "value": "±2ppm (ประมาณ 1 นาทีต่อปี)"
+    },
+    {
+      "label": "Battery",
+      "value": "CR2032 (Backup)"
+    },
+    {
+      "label": "Interface",
+      "value": "I2C (0x68)"
+    },
+    {
+      "label": "Voltage",
+      "value": "2.3V - 5.5V"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "นาฬิกาดิจิทัล",
+      "ระบบบันทึก Data Logger",
+      "ระบบตั้งเวลารดน้ำ",
+      "ระบบจับเวลาอุตสาหกรรม"
+    ],
+    "en": [
+      "Digital Clock",
+      "Data Logger Timestamp",
+      "Irrigation Timer",
+      "Industrial Timekeeping"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "นาฬิกาแขวนผนังยักษ์ (LED Matrix)",
+        "desc": "ใช้รักษาเวลาให้ตรงอยู่เสมอแม้ไฟจะดับ เพื่อไม่ต้องตั้งเวลาใหม่ทุกครั้งที่เปิดเครื่อง"
+      },
+      {
+        "title": "ระบบรดน้ำต้นไม้ตามเวลาที่กำหนด",
+        "desc": "ใช้ตั้งเวลาการเปิด-ปิดระบบรดน้ำโดยไม่ต้องเชื่อมต่ออินเทอร์เน็ต (Offline Timer)"
+      }
+    ],
+    "en": [
+      {
+        "title": "Giant LED Wall Clock",
+        "desc": "Ensure your DIY clock stays perfectly synced even after power outages without manual reset."
+      },
+      {
+        "title": "Offline Irrigation Timer",
+        "desc": "Schedule garden watering at specific times of the day without needing an internet connection."
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "แบตเตอรี่ CR2032 สามารถรักษาเวลาได้นานหลายปี",
+      "Address I2C ตรงกับ MPU6050 (0x68) จึงใช้พร้อมกันไม่ได้โดยตรง"
+    ],
+    "en": [
+      "The CR2032 battery can keep time for several years",
+      "Shares I2C address 0x68 with MPU6050 — cannot use both without modification"
+    ]
+  },
+  "pinout_desc": {
+    "th": "เชื่อมต่อแบบ I2C: VCC, GND, SCL, SDA และมีขา 32K (สัญญาณ Clock), SQW (Interrupt/Output)",
+    "en": "I2C Interface: VCC, GND, SCL, SDA, 32K (Clock output), and SQW (Programmable Square Wave/Interrupt)."
+  },
+  "deep_dive": {
+    "th": "DS3231 แตกต่างจาก RTC ทั่วไปอย่าง DS1307 ตรงที่มี TCXO (Temperature Compensated Crystal Oscillator) ในตัว ซึ่งจะตรวจสอบอุณหภูมิและปรับความถี่ของคริสตัลให้คงที่เสมอ ทำให้มีความแม่นยำสูงมาก คลาดเคลื่อนเพียง ±2ppm หรือประมาณ 1 นาทีต่อปีเท่านั้น",
+    "en": "The DS3231 surpasses standard RTCs like the DS1307 by integrating a Temperature Compensated Crystal Oscillator (TCXO). It constantly monitors ambient temperature and adjusts the crystal frequency to maintain high accuracy, drifting only ±2ppm (about 1 minute per year)."
+  },
+  "technical_specs": [
+    {
+      "label": "Time Accuracy",
+      "value": "±2ppm (0°C to +40°C)"
+    },
+    {
+      "label": "Battery Backup",
+      "value": "Yes (CR2032)"
+    },
+    {
+      "label": "Operating Voltage",
+      "value": "2.3V - 5.5V"
+    },
+    {
+      "label": "Temp Sensor Accuracy",
+      "value": "±3°C"
+    },
+    {
+      "label": "Bus Speed",
+      "value": "400kHz I2C"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿40 - ฿70",
+    "links": [
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=ds3231"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=ds3231"
+      }
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "การเชื่อมต่อ I2C Bus",
+        "en": "I2C Connection"
+      },
+      "steps": {
+        "th": [
+          "ต่อ <b>VCC</b> (3.3V/5V), <b>GND</b>, <b>SDA</b>, และ <b>SCL</b> เข้ากับบอร์ดไมโครคอนโทรลเลอร์",
+          "DS3231 ทำงานที่ Address <b>0x68</b> (ถาวร) และมีชิป EEPROM 24C32 อยู่ที่ Address <b>0x57</b>",
+          "ขาสัญญาณ I2C ของโมดูลนี้มักมีตัวต้านทาน Pull-up มาให้ในตัวแล้ว"
+        ],
+        "en": [
+          "Connect <b>VCC</b> (3.3V or 5V), <b>GND</b>, <b>SDA</b>, and <b>SCL</b> to your MCU's I2C pins",
+          "Device defaults to I2C address <b>0x68</b>; the onboard EEPROM (24C32) often resides at <b>0x57</b>",
+          "Internal 4.7kΩ pull-up resistors are typically pre-soldered on most module versions"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "การตั้งเวลาและการใช้งานแบตเตอรี่",
+        "en": "Time Sync & Battery"
+      },
+      "steps": {
+        "th": [
+          "ใส่แบตเตอรี่ <b>CR2032</b> เพื่อให้เวลาเดินต่อได้แม้ไม่มีไฟเลี้ยงหลัก",
+          "ใช้คำสั่ง <code>rtc.adjust(DateTime(F(__DATE__), F(__TIME__)))</code> ในตอนแรกเพื่อตั้งเวลาให้ตรงกับคอมฯ",
+          "<b>ข้อควรระวัง:</b> ห้ามใส่แบตเตอรี่แบบชาร์จไม่ได้ (LIR2032) ในขณะที่มีวงจรชาร์จบนโมดูลทำงานอยู่ (หากไม่ได้ดัดแปลงบอร์ด)"
+        ],
+        "en": [
+          "Install a <b>CR2032</b> coin cell to maintain the clock state during power cycles",
+          "Sync time with your system once using <code>rtc.adjust(DateTime(F(__DATE__), F(__TIME__)))</code> during setup",
+          "<b>WARNING:</b> Standard CR2032 batteries are non-rechargeable; ensure the module's charging circuit is disabled or use LIR2032"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "ฟังก์ชันเสริม",
+        "en": "Advanced Features (Alarms)"
+      },
+      "steps": {
+        "th": [
+          "DS3231 มีระบบตั้งปลุก (Alarm) 2 ชุด ซึ่งสามารถส่งสัญญาณ Interrupt ไปยัง MCU ได้",
+          "อ่านค่าอุณหภูมิได้ผ่านฟังก์ชัน <code>rtc.getTemperature()</code> โดยมีความละเอียดถึง 0.25°C"
+        ],
+        "en": [
+          "The DS3231 features 2 programmable alarms that can trigger an interrupt on external pins",
+          "Access the onboard temperature sensor via <code>rtc.getTemperature()</code> for environmental logging"
+        ]
+      }
+    }
+  ]
+}

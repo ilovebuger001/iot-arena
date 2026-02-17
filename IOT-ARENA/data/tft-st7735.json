@@ -1,0 +1,162 @@
+{
+    "id": "tft-st7735",
+    "category": "display",
+    "image": "asset/tft-st7735.png",
+    "title": {
+        "th": "TFT ST7735 1.8\"",
+        "en": "TFT ST7735 1.8\" Display"
+    },
+    "sub_title": {
+        "th": "หน้าจอสี TFT ขนาดเล็ก",
+        "en": "Small Color TFT Display"
+    },
+    "description": {
+        "th": "หน้าจอ LCD TFT สีขนาด 1.8 นิ้ว รองรับการแสดงผลรูปภาพและกราฟิกสี เชื่อมต่อผ่าน SPI",
+        "en": "A 1.8-inch color TFT LCD screen that supports full color images and graphics, typically using the SPI interface."
+    },
+    "specs": [
+        {
+            "label": "Resolution",
+            "value": "128x160 Pixels"
+        },
+        {
+            "label": "Colors",
+            "value": "65K Color"
+        },
+        {
+            "label": "Interface",
+            "value": "SPI"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เครื่องเล่นเกมพกพา",
+            "หน้าจอแสดงผลข้อมูลสี"
+        ],
+        "en": [
+            "Handheld Gaming",
+            "Color Status Display"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "เกมกดแนว Retro",
+                "desc": "สร้างเกมอย่าง Flappy Bird หรือ Snake โดยแสดงผลเป็นกราฟิกสีสันสดใส"
+            },
+            {
+                "title": "เครื่องเฝ้าสังเกตการณ์ระบบ",
+                "desc": "แสดงค่า CPU, RAM และอุณหภูมิของเครื่อง PC ผ่านสาย USB"
+            }
+        ],
+        "en": [
+            {
+                "title": "DIY Retro Gaming Console",
+                "desc": "Code full-color games like Flappy Bird or Snake with fluid animations and sprites."
+            },
+            {
+                "title": "System Diagnostic Dashboard",
+                "desc": "Create a desktop monitor for your PC's CPU, RAM, and thermals connected via USB."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "จอ TFT ST7735 ขนาด 1.8 นิ้ว ให้สีสันสดใสแบบ 16-bit (65K สี) ต่างจากจอ OLED ที่มีแค่สีเดียว เหมาะสำหรับทำเมนูที่มีไอคอนสีหรือเกมง่ายๆ \n\nข้อควรระวัง: จอรุ่นนี้เป็นจอแบบ SPI ที่มีความละเอียด 128x160 และมักจะมีปัญหาเรื่อง 'Offset' (ภาพเลื่อน) ในบางไลบรารี ต้องเลือก InitR ให้ตรงกับแถบสีของป้ายพลาสติกที่ติดมากับจอ (Green/Red/Black Tab)",
+        "en": "The ST7735 is a color TFT screen driven via SPI. Unlike monochrome OLEDs, it offers full 16-bit color (65,536 colors), making it perfect for retro games or rich UI. \n\nTroubleshooting: These displays suffer from 'Initialization Offset' issues depending on the manufacturer. If your image is shifted or static noises appear on the edges, try changing the initializer in your code (e.g., INITR_BLACKTAB vs INITR_GREENTAB)."
+    },
+    "technical_specs": [
+        {
+            "label": "Driver",
+            "value": "ST7735"
+        },
+        {
+            "label": "Resolution",
+            "value": "128x160 Pixels"
+        },
+        {
+            "label": "Size",
+            "value": "1.8 Inch"
+        },
+        {
+            "label": "Colors",
+            "value": "16-Bit RGB (65K)"
+        },
+        {
+            "label": "Interface",
+            "value": "SPI"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V Logic (Need Divider for 5V)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿90 - ฿140",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=tft%201.8%20st7735"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+tft+1.8"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "เชื่อมต่อแบบ SPI รวม 8 ขา: VCC (3.3V), GND, CS, RESET, A0 (D/C), SDA (MOSI), SCK, และ LED (Backlight)",
+        "en": "8-pin SPI interface: VCC (3.3V), GND, CS, RESET, A0 (Data/Command), SDA (MOSI), SCK, and LED (Backlight control)."
+    },
+    "tips": {
+        "th": [
+            "ต้องการตัวต้านทานจำกัดกระแสสำหรับ Backlight",
+            "ความเร็วของการวาดรูปขึ้นอยู่กับ Clock ของ SPI แนะนำให้ใช้ขา Hardware SPI เสมอ"
+        ],
+        "en": [
+            "Requires a resistor for Backlight limit (LED Pin)",
+            "Drawing speed is dependent on the SPI clock; always use shared Hardware SPI pins for performance."
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การต่อสาย SPI (7 ขา)",
+                "en": "Full SPI Wiring"
+            },
+            "steps": {
+                "th": [
+                    "<b>SCL:</b> ต่อเข้ากับพิน SCK | <b>SDA:</b> ต่อเข้ากับพิน MOSI",
+                    "<b>RES:</b> พินรีเซ็ต | <b>DC:</b> พินสั่งการข้อมูล/คำสั่ง",
+                    "ต้องระบุพินเหล่านี้ในโค้ดให้ตรงกับที่ต่อจริงบน MCU"
+                ],
+                "en": [
+                    "<b>SCL:</b> Connect to Hardware SCK | <b>SDA:</b> Connect to Hardware MOSI",
+                    "<b>RES:</b> Reset pin | <b>DC:</b> Data/Command selector pin",
+                    "Ensure these dynamic pins (CS, DC, RES) are correctly mapped in your constructor code"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การหมุนหน้าจอ",
+                "en": "Managing Orientation"
+            },
+            "steps": {
+                "th": [
+                    "ใช้คำสั่ง <code>tft.setRotation(0-3)</code> เพื่อเปลี่ยนเป็นแนวตั้งหรือแนวนอน",
+                    "สามารถวาดรูปภาพได้โดยการแปลงไฟล์ภาพเป็น Hex Array",
+                    "พิน <b>LED</b> ต้องต่อกับ 3.3V หรือ 5V เพื่อให้หน้าจอมีแสงสว่าง"
+                ],
+                "en": [
+                    "Call <code>tft.setRotation(0-3)</code> to switch between Portrait and Landscape modes",
+                    "Small graphics (Bitmaps) can be rendered by converting images into C-Style hex arrays",
+                    "The <b>LED</b> pin must be powered (via a current-limiting resistor) to enable the backlight"
+                ]
+            }
+        }
+    ]
+}

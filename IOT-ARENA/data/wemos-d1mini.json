@@ -1,0 +1,160 @@
+{
+    "id": "wemos-d1mini",
+    "category": "mcu",
+    "image": "asset/wemos-d1mini.png",
+    "title": {
+        "th": "Wemos D1 Mini",
+        "en": "Wemos D1 Mini (ESP8266)"
+    },
+    "sub_title": {
+        "th": "บอร์ด WiFi ขนาดพกพา",
+        "en": "Mini WiFi Development Board"
+    },
+    "description": {
+        "th": "บอร์ด WiFi ขนาดเล็กมากที่ใช้ชิป ESP8266 เหมาะสำหรับโปรเจกต์ IoT ที่ต้องการความกะทัดรัด",
+        "en": "A tiny WiFi board based on the ESP8266. Excellent for compact IoT projects and wearables."
+    },
+    "specs": [
+        {
+            "label": "MCU",
+            "value": "ESP8266EX"
+        },
+        {
+            "label": "Pins",
+            "value": "11 Digital I/O"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V (USB 5V Converter)"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เซนเซอร์ IoT ขนาดจิ๋ว",
+            "อุปกรณ์สวมใส่"
+        ],
+        "en": [
+            "Mini IoT Nodes",
+            "Wearable Tech"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "เครื่องประดับอัจฉริยะ",
+                "desc": "ขนาดเล็กจนสามารถซ่อนไว้ในหมวกหรือเสื้อผ้าเพื่อแสดงสถานะหรือวัดค่าร่างกายได้"
+            },
+            {
+                "title": "เซนเซอร์วัดดินไร้สาย",
+                "desc": "ใช้ร่วมกับ Shield ของ Wemos เพื่อสร้างสถานะวัดความชื้นขนาดพกพาที่ใช้พลังงานต่ำ"
+            }
+        ],
+        "en": [
+            {
+                "title": "Smart Wearable Gadgets",
+                "desc": "Compact enough to be hidden in clothing or accessories for status tracking and telemetry."
+            },
+            {
+                "title": "Ultra-Mini Soil Monitor",
+                "desc": "Pair with custom Wemos shields to build a tiny, low-power plant health monitoring node."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "Wemos D1 Mini เป็นบอร์ด ESP8266 ที่มีขนาดเล็กที่สุดและชาญฉลาดที่สุด (ในความคิดเห็นของ Maker หลายคน) เพราะการออกแบบขาที่เป็นมาตรฐานทำให้สามารถนำ Shield ต่างๆ (เช่น Relay, OLED, SD Card) มาเสียบซ้อนกันเป็นตึกแถวได้เลยโดยไม่ต้องโยงสายไฟให้ยุ่งยาก \n\nข้อควรระวัง: แม้บอร์ดจะมี 5V pin แต่ขา GPIO ทั้งหมดรับไฟได้แค่ 3.3V ห้ามต่อ Sensor 5V เข้าโดยไม่มีตัวลดระดับแรงดัน (Logic Level Converter)",
+        "en": "The Wemos D1 Mini revolutionized modular IoT with its stackable 'Shield' ecosystem. It packs the full power of the ESP8266 into a footprint barely larger than the Wi-Fi module itself. The ability to plug in a relay, screen, or sensor shield without a single jumper wire makes it unmatched for tidy, permanent deployments."
+    },
+    "technical_specs": [
+        {
+            "label": "MCU",
+            "value": "ESP8266EX"
+        },
+        {
+            "label": "Clock Speed",
+            "value": "80 / 160 MHz"
+        },
+        {
+            "label": "Flash",
+            "value": "4 MB"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V (5V via USB)"
+        },
+        {
+            "label": "Digital I/O",
+            "value": "11 Pins"
+        },
+        {
+            "label": "Analog Input",
+            "value": "1 Pin (3.2V Max)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿60 - ฿100",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=wemos+d1+mini"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=wemos+d1+mini"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วยขา GPIO 11 ขา, 1x ADC (3.2V Max), I2C, SPI, UART และขาไฟเลี้ยง 5V, 3.3V รองรับบอร์ดเสริม (Shield) ได้ง่าย",
+        "en": "Features 11 GPIO pins, 1x 3.2V Max ADC, I2C, SPI, UART, and Power pins (5V, 3.3V). Designed for stackable shields."
+    },
+    "tips": {
+        "th": [
+            "จุดเด่นคือระบบ <b>Shield</b> ที่สามารถเสียบซ้อนกันได้ทันที เช่น Relay Shield หรือ Battery Shield",
+            "ขา D1 และ D2 มักถูกใช้เป็น I2C โดยอัตโนมัติในส่วนใหญ่ของไลบรารี",
+            "หากต้องการประหยัดไฟสูงสุด ให้ใช้ขา 3.3V และถอดชิปสื่อสารออกในงานถาวร"
+        ],
+        "en": [
+            "Features a unique <b>Shield system</b> allowing you to stack sensor/power modules directly on top",
+            "Pins D1 and D2 are the default hardware I2C lines (SCL/SDA) in most Arduino community libraries",
+            "For ultimate low-power field use, bypass the USB regulator and supply 3.3V directly to the 3V3 pin"
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "แผนผังขาที่ควรจำ",
+                "en": "Essential Pin Mapping"
+            },
+            "steps": {
+                "th": [
+                    "ระวังเลข D-numbers บนบอร์ดไม่ตรงกับ GPIO",
+                    "ขา <b>D3, D4, D8</b> มีความสำคัญต่อการบูต — หากต่อเซนเซอร์ที่มีค่า Pull-up/down อาจทำให้บอร์ดไม่ทำงาน"
+                ],
+                "en": [
+                    "Remember: Silk-screen labels (D1, D2) differ from GPIO numbers (e.g., <b>D1 is GPIO5</b>, <b>D4 is GPIO2</b>)",
+                    "Pins <b>D3, D4, and D8</b> influence boot modes—avoid attaching sensors that force these pins HIGH/LOW at startup"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การถนอมบอร์ดและการจ่ายไฟ",
+                "en": "Powering & Care"
+            },
+            "steps": {
+                "th": [
+                    "รองรับการจ่ายไฟจาก <b>Micro USB</b> 5V หรือขา <b>5V</b> บนบอร์ด",
+                    "ห้ามจ่ายไฟเกิน 3.3V เข้าที่ขา Digital โดยตรง เพราะชิป ESP8266EX ไม่รับระบบ 5V Logic"
+                ],
+                "en": [
+                    "Power via <b>Micro USB</b> or the <b>5V pin</b> (regulated down to 3.3V onboard)",
+                    "Do NOT apply 5V logic signals to the digital pins; the ESP8266EX chip is strictly 3.3V logic tolerant"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+{
+  "id": "joystick",
+  "category": "module",
+  "image": "asset/joystick.jpg",
+  "title": {
+    "th": "Joystick Module KY-023",
+    "en": "Joystick Module KY-023"
+  },
+  "sub_title": {
+    "th": "โมดูลจอยสติ๊กแบบ 2 แกนพร้อมปุ่มกด",
+    "en": "Dual-Axis Joystick with Button"
+  },
+  "description": {
+    "th": "โมดูลจอยสติ๊กที่ทำงานด้วยตัวต้านทานปรับค่าได้ (Potentiometer) 2 ตัว ให้ค่าแรงดัน Analog ตามการขยับในแกน X และ Y และมีสวิตช์ปุ่มกดเมื่อกดตัวจอยสติ๊กลงไปตรงๆ",
+    "en": "A dual-axis joystick that uses two potentiometers to provide analog voltages for X and Y movements. It also features a push-button switch when the joystick is pressed down."
+  },
+  "specs": [
+    {
+      "label": "Interface",
+      "value": "Analog (X, Y) & Digital (SW)"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.3V - 5V"
+    },
+    {
+      "label": "Size",
+      "value": "34 x 26 x 32 mm"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "ควบคุมหุ่นยนต์",
+      "เกมอาเขต DIY",
+      "แขนกลรีโมท",
+      "เมนูนำทาง"
+    ],
+    "en": [
+      "Robot Control",
+      "DIY Arcade Game",
+      "Robotic Arm Remote",
+      "Menu Navigation"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "รีโมทควบคุมแขนกล 2 มิติ",
+        "desc": "ขยับจอยสติ๊กแกน X และ Y เพื่อควบคุมตำแหน่งของเซอร์โวมอเตอร์แต่ละตัว"
+      },
+      {
+        "title": "เครื่องเล่นเกมงู (Snake Game) บน OLED",
+        "desc": "ใช้จอยสติ๊กควบคุมทิศทางของงูได้อย่างลื่นไหลกว่าการใช้ปุ่มกดแยก"
+      }
+    ],
+    "en": [
+      {
+        "title": "2D Robotic Arm Remote",
+        "desc": "Map X and Y axis movements to separate servo motors for intuitive joint control."
+      },
+      {
+        "title": "Snake Game Controller",
+        "desc": "Provide fluid 4-way movement for retro games displayed on OLED or LCD screens."
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "ค่ากลางจริงอาจไม่ตรง 512 พอดี — ควร Calibrate ก่อนใช้งาน",
+      "ปุ่มกดใช้ Internal Pull-up ได้"
+    ],
+    "en": [
+      "The true center value may drift from 512 — calibrate at startup",
+      "The button works well with internal pull-up resistors"
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วย 5 ขา: GND, +5V, VRx (แกน X), VRy (แกน Y), และ SW (ปุ่มกด เมื่อกดจะเป็น Low)",
+    "en": "Features 5 pins: GND, +5V, VRx (X-axis Analog), VRy (Y-axis Analog), and SW (Push button, pulls to LOW when pressed)."
+  },
+  "deep_dive": {
+    "th": "ภายใน Joystick ประกอบด้วย Potentiometer 10kΩ สองตัววางตั้งฉากกัน สำหรับแกน X และ Y เมื่อเลื่อนก้านจอย ค่าความต้านทานจะเปลี่ยนไป ทำให้แรงดันไฟฟ้าที่ขา VRx และ VRy เปลี่ยนแปลง (Voltage Divider) ส่วนปุ่มกดเป็นเพียง Tactile Switch ธรรมดา",
+    "en": "Internally, the joystick consists of two 10kΩ potentiometers placed perpendicular to each other for the X and Y axes. Moving the stick changes the resistance, creating a voltage divider that outputs varying analog signals on VRx and VRy. The push button is a simple tactile switch."
+  },
+  "technical_specs": [
+    {
+      "label": "Potentiometer Value",
+      "value": "10kΩ"
+    },
+    {
+      "label": "Output Range",
+      "value": "0V - VCC (Analog)"
+    },
+    {
+      "label": "Button Type",
+      "value": "Tactile (Active Low)"
+    },
+    {
+      "label": "Operating Voltage",
+      "value": "3.3V - 5V"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿20 - ฿40",
+    "links": [
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=ky-023"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=joystick+module"
+      }
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "ตำแหน่งขาใช้งาน",
+        "en": "5-Pin Hardware Interface"
+      },
+      "steps": {
+        "th": [
+          "<b>VRx:</b> แกน X (Analog), <b>VRy:</b> แกน Y (Analog), <b>SW:</b> ปุ่มกด (Digital)",
+          "ต่อ <b>VCC</b> กับ 5V สำหรับ Arduino Uno เพื่อให้ได้ช่วงแรงดัน Analog ที่กว้างที่สุด",
+          "ขา SW ควรต่อกับขา Digital ที่รองรับ <code>INPUT_PULLUP</code> เพื่อให้อ่านค่าได้นิ่ง"
+        ],
+        "en": [
+          "<b>VRx:</b> Horizontal Axis (Analog), <b>VRy:</b> Vertical Axis (Analog), <b>SW:</b> Push-Button (Digital)",
+          "Link <b>VCC</b> to 5V on Arduino boards to maximize the dynamic range of the analog signals",
+          "Initialize the <b>SW</b> pin with <code>INPUT_PULLUP</code> to avoid floating signal issues when not pressed"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "การจัดการค่าระดับซอฟต์แวร์",
+        "en": "Software Deadzone & Mapping"
+      },
+      "steps": {
+        "th": [
+          "การนิ่งไม่ขยับอาจให้ค่าไม่เท่ากับ 512 พอดี — ควรกำหนด <b>Deadzone</b> (เช่น 480-540) ให้ถือว่าเป็นศูนย์",
+          "ใช้ <code>analogRead()</code> เพื่อตรวจสอบพิกัด และ <code>digitalRead()</code> เพื่อเช็คการกดปุ่ม",
+          "แนะนำให้ Calibrate ค่ากลางตอนเริ่มต้นโปรแกรม (<code>setup</code>) เพื่อความแม่นยำสูงสุด"
+        ],
+        "en": [
+          "Center values often jitter near 512; define a <b>Deadzone</b> (e.g., ±30) to ignore minor drift",
+          "Combine <code>analogRead()</code> for positional tracking and <code>digitalRead()</code> for button triggers",
+          "Perform a quick auto-calibration in <code>setup()</code> to record the true 'neutral' position of your module"
+        ]
+      }
+    }
+  ]
+}

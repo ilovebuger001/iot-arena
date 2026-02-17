@@ -1,0 +1,152 @@
+{
+    "id": "beaglebone-black",
+    "category": "mcu",
+    "image": "asset/beaglebone-black.png",
+    "title": {
+        "th": "BeagleBone Black",
+        "en": "BeagleBone Black"
+    },
+    "sub_title": {
+        "th": "คอมพิวเตอร์บอร์ดเดี่ยวประสิทธิภาพสูง",
+        "en": "Single Board Computer for Industry"
+    },
+    "description": {
+        "th": "บอร์ดคอมพิวเตอร์ที่รัน Linux ได้ มีความโดดเด่นที่ขา I/O จำนวนมากและมีความเสถียรสูง",
+        "en": "A robust Linux-based single board computer known for its high I/O count and PRU units for real-time tasks."
+    },
+    "specs": [
+        {
+            "label": "Processor",
+            "value": "AM335x 1GHz ARM"
+        },
+        {
+            "label": "RAM",
+            "value": "512MB DDR3"
+        },
+        {
+            "label": "Storage",
+            "value": "4GB eMMC On-board"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เกตเวย์อุตสาหกรรม",
+            "ระบบที่ต้องการ I/O เยอะ"
+        ],
+        "en": [
+            "Industrial Gateways",
+            "Heavy I/O Embedded Systems"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "Industrial Gateway (IIoT)",
+                "desc": "ใช้รัน MQTT Broker และรวบรวมข้อมูลจากเซนเซอร์หลายสิบตัวเพื่อส่งขึ้นระบบ Cloud ในโรงงาน"
+            },
+            {
+                "title": "ระบบควบคุม CNC ความแม่นยำสูง",
+                "desc": "ใช้หน่วยประมวลผล PRU ภายในเพื่อสั่งงาน Stepper Motor ด้วยความเร็วสูงโดยไม่เกิดอาการกระตุก"
+            }
+        ],
+        "en": [
+            {
+                "title": "Industrial IIoT Gateway",
+                "desc": "Run an on-site MQTT broker and aggregate data from dozens of sensors for advanced cloud reporting."
+            },
+            {
+                "title": "High-Precision CNC controller",
+                "desc": "Utilize the internal PRUs to drive stepper motors at high speeds with microsecond precision, independent of Linux overhead."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "BeagleBone Black คือบอร์ดคอมพิวเตอร์ฝังตัว (SBC) ที่เน้นงานอุตสาหกรรม จุดเด่นที่สุดคือมีหน่วยประมวลผลพิเศษ PRU (Programmable Real-Time Unit) 2 ตัวแยกต่างหากจาก CPU หลัก ทำให้สามารถควบคุม I/O ได้แบบ Real-time (ระดับ Nanosecond) โดยไม่กระตุกแม้ OS หลัก (Linux) จะทำงานหนักอยู่ \n\nข้อควรระวัง: บอร์ดนี้บูตระบบจาก eMMC ในตัวได้เลย (ไม่ต้องง้อ SD Card) แต่ต้องระวังเรื่องไฟเลี้ยง 5V ต้องเสถียรมากๆ มิฉะนั้น eMMC อาจเสียหายได้",
+        "en": "The BeagleBone Black stands out with its two 32-bit PRUs (Programmable Real-Time Units). These allow for deterministic, ultra-low latency I/O control independent of the main Linux kernel, making it superior to Raspberry Pi for tasks like CNC control or custom protocols.\n\nPower Note: Use a high-quality 5V 2A power supply. The board is sensitive to voltage drops and may corrupt the onboard eMMC if power fails during writes."
+    },
+    "technical_specs": [
+        {
+            "label": "CPU",
+            "value": "AM335x 1GHz ARM Cortex-A8"
+        },
+        {
+            "label": "RAM",
+            "value": "512MB DDR3 RAM"
+        },
+        {
+            "label": "Storage",
+            "value": "4GB eMMC Flash"
+        },
+        {
+            "label": "PRU",
+            "value": "2x 32-bit RISC Units"
+        },
+        {
+            "label": "GPIO",
+            "value": "69 Pins (3.3V Logic)"
+        },
+        {
+            "label": "OS",
+            "value": "Debian Linux (Pre-installed)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿2,500 - ฿3,500",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "RS Components",
+                "url": "https://th.rs-online.com/web/p/processor-microcontroller-development-kits/1252411"
+            },
+            {
+                "title": "Element14",
+                "url": "https://th.element14.com/beagleboard/bbone-black-4g/beaglebone-black-rev-c-cortex/dp/2422230"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "มี Header 46 ขา 2 แถว (P8 และ P9) รวม 92 ขา รองรับ GPIO, ADC, I2C, SPI, PWM และ PRU ที่มีความแม่นยำสูง",
+        "en": "Features dual 46-pin headers (P8 & P9) totaling 92 pins. Supports massive GPIO, ADC, I2C, SPI, PWM, and high-speed PRU sub-systems."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การเชื่อมต่อผ่านเว็บ",
+                "en": "Web-based Access (Cloud9)"
+            },
+            "steps": {
+                "th": [
+                    "เสียบสาย USB เข้ากับคอมพิวเตอร์ บอร์ดจะจำลองตัวเองเป็น Network Adapter",
+                    "เปิดเบราว์เซอร์ไปที่ <code>192.168.7.2</code> เพื่อเข้าหน้าคอนโซลควบคุม Cloud9",
+                    "สามารถเขียนโค้ด Python หรือ JavaScript ได้ทันทีโดยไม่ต้องติดตั้งโปรแกรมเพิ่ม"
+                ],
+                "en": [
+                    "Connect via USB to your PC; the board identifies as a network adapter automatically",
+                    "Navigate to <code>192.168.7.2</code> in your browser to access the Cloud9 IDE environmental dashboard",
+                    "Code in Python or JavaScript immediately using the provided on-board libraries and examples"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การใช้งานขา Header",
+                "en": "Navigation Header P8 & P9"
+            },
+            "steps": {
+                "th": [
+                    "BeagleBone มีขาเชื่อมต่อถึง 92 ขา แบ่งเป็นสองฝั่งคือ P8 และ P9",
+                    "ระวังพิน 5V และ 3.3V ให้ดี เพราะชิปประมวลผลรองรับแรงดัน I/O เพียง 3.3V เท่านั้น",
+                    "ใช้คำสั่ง <code>config-pin</code> ใน Terminal เพื่อตั้วค่าโหมดของแต่ละขา (เช่น GPIO, PWM, UART)"
+                ],
+                "en": [
+                    "Access the massive 92-pin I/O via the two 46-pin headers labelled P8 and P9",
+                    "Be extremely careful with voltage; all I/O pins are 3.3V only and are not 5V tolerant",
+                    "Use the <code>config-pin</code> command in the Linux terminal to dynamically switch pin modes (e.g., set to PWM or UART)"
+                ]
+            }
+        }
+    ]
+}

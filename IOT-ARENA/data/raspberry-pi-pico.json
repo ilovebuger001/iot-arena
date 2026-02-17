@@ -1,0 +1,172 @@
+{
+  "id": "raspberry-pi-pico",
+  "category": "mcu",
+  "image": "asset/raspberry-pi-pico.png",
+  "title": {
+    "th": "Raspberry Pi Pico",
+    "en": "Raspberry Pi Pico"
+  },
+  "sub_title": {
+    "th": "บอร์ดไมโครคอนโทรลเลอร์ประสิทธิภาพสูงจาก Raspberry Pi",
+    "en": "High-performance MCU board from Raspberry Pi"
+  },
+  "description": {
+    "th": "Raspberry Pi Pico เป็นบอร์ดไมโครคอนโทรลเลอร์รุ่นแรกที่ใช้ชิป RP2040 ที่ออกแบบโดย Raspberry Pi เอง มีจุดเด่นที่ความเร็วนาฬิกาสูง หน่วยความจำเยอะ และฟีเจอร์เด็ดอย่าง Programmable I/O (PIO) ที่ช่วยให้ผู้ใช้สามารถสร้างอินเตอร์เฟซสื่อสารแบบกำหนดเองได้ รองรับการเขียนโปรแกรมด้วย C/C++ และ MicroPython",
+    "en": "The Raspberry Pi Pico is the first microcontroller board built on the RP2040 chip designed by Raspberry Pi. It stands out with a fast clock speed, large memory, and a unique feature called Programmable I/O (PIO), allowing users to create custom hardware interfaces. It is highly flexible and supports C/C++ and MicroPython programming."
+  },
+  "specs": [
+    {
+      "label": "MCU",
+      "value": "RP2040 Dual-core ARM Cortex-M0+"
+    },
+    {
+      "label": "Clock Speed",
+      "value": "133 MHz"
+    },
+    {
+      "label": "SRAM",
+      "value": "264 KB"
+    },
+    {
+      "label": "Flash Memory",
+      "value": "2 MB"
+    },
+    {
+      "label": "GPIO",
+      "value": "26 Pins (3 Analog inputs)"
+    },
+    {
+      "label": "Interface",
+      "value": "2x UART, 2x SPI, 2x I2C, 16x PWM"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "โปรเจกต์ MicroPython",
+      "ระบบฝังตัว",
+      "ควบคุม LED Matrix",
+      "อุปกรณ์ USB HID"
+    ],
+    "en": [
+      "MicroPython Projects",
+      "Embedded Systems",
+      "LED Matrix Control",
+      "USB HID Devices"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "อุปกรณ์จำลองคีย์บอร์ด (Macro Pad)",
+        "desc": "ใช้ฟีเจอร์ USB HID เพื่อสร้างปุ่มลัดสำหรับคอมพิวเตอร์เพื่อความสะดวกในการทำงาน"
+      },
+      {
+        "title": "เครื่องวัดอุณหภูมิความละเอียดสูง",
+        "desc": "ใช้ร่วมกับเซนเซอร์ DS18B20 และพลังการประมวลผลของ RP2040 เพื่อเก็บบันทึกข้อมูล"
+      }
+    ],
+    "en": [
+      {
+        "title": "Custom Macro Pad",
+        "desc": "Utilize USB HID features to create shortcut keys for your PC to boost productivity."
+      },
+      {
+        "title": "High-Precision Temperature Logger",
+        "desc": "Combine with a DS18B20 sensor and RP2040's processing power for accurate data logging."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "Raspberry Pi Pico ใช้ชิป RP2040 ที่ Raspberry Pi ออกแบบเอง จุดเด่นคือเป็น Dual-core Cortex M0+ ที่ทำงานแยกอิสระได้ และมีฟีเจอร์ PIO (Programmable I/O) ซึ่งเป็น State Machine ขนาดเล็ก 8 ตัวที่สามารถโปรแกรมให้จำลองโปรโตคอลสื่อสารความเร็วสูงได้ (เช่น VGA, HDMI, หรือ CAN bus) โดยไม่รบกวน CPU หลัก \n\nข้อดีอีกอย่างคือรองรับ MicroPython เต็มรูปแบบ ทำให้เขียนโค้ดได้ง่ายและรวดเร็วมาก",
+    "en": "The Raspberry Pi Pico is built on the RP2040, a custom silicon designed by Raspberry Pi. It features a dual-core Cortex-M0+ configuration and, most notably, the PIO (Programmable I/O) subsystem. PIO consists of 8 state machines that can bit-bang high-speed protocols (like VGA, HDMI, or SD card interfaces) independently of the main CPU.\n\nIts native support for MicroPython, combined with drag-and-drop UF2 firmware flashing, makes it arguably the most user-friendly microcontroller for beginners and pros alike."
+  },
+  "technical_specs": [
+    {
+      "label": "MCU",
+      "value": "RP2040 (Dual-core ARM Cortex-M0+)"
+    },
+    {
+      "label": "Clock Speed",
+      "value": "133 MHz (Overclockable)"
+    },
+    {
+      "label": "SRAM",
+      "value": "264 KB (On-chip)"
+    },
+    {
+      "label": "Flash Memory",
+      "value": "2 MB (External QSPI)"
+    },
+    {
+      "label": "GPIO",
+      "value": "26 Pins (3.3V Logic)"
+    },
+    {
+      "label": "ADC",
+      "value": "3 Channels (12-bit)"
+    },
+    {
+      "label": "PIO",
+      "value": "8 State Machines"
+    },
+    {
+      "label": "USB",
+      "value": "USB 1.1 Host/Device"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿140 - ฿200",
+    "links": [
+      {
+        "title": "Cytron Thailand (Official Reseller)",
+        "url": "https://www.cytron.io/p-raspberry-pi-pico"
+      },
+      {
+        "title": "Element14",
+        "url": "https://th.element14.com/"
+      },
+      {
+        "title": "Raspberry Pi",
+        "url": "https://www.raspberrypi.com/products/raspberry-pi-pico/"
+      }
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วยขา GPIO 26 ขา, รองรับ ADC 3 ช่อง, 2x UART, 2x SPI, 2x I2C และ 16x PWM ปรับตั้งค่าได้อิสระ แทบทุกขา",
+    "en": "Features 26 multi-function GPIO pins, 3 Analog inputs, 2x UART, 2x SPI, 2x I2C, and 16x PWM channels for maximum flexibility."
+  },
+  "tips": {
+    "th": [
+      "ใช้ Thonny IDE สำหรับเขียน MicroPython ง่ายที่สุด",
+      "PIO สามารถสร้างโปรโตคอลสื่อสารแบบกำหนดเองได้"
+    ],
+    "en": [
+      "Thonny IDE is the easiest way to program MicroPython",
+      "PIO blocks can emulate custom communication protocols"
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "<b>ดาวน์โหลดเฟิร์มแวร์:</b><br>ไปที่เว็บ Raspberry Pi หรือ MicroPython.org และโหลดไฟล์ <code>.uf2</code> สำหรับ Pico",
+          "<b>เข้าโหมด Bootloader:</b><br>กดปุ่ม <b>BOOTSEL</b> บนบอร์ดค้างไว้ แล้วเสียบสาย USB เข้าคอมพิวเตอร์",
+          "<b>แฟลช (Flash):</b><br>คอมพิวเตอร์จะมองเห็น Drive ชื่อ <b>RPI-RP2</b> ให้ลากไฟล์ <code>.uf2</code> ที่โหลดมาไปใส่ใน Drive นั้น",
+          "<b>ติดตั้งเครื่องมือ:</b><br>ดาวน์โหลดและติดตั้ง <b>Thonny IDE</b>",
+          "<b>เริ่มเขียนโค้ด:</b><br>เปิด Thonny เลือก Interpreter ด้านล่างขวาเป็น <b>'MicroPython (Raspberry Pi Pico)'</b> แล้วเริ่มเขียนได้เลย"
+        ],
+        "en": [
+          "<b>Get Firmware:</b><br>Download the MicroPython <code>.uf2</code> file from the official Raspberry Pi website.",
+          "<b>Bootloader Mode:</b><br>Hold the <b>BOOTSEL</b> button while plugging the USB cable into your PC.",
+          "<b>Flash:</b><br>A drive named <b>RPI-RP2</b> will appear. Drag and drop the <code>.uf2</code> file into it. The board will reboot automatically.",
+          "<b>IDE Setup:</b><br>Install <b>Thonny IDE</b> (recommended for beginners).",
+          "<b>Start Coding:</b><br>In Thonny, set the interpreter to <b>'MicroPython (Raspberry Pi Pico)'</b> and you are ready to go."
+        ]
+      }
+    }
+  ]
+}

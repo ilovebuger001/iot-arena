@@ -1,0 +1,164 @@
+{
+    "id": "mcp2515",
+    "category": "module",
+    "image": "asset/mcp2515.png",
+    "title": {
+        "th": "MCP2515 CAN Bus",
+        "en": "MCP2515 CAN Bus Module"
+    },
+    "sub_title": {
+        "th": "โมดูลสื่อสารกับระบบควบคุมรถยนต์",
+        "en": "CAN Controller SPI Interface"
+    },
+    "description": {
+        "th": "โมดูลที่ทำให้บอร์ดไมโครคอนโทรลเลอร์สามารถสื่อสารผ่านเครือข่าย CAN Bus ที่พบในรถยนต์และอุตสาหกรรม",
+        "en": "A standalone CAN controller that implements the CAN specification, version 2.0B, using the SPI interface."
+    },
+    "specs": [
+        {
+            "label": "Standard",
+            "value": "CAN V2.0B at 1 Mb/s"
+        },
+        {
+            "label": "Interface",
+            "value": "SPI (Up to 10 MHz)"
+        },
+        {
+            "label": "Voltage",
+            "value": "5V DC"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "อ่านข้อมูล OBD-II",
+            "เครือข่ายความเร็วสูง"
+        ],
+        "en": [
+            "Reading OBD-II Data",
+            "High-speed Industrial Comms"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "จอแสดงผลเกจรถยนต์ (Digital Dashboard)",
+                "desc": "อ่านค่า RPM, ความร้อน และความเร็วรถยนต์จากพอร์ต OBD-II มาแสดงผลบนหน้าจอ OLED"
+            },
+            {
+                "title": "เครือข่ายหุ่นยนต์อุตสาหกรรม",
+                "desc": "ใช้สื่อสารระหว่างคอนโทรลเลอร์หลายตัวในระยะทางไกลที่มีสัญญาณรบกวนสูง (High Noise)"
+            }
+        ],
+        "en": [
+            {
+                "title": "Digital Car Gauge Dashboard",
+                "desc": "Read RPM, Temperature, and Speed from a car's OBD-II port and render it on an OLED screen."
+            },
+            {
+                "title": "Industrial Robot Network",
+                "desc": "Establish robust communication between multiple controllers over long distances in high-noise environments."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "MCP2515 เป็นชิป CAN Controller ที่สื่อสารผ่าน SPI ทำให้ไมโครคอนโทรลเลอร์ธรรมดาๆ (อย่าง Arduino) สามารถคุยกับระบบในรถยนต์ (OBD-II, ECU) หรือเครื่องจักรโรงงานได้ \n\nจุดเด่น: มาพร้อมกับชิป Transceiver (TJA1050 หรือ MCP2551) ในตัวโมดูลเลย ทำให้ต่อสายเข้ากับ CAN Bus ได้ทันที \nข้อควรระวัง: สัญญาณ CAN มีความละเอียดอ่อนเรื่อง Noise มาก ควรใช้สายคู่บิดเกลียว (Twisted Pair) และต้องมีตัวต้านทาน 120 โอห์มปิดหัวท้ายของระบบเสมอ",
+        "en": "The MCP2515 module bridges the gap between standard microcontrollers and the robust CAN Bus network used in automotive and industrial automation. It handles message filtering, error checking, and timing, offloading these complex tasks from the main MCU.\n\nHardware Note: Most modules include the TJA1050 transceiver. It requires 5V to operate (3.3V will receive but may struggle to transmit dominant bits)."
+    },
+    "technical_specs": [
+        {
+            "label": "Controller",
+            "value": "MCP2515"
+        },
+        {
+            "label": "Transceiver",
+            "value": "TJA1050 / MCP2551"
+        },
+        {
+            "label": "Speed",
+            "value": "Up to 1 Mb/s"
+        },
+        {
+            "label": "Interface",
+            "value": "SPI (10 MHz)"
+        },
+        {
+            "label": "Voltage",
+            "value": "5V DC"
+        },
+        {
+            "label": "Standard",
+            "value": "CAN V2.0B"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿60 - ฿100",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=mcp2515%20can%20bus"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+can+module"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ต้องการตัวต้านทาน 120 โอห์ม ที่จุดเริ่มต้นและจุดสิ้นสุดของสายสัญญาณ (Bus Termination)",
+            "โมดูลส่วนใหญ่มีจัมเปอร์ <b>J1</b> เพื่อเปิดหรือปิดตัวต้านทาน 120 โอห์มในตัว",
+            "ความเร็ว CAN (Baud rate) และความถี่คริสตัล (มักเป็น 8MHz หรือ 16MHz) ต้องตั้งค่าให้ตรงกันในโค้ด"
+        ],
+        "en": [
+            "Universal CAN standard requires 120Ω termination resistors at both extreme ends of the physical bus",
+            "Most modules include a <b>J1 Jumper</b> to engage the onboard 120Ω resistor—use it if the module is at an end-point",
+            "Your software configuration for Baud rate depends on the module's <b>Crystal Frequency</b> (usually 8MHz or 16MHz)"
+        ]
+    },
+    "pinout_desc": {
+        "th": "เชื่อมต่อแบบ SPI รวม 7 ขา: VCC (5V), GND, SCK, SI, SO, CS, และ INT ฝั่ง CAN: CANH, CANL และ GND",
+        "en": "7-pin SPI interface: VCC (5V), GND, SCK, SI (MOSI), SO (MISO), CS, and INT. CAN Bus side: CANH, CANL, and GND terminals."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การเชื่อมต่อกายภาพ",
+                "en": "Physical Wiring (SPI & CAN)"
+            },
+            "steps": {
+                "th": [
+                    "ต่อ <b>INT</b>/<b>MISO</b>/<b>MOSI</b>/<b>SCK</b> เข้ากับบอร์ดไมโครคอนโทรลเลอร์ (SPI Bus)",
+                    "ต่อ <b>CAN_H</b> และ <b>CAN_L</b> เข้ากับเครือข่าย โดยสายทั้งสองเส้นควรพันเกลียวกัน (Twisted pair)",
+                    "โมดูลต้องการไฟ 5V คงที่เพื่อเลี้ยงชิป Transceiver ให้ทำงานได้อย่างถูกต้อง"
+                ],
+                "en": [
+                    "Connect <b>INT, MISO, MOSI, and SCK</b> to your MCU's hardware SPI pins",
+                    "Connect <b>CAN_High</b> and <b>CAN_Low</b> to the bus using a <b>Twisted Pair</b> cable to minimize EMI",
+                    "Ensure a steady 5V supply is provided to power the CAN transceiver chip correctly"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "พื้นฐานซอฟต์แวร์และการรับค่า",
+                "en": "Software & Message Handling"
+            },
+            "steps": {
+                "th": [
+                    "ติดตั้งไลบรารี <b>'mcp_can'</b> โดย Cory J. Fowler เพื่อความเสถียรสูงสุด",
+                    "กำหนดค่า <b>CS Pin</b> (เช่น D10) และใช้คำสั่ง <code>CAN.begin(CAN_500KBPS, MCP_8MHz)</code> เพื่อเริ่มต้น",
+                    "ใช้คำสั่ง <code>CAN.readMsgBuf(&id, &len, buf)</code> เพื่อรับข้อมูลขนาดสูงสุด 8 ไบต์"
+                ],
+                "en": [
+                    "Install the <b>'mcp_can'</b> library by Cory J. Fowler for the most reliable board support",
+                    "Define the <b>CS Pin</b> and initialize with <code>CAN.begin(CAN_500KBPS, MCP_8MHz)</code>—adjust for your specific crystal",
+                    "Handle incoming packets with <code>CAN.readMsgBuf(&id, &len, buf)</code>; CAN messages are limited to 8 bytes of data"
+                ]
+            }
+        }
+    ]
+}

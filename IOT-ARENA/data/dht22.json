@@ -1,0 +1,146 @@
+{
+    "id": "dht22",
+    "category": "sensor",
+    "image": "asset/dht22.png",
+    "title": {
+        "th": "DHT22 / AM2302",
+        "en": "DHT22 / AM2302 Sensor"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์วัดอุณหภูมิและความชื้นความแม่นยำสูง",
+        "en": "High Precision Temp & Humidity Sensor"
+    },
+    "description": {
+        "th": "เซนเซอร์วัดอุณหภูมิและความชื้นที่มีความแม่นยำสูงกว่า DHT11 ช่วงการวัดกว้างกว่าและส่งข้อมูลแบบดิจิทัล",
+        "en": "A high-precision temperature and humidity sensor with a wider range and better accuracy than the DHT11."
+    },
+    "specs": [
+        {
+            "label": "Humidity",
+            "value": "0-100% (±2-5%)"
+        },
+        {
+            "label": "Temperature",
+            "value": "-40 to 80°C (±0.5°C)"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "สถานีวัดอากาศ",
+            "ระบบควบคุมฟาร์มเห็ด"
+        ],
+        "en": [
+            "Weather Station",
+            "Greenhouse Automation"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ห้องบ่มไวน์/อาหาร",
+                "desc": "ตรวจสอบและรักษาอุณหภูมิและความชื้นที่นิ่งมากเพื่อให้ได้คุณภาพสินค้าสูงสุด"
+            },
+            {
+                "title": "ตู้ฟักไข่อัจฉริยะ",
+                "desc": "คุมความชื้นให้เหมาะสมกับการฟักตัวของไข่สัตว์ปีกที่เน้นความแม่นยำระดับ 0.1"
+            }
+        ],
+        "en": [
+            {
+                "title": "Food/Wine Aging Room",
+                "desc": "Monitor and maintain stable environmental conditions to ensure high product quality."
+            },
+            {
+                "title": "Smart Egg Incubator",
+                "desc": "Precisely control humidity levels (0.1 resolution) for successful poultry hatching."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "DHT22 (หรือ AM2302) เป็นรุ่นอัปเกรดของ DHT11 ที่มีความแม่นยำสูงกว่าและช่วงการวัดกว้างกว่ามาก สามารถวัดอุณหภูมิติดลบได้ถึง -40°C และวัดความชื้นได้ครบ 0-100% RH ทำให้เหมาะสำหรับงานระดับจริงจัง เช่น โรงเรือนเพาะปลูก หรือตู้แช่สินค้า \n\nแม้รูปร่างภายนอกจะคล้ายกัน แต่ไส้ในใช้วัสดุตรวจจับคุณภาพสูงกว่า ทำให้ราคาสูงกว่า DHT11 ประมาณ 2-3 เท่า และยังคงใช้ Protocol การสื่อสารแบบ Single-wire เหมือนเดิม",
+        "en": "The DHT22 (AM2302) is the high-performance sibling of the DHT11. It offers superior accuracy, a wider range (including sub-zero temperatures), and better long-term stability. This makes it suitable for professional-grade applications like greenhouses or cold chain monitoring.\n\nWhile it shares the same pinout and protocol, the internal capacitive sensor is calibrated more precisely. Note that the sampling rate is slightly slower (0.5Hz max), meaning you should wait at least 2 seconds between readings."
+    },
+    "technical_specs": [
+        {
+            "label": "Humidity Range",
+            "value": "0-100% RH"
+        },
+        {
+            "label": "Humidity Accuracy",
+            "value": "±2-5% RH"
+        },
+        {
+            "label": "Temp Range",
+            "value": "-40 to 80°C"
+        },
+        {
+            "label": "Temp Accuracy",
+            "value": "±0.5°C"
+        },
+        {
+            "label": "Sampling Rate",
+            "value": "0.5 Hz (Once every 2s)"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 6V"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿120 - ฿180",
+        "links": [
+            {
+                "title": "Cytron Thailand",
+                "url": "https://www.cytron.io/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=dht22"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=dht22"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "อ่านข้อมูลได้ทุกๆ 2 วินาทีเท่านั้น (ช้ากว่า DHT11)",
+            "หากใช้สายยาวเกิน 20 เมตร ควรใส่ตัวต้านทาน 4.7k-10k Pull-up ระหว่าง VCC และ Data"
+        ],
+        "en": [
+            "Sampling rate is limited to once every 2 seconds (slower than DHT11)",
+            "For cable runs longer than 20m, add a 4.7k-10k pull-up resistor between VCC and Data"
+        ]
+    },
+    "pinout_desc": {
+        "th": "ขั้วต่อ 4 ขา: 1.VCC (3.3-5V), 2.Data (SDA), 3.NC (ไม่ใช้งาน), 4.GND อย่าลืมต่อตัวต้านทาน Pull-up 10k",
+        "en": "4-pin layout: 1.VCC (3.3-5V), 2.Data (SDA), 3.NC (Not Connected), 4.GND. Requires a 10k Pull-up resistor on the data line."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>เตรียมอุปกรณ์:</b><br>เซนเซอร์ DHT22, ตัวต้านทาน 10k (ถ้าเป็นตัวเปล่า 4 ขา), สายจัมเปอร์",
+                    "<b>การ Wiring:</b><br>ขาสัญญาณ (Data) ต่อเข้าขา Digital (เช่น D2) พร้อมต่อตัวต้านทาน Pull-up 10k ไปที่ VCC (ถ้าเป็นโมดูลสำเร็จรูปไม่ต้องต่อเพิ่ม)",
+                    "<b>ไลบรารี:</b><br>ใช้ <b>'DHT sensor library'</b> ตัวเดียวกับ DHT11",
+                    "<b>การเขียนโค้ด:</b><br>เปลี่ยนคำสั่ง define เป็น <code>#define DHTTYPE DHT22</code> ค่าที่อ่านได้จะเป็นทศนิยม (float) ที่มีความละเอียดสูงกว่า"
+                ],
+                "en": [
+                    "<b>Hardware:</b><br>DHT22 Sensor, 10k Resistor (for 4-pin version), Jumper wires.",
+                    "<b>Wiring:</b><br>Connect Data pin to Digital I/O (e.g., D2). If using the 4-pin version, add a 10k Pull-up resistor between Data and VCC. Modules usually have this built-in.",
+                    "<b>Library:</b><br>Use the same <b>'DHT sensor library'</b> by Adafruit.",
+                    "<b>Code Change:</b><br>Update your sketch to <code>#define DHTTYPE DHT22</code>. You will now receive precise floating-point values."
+                ]
+            }
+        }
+    ]
+}

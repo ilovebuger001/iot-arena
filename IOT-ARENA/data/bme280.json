@@ -1,0 +1,150 @@
+{
+    "id": "bme280",
+    "category": "sensor",
+    "image": "asset/bme280.png",
+    "title": {
+        "th": "BME280",
+        "en": "BME280 Sensor"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์วัดอุณหภูมิ ความชื้น และความกดอากาศ",
+        "en": "Temp, Humidity & Pressure Sensor"
+    },
+    "description": {
+        "th": "เซนเซอร์ 3-in-1 จาก Bosch ที่วัดได้ทั้งอุณหภูมิ ความชื้น และความกดอากาศ สื่อสารผ่าน I2C/SPI",
+        "en": "A versatile 3-in-1 sensor from Bosch that measures temperature, humidity, and atmospheric pressure."
+    },
+    "specs": [
+        {
+            "label": "Pressure",
+            "value": "300-1100 hPa"
+        },
+        {
+            "label": "Humidity",
+            "value": "±3%"
+        },
+        {
+            "label": "Interface",
+            "value": "I2C (0x76/0x77) / SPI"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "สถานีอากาศพกพา",
+            "โดรน/คอร์ปเตอร์"
+        ],
+        "en": [
+            "Portable Weather Station",
+            "Drones/Altimeters"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบเฝ้าระวังโรงเรือนปลูกพืช",
+                "desc": "ใช้ตัวเดียวได้ครบทั้ง อุณหภูมิและความชื้นเพื่อคุมพัดลม และลบกวนการทำงานของแมลงด้วยความกดอากาศ"
+            },
+            {
+                "title": "เครื่องวัดระดับความสูงดิจิทัล",
+                "desc": "ใช้ในงานปีนเขาหรือโดรนเพื่อคำนวนค่าความสูงที่อ้างอิงจากความกดอากาศแบบ Real-time"
+            }
+        ],
+        "en": [
+            {
+                "title": "Smart Greenhouse Monitor",
+                "desc": "Single sensor for temperature and humidity to trigger HVAC, using pressure for environment analysis."
+            },
+            {
+                "title": "Digital Altimeter",
+                "desc": "Measure real-time altitude changes in hiking gear or drone flight controllers using pressure variances."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "BME280 คือราชาแห่งเซนเซอร์วัดสภาพอากาศขนาดจิ๋วจาก Bosch Sensortec จุดเด่นคือความแม่นยำที่สูงกว่า DHT22 มาก และวัดค่าความกดอากาศ (Barometric Pressure) ได้ด้วย ทำให้สามารถคำนวณความสูงจากระดับน้ำทะเลได้ (Altimeter) \n\nข้อควรระวังคือมันทำงานที่ไฟ 3.3V เท่านั้น (บอร์ดโมดูลสีม่วงมักจะมี Regulator 5V มาให้ แต่บอร์ดสีชมพูเล็กๆ มักจะรับได้แค่ 3.3V) และ Address ของ I2C อาจเป็น 0x76 หรือ 0x77 ขึ้นอยู่กับผู้ผลิต",
+        "en": "The BME280 is the gold standard for low-cost environmental sensing. Unlike the DHT series, it includes a high-precision pressure sensor, allowing for altitude estimation (±1 meter). It communicates via I2C or SPI.\n\nWarning: Specific modules differ. The purple 6-pin modules often have a 5V regulator, but small pink/blue ones are strictly 3.3V. Also, the I2C address defaults to 0x76 (SDO=GND) or 0x77 (SDO=VCC) depending on your breakout board."
+    },
+    "technical_specs": [
+        {
+            "label": "Temp Range",
+            "value": "-40 to 85°C"
+        },
+        {
+            "label": "Temp Accuracy",
+            "value": "±1.0°C"
+        },
+        {
+            "label": "Humidity Range",
+            "value": "0-100% RH"
+        },
+        {
+            "label": "Humidity Accuracy",
+            "value": "±3% RH"
+        },
+        {
+            "label": "Pressure Range",
+            "value": "300-1100 hPa"
+        },
+        {
+            "label": "Pressure Accuracy",
+            "value": "±1 hPa"
+        },
+        {
+            "label": "Interface",
+            "value": "I2C / SPI"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿90 - ฿250",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=bme280"
+            },
+            {
+                "title": "AliExpress",
+                "url": "https://www.aliexpress.com/w/wholesale-bme280.html"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ระวังความร้อนจากชิปข้างเคียงอาจส่งผลต่อการวัดอุณหภูมิ",
+            "I2C Address มักจะเป็น 0x76"
+        ],
+        "en": [
+            "Self-heating can affect temp readings if polled too fast",
+            "Default I2C Address is usually 0x76"
+        ]
+    },
+    "pinout_desc": {
+        "th": "เชื่อมต่อแบบ I2C: VCC (1.8-3.6V), GND, SCL (Clock), และ SDA (Data) หรือใช้ SPI หากโมดูลรองรับ",
+        "en": "I2C Interface: VCC (1.8-3.6V), GND, SCL (Clock), and SDA (Data). Also supports SPI on specific modules."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>การ Wiring (I2C):</b> ต่อขา Vin (3.3V/5V), GND, SCL (Clock), SDA (Data)",
+                    "<b>ไลบรารี:</b> ติดตั้ง <b>'Adafruit BME280 Library'</b> ผ่าน Library Manager",
+                    "<b>หา Address:</b> หากรันโค้ดแล้วหาไม่เจอ (Sensor not found) ให้ลองแก้ Address ในโค้ดจาก 0x77 เป็น <b>0x76</b> (บรรทัด <code>bme.begin(0x76)</code>)",
+                    "<b>การใช้งาน:</b> อ่านค่าผ่านฟังก์ชัน <code>bme.readTemperature()</code>, <code>bme.readHumidity()</code>, <code>bme.readPressure()</code>"
+                ],
+                "en": [
+                    "<b>Wiring (I2C):</b> Connect Vin (3.3V/5V), GND, SCL, and SDA to your MCU's I2C pins.",
+                    "<b>Library:</b> Install <b>'Adafruit BME280 Library'</b>.",
+                    "<b>Address Fix:</b> If code creates an error, force the address to 0x76 via <code>bme.begin(0x76)</code>. Many generic modules use 0x76 instead of the Adafruit default 0x77.",
+                    "<b>Coding:</b> Use <code>bme.readTemperature()</code>, <code>bme.readHumidity()</code>, and <code>bme.readPressure()</code> / 100.0 (to get hPa)."
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+.gemini/
+.agent/
+node_modules/
+.DS_Store
+Thumbs.db
+all_images.txt
+list.txt
+all_en_titles.txt
+all_titles.txt
+*.log

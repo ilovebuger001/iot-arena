@@ -1,0 +1,150 @@
+{
+    "id": "water-level",
+    "category": "sensor",
+    "image": "asset/water-level.png",
+    "title": {
+        "th": "Water Level Sensor",
+        "en": "Water Level Sensor"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์วัดระดับน้ำ",
+        "en": "Liquid Level Detection"
+    },
+    "description": {
+        "th": "เซนเซอร์สำหรับวัดความสูงของผิวน้ำ ทำงานโดยการให้ความต้านทานไฟฟ้าเปลี่ยนไปตามรอยเส้นนำไฟฟ้าที่สัมผัสน้ำ",
+        "en": "A sensor designed for detecting the height of a liquid surface, using parallel trace resistance."
+    },
+    "specs": [
+        {
+            "label": "Area",
+            "value": "40mm x 16mm"
+        },
+        {
+            "label": "Output",
+            "value": "Analog"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "ตรวจจับน้ำท่วมขัง",
+            "วัดระดับน้ำในถัง"
+        ],
+        "en": [
+            "Flood Detection",
+            "Water Tank Monitoring"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบเตือนน้ำล้นอ่างอาบน้ำ",
+                "desc": "ใช้ติดที่ขอบอ่างและส่งเสียง Buzzer เตือนเมื่อระดับน้ำมาถึงจุดที่กำหนด"
+            },
+            {
+                "title": "เครื่องตรวจจับการรั่วซึมใต้หลังคา",
+                "desc": "วางแผ่นเซนเซอร์ในจุดที่มีความเสี่ยง เพื่อรับการแจ้งเตือนทันทีเมื่อเริ่มมีละอองน้ำ"
+            }
+        ],
+        "en": [
+            {
+                "title": "Bathtub Overflow Alarm",
+                "desc": "Mount at the rim and trigger a buzzer when the water reaches the target height."
+            },
+            {
+                "title": "Roof Leak Detector",
+                "desc": "Place the sensor in high-risk attic spots to get immediate alerts at the first sign of moisture."
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 3 ขา: VCC (3.3-5V), GND, และ S (Analog Output) ให้ค่าแรงดันตามระดับน้ำที่สัมผัสแผ่นวาย",
+        "en": "Features 3 pins: VCC (3.3-5V), GND, and S (Analog Output signal proportionally to water level immersion)."
+    },
+    "tips": {
+        "th": [
+            "ควรล้างเซนเซอร์ด้วยน้ำสะอาดหลังการใช้งานในน้ำที่ไม่บริสุทธิ์",
+            "ห้ามจุ่มส่วนหัวที่เป็นวงจร (PCB ด้านบน) ลงในน้ำ ให้จุ่มเฉพาะส่วนลายเส้นนำไฟฟ้า"
+        ],
+        "en": [
+            "Clean the traces after use in non-pure water to avoid buildup",
+            "Never submerge the top circuit area; only the gold/nickel traces should touch the liquid"
+        ]
+    },
+    "deep_dive": {
+        "th": "เซนเซอร์วัดระดับน้ำทำงานโดยหลักการนำไฟฟ้า (Conductivity) ลายทองแดงบนแผ่น PCB ทำหน้าที่เป็นตัวต้านทานแบบแปรค่าได้ เมื่อน้ำสัมผัสลายทองแดง จะทำให้กระแสไหลผ่านได้มากขึ้น แรงดันไฟฟ้าที่ขา Signal จึงสูงขึ้นตามระดับน้ำ",
+        "en": "The Water Level Sensor works on the principle of variable resistance. The parallel copper traces acts as a variable resistor whose resistance varies according to the water level. The more water the sensor is immersed in, the better the conductivity and the lower the resistance, resulting in a higher voltage output."
+    },
+    "technical_specs": [
+        {
+            "label": "Operating Voltage",
+            "value": "3V - 5V"
+        },
+        {
+            "label": "Operating Current",
+            "value": "<20mA"
+        },
+        {
+            "label": "Sensor Type",
+            "value": "Analog Resistive"
+        },
+        {
+            "label": "Detection Area",
+            "value": "40mm x 16mm"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿10 - ฿25",
+        "links": [
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=water+level+sensor"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=water+level+sensor"
+            }
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การอ่านค่าเป็นความสูง",
+                "en": "Height Mapping"
+            },
+            "steps": {
+                "th": [
+                    "เซนเซอร์ให้ค่าแอนะล็อกตั้งแต่ <b>0</b> ถึงประมาณ <b>600+</b>",
+                    "ใช้คำสั่ง <code>analogRead()</code> และเปรียบเทียบค่าเป็นระดับ (เช่น 0-100, 101-400, 401+)",
+                    "ค่าที่ได้ขึ้นอยู่กับความนำไฟฟ้าของน้ำด้วย"
+                ],
+                "en": [
+                    "Returns an analog value from <b>0</b> (dry) to roughly <b>600+</b> (fully submerged)",
+                    "Use <code>analogRead()</code> to categorize results into levels (e.g., Low, Medium, High)",
+                    "Readings vary with water conductivity; deionized water yields lower values than tap or salt water"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "ข้อแนะนำการดูแลรักษา",
+                "en": "Maintenance Guide"
+            },
+            "steps": {
+                "th": [
+                    "เช็ดให้แห้งเสมอหลังใช้งานเสร็จเพื่อป้องกันสนิมทองแดง",
+                    "หากค่าเริ่มเพี้ยน (ค่าไม่กลับเป็น 0 แม้อยู่ในอากาศ) ให้ใช้แอลกอฮอล์เช็ดระหว่างลายเส้น",
+                    "ระวังคราบหินปูนเกาะลายวงจรซึ่งจะทำหน้าที่เป็นสะพานไฟทำให้ค่าเพี้ยน"
+                ],
+                "en": [
+                    "Always dry the sensor after use to prevent corrosion of the conductive traces",
+                    "If the value doesn't return to zero when dry, clean between the traces with isopropyl alcohol",
+                    "Mineral buildup can form a conductive bridge between traces, causing persistent ghost readings"
+                ]
+            }
+        }
+    ]
+}

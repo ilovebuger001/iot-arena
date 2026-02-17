@@ -1,0 +1,168 @@
+{
+  "id": "hc-05",
+  "category": "module",
+  "image": "asset/hc-05.png",
+  "title": {
+    "th": "HC-05 Bluetooth",
+    "en": "HC-05 Bluetooth Module"
+  },
+  "sub_title": {
+    "th": "โมดูลสื่อสารบลูทูธไร้สาย",
+    "en": "Bluetooth Serial Port Module"
+  },
+  "description": {
+    "th": "HC-05 เป็นโมดูลบลูทูธ (Bluetooth Classic) ที่เปลี่ยนสัญญาณ Serial (UART) ให้เป็นไร้สาย สามารถทำหน้าที่เป็นได้ทั้งตัวส่ง (Master) และตัวรับ (Slave) นิยมใช้ควบคุมหุ่นยนต์ผ่านสมาร์ทโฟนแอนดรอยด์",
+    "en": "The HC-05 is a classic Bluetooth module that acts as a wireless serial cable. Unlike the HC-06 (which is slave-only), the HC-05 can function as both Master and Slave. It is widely used for controlling robots and home projects from Android smartphones."
+  },
+  "specs": [
+    {
+      "label": "Protocol",
+      "value": "Bluetooth v2.0 + EDR"
+    },
+    {
+      "label": "Baud Rate",
+      "value": "9600 (Default) / 38400 (AT Mode)"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.6V - 6V (VCC)"
+    },
+    {
+      "label": "Logic Level",
+      "value": "3.3V (ห้ามต่อ 5V ตรงๆ เข้า RX)"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "ควบคุมหุ่นยนต์ผ่านมือถือ",
+      "ส่งข้อมูลเซนเซอร์ไร้สาย",
+      "รีโมทคอนโทรล",
+      "ระบบล็อคประตูบลูทูธ"
+    ],
+    "en": [
+      "Phone-controlled Robot",
+      "Wireless Sensor Data",
+      "Remote Control",
+      "Bluetooth Door Lock"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "รถบังคับผ่านมือถือแอนดรอยด์",
+        "desc": "ใช้แอปฯ ส่งตัวอักษร 'F', 'B', 'L', 'R' ผ่านบลูทูธเพื่อสั่งให้รถเคลื่อนที่ตามทิศทาง"
+      },
+      {
+        "title": "จอแสดงผลค่าเซนเซอร์ไร้สาย",
+        "desc": "ส่งค่าอุณหภูมิจากเซนเซอร์ไปแสดงผลบนแอปฯ ในสมาร์ทโฟนแบบเรียลไทม์"
+      }
+    ],
+    "en": [
+      {
+        "title": "Android RC Car",
+        "desc": "Transmit 'F', 'B', 'L', 'R' characters via Bluetooth to command a robot's direction from an app."
+      },
+      {
+        "title": "Wireless Telemetry Display",
+        "desc": "Stream real-time sensor data from your project directly to a mobile dashboard or terminal app."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "HC-05 คือโมดูล Bluetooth Classic (2.0) ที่ทำงานเป็น Serial Port แบบไร้สาย (SPP) \n\nความแตกต่างจาก HC-06: HC-05 เป็นได้ทั้ง Master (ตัวเชื่อม) และ Slave (ตัวถูกเชื่อม) แต่ HC-06 เป็น Slave ได้อย่างเดียว \n\nข้อควรระวัง: ขา RX ของ HC-05 รับไฟได้แค่ 3.3V หากต่อจาก Arduino 5V ต้องใช้ตัวต้านทานแบ่งแรงดัน (Voltage Divider) เพื่อป้องกันโมดูลเสียหาย",
+    "en": "The HC-05 operates as a transparent Serial Port Profile (SPP) bridge. \n\nVS HC-06: The HC-05 can initiate connections (Master) or accept them (Slave), whereas the HC-06 is purely a Slave device.\n\nLogic Level Warning: The RX pin is 3.3V logic. Connecting it directly to a 5V Arduino TX pin can damage the chip. Use a 1k/2k resistor divider."
+  },
+  "technical_specs": [
+    {
+      "label": "Bluetooth Ver",
+      "value": "2.0 + EDR"
+    },
+    {
+      "label": "Range",
+      "value": "~10 Meters"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.6V - 6V"
+    },
+    {
+      "label": "Default Baud",
+      "value": "9600"
+    },
+    {
+      "label": "Pairing Code",
+      "value": "1234 or 0000"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿100 - ฿150",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=hc-05%20bluetooth"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=arduino+bluetooth+hc05"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "ตอน Upload โค้ดเข้า Arduino ให้ถอดสาย TX/RX ออกก่อนเสมอ (กันชนกัน)",
+      "LED กระพริบเร็ว = รอเชื่อมต่อ, กระพริบช้า (หรือดับแล้วติด) = เชื่อมต่อแล้ว, กระพริบช้ามาก (2วิ) = AT Mode"
+    ],
+    "en": [
+      "ALWAYS disconnect TX/RX wires when uploading a sketch to Arduino (they share the USB serial lines).",
+      "Fast blink = Pairing mode. Slow blink (every 2s) = AT Mode. Double blink = Connected."
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วย 6 ขา: VCC (3.6-6V), GND, TXD, RXD (3.3V Logic), STATE, และ EN (หรือ KEY สำหรับเข้า AT Mode)",
+    "en": "Features 6 pins: VCC (3.6-6V), GND, TXD, RXD (3.3V Logic), STATE, and EN (or KEY to enter AT Mode)."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "การตั้งค่า AT Mode",
+        "en": "Enter AT Mode"
+      },
+      "steps": {
+        "th": [
+          "<b>Wiring:</b> ต่อ VCC, GND ปกติ แต่ยังไม่จ่ายไฟ",
+          "<b>Button:</b> กดปุ่มเล็กๆ บนโมดูลค้างไว้ แล้วเสียบสายไฟ VCC",
+          "<b>Check:</b> ไฟจะกระพริบช้าๆ (2 วินาทีครั้ง) แปลว่าเข้าโหมด AT แล้ว",
+          "<b>Command:</b> เปิด Serial Monitor ที่ Baud 38400 (NL & CR) พิมพ์ <code>AT</code> ต้องตอบกลับ <code>OK</code>"
+        ],
+        "en": [
+          "<b>Hold:</b> Press and hold the small button on the module BEFORE powering it up.",
+          "<b>Power:</b> Connect VCC while holding the button.",
+          "<b>Verify:</b> LED should blink slowly (2s period).",
+          "<b>Config:</b> Set Serial Monitor to 38400 baud, Both NL & CR. Type <code>AT</code> -> Response <code>OK</code>."
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "การใช้งานเบื้องต้น",
+        "en": "Basic Usage (Slave)"
+      },
+      "steps": {
+        "th": [
+          "ไม่ต้องตั้งค่าอะไร (Default คือ Slave, Baud 9600, Pass 1234)",
+          "จับคู่กับมือถือ Android (ชื่อ HC-05)",
+          "ใช้แอป 'Serial Bluetooth Terminal' เพื่อส่งข้อความหากัน"
+        ],
+        "en": [
+          "Default settings work out of the box (Slave, 9600, 1234).",
+          "Pair with Android phone. Open 'Serial Bluetooth Terminal'.",
+          "Connect to 'HC-05'. Text sent from phone will appear in Arduino Serial."
+        ]
+      }
+    }
+  ]
+}

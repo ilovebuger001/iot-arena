@@ -1,0 +1,164 @@
+{
+    "id": "nodemcu-v3",
+    "category": "mcu",
+    "image": "asset/nodemcu-v3.png",
+    "title": {
+        "th": "NodeMCU V3",
+        "en": "NodeMCU V3 (ESP8266)"
+    },
+    "sub_title": {
+        "th": "บอร์ด WiFi พร้อมใช้งานยอดนิยม",
+        "en": "Popular WiFi Dev Board"
+    },
+    "description": {
+        "th": "บอร์ด ESP8266 รุ่นอัพเกรดที่มีชิป USB-to-Serial บนบอร์ด ทำให้เขียนโปรแกรมได้ง่ายผ่านสาย Micro USB",
+        "en": "An easy-to-use ESP8266 development board with integrated USB-to-Serial (CH340), ideal for IoT projects."
+    },
+    "specs": [
+        {
+            "label": "SoC",
+            "value": "ESP8266 (ESP-12E)"
+        },
+        {
+            "label": "Flash",
+            "value": "4 MB"
+        },
+        {
+            "label": "Interface",
+            "value": "WiFi 2.4GHz"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "สถานีวัดอากาศ WiFi",
+            "สวิตช์ไฟผ่านเว็บ"
+        ],
+        "en": [
+            "WiFi Weather Station",
+            "Web Controlled Switches"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบควบคุมอุณหภูมิห้องผ่านเว็บ",
+                "desc": "ใช้ ESP8266 เปิดเซิร์ฟเวอร์ขนาดเล็กเพื่อดูค่าอุณหภูมิและสั่งงานแอร์จากมือถือได้โดยตรง"
+            },
+            {
+                "title": "ปุ่มกดสั่งงานไร้สาย",
+                "desc": "ใช้ปุ่มบนบอร์ดเป็นอินพุตเพื่อส่งสัญญาณ Webhook ไปยังบริการอย่าง IFTTT หรือ LINE"
+            }
+        ],
+        "en": [
+            {
+                "title": "Web-based Room Thermostat",
+                "desc": "Run a small web server on the ESP8266 to monitor temperatures and toggle AC units via mobile."
+            },
+            {
+                "title": "Custom IoT Emergency Button",
+                "desc": "Map the onboard flash button to trigger webhooks for IFTTT or LINE Notify alerts."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "NodeMCU V3 (LoLin) เป็นบอร์ด ESP8266 ที่ได้รับความนิยมสูงสุดในไทย เพราะมีขนาดใหญ่เสียบสายง่าย และมีขาไฟเลี้ยง USB แยกต่างหาก (VU Pin) แต่ข้อเสียคือขนาดที่กว้างเกินไปจนบังรู Breadboard เกือบหมด ทำให้ต้องใช้เทคนิคการต่อสายแบบอ้อมหรือใช้สายจัมเปอร์ตัวเมียช่วย",
+        "en": "The NodeMCU V3 (often branded LoLin) features the ESP8266-12E module. It is slightly larger than the V2, which unfortunately means it covers all the tie-points on a standard breadboard. However, it compensates with a robust USB-to-Serial chip (CH340G) and reliable voltage regulation, making it the workhorse of beginner IoT projects."
+    },
+    "technical_specs": [
+        {
+            "label": "MCU",
+            "value": "ESP8266 @ 80MHz"
+        },
+        {
+            "label": "Flash",
+            "value": "4 MB"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V Logic"
+        },
+        {
+            "label": "Input Power",
+            "value": "4.5V - 10V (Vin)"
+        },
+        {
+            "label": "WiFi",
+            "value": "802.11 b/g/n"
+        },
+        {
+            "label": "USB-Serial",
+            "value": "CH340G"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿80 - ฿120",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=nodemcu+v3"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=nodemcu+v3"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "บอร์ดพัฒนา ESP8266 ที่มีขา GPIO ใช้งานง่าย, จ่ายไฟผ่าน Micro USB, และมี ADC 0-3.3V (ผ่านวงจรลดแรงดันบนบอร์ด)",
+        "en": "ESP8266 development board with accessible GPIOs, Micro USB power, and an onboard voltage divider for 0-3.3V ADC input."
+    },
+    "tips": {
+        "th": [
+            "บอร์ดรุ่น V3 มีขนาดกว้างมากจนบังรูบน Breadboard แนะนำให้ใช้สายจัมเปอร์ตัวเมียหรือ Breadboard 2 อันประกบกัน",
+            "ต้องใช้สาย Micro USB ที่รองรับการรับส่งข้อมูล (Data Cable) เท่านั้น",
+            "หลีกเลี่ยงการใช้ขา D0 (GPIO16) หากไม่ใช่การทำ Deep Sleep"
+        ],
+        "en": [
+            "V3 is extra wide and blocks all breadboard holes; use female-to-male jumpers or two breadboards side-by-side",
+            "Ensure you use a Micro USB cable that supports data transfer, not just power charging",
+            "Avoid using pin D0 (GPIO16) for general I/O unless you are implementing Deep Sleep functionality"
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การตั้งค่า Driver",
+                "en": "Driver Installation"
+            },
+            "steps": {
+                "th": [
+                    "บอร์ด V3 ส่วนใหญ่ใช้ชิป <b>CH340</b> ให้ดาวน์โหลดและติดตั้งจากเว็บไซต์ผู้ผลิต",
+                    "เมื่อเสียบสาย USB แล้ว ต้องเห็นชื่อ <b>USB-SERIAL CH340</b> ใน Device Manager",
+                    "หากไม่ขึ้นพอร์ต ให้ตรวจสอบคุณภาพของสาย USB"
+                ],
+                "en": [
+                    "Most V3 boards use the <b>CH340</b> bridge; download and install the official driver for your OS",
+                    "Once connected, <b>'USB-SERIAL CH340'</b> should appear under the 'Ports' section in Device Manager",
+                    "If no port appears, the USB cable is likely power-only or faulty"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "ซอฟต์แวร์และการเลือกบอร์ด",
+                "en": "Software Selection"
+            },
+            "steps": {
+                "th": [
+                    "ใน Arduino IDE ให้เลือกบอร์ดเป็น <b>NodeMCU 1.0 (ESP-12E Module)</b>",
+                    "ตั้งค่า Port ให้ตรงกับที่พบในคอมพิวเตอร์ และตั้ง <b>Upload Speed</b> เป็น 115200 เพื่อความเสถียร",
+                    "ลองอัปโหลดโค้ด <b>Blink</b> เพื่อทดสอบว่าบอร์ดและคอมพิวเตอร์เชื่อมต่อกันสมบูรณ์"
+                ],
+                "en": [
+                    "In the Arduino IDE board manager, select <b>NodeMCU 1.0 (ESP-12E Module)</b>",
+                    "Verify the COM Port and set <b>Upload Speed</b> to 115200 for maximum reliability during flashes",
+                    "Test your connection by uploading the <b>Blink</b> example and watching the onboard LED"
+                ]
+            }
+        }
+    ]
+}

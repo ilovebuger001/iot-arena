@@ -1,0 +1,162 @@
+{
+    "id": "tm1637",
+    "category": "display",
+    "image": "asset/tm1637.png",
+    "title": {
+        "th": "TM1637",
+        "en": "TM1637 4-Digit Display"
+    },
+    "sub_title": {
+        "th": "หน้าจอ 7-segment 4 หลัก",
+        "en": "7-Segment Decimal Display"
+    },
+    "description": {
+        "th": "โมดูลแสดงตัวเลข 4 หลัก เหมาะสำหรับทำนาฬิกาหรือเครื่องนับเวลา",
+        "en": "A 4-digit numeric display based on the TM1637 chip, ideal for digital clocks or counters."
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 4 ขา: VCC (3.3-5V), GND, DIO (Data), และ CLK (Clock) ใช้ Protocol แบบ Bit-banging (ไม่ใช่ I2C)",
+        "en": "Features 4 pins: VCC (3.3-5V), GND, DIO (Data), and CLK (Clock). Uses a custom bit-banging protocol (not I2C)."
+    },
+    "specs": [
+        {
+            "label": "Display",
+            "value": "4x 7-Segment"
+        },
+        {
+            "label": "Pins",
+            "value": "DIO, CLK (2-wire)"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เครื่องตั้งเวลา",
+            "แสดงอุณหภูมิ"
+        ],
+        "en": [
+            "Kitchen Timer",
+            "Temperature Monitor"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "นาฬิกาปลุกดิจิทัล",
+                "desc": "ใช้แสดงเวลาโดยมีจุดโคลอนค้างหรือกระพริบเพื่อบอกวินาที"
+            },
+            {
+                "title": "เครื่องกดบัตรคิว",
+                "desc": "แสดงหมายเลขคิวล่าสุดที่กำลังเรียก พร้อมเสียง Buzzer เมื่อมีการเปลี่ยนเลข"
+            }
+        ],
+        "en": [
+            {
+                "title": "Digital Alarm Clock",
+                "desc": "Display time in HH:MM format with a blinking colon to indicate active timekeeping."
+            },
+            {
+                "title": "Queue Number Display",
+                "desc": "Show the current serving number in a simple and easy-to-read numeric format."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "TM1637 เป็นชิปขับ LED แบบ 7-segment ที่นิยมที่สุดสำหรับโปรเจกต์ Arduino เพราะใช้สายไฟเพียง 2 เส้น (CLK, DIO) ในการควบคุม แสดงผลได้ 4 หลักและปรับความสว่างได้ 8 ระดับ \n\nจุดเด่น: ไม่กินทรัพยากรเครื่องมากเท่าจอ OLED และสู้แสงแดดได้ดีกว่า เหมาะสำหรับทำนาฬิกาหรือเครื่องจับเวลา ข้อจำกัดคือแสดงตัวหนังสือภาษาอังกฤษได้ไม่ครบทุกตัว (แสดงได้เฉพาะตัวที่พอดัดแปลงจากเลข 8 ได้ เช่น A, b, C, d, E, F)",
+        "en": "The TM1637 is a dedicated LED driver chip that simplifies controlling 4-digit 7-segment displays using only 2 data pins (CLK, DIO). It handles the multiplexing refresh cycle internally, so your Arduino doesn't have to constantly update the display to prevent flickering.\n\nLimitation: It is designed primarily for numbers. While it can display some characters (A, b, C, d, E, F), it cannot display 'K', 'M', 'W', etc."
+    },
+    "technical_specs": [
+        {
+            "label": "Chip",
+            "value": "TM1637"
+        },
+        {
+            "label": "Digits",
+            "value": "4 (0.36 or 0.56 inch)"
+        },
+        {
+            "label": "Color",
+            "value": "Red (Common)"
+        },
+        {
+            "label": "Brightness",
+            "value": "8 Levels"
+        },
+        {
+            "label": "Interface",
+            "value": "2-Wire (Not I2C)"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿25 - ฿50",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=tm1637"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+tm1637"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "มีจุดโคลอนตรงกลางเหมาะสำหรับทำนาฬิกา",
+            "สามารถปรับความสว่างได้ 7 ระดับเพื่อถนอมสายตาในตอนกลางคืน"
+        ],
+        "en": [
+            "Commonly includes a central colon for clock formatting",
+            "Features 7 levels of software brightness control for comfortable night-time viewing"
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การแสดงผลตัวเลขและเวลา",
+                "en": "Number & Clock Logic"
+            },
+            "steps": {
+                "th": [
+                    "ใช้คำสั่ง <code>display.showNumberDec(value)</code> เพื่อแสดงตัวเลข 0-9999",
+                    "สำหรับการทำนาฬิกา ต้องสั่งเปิดโหมด <b>dot</b> เพื่อให้จุดโคลอนปรากฏ",
+                    "หากต้องการแสดงตัวอักษรบางตัว สามารถสร้าง Array ของ Segment เองได้"
+                ],
+                "en": [
+                    "Call <code>display.showNumberDec(value)</code> to output integers between 0 and 9999",
+                    "For timers, enable the <b>colon</b> parameter in the display function to separate hours and minutes",
+                    "Custom characters (e.g., 'HELP') can be displayed by defining manual segment bitmasks"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การควบคุมความสว่าง",
+                "en": "Brightness Control"
+            },
+            "steps": {
+                "th": [
+                    "ใช้คำสั่ง <code>display.setBrightness(0-7)</code> โดย 7 คือสว่างที่สุด",
+                    "การลดความสว่างจะช่วยลดการใช้พลังงานและยืดอายุการใช้งานของ LED",
+                    "โมดูลนี้ใช้เพียง 2 สายส่งข้อมูลเข้าใข้ง่ายไม่ซับซ้อน"
+                ],
+                "en": [
+                    "Use <code>display.setBrightness(0-k)</code> where 7 is the maximum intensity",
+                    "Lowering brightness significantly reduces power draw and prevents LED burnout over years of use",
+                    "Only requires 2 pins (DIO and CLK) for data communication, saving GPIO pins for other sensors"
+                ]
+            }
+        }
+    ]
+}

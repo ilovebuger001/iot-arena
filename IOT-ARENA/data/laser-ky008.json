@@ -1,0 +1,140 @@
+{
+    "id": "laser-ky008",
+    "category": "actuator",
+    "image": "asset/laser-ky008.png",
+    "title": {
+        "th": "Laser Module",
+        "en": "Laser Transmitter (KY-008)"
+    },
+    "sub_title": {
+        "th": "โมดูลยิงแสงเลเซอร์สีแดง",
+        "en": "Red Laser Diode Module"
+    },
+    "description": {
+        "th": "โมดูลยิงแสงเลเซอร์สีแดงขนาดเล็ก 650nm ใช้สำหรับสร้างโปรเจกต์กันขโมยหรือวัดระยะ",
+        "en": "A small 650nm red laser diode module useful for building security systems or point-to-point communication."
+    },
+    "specs": [
+        {
+            "label": "Wavelength",
+            "value": "650 nm"
+        },
+        {
+            "label": "Power",
+            "value": "5 mW"
+        },
+        {
+            "label": "Voltage",
+            "value": "5V"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "ระบบกันขโมยเลเซอร์",
+            "ของเล่นแมว"
+        ],
+        "en": [
+            "Laser Security System",
+            "Pet Toy Automation"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบสื่อสารผ่านแสง (Li-Fi เบื้องต้น)",
+                "desc": "ใช้เลเซอร์ยิงรหัสมอร์สหรือข้อมูลดิจิทัลไปยังตัวรับแสงในระยะไกล"
+            },
+            {
+                "title": "เครื่องยิงเลเซอร์ตั้งแนวระนาบ",
+                "desc": "ช่วยในการเล็งหรือวัดระดับเป็นเส้นตรงสำหรับงานก่อสร้างหรืองานติดตั้ง"
+            }
+        ],
+        "en": [
+            {
+                "title": "Optical Data Transfer",
+                "desc": "Transmit Morse code or digital data streams over long distances using light pulses."
+            },
+            {
+                "title": "Laser Leveling Aid",
+                "desc": "Create a perfectly straight reference line for alignment tasks in DIY or construction projects."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "Laser Module KY-008 เป็นไดโอดเลเซอร์สีแดงขนาดเล็ก (650nm) ที่ใช้งานง่ายเหมือน LED ทั่วไป (แค่จ่ายไฟก็ติด) สามารถนำไปยิงใส่ LDR เพื่อทำระบบกันขโมยแบบลำแสง (Tripwire) \n\nข้อควรระวัง: แม้จะมีกำลังต่ำ (<5mW) แต่การจ้องมองแสงเลเซอร์ตรงๆ หรือแสงสะท้อนจากกระจกเป็นเวลานาน สามารถทำลายจอประสาทตาได้",
+        "en": "The KY-008 is a standard 650nm Red Laser Diode. It behaves electrically like an LED but emits a coherent beam of light. \n\nSafety Warning: This is likely a Class 3R laser product. Direct eye exposure can cause permanent retinal damage. Never point it at people, pets, or aircraft. Use only for alignment or tripwire sensors."
+    },
+    "technical_specs": [
+        {
+            "label": "Wavelength",
+            "value": "650 nm (Red)"
+        },
+        {
+            "label": "Output Power",
+            "value": "< 5mW"
+        },
+        {
+            "label": "Voltage",
+            "value": "5V DC"
+        },
+        {
+            "label": "Current",
+            "value": "~30mA"
+        },
+        {
+            "label": "Output Type",
+            "value": "Continuous Wave"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿15 - ฿30",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=ky-008%20laser"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+laser+module"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ต่อพิน S (Signal) เข้าไฟ 5V ก็ติดเลย ไม่จำเป็นต้องเขียนโค้ดซับซ้อน",
+            "ห้ามใช้แรงดันเกิน 5V เพราะไดโอดอาจขาดทันที"
+        ],
+        "en": [
+            "Connect Signal (S) to 5V to turn on; essentially acts like a pointy LED",
+            "Do not exceed 5V or reverse polarity, as laser diodes are very sensitive"
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 3 ขา: S (Signal - จ่ายไฟ), VCC (ไม่จำเป็น), และ - (GND) พิกัดแรงดัน 5V",
+        "en": "Features 3 pins: S (Signal/Power), VCC (NC), and - (GND). Operates typically at 5V."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "ต่อขาลบ (-) เข้า GND, ขา S (Signal) เข้า Digital Pin (เช่น D13)",
+                    "ใช้ <code>digitalWrite(13, HIGH);</code> เพื่อยิงเลเซอร์",
+                    "ยิงเลเซอร์ใส่ LDR ถ้า LDR อ่านค่าได้ 'มืด' ลงกะทันหัน (เพราะมีคนเดินตัดแสง) ให้สั่งแจ้งเตือน"
+                ],
+                "en": [
+                    "Connect Pin (-) to GND, Pin (S) to a Digital Output (e.g., D13).",
+                    "Use standard Blink code; it works exactly like an LED.",
+                    "Point it at a photoresistor (LDR) across a doorway. If the LDR detects a drop in light, someone has crossed the beam."
+                ]
+            }
+        }
+    ]
+}

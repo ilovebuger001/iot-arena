@@ -1,0 +1,162 @@
+{
+    "id": "teensy-41",
+    "category": "mcu",
+    "image": "asset/teensy-41.png",
+    "title": {
+        "th": "Teensy 4.1",
+        "en": "Teensy 4.1"
+    },
+    "sub_title": {
+        "th": "บอร์ดไมโครที่เร็วที่สุดในปัจจุบัน",
+        "en": "The Fastest Microcontroller"
+    },
+    "description": {
+        "th": "ขุมพลัง 600 MHz บนบอร์ดขนาดเล็ก รองรับ Ethernet และการประมวลผลขั้นสูง",
+        "en": "An incredibly fast 600 MHz ARM Cortex-M7 board, featuring Ethernet support and extensive I/O."
+    },
+    "specs": [
+        {
+            "label": "Speed",
+            "value": "600 MHz"
+        },
+        {
+            "label": "RAM",
+            "value": "1 MB"
+        },
+        {
+            "label": "Ethernet",
+            "value": "10/100 Mbit (Native pins)"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "AUDIO Processing",
+            "ระบบควบคุมเรียลไทม์สูง"
+        ],
+        "en": [
+            "High-end Audio Projects",
+            "Real-time Control Systems"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบสังเคราะห์เสียง",
+                "desc": "ใช้ไลบรารี Audio เพื่อสร้างเสียงดนตรีที่ซับซ้อนและเอฟเฟกต์แบบ Real-time คุณภาพสูง"
+            },
+            {
+                "title": "เครื่องอ่านข้อมูลความเร็วสูง",
+                "desc": "บันทึกข้อมูลจากเซนเซอร์ลง SD Card หรือส่งผ่าน Ethernet ด้วยความเร็วระดับมิลลิวินาที"
+            }
+        ],
+        "en": [
+            {
+                "title": "High-Fidelity Audio Synth",
+                "desc": "Leverage the powerful Audio Library to create complex synthesizers and real-time effects processing."
+            },
+            {
+                "title": "High-Speed Data Logger",
+                "desc": "Log massive amounts of sensor data to the onboard SD slot or stream over Ethernet with microsecond precision."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "Teensy 4.1 คือบอร์ดไมโครคอนโทรลเลอร์ที่แรงที่สุดในตลาด Hobbyist ตอนนี้ ด้วยความเร็ว 600 MHz (Overclock ได้ถึง 1 GHz!) ทำให้มันเหมาะมากสำหรับงานที่ต้องการการประมวลผลโหดๆ เช่น การสังเคราะห์เสียง (Audio Synth), พอร์ต Ethernet 10/100 ในตัว, และการเชื่อมต่อ USB High Speed (480 Mbit/sec) \n\nข้อควรระวัง: ใช้ไฟ 3.3V เท่านั้น ห้ามต่อ 5V เข้าขา I/O เด็ดขาดเพราะชิปจะไหม้ทันที",
+        "en": "The Teensy 4.1 features an ARM Cortex-M7 processor at 600 MHz, with an NXP iMXRT1062 chip, making it the fastest microcontroller available today. It includes native Ethernet support, High-Speed USB (480 Mbit/sec), and digital audio interface.\n\nCRITICAL WARNING: The pins are NOT 5V tolerant. Do not apply more than 3.3V to any digital pin."
+    },
+    "technical_specs": [
+        {
+            "label": "MCU",
+            "value": "ARM Cortex-M7 600MHz"
+        },
+        {
+            "label": "Flash",
+            "value": "8 MB"
+        },
+        {
+            "label": "RAM",
+            "value": "1 MB"
+        },
+        {
+            "label": "EEPROM",
+            "value": "4 KB (Emulated)"
+        },
+        {
+            "label": "Ethernet",
+            "value": "10/100 Mbit (Native)"
+        },
+        {
+            "label": "USB",
+            "value": "480 Mbit/sec (Host/Device)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿1,200 - ฿1,500",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "PJRC (Official)",
+                "url": "https://www.pjrc.com/store/teensy41.html"
+            },
+            {
+                "title": "Cytron",
+                "url": "https://www.cytron.io/p-teensy-4.1"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วยขา Digital I/O 55 ขา (3.3V Only!), Analog Input 35 ขา, 2x DAC (12-bit), 8x UART, 3x I2C และ 3x SPI",
+        "en": "Features 55 Digital I/O (3.3V STRICT!), 35 Analog Inputs, 2x 12-bit DACs, 8x UARTs, 3x I2Cs, and 3x SPI interfaces."
+    },
+    "tips": {
+        "th": [
+            "รองรับการเพิ่มหน่วยความจำภายนอก (Flash/RAM) ได้ที่ด้านล่างบอร์ด",
+            "สามารถโอเวอร์คล็อกได้ไปได้ไกลกว่า 600MHz แต่ต้องระวังอุณหภูมิ"
+        ],
+        "en": [
+            "Can be expanded with additional Flash/RAM chips on the bottom pads",
+            "Supports Overclocking beyond 600MHz; however, active cooling or a heatsink is required for sustained high speeds."
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การติดตั้ง Teensyduino",
+                "en": "Teensyduino Integration"
+            },
+            "steps": {
+                "th": [
+                    "ดาวน์โหลดและติดตั้ง <b>Teensyduino</b> เพื่อเพิ่มการรองรับบอร์ด Teensy ใน Arduino IDE",
+                    "เลือกบอร์ด <b>'Teensy 4.1'</b> และตรวจสอบว่าตั้งค่า USB Type เป็น 'Serial' หรือแบบอื่นตามต้องการ",
+                    "เมื่อกดอัปโหลด ให้รอกดยืนยันที่ปุ่มเล็กๆ บนตัวบอร์ดหากตัวโหลดไม่อัตโนมัติ"
+                ],
+                "en": [
+                    "Download and install the <b>Teensyduino</b> add-on to enable Teensy support within the Arduino IDE",
+                    "Select <b>'Teensy 4.1'</b> from the boards menu and configure the desired USB Type (e.g., Serial, MIDI, HID)",
+                    "Press the small 'Program' button on the board if the automatic loader fails to trigger during an upload"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การขยายความจำ",
+                "en": "Expanding Memory"
+            },
+            "steps": {
+                "th": [
+                    "พลิกด้านล่างบอร์ดเพื่อหาจุดบัดกรีสำหรับชิป <b>SPI Flash หรือ PSRAM</b>",
+                    "ใช้หัวแร้งปลายเล็กบัดกรีชิปเพิ่มความจำเพื่อรันโค้ดที่ใหญ่ขึ้นหรือเก็บข้อมูล Buffer เสียง",
+                    "ใช้งานผ่านคำสั่งในไลบรารี <code>extRAM</code> เพื่อเข้าถึงพื้นที่ความจำใหม่"
+                ],
+                "en": [
+                    "Locate the specialized solder pads on the underside for <b>SPI Flash or PSRAM</b> chips",
+                    "Carefully solder compatible chips to expand your workspace for giant programs or high-quality audio buffers",
+                    "Access the additional memory programmatically using the <code>extRAM</code> library functions"
+                ]
+            }
+        }
+    ]
+}

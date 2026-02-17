@@ -1,0 +1,154 @@
+{
+    "id": "mq7",
+    "category": "sensor",
+    "image": "asset/mq7.png",
+    "title": {
+        "th": "MQ-7",
+        "en": "MQ-7 Carbon Monoxide"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์วัดคาร์บอนมอนอกไซด์",
+        "en": "CO Gas Sensor"
+    },
+    "description": {
+        "th": "เซนเซอร์สำหรับตรวจจับก๊าซคาร์บอนมอนอกไซด์ (CO) ในอากาศ ป้องกันอันตรายจากควันและไฟ",
+        "en": "A sensor for detecting Carbon Monoxide (CO) concentrations in the air."
+    },
+    "specs": [
+        {
+            "label": "Target Gas",
+            "value": "Carbon Monoxide"
+        },
+        {
+            "label": "Output",
+            "value": "Analog & Digital"
+        },
+        {
+            "label": "Voltage",
+            "value": "5V DC"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "สัญญาณเตือนอัคคีภัย",
+            "เครื่องตรวจสอบคุณภาพอากาศ"
+        ],
+        "en": [
+            "Fire Alarm Systems",
+            "Air Quality Monitor"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบเซนเซอร์ตรวจจับควันรถในลานจอด",
+                "desc": "เฝ้าระวังระดับก๊าซ CO ที่เป็นพิษในที่อับอากาศและสั่งเปิดพัดลมระบายอากาศ"
+            },
+            {
+                "title": "สัญญาณกันขโมยที่ตรวจจับการเผาไหม้",
+                "desc": "ตรวจหาควันหรือการเผาไหม้ที่เกิดขึ้นภายในครัวหรือจุดทิ้งขยะ"
+            }
+        ],
+        "en": [
+            {
+                "title": "Garage CO Monitor",
+                "desc": "Track toxic CO levels in enclosed parking areas and trigger ventilation fans when limits are exceeded."
+            },
+            {
+                "title": "Early Fire Detection",
+                "desc": "Identify smoldering fires or incomplete combustion in kitchens or waste disposal units."
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ต้องการวงจรจ่ายไฟแบบ Pulse (High/Low Voltage) เพื่อความแม่นยำ",
+            "ก๊าซ Carbon Monoxide ไม่มีสี ไม่มีกลิ่น และอันตรายถึงชีวิต ต้องหมั่นเช็คเซนเซอร์เสมอ"
+        ],
+        "en": [
+            "Requires pulse voltage heating cycle for accurate CO detection",
+            "Carbon Monoxide is colorless, odorless, and lethal; ensure regular sensor functional checks"
+        ]
+    },
+    "deep_dive": {
+        "th": "MQ-7 ออกแบบมาเพื่อตรวจจับ Carbon Monoxide (CO) โดยใช้ระบบทำความร้อนแบบวัฏจักร (Cycle Heating): High Voltage 5V (60 วินาที) เพื่อทำความสะอาดหัววัด และ Low Voltage 1.4V (90 วินาที) เพื่อตรวจวัดค่า การใช้งานให้แม่นยำต้องเขียนโค้ดคุมจังหวะเวลานี้",
+        "en": "The MQ-7 is designed for Carbon Monoxide (CO) detection using a cycle heating method: High voltage (5V) for 60 seconds to clean the sensor, followed by low voltage (1.4V) for 90 seconds to measure detection. Accurate readings require strictly following this heating cycle."
+    },
+    "technical_specs": [
+        {
+            "label": "Target Gas",
+            "value": "Carbon Monoxide (CO)"
+        },
+        {
+            "label": "Detection Range",
+            "value": "20 - 2000 ppm CO"
+        },
+        {
+            "label": "Heating Voltage",
+            "value": "5V (High) / 1.4V (Low)"
+        },
+        {
+            "label": "Heating Time",
+            "value": "60s (High) / 90s (Low)"
+        },
+        {
+            "label": "Loop Voltage",
+            "value": "≤ 10V DC"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿60 - ฿100",
+        "links": [
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=mq7+sensor"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=mq-7+gas+sensor"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 4 ขา: VCC (5V), GND, DO (Digital), AO (Analog วัดคาร์บอนมอนอกไซด์) *ต้องการการอุ่นเครื่อง (Warm-up) ก่อนใช้งาน",
+        "en": "Features 4 pins: VCC (5V), GND, DO (Digital), AO (Analog Output for CO level). *Requires a warm-up period for accurate readings."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "วงจรความร้อน 2 ระดับ",
+                "en": "Dual-Voltage Heating Cycle"
+            },
+            "steps": {
+                "th": [
+                    "จ่าย <b>5V</b> เป็นเวลา 60 วินาที เพื่อเผาทำลายกากก๊าซอื่นที่เกาะผิว (Clean)",
+                    "จ่าย <b>1.4V</b> เป็นเวลา 90 วินาที และอ่านค่าในช่วงเวลานี้ (Measure)",
+                    "การอ่านค่าขณะ 5V จะไม่ให้ค่าที่แม่นยำสำหรับ CO"
+                ],
+                "en": [
+                    "Apply <b>5V</b> for 60 seconds to burn off other accumulated gases (Clean phase)",
+                    "Drop to <b>1.4V</b> for 90 seconds; perform your measurement during this lower voltage stage",
+                    "Measuring while at a constant 5V will result in inaccurate readings for Carbon Monoxide specifically"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "ข้อควรระวังเรื่องความปลอดภัย",
+                "en": "Safety & Logic"
+            },
+            "steps": {
+                "th": [
+                    "ค่า <b>D0</b> มักจะทำงานช้ากว่าแบบแอนะล็อกเนื่องจากวงจรเปรียบเทียบบนบอร์ด",
+                    "ห้ามใช้ MQ-7 ในงานทางการแพทย์หรืออุตสาหกรรมหนักโดยไม่มีการรับรอง (Certification)",
+                    "เซนเซอร์ต้องการค่า <b>R0</b> ในอากาศบริสุทธิ์เพื่อใช้อ้างอิงการพยากรณ์ก๊าซ"
+                ],
+                "en": [
+                    "The <b>D0 (Digital Out)</b> may lag behind analog readings due to the latency of the cooling cycle",
+                    "Do not use MQ-7 for medical-grade life safety without professional-grade secondary backup",
+                    "Baseline your <b>R0</b> resistance in perfectly clean air to ensure PPM calculations are valid"
+                ]
+            }
+        }
+    ]
+}

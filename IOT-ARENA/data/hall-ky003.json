@@ -1,0 +1,150 @@
+{
+    "id": "hall-ky003",
+    "category": "sensor",
+    "image": "asset/hall-ky003.png",
+    "title": {
+        "th": "Hall Effect Sensor",
+        "en": "Hall Effect Sensor"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์ตรวจจับสนามแม่เหล็ก",
+        "en": "Magnetic Field Sensor"
+    },
+    "description": {
+        "th": "เซนเซอร์ที่ทำงานเมื่อเข้าใกล้สนามแม่เหล็ก ใช้ตรวจจับการหมุนหรือสถานะเปิด-ปิด",
+        "en": "A sensor that reacts to magnetic fields, useful for speed measurement or door/window open states."
+    },
+    "specs": [
+        {
+            "label": "Type",
+            "value": "Unipolar Switch"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        },
+        {
+            "label": "Interface",
+            "value": "Digital Output"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "วัดความเร็วรอบ",
+            "สวิตช์หน้าต่าง"
+        ],
+        "en": [
+            "RPM Counter",
+            "Proximity Switching"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "เครื่องวัดความเร็วรอบมอเตอร์",
+                "desc": "ติดแม่เหล็กไว้ที่เพลามอเตอร์และใช้เซนเซอร์นับจำนวนครั้งที่แม่เหล็กผ่านเพื่อคำนวณ RPM"
+            },
+            {
+                "title": "เซนเซอร์ตรวจจับการปิดประตู/หน้าต่าง",
+                "desc": "ใช้ติดที่ขอบประตูเพื่อเช็คว่าปิดสนิทหรือไม่ โดยไม่ต้องมีการสัมผัสทางกายภาพ"
+            }
+        ],
+        "en": [
+            {
+                "title": "Motor RPM Tachometer",
+                "desc": "Mount a magnet on the motor shaft and count pulses via the Hall sensor to calculate rotation speed."
+            },
+            {
+                "title": "Contactless Door Switch",
+                "desc": "Check if a door is fully closed using magnetic proximity, avoiding mechanical wear and tear."
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ต้องการแม่เหล็กที่มีความแรงพอสมควรในการกระตุ้น",
+            "เซนเซอร์รุ่นนี้เป็นแบบ Unipolar จะตอบสนองต่อขั้วแม่เหล็กเพียงขั้วเดียว (มักเป็นขั้วใต้ - South Pole)"
+        ],
+        "en": [
+            "Requires a sufficiently strong magnet for reliable triggering",
+            "This is a Unipolar switch; it typically only responds to one magnetic pole (usually the South Pole)"
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 3 ขา: S (Digital Out), VCC (4.5-24V!), และ - (GND) สัญญาณจะเป็น Low เมื่อตรวจพบสนามแม่เหล็ก",
+        "en": "Features 3 pins: S (Digital Output), VCC (4.5-24V!), and - (GND). Output switches LOW when a magnetic field is detected."
+    },
+    "deep_dive": {
+        "th": "KY-003 ใช้ชิป 3144 Hall-effect Switch ซึ่งจะเปลี่ยนสถานะ Output เป็น LOW เมื่อตรวจพบสนามแม่เหล็ก (ขั้วใต้) ที่มีความเข้มเพียงพอ และจะกลับเป็น HIGH เมื่อไม่มีสนามแม่เหล็ก มักใช้ในงานวัดรอบมอเตอร์หรือตรวจจับตำแหน่ง",
+        "en": "The KY-003 module is based on the 3144 Hall-effect switch. It drives the output pin LOW when a magnetic field (South pole) of sufficient strength is detected. It returns to HIGH when the magnetic field is removed. Commonly used for RPM counting and position detection."
+    },
+    "technical_specs": [
+        {
+            "label": "Sensor Chip",
+            "value": "3144 Hall Switch"
+        },
+        {
+            "label": "Operating Voltage",
+            "value": "4.5V - 24V"
+        },
+        {
+            "label": "Output Current",
+            "value": "25mA (Max)"
+        },
+        {
+            "label": "Response Freq",
+            "value": "Unknown (Typ. >10kHz)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿15 - ฿30",
+        "links": [
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=ky-003"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=ky-003"
+            }
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "ขั้วแม่เหล็กและการตอบสนอง",
+                "en": "Magnetic Polarity"
+            },
+            "steps": {
+                "th": [
+                    "หากนำแม่เหล็กมาใกล้แล้วเซนเซอร์ไม่ทำงาน ให้ลอง <b>พลิกด้านแม่เหล็ก</b>",
+                    "เซนเซอร์จะส่งสัญญาณ <b>LOW</b> เมื่อตรวจพบสนามแม่เหล็กที่ถูกต้อง",
+                    "ควรวางเซนเซอร์ให้ขนานกับแนวการเคลื่อนที่ของแม่เหล็กเพื่อความแม่นยำ"
+                ],
+                "en": [
+                    "If the sensor doesn't trigger, <b>flip the magnet over</b>; it only reacts to one specific pole",
+                    "The output pin goes <b>LOW</b> when a matching magnetic field is detected within range",
+                    "Align the sensor face parallel to the magnet's path for the most reliable switching behavior"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การนับรอบ (RPM Counting)",
+                "en": "RPM & Frequency"
+            },
+            "steps": {
+                "th": [
+                    "แนะนำให้ใช้ขา <b>Interrupt</b> ของ MCU เพื่อให้นับจำนวนพัลส์ได้ทันเวลาความเร็วสูง",
+                    "ใช้ฟังก์ชัน <code>attachInterrupt(digitalPinToInterrupt(pin), count, FALLING)</code>",
+                    "สามารถตรวจจับความเร็วได้ระดับหลายพันรอบต่อนาที (RPM) โดยไม่พลาดสายตา"
+                ],
+                "en": [
+                    "Use a <b>Hardware Interrupt</b> pin on your MCU to capture high-speed pulses accurately",
+                    "Implement <code>attachInterrupt(digitalPinToInterrupt(pin), yourFunction, FALLING)</code> for pulse counting",
+                    "Capable of tracking thousands of RPMs without missing events, provided the interrupt code is efficient"
+                ]
+            }
+        }
+    ]
+}

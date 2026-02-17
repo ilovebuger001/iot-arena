@@ -1,0 +1,158 @@
+{
+  "id": "matrix-keypad",
+  "category": "module",
+  "image": "asset/matrix-keypad.jpg",
+  "title": {
+    "th": "Matrix Keypad 4x4",
+    "en": "Matrix Keypad 4x4"
+  },
+  "sub_title": {
+    "th": "แผงปุ่มกดตัวเลข 16 ปุ่ม",
+    "en": "16-Button Numeric Keypad"
+  },
+  "description": {
+    "th": "แผงปุ่มกดที่ประหยัดสายสัญญาณโดยใช้การสแกนแบบแถว (Row) และคอลัมน์ (Column) ทำให้สามารถรับค่าปุ่ม 16 ปุ่มได้โดยใช้สายเพียง 8 เส้น นิยมใช้ป้อนรหัสผ่านหรือตั้งค่าตัวเลข",
+    "en": "A numeric keypad that uses a grid system to scan buttons. By scanning Rows and Columns, it can detect 16 distinct buttons using only 8 GPIO pins. Perfect for password entries and numeric settings."
+  },
+  "specs": [
+    {
+      "label": "Key Layout",
+      "value": "0-9, A-D, *, #"
+    },
+    {
+      "label": "Type",
+      "value": "Membrane or Mechanical"
+    },
+    {
+      "label": "Pins",
+      "value": "8 Pins (4 Rows, 4 Columns)"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "ระบบล็อคด้วยรหัสผ่าน",
+      "ป้อนค่าตัวเลข",
+      "ตู้ ATM จำลอง",
+      "เครื่องคิดเลข"
+    ],
+    "en": [
+      "Password Lock System",
+      "Numeric Input",
+      "ATM Simulator",
+      "Simple Calculator"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "ระบบตู้เซฟเก็บของดิจิทัล",
+        "desc": "ใช้กดรหัสลับเพื่อปลดล็อคแม่เหล็กไฟฟ้า และแสดงสถานะ 'Locked/Unlocked' บนหน้าจอ"
+      },
+      {
+        "title": "แป้นพิมพ์ปรับแต่งความเร็วพัดลม",
+        "desc": "กดเลข 0-9 เพื่อกำหนดระดับความแรงของความเร็วลมที่ต้องการโดยตรง"
+      }
+    ],
+    "en": [
+      {
+        "title": "Digital Storage Safe",
+        "desc": "Input a secret numeric code to activate an electromagnetic lock and update the status screen."
+      },
+      {
+        "title": "Precision Fan Speed Keypad",
+        "desc": "Directly input 0-9 values to instantly jump to a specific airflow intensity or motor speed."
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "แป้นพิมพ์แบบเมมเบรนบางกว่าแต่ทนทานน้อยกว่าแบบกลไก",
+      "ใช้ไลบรารี Keypad เพื่อจัดการ Scan Matrix อัตโนมัติ"
+    ],
+    "en": [
+      "Membrane keypads are thinner but less durable than mechanical ones",
+      "Use the Keypad library for automatic matrix scanning"
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วย 8 ขา (สำหรับ 4x4): ขา 1-4 คือ Row (แถว) และขา 5-8 คือ Column (คอลัมน์) ต่อเข้า GPIO ได้โดยตรง",
+    "en": "8-pin layout (for 4x4): Pins 1-4 represent Rows, and Pins 5-8 represent Columns. Connects directly to GPIOs."
+  },
+  "deep_dive": {
+    "th": "Matrix Keypad ใช้หลักการ Scan Matrix โดยเชื่อมต่อปุ่มกดเป็นตาราง Microcontroller จะปล่อยสัญญาณ LOW ไปทีละแถว (Row) แล้วตรวจสอบที่ขาคอลัมน์ (Column) ว่ามีการเชื่อมต่อหรือไม่ หากพบการเชื่อมต่อก็จะรู้ว่าปุ่มใดถูกกด วิธีนี้ช่วยลดจำนวนขา GPIO ที่ต้องใช้",
+    "en": "Matrix Keypads operate by scanning a grid. The microcontroller sets one Row pin LOW at a time and checks the Column pins. If a button is pressed, it bridges the active Row to a Column, allowing the MCU to identify the specific key coordinate (Row, Col)."
+  },
+  "technical_specs": [
+    {
+      "label": "Max Voltage",
+      "value": "24V DC"
+    },
+    {
+      "label": "Max Current",
+      "value": "30mA"
+    },
+    {
+      "label": "Contact Resistance",
+      "value": "<100Ω"
+    },
+    {
+      "label": "Bounce Time",
+      "value": "<5ms"
+    },
+    {
+      "label": "Lifespan",
+      "value": "1 Million Presses"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿20 - ฿50",
+    "links": [
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=matrix+keypad"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=matrix+keypad"
+      }
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "การระบุตำแหน่งขา",
+        "en": "Identifying Row & Column Pins"
+      },
+      "steps": {
+        "th": [
+          "ขา 8 เส้นแบ่งเป็น <b>แถว (Row 1-4)</b> และ <b>คอลัมน์ (Col 1-4)</b> ตามลำดับ",
+          "หากกดแล้วค่าไม่ตรง ให้ลองสลับลำดับการประกาศขาในโค้ดระหว่าง Rows และ Columns",
+          "หากใช้แป้นพิมพ์ 3x4 ให้ปล่อย 4 ขาสุดท้ายไว้โดยไม่ต้องต่อ (ถ้ามี 8 ขา)"
+        ],
+        "en": [
+          "The 8 pins are divided into <b>Rows (1-4)</b> and <b>Columns (1-4)</b> sequentially",
+          "If button outputs are swapped, reverse the pin order in your <code>byte rowPins[]</code> array",
+          "For 3x4 keypads with 8 pins, typically the last column pin remains disconnected"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "การจัดการค่ากดปุ่มหลายครั้ง",
+        "en": "Handling Key Events"
+      },
+      "steps": {
+        "th": [
+          "ใช้ฟังก์ชัน <code>keypad.getState()</code> เพื่อเช็คสถานะ PRESSED, HOLD, RELEASED",
+          "การกดค้าง (HOLD) สามารถนำไปใช้ทำฟีเจอร์เช่น การกดเลขค้างไว้เพื่อเปลี่ยนเมนูหลัก",
+          "ตรวจสอบการทำงานของปุ่ม <b>Debounce</b> ภายในไลบรารีเพื่อลดสัญญาณรบกวน"
+        ],
+        "en": [
+          "Use <code>keypad.getState()</code> to differentiate between PRESS, HOLD, and RELEASE events",
+          "Long-press (HOLD) behavior can be mapped to advanced features like resetting values or menu jumps",
+          "The library handles <b>Debouncing</b> internally; adjust <code>setDebounceTime()</code> if keys feel jittery"
+        ]
+      }
+    }
+  ]
+}

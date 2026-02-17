@@ -1,0 +1,162 @@
+{
+    "id": "mg996r",
+    "category": "actuator",
+    "image": "asset/mg996r.png",
+    "title": {
+        "th": "High Torque Servo MG996R",
+        "en": "MG996R High Torque Servo"
+    },
+    "sub_title": {
+        "th": "เซอร์โวมอเตอร์เกียร์โลหะแรงบิดสูง",
+        "en": "Metal Gear High Torque Servo"
+    },
+    "description": {
+        "th": "เซอร์โวมอเตอร์รุ่นอัพเกรดจาก SG90 โดยใช้เฟืองโลหะและให้แรงบิดที่มากกว่าเดิมอย่างมาก",
+        "en": "An upgraded version of the SG90 featuring metal gears and significantly higher torque for heavy duty tasks."
+    },
+    "specs": [
+        {
+            "label": "Torque",
+            "value": "9.4 kg-cm (4.8V) / 11 kg-cm (6V)"
+        },
+        {
+            "label": "Gear Type",
+            "value": "Metal Gearing"
+        },
+        {
+            "label": "Degree",
+            "value": "0 - 180°"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "แขนหุ่นยนต์ขนาดใหญ่",
+            "ระบบเลี้ยวของรถ RC"
+        ],
+        "en": [
+            "Large Robotic Arms",
+            "RC Car Steering"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "กรงเล็บหุ่นยนต์ (Robot Gripper)",
+                "desc": "ใช้แรงบิดมหาศาลเพื่อคีบและยกวัตถุที่มีน้ำหนักมากได้อย่างมั่นคง"
+            },
+            {
+                "title": "ตัวปลดล็อคกลอนประตู (Electric Latch)",
+                "desc": "ใช้เพื่อดึงกลอนประตูไม้หรือกรงเหล็กเพื่อสร้างระบบเปิดประตูอัตโนมัติ"
+            }
+        ],
+        "en": [
+            {
+                "title": "Heavy-Duty Robot Gripper",
+                "desc": "Harness massive torque to firmly grasp and lift heavy payloads in robotic arm projects."
+            },
+            {
+                "title": "Smart Door Latch Actuator",
+                "desc": "Pull heavy mechanical latches or bolts to create a secure, automated door opening system."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "MG996R เป็นรุ่นอัปเกรดของ MG995 ที่ปรับปรุงระบบควบคุมและชุดเกียร์ให้แม่นยำขึ้น เหมาะสำหรับงานที่ต้องการแรงบิดสูง เช่น แขนหุ่นยนต์ หรือการบังคับเลี้ยวของรถ RC \n\nข้อควรระวัง: กินกระแสสูงมาก (อาจพุ่งถึง 2.5A ตอน Stall) ห้ามจ่ายไฟจากบอร์ด Arduino โดยตรงเด็ดขาด ควรใช้ Switching Power Supply หรือแบตเตอรี่ที่มีการจ่ายกระแสได้สูง",
+        "en": "The MG996R is essentially an upgraded MG995 with a redesigned PCB and gear system for better centering and resolution. It is the go-to servo for high-torque applications like biped robots or 1/10 scale RC cars.\n\nWarning: It is power-hungry. Stall current can exceed 2.5A. Never power it directly from an Arduino 5V pin, or you will trigger brown-outs (random resets)."
+    },
+    "technical_specs": [
+        {
+            "label": "Torque (4.8V)",
+            "value": "9.4 kg-cm"
+        },
+        {
+            "label": "Torque (6.0V)",
+            "value": "11 kg-cm"
+        },
+        {
+            "label": "Speed",
+            "value": "0.15s/60°"
+        },
+        {
+            "label": "Gear Type",
+            "value": "Metal (Brass)"
+        },
+        {
+            "label": "Rotation",
+            "value": "0 - 180°"
+        },
+        {
+            "label": "Voltage",
+            "value": "4.8V - 7.2V"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿120 - ฿180",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=mg996r"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+mg996r"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "แนะนำให้ใช้แหล่งจ่ายไฟแยกเพราะกินกระแสสูงมากขณะทำงาน",
+            "สายสีน้ำตาล = GND, สายสีแดง = VCC (5-6V), สายสีส้ม = Signal (PWM)"
+        ],
+        "en": [
+            "Requires an external power supply as it draws high peak currents (up to 2.5A stalled)",
+            "Wiring: Brown = GND, Red = VCC (5V-6V), Orange = Signal (PWM)"
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 3 สาย: น้ำตาล(GND), แดง(VCC 5V-7.2V), และ ส้ม(PWM Signal) กินกระแสสูงกว่า SG90 มาก",
+        "en": "Features 3 wires: Brown(GND), Red(VCC 5V-7.2V), and Orange(PWM Signal). Draws significantly more current than the SG90."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การจ่ายไฟแบบแยกแหล่ง",
+                "en": "External Power Setup"
+            },
+            "steps": {
+                "th": [
+                    "ต่อไฟบวกจากแบตเตอรี่/อะแดปเตอร์ 6V เข้าสายสีแดงของเซอร์โว",
+                    "ต่อไฟลบเข้าสายสีน้ำตาลของเซอร์โว <b>และต้องต่อสาย GND ร่วมกับไมโครคอนโทรลเลอร์ด้วย</b>",
+                    "ห้ามใช้ไฟ 5V จากบอร์ด Arduino เพราะจะทำให้บอร์ดรีเซ็ตหรือพังได้"
+                ],
+                "en": [
+                    "Connect a 6V battery or DC adapter directly to the servo's Red wire",
+                    "Connect the power supply's negative to the Brown wire <b>and share this GND with your MCU's GND</b>",
+                    "Avoid using the Arduino's 5V pin; the high current demand will cause voltage brownouts and resets."
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การควบคุมมุมองศา",
+                "en": "Controlling the Angle"
+            },
+            "steps": {
+                "th": [
+                    "ใช้ไลบรารี <code>Servo.h</code> และประกาศตัวแปร <code>Servo myServo;</code>",
+                    "ใช้คำสั่ง <code>myServo.write(องศา)</code> ระหว่าง 0 ถึง 180",
+                    "ควรใส่ <code>delay()</code> สั้นๆ เพื่อให้เวลาเฟืองโลหะขยับไปยังตำแหน่งที่ต้องการ"
+                ],
+                "en": [
+                    "Include <code>Servo.h</code> and instantiate the object with <code>Servo myServo;</code>",
+                    "Send commands via <code>myServo.write(angle)</code> with values ranging from 0 to 180 degrees",
+                    "Allow for travel time; metal gears move slower than plastic ones, so include a brief delay after movements."
+                ]
+            }
+        }
+    ]
+}

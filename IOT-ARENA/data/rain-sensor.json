@@ -1,0 +1,140 @@
+{
+    "id": "rain-sensor",
+    "category": "sensor",
+    "image": "asset/rain-sensor.png",
+    "title": {
+        "th": "Rain Sensor",
+        "en": "Rain Sensor Module"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์ตรวจจับเม็ดฝน",
+        "en": "Raindrop Detection Module"
+    },
+    "description": {
+        "th": "แผ่นวงจรตรวจจับน้ำฝน เมื่อเม็ดฝนตกลงบนแผ่นเซนเซอร์จะส่งสัญญาณออกมา",
+        "en": "A raindrop detection board that provides a signal when water falls onto its touch-pad surface."
+    },
+    "specs": [
+        {
+            "label": "Pad Size",
+            "value": "5.0 x 4.0 cm"
+        },
+        {
+            "label": "Sensitivity",
+            "value": "Adjustable via Potentiometer"
+        },
+        {
+            "label": "Output",
+            "value": "Analog & Digital"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "ระบบราวตากผ้าอัตโนมัติ",
+            "ปิดหน้าต่างอัตโนมัติ"
+        ],
+        "en": [
+            "Smart Clothesline",
+            "Automatic Window Closer"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบราวตากผ้าหนีฝน",
+                "desc": "เมื่อฝนตก ให้เซอร์โวมอเตอร์ดึงราวตากผ้าเข้าที่ร่มเพื่อป้องกันผ้าเปียก"
+            },
+            {
+                "title": "สถานีพยากรณ์อากาศ DIY",
+                "desc": "เก็บสถิติความถี่ของการเกิดฝนตกในแต่ละวันเพื่อนำไปพยากรณ์อากาศเบื้องต้น"
+            }
+        ],
+        "en": [
+            {
+                "title": "Rain-Avoidance Clothesline",
+                "desc": "Automatically retract or cover laundry using a servo motor when the first drops are detected."
+            },
+            {
+                "title": "DIY Weather Logger",
+                "desc": "Track the onset and duration of rainfall events to build a localized weather history database."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "Rain Sensor ทำงานโดยอาศัยหลักการนำไฟฟ้าของน้ำ เมื่อน้ำฝนตกลงบนลายทองแดงจะทำให้วงจรครบวงจรและมีความต้านทานลดลง ยิ่งเปียกมาก แรงดันไฟฟ้า (Analog) ยิ่งต่ำลง \n\nข้อควรระวังสำคัญคือ 'การกัดกร่อน' (Electrolysis) เนื่องจากมีการจ่ายไฟแช่ไว้ตลอดเวลาเมื่อเปียก แนะนำให้จ่ายไฟให้เซนเซอร์เฉพาะตอนอ่านค่า (เช่น ใช้ Digital Pin จ่ายไฟ VCC) เพื่อยืดอายุการใช้งาน",
+        "en": "The Rain Sensor works on the principle of variable resistance. Water connects the parallel copper traces, lowering the resistance and causing a voltage drop on the signal pin.\n\nCrucial Tip: Continuous power accelerates galvanic corrosion (electrolysis) on the wet sensor pad. To make it last, power the sensor via a Digital GPIO pin and toggle it High only when taking a reading."
+    },
+    "technical_specs": [
+        {
+            "label": "Sensor Type",
+            "value": "Resistive"
+        },
+        {
+            "label": "Output",
+            "value": "Analog (0-1023) & Digital"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        },
+        {
+            "label": "Pad Dimensions",
+            "value": "5.0 x 4.0 cm"
+        },
+        {
+            "label": "Comparator",
+            "value": "LM393"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿25 - ฿45",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=rain%20sensor%20module"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+rain+sensor"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "เชื่อมต่อผ่านบอร์ดเปรียบเทียบเทียบ (Comparator): VCC, GND, DO (Digital Output), และ AO (Raw Humidity Signal)",
+        "en": "Connects via the comparator board: VCC, GND, DO (Digital Output), and AO (Raw Analog signal from matching probe)."
+    },
+    "tips": {
+        "th": [
+            "ติดตั้งในมุมเอียงให้น้ำไหลผ่านได้ เพื่อให้เซนเซอร์แห้งเร็วขึ้นหลังฝนหยุด",
+            "ควรเคลือบสเปรย์กันชื้นที่แผงวงจรควบคุม (ไม่ใช่ที่แผ่นรับน้ำ) เพื่อกันสนิม"
+        ],
+        "en": [
+            "Mount at a 45° angle to allow water runoff and faster drying",
+            "Conformal coat the control board (not the sensing pad) to prevent corrosion"
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>Wiring:</b> ต่อ VCC (3.3V/5V), GND, D0 (ถ้าเอาแค่ตก/ไม่ตก), หรือ A0 (ถ้าวัดระดับความตกหนัก)",
+                    "<b>การปรับจูน:</b> หมุน Potentiometer บนบอร์ดจนไฟ LED ดับ และให้ติดเมื่อหยดน้ำลงบนแผ่น",
+                    "<b>การลดสนิม:</b> แก้ให้ต่อขา VCC เข้ากับ Digital Pin แทน 5V แช่ สั่ง <code>digitalWrite(PowerPin, HIGH)</code> ก่อนอ่านค่า แล้วสั่ง LOW ทันที"
+                ],
+                "en": [
+                    "<b>Wiring:</b> Connect VCC, GND. Use D0 for simple Rain/No-Rain logic, or A0 to measure rainfall intensity.",
+                    "<b>Tuning:</b> Adjust the blue potentiometer until the LED turns off when dry, and turns on when a drop hits the pad.",
+                    "<b>Anti-Corrosion:</b> Power the sensor using a Digital Pin instead of constant 5V. Toggle it HIGH only during the <code>analogRead()</code> process."
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,158 @@
+{
+  "id": "sg90",
+  "category": "actuator",
+  "image": "asset/sg90.png",
+  "title": {
+    "th": "Servo SG90",
+    "en": "Servo SG90"
+  },
+  "sub_title": {
+    "th": "เซอร์โวมอเตอร์ขนาดจิ๋ว 180 องศา",
+    "en": "9g Micro Servo Motor (180°)"
+  },
+  "description": {
+    "th": "SG90 เป็นมอเตอร์ขนาดจิ๋วที่น้ำหนักเบาเพียง 9 กรัม แต่มีความสามารถในการควบคุมตำแหน่งได้อย่างแม่นยำในช่วง 0-180 องศา ภายในประกอบด้วยมอเตอร์กระแสตรง, ชุดเกียร์ไนลอน และวงจรควบคุมที่รับสัญญาณเพื่อกำหนดตำแหน่งของแขนหมุน นิยมใช้ในงานหุ่นยนต์เดินได้, แขนกลขนาดเล็ก และเครื่องบินบังคับ",
+    "en": "The SG90 is a lightweight, high-quality micro servo motor. Despite its small 9g size, it provides precise angular positioning between 0 and 180 degrees. Inside, it features a DC motor, nylon gears, and a control circuit that interprets Pulse Width Modulation (PWM) signals to set the output shaft position. It is the most common actuator for RC planes, small robot arms, and hexapods."
+  },
+  "specs": [
+    {
+      "label": "Weight",
+      "value": "9 grams"
+    },
+    {
+      "label": "Stall Torque",
+      "value": "1.8 kg/cm (at 4.8V)"
+    },
+    {
+      "label": "Operating Speed",
+      "value": "0.1s / 60 degrees"
+    },
+    {
+      "label": "Voltage",
+      "value": "4.8V to 6.0V"
+    },
+    {
+      "label": "Rotation",
+      "value": "0 - 180°"
+    },
+    {
+      "label": "Gear Type",
+      "value": "Nylon"
+    }
+  ],
+  "pinout_desc": {
+    "th": "ประกอบด้วย 3 สาย: น้ำตาล(GND), แดง(VCC 4.8-6V), และ ส้ม(PWM Signal)",
+    "en": "Features 3 wires: Brown(GND), Red(VCC 4.8-6V), and Orange(PWM Signal)."
+  },
+  "use_cases": {
+    "th": [
+      "แขนกลขนาดเล็ก",
+      "หุ่นยนต์เดิน",
+      "ล็อคประตูอัตโนมัติ",
+      "กล้องแพน-ทิลท์"
+    ],
+    "en": [
+      "Small Robot Arm",
+      "Walking Robot",
+      "Automatic Door Lock",
+      "Pan-Tilt Camera"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "ระบบล็อคประตูด้วยบาร์โค้ด",
+        "desc": "ใช้พ่วงกับกลอนประตู เมื่อสแกนรหัสผ่านถูกต้องให้เซอร์โวหมุน 90 องศาเพื่อดึงตัวล็อคออก"
+      },
+      {
+        "title": "เครื่องป้อนอาหารปลาอัตโนมัติ",
+        "desc": "ใช้เซอร์โวหมุนเพื่อควบคุมปริมาณเม็ดอาหารที่ตกลงมาจากช่องเก็บตามเวลาที่กำหนด"
+      }
+    ],
+    "en": [
+      {
+        "title": "Smart Barcode Lock",
+        "desc": "Connect the servo to a physical latch; rotate 90 degrees to unlock when a valid code is scanned."
+      },
+      {
+        "title": "Automated Fish Feeder",
+        "desc": "Use the servo to open and close a dispenser flap at scheduled intervals to release food pellets."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "SG90 เป็น Micro Servo ยอดนิยม ภายในมีชุดเกียร์และวงจร Feedback Control เพื่อรักษามุมให้คงที่ตามสัญญาณ PWM ที่ได้รับ (คาบ 20ms) \n\nข้อจำกัด: เฟืองทำจากไนลอน (พลาสติก) หากรับน้ำหนักเกินหรือฝืนหมุนด้วยมือ เฟืองอาจรูดได้ง่าย แนะนำให้ใช้รุ่น MG90S (เฟืองโลหะ) หากต้องการความทนทาน",
+    "en": "The SG90 is the standard micro servo for hobbyists. It uses an internal potentiometer to provide closed-loop feedback, ensuring the shaft stays at the precise angle dictated by the PWM signal.\n\nWeakness: The internal gears are Nylon. They strip easily if over-torqued or manually forced. For heavier loads, upgrade to the MG90S (Metal Gear) version."
+  },
+  "technical_specs": [
+    {
+      "label": "Torque",
+      "value": "1.8 kg-cm (@4.8V)"
+    },
+    {
+      "label": "Speed",
+      "value": "0.1 sec/60°"
+    },
+    {
+      "label": "Weight",
+      "value": "9g"
+    },
+    {
+      "label": "Voltage",
+      "value": "4.8V - 6V"
+    },
+    {
+      "label": "Gear Material",
+      "value": "Nylon"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿40 - ฿60",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=sg90%20servo"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=arduino+sg90"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "สายสีน้ำตาล = GND, สีแดง = 5V, สีส้ม = Signal (PWM)",
+      "อย่าจ่ายไฟจากบอร์ด Arduino โดยตรงหากใช้ Servo เกิน 1 ตัว (กระแสไม่พอ)"
+    ],
+    "en": [
+      "Brown = GND, Red = 5V, Orange = Signal (PWM)",
+      "Do NOT power more than one servo directly from the Arduino 5V pin"
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "<b>Wiring:</b> สายส้มเข้า Digital Pin (ที่มีเครื่องหมาย ~), แดงเข้า 5V, น้ำตาลเข้า GND",
+          "<b>Library:</b> ใช้ <code>#include &lt;Servo.h&gt;</code> ไม่ต้องติดตั้งเพิ่ม",
+          "<b>Code:</b> สร้างออบเจกต์ <code>Servo myservo;</code> แล้วสั่ง <code>myservo.write(90);</code> เพื่อหมุนไปตรงกลาง",
+          "<b>Calibration:</b> หากสั่ง 0 องศาแล้วเฟืองคาง ให้ปรับค่า min/max pulse ในฟังก์ชัน attach() เพื่อจูนให้เข้ากับฮาร์ดแวร์จริง"
+        ],
+        "en": [
+          "<b>Wiring:</b> Orange to PWM Pin (~), Red to 5V, Brown to GND.",
+          "<b>Library:</b> Include the standard <code>Servo.h</code> library.",
+          "<b>Action:</b> Initialize with <code>myservo.attach(pin);</code> and set angle with <code>myservo.write(angle);</code>.",
+          "<b>Tuning:</b> If the servo buzzes at 0 or 180 degrees, it's hitting physical stops. Adjust your code limits (e.g., 5-175)."
+        ]
+      }
+    }
+  ]
+}

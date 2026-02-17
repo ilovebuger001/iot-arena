@@ -1,0 +1,140 @@
+{
+    "id": "oled-sh1106",
+    "category": "display",
+    "image": "asset/oled-sh1106.png",
+    "title": {
+        "th": "OLED SH1106 1.3\"",
+        "en": "OLED SH1106 1.3\" Display"
+    },
+    "sub_title": {
+        "th": "จอแสดงผล OLED กราฟิกสีขาว/น้ำเงิน",
+        "en": "Graphic OLED Display White/Blue"
+    },
+    "description": {
+        "th": "จอ SH1106 เป็นจอ OLED ขนาด 1.3 นิ้วที่ใหญ่กว่า SSD1306 เล็กน้อย มีความคมชัดสูงและประหยัดพลังงาน เชื่อมต่อผ่าน I2C หรือ SPI",
+        "en": "The SH1106 is a 1.3-inch OLED display, slightly larger than the SSD1306. It offers high contrast and low power consumption, typically using I2C or SPI."
+    },
+    "specs": [
+        {
+            "label": "Resolution",
+            "value": "128x64 Pixels"
+        },
+        {
+            "label": "Size",
+            "value": "1.3 Inch"
+        },
+        {
+            "label": "Interface",
+            "value": "I2C / SPI"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "นาฬิกาอัจฉริยะ",
+            "หน้าจอเมนู"
+        ],
+        "en": [
+            "Smart Watch",
+            "Menu Display"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบเฝ้าระวังสภาพอากาศพกพา",
+                "desc": "แสดงกราฟความร้อนและความชื้นแบบ Real-time พร้อมไอคอนบอกแดด/ฝน"
+            },
+            {
+                "title": "หน้าปัดข้อมูลสำหรับคอนโดมิเนียม",
+                "desc": "ใช้แสดงเลขนัดหมาย หรือรหัสผ่าน Wi-Fi ในรูปแบบ QR Code ขนาดเล็ก"
+            }
+        ],
+        "en": [
+            {
+                "title": "Portable Weather Monitor",
+                "desc": "Display real-time temperature/humidity graphs and weather icons (Sun, Clouds, Rain)."
+            },
+            {
+                "title": "Home Information Hub",
+                "desc": "Show upcoming appointments, status logs, or even a small QR Code for Wi-Fi access."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "SH1106 เป็นDriver ที่ใช้ในจอ OLED ขนาด 1.3 นิ้ว (ใหญ่กว่า SSD1306 ที่ใช้ในจอ 0.96 นิ้ว) \n\nข้อควรระวังสำคัญ: แม้จอจะความละเอียด 128x64 เท่ากัน แต่การจัดการหน่วยความจำ (RAM Addressing) ต่างกัน หากใช้ไลบรารี SSD1306 ภาพอาจจะเลื่อน หรือเป็นจุดๆ (Pixel Garbage) ต้องเลือกไลบรารีให้ถูกรุ่น",
+        "en": "The SH1106 driver is typically found on 1.3-inch OLED modules. Although it shares the 128x64 resolution with the SSD1306, the memory mapping is slightly different (offset).\n\nKey Tip: If you see 'static' or shifted pixels when using standard OLED libraries, force the constructor to use the SH1106 driver specifically."
+    },
+    "technical_specs": [
+        {
+            "label": "Size",
+            "value": "1.3 Inch"
+        },
+        {
+            "label": "Resolution",
+            "value": "128x64 Pixels"
+        },
+        {
+            "label": "Driver",
+            "value": "SH1106"
+        },
+        {
+            "label": "Interface",
+            "value": "I2C / SPI"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿120 - ฿160",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=oled%201.3%20i2c"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+oled+1.3"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "เชื่อมต่อแบบ I2C: VCC (3.3-5V), GND, SCL, SDA (ไดรเวอร์ SH1106 จะมีขนาดหน้าจอ 1.3 นิ้ว ใหญ่กว่า SSD1306 เล็กน้อย)",
+        "en": "I2C Interface: VCC (3.3-5V), GND, SCL, SDA. The SH1106 driver is typically found on 1.3\" OLED modules."
+    },
+    "tips": {
+        "th": [
+            "หากใช้ U8g2 ให้เลือกคอนสตรัคเตอร์เป็น <code>U8G2_SH1106_128X64_NONAME_F_HW_I2C</code>",
+            "ขา VCC กับ GND มักจะสลับตำแหน่งกันในบางยี่ห้อ (ต้องดูสกรีนบนบอร์ดให้ดี)"
+        ],
+        "en": [
+            "For U8g2 library, select the <code>SH1106_128X64_NONAME</code> constructor.",
+            "WATCH OUT: VCC/GND pins are often swapped compared to SSD1306 modules. Check the PCB labels!"
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>Wiring:</b> เช็คขา VCC/GND บนบอร์ดก่อนเสียบ (บางรุ่น GND อยู่ซ้าย บางรุ่นอยู่ขวา)",
+                    "<b>Library:</b> แนะนำ <code>U8g2</code> จะเสถียรที่สุดสำหรับชิป SH1106",
+                    "<b>Code:</b> เลือกบรรทัด <code>U8G2_SH1106...</code> ในตัวอย่างแล้ว Uncomment"
+                ],
+                "en": [
+                    "<b>Wiring:</b> DOUBLE CHECK VCC/GND polarity. It varies by manufacturer.",
+                    "<b>Library:</b> Install <code>U8g2</code> by oliver.",
+                    "<b>Init:</b> Uncomment the SH1106 constructor line in the 'Full Buffer' example sketch."
+                ]
+            }
+        }
+    ]
+}

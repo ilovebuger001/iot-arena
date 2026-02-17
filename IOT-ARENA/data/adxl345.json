@@ -1,0 +1,154 @@
+{
+    "id": "adxl345",
+    "category": "sensor",
+    "image": "asset/adxl345.png",
+    "title": {
+        "th": "ADXL345",
+        "en": "ADXL345 Accelerometer"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์วักความเร่ง 3 แกน",
+        "en": "3-Axis Digital Accelerometer"
+    },
+    "description": {
+        "th": "เซนเซอร์วัดความเร่ง 3 แกนแบบดิจิทัล มีความแม่นยำสูงและใช้พลังงานต่ำ สื่อสารผ่าน I2C/SPI",
+        "en": "A small, thin, ultralow power, 3-axis accelerometer with high resolution (13-bit) measurement."
+    },
+    "specs": [
+        {
+            "label": "Range",
+            "value": "±2g, ±4g, ±8g, ±16g"
+        },
+        {
+            "label": "Resolution",
+            "value": "13-bit / 4mg/LSB"
+        },
+        {
+            "label": "Protocol",
+            "value": "I2C / SPI"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "วัดความเอียง",
+            "ตรวจจับการกระแทก"
+        ],
+        "en": [
+            "Tilt Sensing",
+            "Impact Detection"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบกันขโมยพกพา",
+                "desc": "ตรวจจับการขยับหรือยกกระเป๋า โดยใช้โหมด Interrupt เพื่อประหยัดพลังงาน"
+            },
+            {
+                "title": "ตรวจเช็คการสั่นสะเทือนเครื่องจักร",
+                "desc": "วิเคราะห์ความถี่ของการสั่นเพื่อประเมินความเสียหายของลูกปืนหรือมอเตอร์"
+            }
+        ],
+        "en": [
+            {
+                "title": "Smart Luggage Alarm",
+                "desc": "Detect when a bag is moved or lifted using low-power interrupt modes."
+            },
+            {
+                "title": "Machine Vibration Monitor",
+                "desc": "Analyze vibration frequencies to predict motor bearing failure or mechanical wear."
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "รองรับการตรวจจับการเคาะ (Tap) และการตกอิสระ (Free-fall) ในตัว",
+            "หากต้องการความแม่นยำสูงสุด ให้ Calibrate ค่า Offset บนพื้นราบตอนเริ่มต้น"
+        ],
+        "en": [
+            "Supports built-in Tap and Free-fall detection features",
+            "For maximum accuracy, perform an initial zero-G offset calibration on a flat surface"
+        ]
+    },
+    "pinout_desc": {
+        "th": "เชื่อมต่อแบบ I2C: VCC, GND, SCL, SDA และขา CS (เลือกโหมด), INT1/INT2 (Interrupt)",
+        "en": "I2C Interface: VCC, GND, SCL, SDA, CS (Mode selection), and INT1/INT2 (Interrupt pins)."
+    },
+    "deep_dive": {
+        "th": "ADXL345 เป็นโมดูลวัดความเร่งแบบ 3 แกนที่ใช้เทคโนโลยี MEMS (Micro-Electro-Mechanical Systems) มีความละเอียดสูงถึง 13-bit สามารถวัดความเอียงได้ละเอียดน้อยกว่า 1 องศา และมีฟีเจอร์ตรวจจับพิเศษในตัว เช่น การเคาะ (Tap), การตกอิสระ (Free-fall) โดยไม่ต้องใช้ MCU ประมวลผล",
+        "en": "The ADXL345 is a 3-axis accelerometer based on MEMS technology. It offers high resolution (13-bit) measurement at up to ±16 g. Digital output data is accessible via either a SPI (3- or 4-wire) or I2C digital interface. It includes built-in sensing functions such as activity/inactivity monitoring, tap/double-tap detection, and free-fall detection."
+    },
+    "technical_specs": [
+        {
+            "label": "Resolution",
+            "value": "10-13 bit"
+        },
+        {
+            "label": "Measuring Range",
+            "value": "±2g, ±4g, ±8g, ±16g"
+        },
+        {
+            "label": "Interface",
+            "value": "I2C / SPI"
+        },
+        {
+            "label": "Supply Voltage",
+            "value": "2.0V - 3.6V (Module often 5V ready)"
+        },
+        {
+            "label": "Power Consumption",
+            "value": "40uA (Measurement mode)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿50 - ฿90",
+        "links": [
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=adxl345"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=adxl345"
+            }
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การตั้งค่าขีดจำกัด",
+                "en": "Setting G-Range"
+            },
+            "steps": {
+                "th": [
+                    "เลือกความละเอียดได้ 4 ระดับ: <b>±2g, ±4g, ±8g, ±16g</b>",
+                    "สำหรับงานวัดความเอียง (Tilt) ให้ใช้ ±2g เพื่อความละเอียดสูงสุด (High sensitivity)",
+                    "สำหรับงานตรวจจับการกระแทก (Impact/Crash) ให้ใช้ ±16g เพื่อป้องกันค่าเต็ม (Saturation)"
+                ],
+                "en": [
+                    "Select between four sensitivity ranges: <b>±2g, ±4g, ±8g, or ±16g</b>",
+                    "Use ±2g for tilt sensing or slow motion to gain the highest resolution per G",
+                    "Switch to ±16g for impact or crash detection to avoid hitting sensor limits (saturation)"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การตรวจจับการเคาะ",
+                "en": "Tap Detection Feature"
+            },
+            "steps": {
+                "th": [
+                    "ADXL345 สามารถตรวจจับการ 'เคาะ' (Tap) ได้จากฮาร์ดแวร์โดยตรง",
+                    "ตั้งค่า Threshold และ Duration ใน Register เพื่อลดภาระการประมวลผลของ MCU",
+                    "ใช้ขา <b>INT1</b> หรือ <b>INT2</b> เพื่อส่งสัญญาณเข้า MCU เมื่อเกิดเหตุการณ์ขึ้น"
+                ],
+                "en": [
+                    "The ADXL345 features an onboard hardware logic for 'Tap' and 'Double Tap' detection",
+                    "Configure thresholds and durations in internal registers to offload processing from the MCU",
+                    "Map these events to <b>INT1</b> or <b>INT2</b> pins to trigger an external interrupt on your board"
+                ]
+            }
+        }
+    ]
+}

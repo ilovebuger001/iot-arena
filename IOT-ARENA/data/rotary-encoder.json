@@ -1,0 +1,154 @@
+{
+  "id": "rotary-encoder",
+  "category": "module",
+  "image": "asset/rotary-encoder.jpg",
+  "title": {
+    "th": "Rotary Encoder KY-040",
+    "en": "Rotary Encoder KY-040"
+  },
+  "sub_title": {
+    "th": "ตัวเข้ารหัสแบบหมุนไม่สิ้นสุด",
+    "en": "Infinite Rotation Encoder"
+  },
+  "description": {
+    "th": "ต่างจากตัวต้านทานปรับค่าได้ ตัว Rotary Encoder สามารถหมุนไปได้เรื่อยๆ โดยไม่มีจุดสิ้นสุด โดยจะส่งสัญญาณพัลส์ออกมาเพื่อบอกทิศทางการหมุน เหมาะสำหรับการทำเมนูเลือกบนหน้าจอ",
+    "en": "Unlike a potentiometer, a rotary encoder can spin infinitely. It outputs pulses that tell the microcontroller the direction and speed of rotation. It is the best component for navigating on-screen menus."
+  },
+  "specs": [
+    {
+      "label": "Pulses per Rev",
+      "value": "20"
+    },
+    {
+      "label": "Voltage",
+      "value": "5V"
+    },
+    {
+      "label": "Switch",
+      "value": "Push-button included"
+    }
+  ],
+  "pinout_desc": {
+    "th": "ประกอบด้วย 5 ขา: CLK (A), DT (B), SW (ปุ่ม), +, และ GND ให้สัญญาณแบบสลับขั้วเมื่อหมุน",
+    "en": "Features 5 pins: CLK (Output A), DT (Output B), SW (Push Switch), +, and GND. Provides quadrature pulses when rotated."
+  },
+  "use_cases": {
+    "th": [
+      "ปุ่มหมุนเลือกเมนู",
+      "ปรับระดับเสียง",
+      "ตั้งค่าพารามิเตอร์",
+      "ตัวเลือกสี RGB"
+    ],
+    "en": [
+      "Menu Selector Knob",
+      "Volume Control",
+      "Parameter Tuning",
+      "RGB Color Picker"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "ปุ่มหมุนสำหรับวิทยุออนไลน์",
+        "desc": "ใช้หมุนเพื่อเลื่อนหาคลื่นหรือรายการสถานีบนหน้าจอ และกดลงไปเพื่อเลือกฟัง"
+      },
+      {
+        "title": "ปุ่มควบคุมหลอดไฟหรี่แสง (Dimmer)",
+        "desc": "ปรับระดับความสว่างของไฟในห้องอย่างต่อเนื่องและลื่นไหลกว่าการใช้ปุ่มกดธรรมดา"
+      }
+    ],
+    "en": [
+      {
+        "title": "Internet Radio Tuner",
+        "desc": "Spin the knob to scroll through a list of stations on an LCD and press to play the selection."
+      },
+      {
+        "title": "Digital Light Dimmer",
+        "desc": "Smoothly increase or decrease brightness levels for an LED lamp with an infinite-turn feel."
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "ใช้ Interrupt แทน Polling เพื่อไม่พลาดพัลส์",
+      "ปุ่มกดตรงกลางมีหน้าสัมผัสไว้สำหรับยืนยันการเลือก"
+    ],
+    "en": [
+      "Use interrupts instead of polling to avoid missing pulses",
+      "The center push-button is perfect for confirming selections"
+    ]
+  },
+  "deep_dive": {
+    "th": "Rotary Encoder ทำงานโดยใช้หน้าสัมผัสภายใน (หรือแสงในบางรุ่น) สร้างสัญญาณ Pulse สองชุด (A และ B) ที่เหลื่อมกัน (Phase Shift) เมื่อหมุน การตรวจสอบลำดับของสัญญาณ A และ B ทำให้ MCU รุ้ทิศทางการหมุน และจำนวน Pulse บอกตำแหน่งการหมุน",
+    "en": "Rotary Encoders generate two pulse signals (A and B) that are phase-shifted by 90 degrees (Quadrature). By monitoring the sequence of these transitions, the microcontroller determines the direction of rotation, while the pulse count determines the position."
+  },
+  "technical_specs": [
+    {
+      "label": "Resolution",
+      "value": "20 pulses/360°"
+    },
+    {
+      "label": "Output",
+      "value": "2-bit Quadrature Code"
+    },
+    {
+      "label": "Switch Rating",
+      "value": "5V @ 10mA"
+    },
+    {
+      "label": "Life Cycle",
+      "value": "30,000+ Rotations"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿25 - ฿50",
+    "links": [
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=ky-040"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=rotary+encoder"
+      }
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "หลักการทำงาน",
+        "en": "Phase A & B Decoding"
+      },
+      "steps": {
+        "th": [
+          "สัญญาณ <b>CLK</b> และ <b>DT</b> จะส่งพัลส์เหลื่อมกัน 90 องศาเพื่อระบุทิศทางการหมุน",
+          "หากพบนว่าค่าลดลงทั้งที่หมุนตามเข็ม ให้สลับสาย CLK และ DT หรือสลับในโค้ด",
+          "แนะนำให้ต่อตัวเก็บประจุ 0.1uF คร่อมขา CLK/DT กับ GND เพื่อกรองสัญญาณรบกวน"
+        ],
+        "en": [
+          "<b>CLK</b> and <b>DT</b> output pulses offset by 90° to determine clockwise vs anti-clockwise rotation",
+          "If rotation direction is inverted in your software, simply swap the CLK and DT wire connections",
+          "Adding small 0.1uF capacitors between data lines and GND helps filter high-frequency noise spikes"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "การใช้งานปุ่มกด",
+        "en": "Internal Switch Logic"
+      },
+      "steps": {
+        "th": [
+          "ขา <b>SW</b> คือปุ่มกดแบบปกติเปิด (Normally Open) ให้ใช้ <code>INPUT_PULLUP</code> ในการอ่านค่า",
+          "ปุ่มกดของ Encoder รุ่นนี้มักมีสัญญาณรบกวนมาก ควรตรวจจับด้วย <b>Software Debounce</b>",
+          "เหมาะสำหรับการกดเพื่อเลือกหัวข้อเมนูหรือยืนยันค่าที่ตั้งไว้"
+        ],
+        "en": [
+          "The <b>SW</b> pin is a momentary push-button; initialize it with <code>INPUT_PULLUP</code> in your setup",
+          "Encoder switches are prone to bounce; implement a robust <b>Software Debounce</b> or timer-based check",
+          "Standard use cases involve 'Spin to Select' and 'Click to Confirm' menu navigation patterns"
+        ]
+      }
+    }
+  ]
+}

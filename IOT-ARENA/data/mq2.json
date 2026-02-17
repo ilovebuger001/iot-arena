@@ -1,0 +1,152 @@
+{
+  "id": "mq2",
+  "category": "sensor",
+  "image": "asset/mq2.jpg",
+  "title": {
+    "th": "MQ-2",
+    "en": "MQ-2 Gas Sensor"
+  },
+  "sub_title": {
+    "th": "เซนเซอร์ตรวจจับควันและแก๊สหุงต้ม",
+    "en": "Smoke and Flammable Gas Sensor"
+  },
+  "description": {
+    "th": "MQ-2 เป็นเซนเซอร์เคมีไฟฟ้าที่มีความไวต่อก๊าซหุงต้ม, โพรเพน, ไฮโดรเจน และควันไฟ ภายในมีขดลวดความร้อนเพื่อทำให้ออกซิเจนแตกตัวและทำปฏิกิริยากับก๊าซในอากาศ ค่าความต้านทานที่เปลี่ยนไปจะถูกส่งออกมาเป็นแรงดันไฟฟ้าแบบ Analog เหมาะสำหรับระบบเตือนภัยแก๊สรั่วในครัวเรือน",
+    "en": "The MQ-2 is a metal oxide semiconductor (MOS) gas sensor. It uses an internal heating element to create a chemical reaction with specific gases in the air. It is highly sensitive to LPG, Propane, Hydrogen, and Smoke. The sensor outputs an analog voltage proportional to the concentration of gases, making it perfect for household leak detection systems."
+  },
+  "specs": [
+    {
+      "label": "Gases Detected",
+      "value": "LPG, Smoke, Alcohol, Propane, Hydrogen"
+    },
+    {
+      "label": "Analog Output",
+      "value": "0 - 5V proportional to concentration"
+    },
+    {
+      "label": "Digital Output",
+      "value": "TTL Level (High/Low) via LM393"
+    },
+    {
+      "label": "Heater Voltage",
+      "value": "5V AC/DC"
+    },
+    {
+      "label": "Preheat Time",
+      "value": "> 24 Hours (First time) / 1 min (Standard)"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "ระบบเตือนแก๊สรั่ว",
+      "ระบบดับเพลิงอัตโนมัติ",
+      "ระบบระบายอากาศอัจฉริยะ",
+      "ตรวจสอบคุณภาพอากาศ"
+    ],
+    "en": [
+      "Gas Leak Alarm",
+      "Fire Detection System",
+      "Smart Ventilation",
+      "Air Quality Monitor"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "เครื่องตรวจจับแก๊สรั่วในครัว",
+        "desc": "ส่งสัญญาณเสียงผ่าน Buzzer และตัดการทำงานของเครื่องใช้ไฟฟ้าหากพบการรั่วไหล"
+      },
+      {
+        "title": "ระบบตรวจสอบคุณภาพอากาศ",
+        "desc": "ใช้ร่วมกับเซนเซอร์ฝุ่น (PM2.5) เพื่อวัดระดับควันและมลพิษในพื้นที่ก่อสร้างหรือโรงงาน"
+      }
+    ],
+    "en": [
+      {
+        "title": "Kitchen Gas Detector",
+        "desc": "Trigger a loud buzzer and cut off electricity if a hazardous leak is detected."
+      },
+      {
+        "title": "Air Quality Monitor",
+        "desc": "Pair with PM2.5 sensors to track smoke and pollution levels in workshops or factories."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "MQ-2 ใช้เทคโนโลยี Metal Oxide Semiconductor ภายในมีขดลวดความร้อนเพื่อกระตุ้นสารเคลือบ Tin Dioxide (SnO2) เมื่อแก๊สติดไฟสัมผัสกับพื้นผิวที่ร้อน ความต้านทานจะลดลง \n\nข้อควรระวังสุดๆ: เซนเซอร์ต้องใช้เวลาอุ่นเครื่องอย่างน้อย 24 ชั่วโมงในการใช้งานครั้งแรกเพื่อให้ค่าคงที่ และตัวถังจะ 'ร้อน' เมื่อทำงานปกติ (ไม่ใช่เรื่องผิดปกติ)",
+    "en": "The MQ-2 relies on a heated SnO2 semiconductor layer. When combustible gases touch the hot surface, the sensor's conductivity increases. \n\nCritical Note: This sensor runs HOT by design. It requires a significant 'Burn-in' period (24-48 hours) when new to stabilize its baseline reading. Do not rely on it for life-critical safety applications without professional calibration."
+  },
+  "technical_specs": [
+    {
+      "label": "Gases",
+      "value": "LPG, Propane, Smoke, Hydrogen"
+    },
+    {
+      "label": "Detection Range",
+      "value": "300 - 10000 ppm"
+    },
+    {
+      "label": "Heater Voltage",
+      "value": "5.0V ± 0.1V (AC/DC)"
+    },
+    {
+      "label": "Loop Voltage",
+      "value": "< 24V DC"
+    },
+    {
+      "label": "Preheat Time",
+      "value": "> 24 Hours (First Use)"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿50 - ฿90",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=mq2%20sensor"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=mq-2+gas+sensor"
+      }
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วย 4 ขา: VCC (5V), GND, DO (Digital Threshold), และ AO (Raw Gas Concentration)",
+    "en": "Features 4 pins: VCC (5V), GND, DO (Digital Threshold-based Output), and AO (Raw Gas Concentration signal)."
+  },
+  "tips": {
+    "th": [
+      "ตัวเซนเซอร์จะร้อนเมื่อทำงาน (เป็นเรื่องปกติ)",
+      "ต้องใช้ไฟ 5V (ห้ามใช้ 3.3V) เพราะ Heater กินกระแสเยอะ"
+    ],
+    "en": [
+      "The sensor will get hot to the touch (This is normal)",
+      "Strictly requires 5V power source; 3.3V is insufficient for the heater"
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "<b>Power Up:</b> จ่ายไฟ 5V ให้เซนเซอร์และทิ้งไว้สักพัก (Warm up) จนค่าเริ่มนิ่ง",
+          "<b>Wiring:</b> ต่อ A0 เข้า Analog Pin <b>(แนะนำ)</b> เพื่ออ่านค่าความเข้มข้น หรือ D0 หากต้องการแค่ตัดเมื่อเกินกำหนด",
+          "<b>Calibration:</b> อ่านค่าในอากาศปกติ (เช่นได้ 300) แล้วลองปล่อยแก๊สไฟแช็คใส่ (ค่าจะพุ่งไป 800+) ใช้ตัวเลขนี้ในการเขียนเงื่อนไขแจ้งเตือน"
+        ],
+        "en": [
+          "<b>Warm Up:</b> Power with 5V. Wait 2-3 mins for the heater to stabilize (or 24h if brand new).",
+          "<b>Connection:</b> Use Analog Pin (A0) for detailed sensing. D0 is just a simple threshold switch.",
+          "<b>Baselining:</b> Read the 'Clean Air' value (e.g., 200). Expose to gas (e.g., lighter gas) to see the 'Alarm' value (e.g., 600+). Set your trigger point in between."
+        ]
+      }
+    }
+  ]
+}

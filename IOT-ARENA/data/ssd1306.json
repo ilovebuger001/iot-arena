@@ -1,0 +1,166 @@
+{
+  "id": "ssd1306",
+  "category": "display",
+  "image": "asset/ssd1306.jpg",
+  "title": {
+    "th": "OLED SSD1306 0.96\"",
+    "en": "OLED SSD1306 0.96\""
+  },
+  "sub_title": {
+    "th": "จอแสดงผล OLED กราฟิกขนาดจิ๋ว",
+    "en": "Miniature Graphic OLED Display"
+  },
+  "description": {
+    "th": "หน้าจอ OLED ขนาด 0.96 นิ้ว ความละเอียด 128x64 พิกเซล จุดเด่นคือไม่ต้องใช้ไฟ Backlight เพราะพิกเซลแต่ละจุดส่องสว่างได้เอง ทำให้มีความคมชัดสูงและประหยัดไฟมาก รองรับการวาดภาพกราฟิก ตัวอักษรหลายขนาด และแอนิเมชัน",
+    "en": "A small but crisp 128x64 pixel OLED display. Because it is an OLED, there is no backlight needed, allowing for high contrast and deep blacks. It is very power efficient and capable of displaying text, complex graphics, and small animations via the I2C interface."
+  },
+  "pinout_desc": {
+    "th": "เชื่อมต่อแบบ I2C: VCC (3.3-5V), GND, SCL, SDA (ขาอาจเรียงต่างกันในแต่ละยี่ห้อ โปรดระวังขั้ว VCC/GND)",
+    "en": "I2C Interface: VCC (3.3-5V), GND, SCL, SDA. Note: Pin order for VCC/GND may vary by manufacturer."
+  },
+  "specs": [
+    {
+      "label": "Resolution",
+      "value": "128 x 64 Pixels"
+    },
+    {
+      "label": "Driver",
+      "value": "SSD1306"
+    },
+    {
+      "label": "Interface",
+      "value": "I2C (0x3C or 0x3D)"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.3V - 5V"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "แสดงข้อมูลเซนเซอร์",
+      "หน้าจอสถานะ IoT",
+      "เกมขนาดจิ๋ว",
+      "นาฬิกาดิจิทัล"
+    ],
+    "en": [
+      "Sensor Data Display",
+      "IoT Status Screen",
+      "Mini Games",
+      "Digital Clock"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "เครื่องวัดคลื่นหัวใจขนาดพกพา",
+        "desc": "แสดงกราฟเส้นชีพจรแบบเคลื่อนไหวสวนทางกับข้อมูลที่อ่านได้จริงจากเซนเซอร์"
+      },
+      {
+        "title": "หน้าจอแผงควบคุมระบบสมาร์ทฟาร์ม",
+        "desc": "แสดงไอคอนสถานะ (เช่น สัญลักษณ์หยดน้ำ หรือ พระอาทิตย์) และตัวเลขบอกค่าอากาศ"
+      }
+    ],
+    "en": [
+      {
+        "title": "Portable Pulse Monitor",
+        "desc": "Draw a live electrocardiogram (ECG) waveform that scrolls alongside real-time heart rate data."
+      },
+      {
+        "title": "Smart Farm Dashboard",
+        "desc": "Render custom icons (water drops, suns) and numeric readouts to visualize soil conditions."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "SSD1306 เป็นจอ OLED ยอดนิยมที่พิกเซลแต่ละจุดกำเนิดแสงได้เอง ทำให้ได้สีดำสนิท และประหยัดไฟ \n\nข้อควรระวัง: จอ OLED อาจเกิดอาการภาพค้าง หากเปิดภาพนิ่งเดิมทิ้งไว้นานๆ ควรเขียนโค้ดพักหน้าจอหรือเลื่อนภาพไปมาหากต้องเปิดตลอดเวลา",
+    "en": "The SSD1306 OLED features self-emitting pixels (no backlight required), resulting in high contrast and deep blacks. It connects via I2C (only 2 wires) and sits on a small 0.96-inch panel.\n\nWarning: OLEDs are susceptible to Burn-In. Avoid displaying static high-brightness images for extended periods (days). Implement a screensaver or dimming logic."
+  },
+  "technical_specs": [
+    {
+      "label": "Resolution",
+      "value": "128x64 Pixels"
+    },
+    {
+      "label": "Interface",
+      "value": "I2C (Addr: 0x3C)"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.3V - 5V"
+    },
+    {
+      "label": "Color",
+      "value": "Blue / White / Yellow-Blue"
+    },
+    {
+      "label": "Library",
+      "value": "Adafruit SSD1306 / U8g2"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿80 - ฿120",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=oled%200.96%20i2c"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=arduino+oled+display"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "Address ปกติคือ 0x3C ถ้าไม่ติดลองเปลี่ยนเป็น 0x3D",
+      "ใช้ไลบรารี Adafruit SSD1306 ง่ายสุด แต่กินแรมเยอะกว่า U8g2"
+    ],
+    "en": [
+      "Default Address is 0x3C; try 0x3D if unresponsive.",
+      "Adafruit library is easier for beginners; U8g2 is better for font variety and memory optimization."
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "การตั้งค่า Adafruit SSD1306",
+        "en": "Setup with Adafruit Lib"
+      },
+      "steps": {
+        "th": [
+          "<b>Install:</b> ติดตั้ง <code>Adafruit SSD1306</code> และ <code>Adafruit GFX</code> ใน Library Manager",
+          "<b>Code:</b> แก้ไข <code>#define SCREEN_ADDRESS 0x3C</code> ในตัวอย่างโค้ด",
+          "<b>Power:</b> แนะนำให้ใช้ไฟ 3.3V หากต่อกับ ESP32 แต่ 5V ก็ใช้ได้กับ Arduino Uno"
+        ],
+        "en": [
+          "<b>Install:</b> Get <code>Adafruit SSD1306</code> and <code>Adafruit GFX</code> libs.",
+          "<b>Config:</b> Define width/height (128, 64) and address (0x3C).",
+          "<b>Init:</b> Ensure you call <code>display.begin(SSD1306_SWITCHCAPVCC, 0x3C)</code> in setup."
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "เทคนิคการแสดงผล",
+        "en": "Drawing Graphics"
+      },
+      "steps": {
+        "th": [
+          "ต้องเรียก <code>display.display();</code> ทุกครั้งเพื่อให้ภาพปรากฏ (เพราะเป็นการเขียนลง Buffer ก่อน)",
+          "ใช้เว็บ <b>image2cpp</b> เพื่อแปลงรูปภาพเป็น Code ภาษา C สำหรับแสดงโลโก้",
+          "ใช้คำสั่ง <code>display.clearDisplay();</code> ก่อนวาดเฟรมใหม่เสมอ"
+        ],
+        "en": [
+          "Always call <code>display.display();</code> to push buffer changes to the screen.",
+          "Use online tools like <b>image2cpp</b> to convert Bitmaps for logo display.",
+          "Call <code>display.clearDisplay();</code> at the start of loop() to wipe the previous frame."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "id": "arduino-mega",
+  "category": "mcu",
+  "image": "asset/arduino-mega.png",
+  "title": {
+    "th": "Arduino Mega 2560",
+    "en": "Arduino Mega 2560"
+  },
+  "sub_title": {
+    "th": "บอร์ดไมโครคอนโทรลเลอร์รุ่นใหญ่พิเศษ",
+    "en": "The Pro Board with Extra I/O"
+  },
+  "description": {
+    "th": "พี่ใหญ่ของ Arduino Uno ที่มาพร้อมกับขา I/O จำนวนมหาศาล และหน่วยความจำที่มากกว่า 8 เท่า เหมาะสำหรับโปรเจกต์ขนาดใหญ่ เช่น เครื่องพิมพ์ 3D, ระบบ Automation ที่ซับซ้อน หรือโปรเจกต์ที่ต้องใช้ Serial หลายพอร์ตพร้อมกัน",
+    "en": "The larger sibling of the Arduino Uno, featuring a massive amount of I/O pins and 8x more memory. It is designed for complex projects like 3D printers, complex CNC machines, and automation systems requiring multiple serial ports."
+  },
+  "specs": [
+    {
+      "label": "MCU",
+      "value": "ATmega2560 (8-bit)"
+    },
+    {
+      "label": "Digital I/O",
+      "value": "54 Pins (15 provide PWM)"
+    },
+    {
+      "label": "Analog In",
+      "value": "16 Pins"
+    },
+    {
+      "label": "Flash Memory",
+      "value": "256 KB"
+    },
+    {
+      "label": "UART (Serial)",
+      "value": "4 Hardware Ports"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "เครื่องพิมพ์ 3D",
+      "หุ่นยนต์ CNC",
+      "ระบบ Automation ซับซ้อน",
+      "โปรเจกต์ที่ใช้ Serial หลายช่อง"
+    ],
+    "en": [
+      "3D Printers",
+      "CNC Machines",
+      "Complex Automation",
+      "Multi-Serial Projects"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "เมนบอร์ดสำหรับเครื่องพิมพ์ 3D (RAMPS)",
+        "desc": "ใช้หน่วยความจำที่กว้างขวางเพื่อประมวลผลคำสั่ง G-code และควบคุมมอเตอร์หลายตัวพร้อมกัน"
+      },
+      {
+        "title": "ระบบ Smart Home ขนาดใหญ่",
+        "desc": "ใช้ขา I/O จำนวนมากเพื่อเชื่อมต่อกับสวิตช์ไฟและเซนเซอร์ทุกจุดในบ้านได้ในบอร์ดเดียว"
+      }
+    ],
+    "en": [
+      {
+        "title": "3D Printer Mainboard",
+        "desc": "Leverage ample memory to process G-code and control multiple stepper motors simultaneously."
+      },
+      {
+        "title": "Whole-House Automation",
+        "desc": "Use the high pin count to monitor every sensor and switch in a large building from one central MCU."
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "เลือก Mega เมื่อ Uno มีขาไม่พอ หรือ Flash เต็ม",
+      "รองรับ Shield ของ Uno ได้ทั้งหมด"
+    ],
+    "en": [
+      "Choose Mega when Uno runs out of pins or Flash memory",
+      "Fully compatible with all Uno-compatible shields"
+    ]
+  },
+  "deep_dive": {
+    "th": "Arduino Mega 2560 เป็นบอร์ดรุ่นพี่เบิ้มที่สร้างมาเพื่อแก้ปัญหา 'ขาไม่พอ' และ 'เมมเต็ม' โดยเฉพาะ ด้วยชิป ATmega2560 ที่มีหน่วยความจำ Flash ถึง 256KB (Uno มีแค่ 32KB) และ RAM 8KB ทำให้มันเหมาะกับงานที่ต้องใช้ไลบรารีขนาดใหญ่ เช่น หน้าจอ Graphic LCD, SD Card, หรือ Ethernet พร้อมๆ กัน \n\nจุดเด่น: มี Hardware Serial ถึง 4 ช่อง ทำให้ต่อกับโมดูลสื่อสาร (GPS, Bluetooth, WiFi) ได้หลายตัวพร้อมกันโดยไม่ต้องแย่งกันหรือใช้ SoftwareSerial ที่ไม่เสถียร",
+    "en": "The Arduino Mega 2560 is designed for projects that have outgrown the Uno. With 54 digital I/O pins, 16 analog inputs, and a larger space for your sketch, it is the recommended board for 3D printers and robotics projects.\n\nKey Feature: 4 Hardware UARTs allow you to communicate with multiple serial devices (GSM, GPS, Bluetooth) simultaneously with high reliability and zero CPU overhead from software emulation."
+  },
+  "technical_specs": [
+    {
+      "label": "MCU",
+      "value": "ATmega2560"
+    },
+    {
+      "label": "Flash",
+      "value": "256 KB"
+    },
+    {
+      "label": "SRAM",
+      "value": "8 KB"
+    },
+    {
+      "label": "EEPROM",
+      "value": "4 KB"
+    },
+    {
+      "label": "Clock",
+      "value": "16 MHz"
+    },
+    {
+      "label": "Digital I/O",
+      "value": "54 Pins"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿250 - ฿450",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=arduino+mega+2560"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=arduino+mega+2560"
+      }
+    ]
+  },
+  "pinout_desc": {
+    "th": "บอร์ดขนาดใหญ่ที่มี Digital I/O ถึง 54 ขา (PWM 15 ขา), Analog Input 16 ขา และ UART ถึง 4 พอร์ต เหมาะสำหรับงานซับซ้อน",
+    "en": "Large-scale board with 54 Digital I/O (15 PWM), 16 Analog Inputs, and 4 hardware UART ports for complex projects."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "การจัดการพลังงาน",
+        "en": "Power Management Strategy"
+      },
+      "steps": {
+        "th": [
+          "ช่อง <b>DC Jack</b> แนะนำให้ใช้ไฟ 9V เพื่อให้ Regulator ไม่ร้อนจนเกินไป",
+          "ขา <b>VIN</b> สามารถใช้รับไฟ 7-12V จากแบตเตอรี่ได้โดยตรง",
+          "ห้ามจ่ายไฟ 5V เข้าขา 5V เมื่อมีการต่อ USB เพราะอาจทำลายพอร์ต USB ของคอมพิวเตอร์"
+        ],
+        "en": [
+          "The <b>DC Jack</b> is optimized for 9V; using 12V is possible but generates more regulator heat",
+          "The <b>VIN</b> pin allows for direct 7-12V battery input, bypassing the barrel jack",
+          "<b>WARNING:</b> Avoid back-feeding 5V into the 5V rail while USB is connected to protect your PC port"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "การใช้พอร์ตสื่อสารพิเศษ",
+        "en": "Advanced Comms & Interrupts"
+      },
+      "steps": {
+        "th": [
+          "มีพอร์ต <b>Hardware Serial</b> ถึง 4 ชุด (Serial, Serial1, Serial2, Serial3)",
+          "ขา <b>External Interrupts</b> มีมากถึง 6 ขา: 2, 3, 18, 19, 20, 21",
+          "ใช้ขา 20 (SDA) และ 21 (SCL) สำหรับการต่อจอหรือเซนเซอร์ I2C (ตำแหน่งต่างจาก Uno)"
+        ],
+        "en": [
+          "Features 4 dedicated <b>Hardware Serial</b> ports, avoiding the overhead of SoftwareSerial",
+          "Supports 6 <b>External Interrupts</b> on pins 2, 3, 18, 19, 20, and 21 for real-time response",
+          "I2C communication uses <b>Pin 20 (SDA) and Pin 21 (SCL)</b>, unlike the A4/A5 mapping on the Uno"
+        ]
+      }
+    }
+  ]
+}

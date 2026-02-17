@@ -1,0 +1,150 @@
+{
+  "id": "l298n-motor",
+  "category": "actuator",
+  "image": "asset/l298n-motor.jpg",
+  "title": {
+    "th": "L298N Motor Driver",
+    "en": "L298N Dual H-Bridge Driver"
+  },
+  "sub_title": {
+    "th": "โมดูลขับมอเตอร์กระแสตรง 2 ช่อง",
+    "en": "Dual-Channel DC Motor Driver"
+  },
+  "description": {
+    "th": "L298N เป็นโมดูลขับมอเตอร์แบบ H-Bridge ที่สามารถควบคุมความเร็วและทิศทางของมอเตอร์กระแสตรง (DC Motor) ได้พร้อมกัน 2 ตัว หรือควบคุม Stepper Motor 1 ตัว สามารถรับแรงดันไฟเลี้ยงมอเตอร์ได้สูงและรองรับกระแสได้พอเพียงสำหรับหุ่นยนต์ขนาดเล็กถึงกลาง",
+    "en": "The L298N is a high-power dual H-bridge driver designed to control the speed and direction of two DC motors or one stepper motor. It features a large heatsink to handle significant current and includes a 5V regulator that can power your microcontroller if needed."
+  },
+  "specs": [
+    {
+      "label": "Drive Voltage",
+      "value": "5V - 35V DC"
+    },
+    {
+      "label": "Output Current",
+      "value": "2A (Peak per channel)"
+    },
+    {
+      "label": "Logic Voltage",
+      "value": "5V"
+    },
+    {
+      "label": "Max Power",
+      "value": "25W"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "หุ่นยนต์รถบังคับ",
+      "ระบบสายพานลำเลียง",
+      "ประตูเลื่อนอัตโนมัติ",
+      "หุ่นยนต์เดินตามเส้น"
+    ],
+    "en": [
+      "RC Car Robot",
+      "Conveyor Belt System",
+      "Automatic Sliding Door",
+      "Line-following Robot"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "รถหุ่นยนต์ 4 ล้อบังคับมือ",
+        "desc": "ใช้ขับมอเตอร์ 4 ตัว (พ่วงข้างละ 2 ตัว) เพื่อควบคุมทิศทางแบบ Tank Drive"
+      },
+      {
+        "title": "ระบบทำความสะอาดอัจฉริยะ",
+        "desc": "ควบคุมมอเตอร์หมุนแปรงปัดฝุ่นและมอเตอร์ขับเคลื่อนให้ทำงานสัมพันธ์กัน"
+      }
+    ],
+    "en": [
+      {
+        "title": "4-Wheel RC Tank Robot",
+        "desc": "Drive 4 motors (wired in pairs) to provide robust differential steering or Tank Drive."
+      },
+      {
+        "title": "Smart Cleaning Robot",
+        "desc": "Control rotating brush motors and drive wheels synchronously for automated floor sweeping."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "L298N เป็นชิปขับมอเตอร์แบบ Dual H-Bridge รุ่นคลาสสิก ข้อดีคือทนทานและหาง่าย แต่ข้อเสียคือเป็นเทคโนโลยีเก่า (Bipolar Transistor) ทำให้มีแรงดันตกคร่อม (Voltage Drop) สูงถึง 2V-3V ซึ่งจะเปลี่ยนเป็นความร้อน (Heat) แทนที่จะเป็นแรงหมุน \n\nดังนั้นถ้าจ่ายไฟ 12V มอเตอร์จะได้รับจริงแค่ประมาณ 9V-10V เท่านั้น หากต้องการประสิทธิภาพสูงแนะนำให้ใช้ TB6612FNG แทน",
+    "en": "The L298N is the classic Dual H-Bridge driver. While robust and cheap, it uses older Bipolar Transistor technology, resulting in a significant voltage drop (2V-3V) across the driver itself. This energy is wasted as heat.\n\nImplication: If you supply 12V, your motors only receive ~9-10V. For battery-powered projects requiring efficiency, consider MOSFET-based drivers like the TB6612FNG."
+  },
+  "technical_specs": [
+    {
+      "label": "Driver Chip",
+      "value": "L298N (Dual H-Bridge)"
+    },
+    {
+      "label": "Motor Supply",
+      "value": "5V - 35V DC"
+    },
+    {
+      "label": "Current/Ch",
+      "value": "2A Peak"
+    },
+    {
+      "label": "Logic Voltage",
+      "value": "5V"
+    },
+    {
+      "label": "Max Power",
+      "value": "25W (Heatsinked)"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿50 - ฿80",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=l298n%20driver"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=arduino+l298n"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "ฮีตซิงค์จะร้อนมากเมื่อทำงานหนัก ระวังมือพอง",
+      "ถ้าจ่ายไฟมอเตอร์ >12V ให้ถอดจัมเปอร์ 5V-EN ออก แล้วจ่ายไฟ 5V เข้าช่อง Logic แยกต่างหาก เพื่อกัน Regulator ระเบิด"
+    ],
+    "en": [
+      "Heatsink gets very HOT under load. Do not touch.",
+      "If Motor Power > 12V, REMOVE the 5V-EN jumper and supply external 5V to the Logic pin to prevent frying the onboard regulator."
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วยขั้วต่อ Motor A/B, แหล่งจ่ายไฟ (12V, GND, 5V Out), และขาควบคุม (ENA, IN1, IN2, IN3, IN4, ENB)",
+    "en": "Features Motor A/B terminals, Power Input (12V, GND, 5V Out), and Logic Control pins (ENA, IN1-IN4, ENB)."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "<b>Power Wiring:</b> ต่อไฟมอเตอร์ (เช่น 12V) เข้าช่อง 12V, ต่อ GND ร่วมกับ Arduino, และ 5V ไม่ต้องต่อ(ถ้าใส่จัมเปอร์ไว้)",
+          "<b>Motor Wiring:</b> สายมอเตอร์คู่แรกเข้า OUT1/OUT2, คู่สองเข้า OUT3/OUT4",
+          "<b>Logic Wiring:</b> ต่อ IN1, IN2, IN3, IN4 เข้า Digital Pins ของ Arduino",
+          "<b>Speed Control:</b> ถอดจัมเปอร์ ENA/ENB แล้วเสียบสาย PWM จาก Arduino เข้าไปแทนเพื่อปรับความเร็วรถ"
+        ],
+        "en": [
+          "<b>Power:</b> Connect Battery+ to 12V, Battery- to GND. Connect Arduino GND to Driver GND (Common Ground).",
+          "<b>Outputs:</b> Motor A to OUT1/OUT2. Motor B to OUT3/OUT4.",
+          "<b>Inputs:</b> Connect IN1-IN4 to Arduino Digital Pins for direction control.",
+          "<b>Speed:</b> Remove ENA/ENB jumpers and connect PWM pins to control speed (0-255)."
+        ]
+      }
+    }
+  ]
+}

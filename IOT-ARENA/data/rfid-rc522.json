@@ -1,0 +1,168 @@
+{
+  "id": "rfid-rc522",
+  "category": "module",
+  "image": "asset/rfid-rc522.jpg",
+  "title": {
+    "th": "RFID RC522",
+    "en": "RFID RC522"
+  },
+  "sub_title": {
+    "th": "โมดูลอ่านและเขียนบัตร RFID",
+    "en": "RFID Reader/Writer Module"
+  },
+  "description": {
+    "th": "โมดูล RC522 ใช้สำหรับการสื่อสารไร้สายที่ความถี่ 13.56 MHz สามารถอ่านและเขียนข้อมูลลงในบัตรหรือพวงกุญแจ RFID ได้ นิยมใช้ในระบบควบคุมการเข้า-ออกประตู และระบบยืนยันตัวตน",
+    "en": "The RC522 is a highly integrated reader/writer module for contactless communication at 13.56 MHz. It uses the SPI protocol to talk to microcontrollers and can read/write to RFID tags and keycards. Common uses include door lock systems and attendance tracking."
+  },
+  "pinout_desc": {
+    "th": "เชื่อมต่อแบบ SPI รวม 8 ขา: 3.3V (ห้ามต่อ 5V), RST, GND, IRQ, MISO, MOSI, SCK, และ SDA (SS)",
+    "en": "8-pin SPI interface: 3.3V (VCC), RST, GND, IRQ, MISO, MOSI, SCK, and SDA (SS). *VCC must be 3.3V strictly."
+  },
+  "specs": [
+    {
+      "label": "Frequency",
+      "value": "13.56 MHz"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.3V (ห้ามใช้ 5V!)"
+    },
+    {
+      "label": "Interface",
+      "value": "SPI"
+    },
+    {
+      "label": "Data Rate",
+      "value": "Max 10Mbit/s"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "ระบบเข้า-ออกประตู",
+      "ระบบเช็คชื่อ",
+      "ระบบล็อคตู้เก็บของ",
+      "ตู้จำหน่ายสินค้า"
+    ],
+    "en": [
+      "Door Access Control",
+      "Attendance System",
+      "Smart Locker",
+      "Vending Machine"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "ระบบปลดล็อคประตูด้วยบัตร",
+        "desc": "ใช้ตรวจสอบ UID ของบัตร หากตรงกับที่บันทึกไว้ให้สั่งงานกลอนประตูแม่เหล็ก (Solenoid)"
+      },
+      {
+        "title": "ระบบเช็คชื่อพนักงานออนไลน์",
+        "desc": "บันทึกเวลาที่แตะบัตรและส่งข้อมูลไปเก็บในฐานข้อมูลผ่าน ESP32/WiFi"
+      }
+    ],
+    "en": [
+      {
+        "title": "RFID Door Lock",
+        "desc": "Scan card UID and trigger a solenoid lock if the ID matches the authorized database."
+      },
+      {
+        "title": "Cloud Attendance System",
+        "desc": "Log entry timestamps and send data to an online server via WiFi-enabled MCUs."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "RC522 เป็นโมดูลอ่านบัตรความถี่ 13.56MHz สื่อสารผ่าน SPI \n\nคำเตือนระดับวิกฤต: โมดูลนี้ใช้ไฟเลี้ยงและสัญญาณ ที่ 3.3V เท่านั้น! การต่อกับ Arduino อย่างตรงอาจทำงานได้ในช่วงแรกแต่ชิปจะเสื่อมสภาพและพังในที่สุด ควรใช้ Level Shifter หรือต่อผ่านตัวต้านทานแบ่งแรงดันที่ขา MOSI, SCK, SDA, RST",
+    "en": "The RC522 (NXP MFRC522) allows reading/writing of Mifare tags via SPI.\n\nCRITICAL WARNING: This is a strict 3.3V device. Connecting it directly to a 5V Arduino Uno logic pins is risky. While many tutorials show direct naming, it drastically reduces the module's lifespan. Use a Logic Level Converter for reliable long-term operation."
+  },
+  "technical_specs": [
+    {
+      "label": "Chip",
+      "value": "MFRC522"
+    },
+    {
+      "label": "Frequency",
+      "value": "13.56 MHz"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.3V Stict"
+    },
+    {
+      "label": "Interface",
+      "value": "SPI"
+    },
+    {
+      "label": "Max Speed",
+      "value": "10 Mbit/s"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿60 - ฿100",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=rfid%20rc522"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=arduino+rfid+module"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "บัตรพวงกุญแจสีฟ้าที่แถมมาคือมาตรฐาน Mifare 1K (S50)",
+      "บัดกรีขา Header ให้แน่นหนา ปัญหาอ่านไม่ได้ส่วนใหญ่เกิดจากขาหลวม"
+    ],
+    "en": [
+      "The blue keychain fob is a standard Mifare 1K (S50) tag.",
+      "Solder the headers properly! Poor contact is the #1 cause of read failures."
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "การเชื่อมต่อ SPI",
+        "en": "SPI Wiring (Uno)"
+      },
+      "steps": {
+        "th": [
+          "<b>3.3V:</b> ต่อ 3.3V (ห้าม 5V), <b>GND:</b> GND",
+          "<b>RST:</b> Pin 9, <b>SDA(SS):</b> Pin 10",
+          "<b>MOSI:</b> Pin 11, <b>MISO:</b> Pin 12, <b>SCK:</b> Pin 13",
+          "(แนะนำให้มีตัวต้านทาน 1k คั่นที่ขา 9, 10, 11, 13 เพื่อลดไฟเหลือ 3.3V)"
+        ],
+        "en": [
+          "<b>Power:</b> 3.3V to 3.3V (NOT 5V). GND to GND.",
+          "<b>Control:</b> RST->D9, SDA(SS)->D10.",
+          "<b>Data:</b> MOSI->D11, MISO->D12, SCK->D13.",
+          "<b>Protection:</b> Use 1k/2k dividers or a Level Shifter on inputs (RST, SDA, MOSI, SCK) for safety."
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "การอ่าน UID บัตร",
+        "en": "Reading Tag UID"
+      },
+      "steps": {
+        "th": [
+          "ติดตั้งไลบรารี <code>MFRC522</code> โดย GithubCommunity",
+          "เปิดตัวอย่าง <b>DumpInfo</b>",
+          "แตะบัตรที่ตัวอ่าน ดูผลใน Serial Monitor จะเห็นรหัส UID ฐาน 16 (เช่น DE AD BE EF)"
+        ],
+        "en": [
+          "Install library <code>MFRC522</code>.",
+          "Load example <b>DumpInfo</b>.",
+          "Tap card. The Serial Monitor will output the card's UID hex code (e.g., 'Card UID: XX XX XX XX')."
+        ]
+      }
+    }
+  ]
+}

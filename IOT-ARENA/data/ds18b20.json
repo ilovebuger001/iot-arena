@@ -1,0 +1,154 @@
+{
+  "id": "ds18b20",
+  "category": "sensor",
+  "image": "asset/ds18b20.jpg",
+  "title": {
+    "th": "DS18B20 Waterproof Temp",
+    "en": "DS18B20 Waterproof Temp"
+  },
+  "sub_title": {
+    "th": "เซนเซอร์วัดอุณหภูมิแบบกันน้ำ",
+    "en": "Waterproof Temperature Probe"
+  },
+  "description": {
+    "th": "DS18B20 เป็นเซนเซอร์อุณหภูมิแบบดิจิทัลที่ส่งข้อมูลผ่านสายเส้นเดียว (1-Wire) รุ่นยอดนิยมจะมาในรูปแบบโพรบสแตนเลสกันน้ำ เหมาะมากสำหรับวัดอุณหภูมิน้ำในตู้ปลา ของเหลวในถัง หรือดิน",
+    "en": "The DS18B20 is a digital temperature sensor that communicates over a 1-Wire bus. The waterproof version features a stainless steel probe, making it ideal for measuring liquids in tanks, aquarium water, or wet soil conditions."
+  },
+  "specs": [
+    {
+      "label": "Range",
+      "value": "-55°C to +125°C"
+    },
+    {
+      "label": "Accuracy",
+      "value": "±0.5°C (from -10°C to +85°C)"
+    },
+    {
+      "label": "Resolution",
+      "value": "9 to 12 bit (Programmable)"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.0V - 5.5V"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "วัดอุณหภูมิน้ำในตู้ปลา",
+      "เกษตรอัจฉริยะ",
+      "ระบบทำความเย็น",
+      "อุตสาหกรรมอาหาร"
+    ],
+    "en": [
+      "Aquarium Water Temp",
+      "Smart Agriculture",
+      "Cooling Systems",
+      "Food Industry"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "ระบบควบคุมอุณหภูมิตู้ปลา",
+        "desc": "ใช้ตรวจสอบอุณหภูมิน้ำและสั่งเปิด Heater อัตโนมัติในหน้าหนาวเพื่อสุขภาพของปลา"
+      },
+      {
+        "title": "เครื่องวัดอุณหภูมิของเหลวในถังผสม",
+        "desc": "ใช้ในงานอุตสาหกรรมขนาดเล็กที่ต้องการความทนทานต่อสารเคมีและความชื้น"
+      }
+    ],
+    "en": [
+      {
+        "title": "Smart Aquarium Heater",
+        "desc": "Monitor water temperature and trigger a heater automatically to maintain the ideal climate for fish."
+      },
+      {
+        "title": "Liquid Batch Monitoring",
+        "desc": "Perfect for chemical mixing or food processing applications that require waterproof components."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "DS18B20 ใช้โปรโตคอล 1-Wire ซึ่งเป็นกรรมสิทธิ์ของ Dallas Semiconductor (ปัจจุบัน Maxim) จุดเด่นคือเซนเซอร์ทุกตัวมี 'ชื่อ' (64-bit Address) สลักมาในชิปตั้งแต่ออกโรงงาน ทำให้เราสามารถต่อเซนเซอร์หลายสิบตัวขนานกันบนสายไฟเส้นเดียวได้ เหมาะมากสำหรับการเดินสายรอบบ้านหรือโรงงานเพื่อวัดอุณหภูมิหลายจุดโดยใช้พอร์ตของไมโครคอนโทรลเลอร์เพียงพอร์ตเดียว",
+    "en": "The DS18B20 uses the unique 1-Wire protocol. Each sensor has a factory-lasered 64-bit serial number behaving like a MAC address. This allows you to daisy-chain multiple sensors on a single data wire and address them individually. It's robust, accurate, and digital, meaning no signal degradation over long cable runs."
+  },
+  "technical_specs": [
+    {
+      "label": "Temp Range",
+      "value": "-55°C to +125°C"
+    },
+    {
+      "label": "Accuracy",
+      "value": "±0.5°C (-10 to +85°C)"
+    },
+    {
+      "label": "Protocol",
+      "value": "1-Wire (Digital)"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.0V - 5.5V"
+    },
+    {
+      "label": "Resolution",
+      "value": "9 to 12 bit (Adjustable)"
+    },
+    {
+      "label": "Waterproof",
+      "value": "Yes (Stainless Probe Only)"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿50 - ฿90",
+    "links": [
+      {
+        "title": "Cytron Thailand",
+        "url": "https://www.cytron.io/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=ds18b20"
+      },
+      {
+        "title": "AliExpress",
+        "url": "https://www.aliexpress.com/w/wholesale-ds18b20.html"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "จำเป็นต้องใช้ตัวต้านทาน 4.7k Pull-up ระหว่างขา Data และ VCC เสมอ ไม่งั้นจะอ่านค่าไม่ได้",
+      "สายสีแดง=VCC, สีดำ=GND, สีเหลือง/ขาว=Data"
+    ],
+    "en": [
+      "A 4.7kΩ pull-up resistor between Data and VCC is MANDATORY",
+      "Typical color code: Red = VCC, Black = GND, Yellow/White = Data"
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วย 3 สาย: แดง(VCC), ดำ(GND), และ เหลือง/ขาว(Data) ต้องต่อตัวต้านทาน Pull-up 4.7k ระหว่าง VCC และ Data",
+    "en": "Features 3 wires: Red(VCC), Black(GND), and Yellow/White(Data). Requires a 4.7k Pull-up resistor between VCC and Data line."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "<b>การ Wiring (สำคัญ):</b> ต่อขา Data เข้าขา Digital และ <b>ต้อง</b> ต่อตัวต้านทาน 4.7k คร่อมระหว่างขา Data กับ VCC (Pull-up)",
+          "<b>ไลบรารี:</b> ต้องติดตั้ง 2 ตัว คือ <b>'OneWire'</b> และ <b>'DallasTemperature'</b>",
+          "<b>โค้ด:</b> เริ่มต้นด้วย <code>sensors.begin()</code> และอ่านค่าด้วย <code>sensors.requestTemperatures()</code> ตามด้วย <code>sensors.getTempCByIndex(0)</code>",
+          "<b>หลายตัว:</b> หากต่อหลายตัว ให้ใช้โค้ด Example 'OneWireSearch' เพื่อหา Address ของแต่ละตัวก่อน"
+        ],
+        "en": [
+          "<b>Wiring Rule:</b> Connect Data to a Digital pin. You **MUST** add a 4.7kΩ resistor between Data and VCC. Without this 'pull-up', it won't work.",
+          "<b>Libraries:</b> You need two libraries: <b>'OneWire'</b> (for the protocol) and <b>'DallasTemperature'</b> (to make it easy to use).",
+          "<b>Basic Code:</b> Call <code>sensors.requestTemperatures()</code> then <code>sensors.getTempCByIndex(0)</code> to get the first probe's reading.",
+          "<b>Multiple Sensors:</b> To target specific probes, run a 'OneWireSearch' sketch first to find their 64-bit addresses."
+        ]
+      }
+    }
+  ]
+}

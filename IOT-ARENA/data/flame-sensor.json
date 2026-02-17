@@ -1,0 +1,140 @@
+{
+    "id": "flame-sensor",
+    "category": "sensor",
+    "image": "asset/flame-sensor.png",
+    "title": {
+        "th": "Flame Sensor",
+        "en": "Flame Sensor Module"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์ตรวจจับเปลวไฟ",
+        "en": "Infrared Flame Detection"
+    },
+    "description": {
+        "th": "เซนเซอร์อินฟราเรดสำหรับตรวจจับความยาวคลื่นจากเปลวไฟ (760nm - 1100nm)",
+        "en": "An infrared-based sensor designed to detect light wavelengths typical of fire (760nm to 1100nm)."
+    },
+    "specs": [
+        {
+            "label": "Wavelength",
+            "value": "760nm to 1100nm"
+        },
+        {
+            "label": "Angle",
+            "value": "60 Degrees"
+        },
+        {
+            "label": "Output",
+            "value": "Analog & Digital"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "หุ่นยนต์ดับเพลิง",
+            "ระบบแจ้งเตือนไฟไหม้"
+        ],
+        "en": [
+            "Fire-fighting Robotics",
+            "Fire Alarm Systems"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ประตูหนีไฟอัจฉริยะ",
+                "desc": "เมื่อตรวจพบเปลวไฟในห้อง ให้ปลดล็อคแม่เหล็กไฟฟ้า (Maglock) อัตโนมัติ"
+            },
+            {
+                "title": "ระบบตัดแก๊สอัตโนมัติ",
+                "desc": "หากตรวจพบเปลวไฟที่รั่วไหลนอกจุดที่กำหนด ให้สั่งปิดโซลินอยด์วาล์วแก๊สทันที"
+            }
+        ],
+        "en": [
+            {
+                "title": "Smart Emergency Exit",
+                "desc": "Automatically release electromagnetic locks (Maglocks) when a flame is detected in the area."
+            },
+            {
+                "title": "Automatic Gas Shut-off",
+                "desc": "If fire is detected in a non-safe zone, immediately trigger a solenoid valve to cut the gas supply."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "Flame Sensor (IR Receiver) นี้ถูกจูนมาให้ไวต่อย่านความยาวคลื่นแสงอินฟราเรดที่เปลวไฟปล่อยออกมา (760nm - 1100nm) ซึ่งตาเปล่ามองไม่เห็น \n\nข้อจำกัดคือ แสงแดดและหลอดไฟความร้อนสูง (Incandescent) ก็ปล่อยรังสี IR เช่นกัน จึงอาจเกิดสัญญาณหลอก (False Positive) ได้หากใช้กลางแจ้ง หรือใกล้หลอดไฟ",
+        "en": "This Flame Sensor is essentially an IR phototransistor tuned to detect the specific infrared wavelengths (760nm - 1100nm) emitted by hydrocarbon combustion.\n\nLimitation: The sun is a massive source of IR radiation. Using this sensor outdoors or near incandescent bulbs will likely cause false alarms. It is best suited for indoor, dark environments."
+    },
+    "technical_specs": [
+        {
+            "label": "Spectrum",
+            "value": "760nm - 1100nm"
+        },
+        {
+            "label": "Detection Angle",
+            "value": "60 Degrees"
+        },
+        {
+            "label": "Range",
+            "value": "Up to 1m (Size dependent)"
+        },
+        {
+            "label": "Output",
+            "value": "Digital (0/1) & Analog"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿35 - ฿65",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=flame%20sensor%20module"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+flame+sensor"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ควรใช้ท่อหดสีดำหุ้มรอบตัวรับแสง (Photodiode) เพื่อให้รับแสงจากด้านหน้าเท่านั้น",
+            "ห้ามนำไปลนไฟตรงๆ เซนเซอร์จะละลายได้"
+        ],
+        "en": [
+            "Shield the side of the sensor with black shrink tube to make it directional",
+            "Do NOT place directly in fire; it measures radiation, not heat contact"
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 4 ขา: VCC, GND, DO (Digital Output ติดเมื่อเจอไฟ), และ AO (Analog Output วัดความแรงแสง IR)",
+        "en": "Features 4 pins: VCC, GND, DO (Digital Output triggers on flame presence), and AO (Analog Output for IR light intensity)."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>Wiring:</b> ต่อ VCC, GND, และ D0 (Digital Out) เข้ากับบอร์ด",
+                    "<b>จูนความไว:</b> จุดไฟแช็คห่างประมาณ 30 ซม. แล้วหมุน R-Trimpot จนไฟสถานะติด",
+                    "<b>การใช้งาน:</b> เมื่อ D0 เป็น LOW (หรือ HIGH แล้วแต่บอร์ด) แสดงว่าเจอไฟ สามารถสั่งเปิด Buzzer ได้ทันที"
+                ],
+                "en": [
+                    "<b>Wiring:</b> Connect VCC, GND, and D0 to a digital input pin.",
+                    "<b>Sensitivity:</b> Light a lighter ~30cm away. Adjust the blue potentiometer until the signal LED activates.",
+                    "<b>Logic:</b> The pin will toggle state when fire is detected. Use this trigger to activate a relay or alarm."
+                ]
+            }
+        }
+    ]
+}

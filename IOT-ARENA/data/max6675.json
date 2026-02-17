@@ -1,0 +1,142 @@
+{
+    "id": "max6675",
+    "category": "module",
+    "image": "asset/max6675.png",
+    "title": {
+        "th": "MAX6675 Thermocouple",
+        "en": "MAX6675 Thermocouple Module"
+    },
+    "sub_title": {
+        "th": "โมดูลวัดอุณหภูมิสูงแบบ K-Type",
+        "en": "High Temp K-Type Thermocouple"
+    },
+    "description": {
+        "th": "โมดูลวัดอุณหภูมิที่สามารถใช้ร่วมกับ Thermocouple K-Type เพื่อวัดอุณหภูมิที่สูงมาก เช่น เตาอบ",
+        "en": "A temperature sensor module compatible with K-type thermocouples, capable of measuring very high temperatures such as ovens."
+    },
+    "specs": [
+        {
+            "label": "Range",
+            "value": "0°C to 1024°C"
+        },
+        {
+            "label": "Resolution",
+            "value": "0.25°C"
+        },
+        {
+            "label": "Interface",
+            "value": "SPI (Read Only)"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เตาอบไฟฟ้า",
+            "เครื่องจักร 3D Printer"
+        ],
+        "en": [
+            "Industrial Ovens",
+            "3D Printer Heatbeds"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ตู้อบ Reflow DIY",
+                "desc": "ใช้ขดลวดความร้อนควบคุมโดย Relay และวัดอุณหภูมิด้วย MAX6675 เพื่อสร้าง Profile ความร้อนสำหรับบัดกรีแผ่นวงจร"
+            },
+            {
+                "title": "เครื่องวัดอุณหภูมิเตาเผา",
+                "desc": "ตรวจสอบความร้อนในเตาเซรามิกหรือเตาอบพิซซ่าที่อุณหภูมิสูงเกิน 300 องศา"
+            }
+        ],
+        "en": [
+            {
+                "title": "DIY Reflow Oven",
+                "desc": "Control heating elements via Relay and monitor precise temps with MAX6675 to create soldering profiles."
+            },
+            {
+                "title": "Kiln/Furnace Monitor",
+                "desc": "Monitor extreme heat in ceramic kilns or pizza ovens exceeding 300°C limit of standard sensors."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "MAX6675 เป็นโมดูลแปลงสัญญาณจาก Thermocouple แบบ K-Type ให้เป็นข้อมูล Digital (SPI) เพื่อให้ไมโครคอนโทรลเลอร์อ่านค่าอุณหภูมิที่สูงมากได้ (0-1024 องศา) ซึ่งเซนเซอร์ปกติอย่าง DHT หรือ DS18B20 ทำไม่ได้ \n\nข้อควรระวัง: MAX6675 อ่านค่าได้ละเอียด 0.25 องศา แต่มีความแม่นยำประมาณ +/- 2 องศา และห้ามให้หัววัด Thermocouple แตะกับโลหะที่มีไฟรั่วเด็ดขาด เพราะจะทำให้ชิปเสียหายทันที (เนื่องจากไม่มีการแยกกราวด์ - Non-isolated)",
+        "en": "The MAX6675 performs cold-junction compensation and digitizes the signal from a Type-K thermocouple. The data is output in a 12-bit resolution, SPI-compatible, read-only format. It is essential for high-heat environments like kilns, ovens, or exhaust systems where standard silicon sensors would melt.\n\nWarning: This chip is Non-Isolated. Do not mount the metal thermocouple tip directly to an electrically live surface, or you will destroy the chip and possibly the Arduino."
+    },
+    "technical_specs": [
+        {
+            "label": "Chip",
+            "value": "MAX6675ISA"
+        },
+        {
+            "label": "Sensing Range",
+            "value": "0°C to +1024°C"
+        },
+        {
+            "label": "Resolution",
+            "value": "0.25°C"
+        },
+        {
+            "label": "Interface",
+            "value": "SPI (Read Only)"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5.5V"
+        },
+        {
+            "label": "Time",
+            "value": "0.2s Conversion"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿80 - ฿150",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=max6675"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=max6675"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "สาย Thermocouple ไม่ควรอยู่ใกล้แหล่งสัญญาณรบกวน AC"
+        ],
+        "en": [
+            "Thermocouple wires should be kept away from AC interference"
+        ]
+    },
+    "pinout_desc": {
+        "th": "ฝั่ง MCU (5 ขา): GND, VCC, SCK, CS, และ SO (SPI Output) ฝั่ง TC: ขั้วต่อบวก (+) และ ลบ (-) สำหรับสาย Thermocouple Type-K",
+        "en": "MCU side (5 pins): GND, VCC, SCK, CS, and SO (SPI Output). TC side: Positive (+) and Negative (-) terminals for Type-K Thermocouple."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การเชื่อมต่อ",
+                "en": "Wiring Connection"
+            },
+            "steps": {
+                "th": [
+                    "เชื่อมต่อ <b>VCC</b> -> 5V, <b>GND</b> -> GND",
+                    "เชื่อมต่อ <b>SCK</b>, <b>CS</b>, <b>SO</b> เข้ากับขา Digital ของ Arduino (เช่น 13, 10, 12)",
+                    "ห้ามต่อไฟ 3.3V เข้ากับสาย Thermocouple โดยตรง"
+                ],
+                "en": [
+                    "Connect <b>VCC</b> to 5V and <b>GND</b> to GND",
+                    "Connect <b>SCK, CS, SO</b> to any digital pins (define them in code)",
+                    "Ensure the Thermocouple tip is electrically isolated from high-voltage sources"
+                ]
+            }
+        }
+    ]
+}

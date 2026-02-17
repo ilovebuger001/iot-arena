@@ -1,0 +1,140 @@
+{
+    "id": "relay-4ch",
+    "category": "module",
+    "image": "asset/relay-4ch.png",
+    "title": {
+        "th": "4-Channel Relay",
+        "en": "4-Channel Relay Module"
+    },
+    "sub_title": {
+        "th": "โมดูลรีเลย์ 4 ช่องทาง",
+        "en": "Multi-channel Relay Module"
+    },
+    "description": {
+        "th": "โมดูลรีเลย์ที่สามารถควบคุมเครื่องใช้ไฟฟ้ากระแสสลับได้พร้อมกันถึง 4 อุปกรณ์",
+        "en": "A relay module capable of controlling up to 4 separate AC/DC high-power devices simultaneously."
+    },
+    "specs": [
+        {
+            "label": "Channels",
+            "value": "4 independent nodes"
+        },
+        {
+            "label": "Max Load",
+            "value": "10A 250VAC / 30VDC"
+        },
+        {
+            "label": "Optocoupler",
+            "value": "Yes (Isolation)"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "สมาร์ทโฮมควบคุมไฟหลายจุด",
+            "การเกษตร"
+        ],
+        "en": [
+            "Smart Home Light Control",
+            "Industrial Sequencing"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบควบคุมไฟสวนอัจฉริยะ",
+                "desc": "สั่งเปิด-ปิดไฟทางเดินและไฟประดับ 4 โซนรอบบ้านผ่านมือถือแยกจากกัน"
+            },
+            {
+                "title": "เครื่องตั้งเวลาสำหรับบ่อปลา",
+                "desc": "ใช้รีเลย์ 4 ตัวเพื่อควมคุม ปั๊มน้ำ, ตัวพ่นอากาศ, เครื่องให้อาหาร และแสงสว่างในระบบเดียว"
+            }
+        ],
+        "en": [
+            {
+                "title": "Smart Garden Lighting System",
+                "desc": "Control 4 separate lighting zones around your property using a single MCU dashboard."
+            },
+            {
+                "title": "Aquarium Management Hub",
+                "desc": "Single-handedly manage filter pumps, aerators, feeders, and grow lights via the 4 relay nodes."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "โมดูลรีเลย์ 4 ช่อง ช่วยให้คุณควบคุมอุปกรณ์ 4 อย่างได้อิสระ จุดเด่นคือระบบแยกกราวด์ผ่านจัมเปอร์ JD-VCC ซึ่งช่วยป้องกันไม่ให้สัญญาณรบกวนจากไฟบ้านหรือขดลวดรีเลย์ย้อนกลับมาทำลายไมโครคอนโทรลเลอร์ \n\nเหมาะมากสำหรับโปรเจกต์ Smart Home ที่ต้องการคุมไฟหลายจุดพร้อมกัน",
+        "en": "This 4-channel module employs Optocouplers to provide complete optical isolation between the low-voltage MCU and the relay coils. \n\nBy removing the JD-VCC jumper and powering the coils separately, you essentially eliminate the risk of electromagnetic interference (EMI) crashing your Arduino, which is critical when switching multiple inductive loads."
+    },
+    "technical_specs": [
+        {
+            "label": "Channels",
+            "value": "4 Independent"
+        },
+        {
+            "label": "Supply Voltage",
+            "value": "5V DC"
+        },
+        {
+            "label": "Load Rating",
+            "value": "10A 250VAC"
+        },
+        {
+            "label": "Logic",
+            "value": "Active Low (Usually)"
+        },
+        {
+            "label": "Total Current",
+            "value": "~280mA (All ON)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿60 - ฿90",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=relay%20module%204%20channel"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+relay+4ch"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ฝั่งควบคุม (6 ขา): VCC, GND, และ IN1-IN4 ฝั่ง Output (AC/DC): COM, NO, และ NC สำหรับรีเลย์แต่ละตัวแยกกัน",
+        "en": "Control side (6 pins): VCC, GND, and IN1-IN4. Output side (AC/DC): COM, NO, and NC contacts for each of the 4 relays."
+    },
+    "tips": {
+        "th": [
+            "ถ้าเปิดพร้อมกัน 4 ตัว จะกินกระแสสูง (~300mA) ควรใช้แหล่งจ่ายไฟแยก",
+            "ถอดจัมเปอร์ JD-VCC ออกแล้วจ่ายไฟ 5V แยกเข้าขา JD-VCC เพื่อความเสถียรสูงสุด"
+        ],
+        "en": [
+            "Turning all 4 relays ON draws significant current (~300mA); do not power directly from Arduino 5V pin",
+            "Remove JD-VCC jumper and power coils externally for full isolation stability"
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>Wiring (Control):</b> ต่อ VCC, GND เข้ากับบอร์ด และ IN1-IN4 เข้ากับ Digital Pins",
+                    "<b>Wiring (Power):</b> แนะนำให้ถอดจัมเปอร์ JD-VCC และเอาไฟ 5V นอกเข้าที่ขา JD-VCC และ GND (เพื่อแยกวงจร)",
+                    "<b>Logic:</b> โมดูลนี้มักเป็น <b>Active LOW</b> คือส่งป้อน GND (LOW) เพื่อเปิดให้ทำงาน"
+                ],
+                "en": [
+                    "<b>Signal Wiring:</b> Connect VCC and GND to MCU. Connect IN1-IN4 to Digital Outputs.",
+                    "<b>Isolation (Recommended):</b> Remove the JD-VCC cap. Feed external 5V Adapter power to the JD-VCC pin for coil power.",
+                    "<b>Logic:</b> Most 4-Relay boards are <b>Active LOW</b>. Write <code>LOW</code> to turn ON, and <code>HIGH</code> to turn OFF."
+                ]
+            }
+        }
+    ]
+}

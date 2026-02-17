@@ -1,0 +1,132 @@
+{
+    "id": "loadcell-hx711",
+    "category": "module",
+    "image": "asset/loadcell-hx711.png",
+    "title": {
+        "th": "Load Cell + HX711",
+        "en": "Load Cell + HX711 Module"
+    },
+    "sub_title": {
+        "th": "โมดูลเครื่องชั่งน้ำหนักดิจิทัล",
+        "en": "Digital Weight Scale Module"
+    },
+    "description": {
+        "th": "การรวมกันของ Load Cell (เซนเซอร์แรงกด) และ HX711 (ADC 24-bit) เพื่อใช้สร้างเครื่องชั่งน้ำหนัก",
+        "en": "A combination of a Load Cell (weight sensor) and HX711 (24-bit ADC) used to build digital weight scales."
+    },
+    "specs": [
+        {
+            "label": "ADC",
+            "value": "24-bit Precision"
+        },
+        {
+            "label": "Load Op",
+            "value": "1kg, 5kg, 10kg, 50kg"
+        },
+        {
+            "label": "Protocol",
+            "value": "Serial-like (Data/Clock)"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เครื่องชั่งน้ำหนัก",
+            "นับจำนวนสินค้า"
+        ],
+        "en": [
+            "Weight Scales",
+            "Inventory Counting"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "เครื่องชั่งน้ำหนักดิจิทัล",
+                "desc": "สร้างตาชั่งสำหรับชั่งพัสดุหรือส่วนผสมอาหารที่แสดงผลผ่านหน้าจอ LCD"
+            },
+            {
+                "title": "ระบบนับสต็อกอัตโนมัติ",
+                "desc": "ใช้ตรวจสอบจำนวนของในกล่องโดยดูจากน้ำหนักรวม (เช่น กล่องน็อต)"
+            }
+        ],
+        "en": [
+            {
+                "title": "Digital Kitchen Scale",
+                "desc": "Build a precise scale for weighing food ingredients or postal packages with LCD readout."
+            },
+            {
+                "title": "Smart Inventory Bin",
+                "desc": "Automatically count small parts (like screws) by dividing total weight by single unit weight."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "Load Cell คือแท่งโลหะที่มี Strain Gauge แปะอยู่ เมื่อมีแรงกด ตัวแท่งจะบิดตัวเล็กน้อยทำให้ค่าความต้านทานเปลี่ยนไป ส่วน HX711 คือตัวแปลงสัญญาณ Analog เป็น Digital (ADC) ที่มีความละเอียดสูงถึง 24-bit เพื่ออ่านค่าความเปลี่ยนแปลงที่เล็กมากๆ นั้น \n\nข้อควรระวัง: สัญญาณจาก Load Cell ไวต่อสัญญาณรบกวนมาก สายไฟไม่ควรยาวเกินไปและควรตีเกลียวคู่สายสัญญาณ",
+        "en": "A Load Cell is a metal bar with strain gauges detached. When weight is applied, the bar bends microscopically, changing resistance. The HX711 is a specialized 24-bit ADC designed to amplify and read these tiny changes.\n\nNoise Warning: Because it measures microvolts, the setup is very sensitive to electromagnetic interference. Keep wires short and twisted."
+    },
+    "technical_specs": [
+        {
+            "label": "ADC Precision",
+            "value": "24-bit"
+        },
+        {
+            "label": "Gain",
+            "value": "128 or 64"
+        },
+        {
+            "label": "Voltage",
+            "value": "2.6V - 5.5V"
+        },
+        {
+            "label": "Data Rate",
+            "value": "10Hz or 80Hz"
+        },
+        {
+            "label": "Capacity",
+            "value": "Varies (1kg/5kg/10kg/50kg)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿40 - ฿100",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=hx711%20load%20cell"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+load+cell"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ฝั่ง MCU: VCC (2.7-5V), GND, DT (Data), และ SCK (Clock) ฝั่ง Loadcell: E+, E- (Excitation) และ A+, A- (Signal)",
+        "en": "MCU side: VCC (2.7-5V), GND, DT (Data), and SCK (Clock). Load cell side: E+, E- (Excitation) and A+, A- (Signal inputs)."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การสอบเทียบ (Calibration)",
+                "en": "Calibration Process"
+            },
+            "steps": {
+                "th": [
+                    "<b>Wiring:</b> ต่อสายตามสี (แดง E+, ดำ E-, ขาว A-, เขียว A+)",
+                    "<b>Zero:</b> วางตาชั่งเปล่า รันโค้ดหาค่า 'Tare' (น้ำหนักเริ่มต้น)",
+                    "<b>Calibrate:</b> วางตุ้มน้ำหนักมาตรฐาน (เช่น 1kg) แล้วปรับค่าตัวหาร (Calibration Factor) ในโค้ดจนกว่าจะอ่านได้ 1.000 kg",
+                    "<b>Save:</b> จดค่า Factor นั้นไว้ใช้ในโปรเจกต์จริง"
+                ],
+                "en": [
+                    "<b>Wiring:</b> Red->E+, Black->E-, White->A-, Green->A+ (Standard color code).",
+                    "<b>Tare:</b> Run 'Tare' sketch with an empty scale to zero it out.",
+                    "<b>Measure:</b> Place a known weight (e.g., 1kg phone) on the scale.",
+                    "<b>Adjust:</b> Tweak the 'Calibration Factor' variable until the serial monitor shows exactly '1.0 kg'."
+                ]
+            }
+        }
+    ]
+}

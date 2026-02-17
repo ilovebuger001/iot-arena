@@ -1,0 +1,162 @@
+{
+  "id": "dht11",
+  "category": "sensor",
+  "image": "asset/dht11.jpg",
+  "title": {
+    "th": "DHT11",
+    "en": "DHT11"
+  },
+  "sub_title": {
+    "th": "เซนเซอร์อุณหภูมิและความชื้นดิจิทัล",
+    "en": "Digital Humidity & Temperature Sensor"
+  },
+  "description": {
+    "th": "DHT11 เป็นเซนเซอร์พื้นฐานที่ให้ข้อมูลอุณหภูมิและความชื้นสัมพัทธ์ในรูปแบบดิจิทัลผ่านสายสัญญาณเส้นเดียว (Single-bus) ภายในประกอบด้วยส่วนวัดความชื้นแบบเก็บประจุ (Capacitive) และเทอร์มิสเตอร์ (NTC) สำหรับวัดอุณหภูมิ เหมาะสำหรับงานตรวจสอบสภาพอากาศในอาคารหรืองานเกษตรอัจฉริยะเบื้องต้น",
+    "en": "The DHT11 is a basic, ultra low-cost digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin. It's fairly simple to use, but requires careful timing to grab data. The only real downside is that you can only get new data from it once every second."
+  },
+  "specs": [
+    {
+      "label": "Humidity Range",
+      "value": "20-90% RH (±5% Error)"
+    },
+    {
+      "label": "Temp Range",
+      "value": "0-50°C (±2.0°C Error)"
+    },
+    {
+      "label": "Operating Voltage",
+      "value": "3V to 5.5V"
+    },
+    {
+      "label": "Output Type",
+      "value": "Digital (Single-Bus)"
+    },
+    {
+      "label": "Sampling Rate",
+      "value": "1 Hz (Once per second)"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "สถานีวัดอากาศ",
+      "เกษตรอัจฉริยะ",
+      "ระบบควบคุมห้องเซิร์ฟเวอร์",
+      "ตู้ฟักไข่"
+    ],
+    "en": [
+      "Weather Station",
+      "Smart Agriculture",
+      "Server Room Monitoring",
+      "Egg Incubator"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "ระบบควบคุมความชื้นในโรงเห็ด",
+        "desc": "ใช้พ่นสเปรย์ละอองน้ำโดยอัตโนมัติเมื่อความชื้นต่ำกว่า 70% เพื่อรักษาผลผลิต"
+      },
+      {
+        "title": "แจ้งเตือนอุณหภูมิห้องเซิร์ฟเวอร์",
+        "desc": "ส่งการแจ้งเตือนเมื่อระบบระบายอากาศขัดข้องและอุณหภูมิสูงเกินขีดจำกัด"
+      }
+    ],
+    "en": [
+      {
+        "title": "Mushroom Farm Control",
+        "desc": "Automatically trigger misting systems when humidity drops below 70% to ensure yield."
+      },
+      {
+        "title": "Server Room Overheat Alert",
+        "desc": "Send emergency alerts if the cooling system fails and temperatures exceed safety limits."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "DHT11 เป็นเซนเซอร์วัดอุณหภูมิและความชื้นที่นิยมใช้มากที่สุดสำหรับผู้เริ่มต้น ประกอบด้วยส่วนวัดความชื้นแบบ Capacitive (วัดค่าการเปลี่ยนแปลงประจุไฟฟ้าตามความชื้น) และ Thermistor สำหรับวัดอุณหภูมิ มีชิปประมวลผลภายในแปลงสัญญาณเป็นดิจิทัลส่งออกมาทางขา Data เพียงขาเดียว (Single-wire protocol) \n\nข้อจำกัดคือมีความหน่วงเวลา (Latency) ประมาณ 1-2 วินาที และความละเอียดไม่สูงมาก หากต้องการความแม่นยำสำหรับโรงเพาะเห็ดหรือห้องควบคุมอุณหภูมิ แนะนำให้ขยับไปใช้ DHT22",
+    "en": "The DHT11 is the most popular starting point for environmental logging. Inside the blue casing lies a capacitive humidity sensor and a thermistor. A basic chip handles the analog-to-digital conversion and spits out data via a custom single-wire protocol.\n\nIt's important to note its limitations: it has a slow sampling rate (1Hz max) and relatively low resolution (1°C steps). For precision applications like incubators, the DHT22 is a better choice."
+  },
+  "technical_specs": [
+    {
+      "label": "Humidity Range",
+      "value": "20-90% RH"
+    },
+    {
+      "label": "Humidity Accuracy",
+      "value": "±5% RH"
+    },
+    {
+      "label": "Temp Range",
+      "value": "0-50°C"
+    },
+    {
+      "label": "Temp Accuracy",
+      "value": "±2.0°C"
+    },
+    {
+      "label": "Sampling Rate",
+      "value": "1 Hz (Max)"
+    },
+    {
+      "label": "Operating Voltage",
+      "value": "3.5V - 5.5V"
+    },
+    {
+      "label": "Standby Current",
+      "value": "60uA"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿35 - ฿60",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=dht11"
+      },
+      {
+        "title": "AliExpress",
+        "url": "https://www.aliexpress.com/w/wholesale-dht11.html"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "หากต้องการความแม่นยำสูงขึ้น ควรใช้ DHT22 แทน",
+      "อย่าอ่านค่าถี่กว่า 1 ครั้งต่อวินาที (ใช้ delay(2000) ปลอดภัยสุด)"
+    ],
+    "en": [
+      "Use DHT22 for higher accuracy and wider range",
+      "Do not read faster than once per second (delay(2000) is safest)"
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วย 3 ขา (บนโมดูล): VCC, Data (SDA), และ GND หากเป็นตัวเปล่า 4 ขา ให้เว้นขา 3 ไว้",
+    "en": "3-pin module: VCC, Data (SDA), and GND. If using the 4-pin bare sensor, pin 3 is not connected."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "<b>เตรียมอุปกรณ์:</b><br>เซนเซอร์ DHT11, ตัวต้านทาน 10k (ถ้าจำเป็น), และบอร์ด Arduino",
+          "<b>การเชื่อมต่อ:</b><br>ต่อขา VCC, GND ส่วนขา Data ต่อเข้าขา Digital (เช่น D2) อย่าลืม Pull-up Resistor ถ้าใช้ตัวเปล่า",
+          "<b>ติดตั้ง Library:</b><br>ค้นหาและติดตั้ง <b>'DHT sensor library'</b> โดย Adafruit ใน Library Manager",
+          "<b>เขียนโค้ด:</b><br>ใช้ Example 'DHTtester' ได้เลย แค่แก้ <code>#define DHTPIN 2</code> และ <code>#define DHTTYPE DHT11</code> ให้ตรง"
+        ],
+        "en": [
+          "<b>Hardware:</b><br>DHT11 Sensor, 10k Resistor (if needed), Arduino board.",
+          "<b>Wiring:</b><br>Connect VCC, GND, and Data to a Digital Pin (e.g., D2). Add a 10k Pull-up resistor if using the bare sensor.",
+          "<b>Library:</b><br>Install <b>'DHT sensor library'</b> by Adafruit via Library Manager.",
+          "<b>Tests:</b><br>Open the 'DHTtester' example. Update <code>#define DHTPIN 2</code> and <code>#define DHTTYPE DHT11</code> to match your setup."
+        ]
+      }
+    }
+  ]
+}

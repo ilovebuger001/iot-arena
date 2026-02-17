@@ -1,0 +1,164 @@
+{
+    "id": "nrf24l01",
+    "category": "module",
+    "image": "asset/nrf24l01.png",
+    "title": {
+        "th": "nRF24L01+ 2.4GHz",
+        "en": "nRF24L01+ 2.4GHz RF"
+    },
+    "sub_title": {
+        "th": "โมดูลสื่อสารไร้สายคลื่นวิทยุ",
+        "en": "Wireless RF Transceiver"
+    },
+    "description": {
+        "th": "ชิปสื่อสารไร้สาย 2.4GHz ราคาถูกและประหยัดพลังงาน เหมาะสำหรับการสื่อสารระหว่างบอร์ดแบบ Point-to-Point",
+        "en": "A low-cost, low-power 2.4GHz wireless transceiver chip suitable for peer-to-peer board communication."
+    },
+    "specs": [
+        {
+            "label": "Frequency",
+            "value": "2.4 GHz"
+        },
+        {
+            "label": "Range",
+            "value": "100m (Open space)"
+        },
+        {
+            "label": "Interface",
+            "value": "SPI"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "รีโมทคอนโทรล",
+            "เซนเซอร์ไร้สายระยะใกล้"
+        ],
+        "en": [
+            "Remote Control",
+            "Wireless Sensor Nodes"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบ Smart Home ไร้สาย",
+                "desc": "ใช้สลับการทำงานสลับกับการหลับ (Sleep Mode) ของเซนเซอร์เพื่อให้อยู่ได้นานหลายเดือนด้วยถ่านกระดุม"
+            },
+            {
+                "title": "รีโมทคอนโทรลสำหรับโดรนหรือหุ่นยนต์",
+                "desc": "ส่งข้อมูลดิบ (Raw Data) ขนาด 32 ไบต์ ได้อย่างรวดเร็วและมีความหน่วงต่ำ (Low Latency)"
+            }
+        ],
+        "en": [
+            {
+                "title": "Low Power Smart Home Nodes",
+                "desc": "Cycle between deep sleep and transmission to run sensor nodes for months on a coin cell."
+            },
+            {
+                "title": "Custom Drone/Robot Remote",
+                "desc": "Transmit 32-byte raw payloads with extremely low latency for high-speed maneuvering."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "nRF24L01+ เป็นโมดูลรับส่งสัญญาณวิทยุความถี่ 2.4GHz ที่ได้รับความนิยมสูงสุดในหมู่นักประดิษฐ์ เนื่องจากราคาถูกมากและกินไฟต่ำ \n\nจุดเด่น: สามารถกำหนดท่อส่งข้อมูล (Pipe) ได้ถึง 6 ท่อ ทำให้ตัวรับ 1 ตัวสามารถรับข้อมูลจากตัวส่ง 6 ตัวพร้อมกันได้ (Mesh Network อย่างง่าย) เหมาะสำหรับทำระบบ Sensor Network ในบ้าน \n\nข้อควรระวัง: ปัญหาที่พบบ่อยที่สุดคือ 'ไฟเลี้ยงไม่พอ' แม้จะใช้ไฟ 3.3V จากบอร์ด Arduino ก็อาจจะไม่เสถียรพอ ทำให้ส่งข้อมูลไม่ออก ต้องต่อ Capacitor 10uF-100uF คร่อมขา VCC-GND ที่ตัวโมดูลเสมอ",
+        "en": "The nRF24L01+ is the most popular 2.4GHz RF transceiver for hobbyists due to its ultra-low cost and power consumption.\n\nFeature: MultiCeiver™ technology allows one receiver to listen to 6 transmitters simultaneously, making it perfect for star-topology sensor networks.\n\nTroubleshooting: 99% of issues are power-related. The instantaneous current spikes during transmission can cause voltage drops on standard Arduino 3.3V rails. ALWAYS solder a 10uF-100uF capacitor directly across the VCC and GND pins of the module."
+    },
+    "technical_specs": [
+        {
+            "label": "Frequency",
+            "value": "2.4 GHz ISM Band"
+        },
+        {
+            "label": "Max Speed",
+            "value": "2 Mbps"
+        },
+        {
+            "label": "Voltage",
+            "value": "1.9V - 3.6V"
+        },
+        {
+            "label": "Logic Level",
+            "value": "5V Tolerant I/O"
+        },
+        {
+            "label": "Range",
+            "value": "100m (PCB Antenna)"
+        },
+        {
+            "label": "Range (PA+LNA)",
+            "value": "1000m (External Antenna)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿25 - ฿150",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=nrf24l01"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+nrf24l01"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ต้องใช้แรงดัน 3.3V เท่านั้น (ห้ามต่อ 5V เข้า VCC)",
+            "ขา RX/TX ทนแรงดัน 5V ได้ (5V Tolerant) แต่ VCC ไม่ทน",
+            "การต่อตัวเก็บประจุ 10uF-100uF ระหว่าง VCC/GND ช่วยลดปัญหาเชื่อมต่อหลุดได้ดีที่สุด"
+        ],
+        "en": [
+            "Use 3.3V for VCC ONLY (5V will destroy the chip immediately)",
+            "The I/O pins are 5V tolerant, meaning they can interface with Arduino Uno safely",
+            "Soldering a 10uF-100uF capacitor across VCC and GND pins is the best fix for 'Connection Failed' errors"
+        ]
+    },
+    "pinout_desc": {
+        "th": "เชื่อมต่อแบบ SPI รวม 8 ขา: GND, VCC (3.3V เท่านั้น!), CE, CSN, SCK, MOSI, MISO, และ IRQ",
+        "en": "8-pin SPI interface: GND, VCC (3.3V STRICTLY!), CE, CSN, SCK, MOSI, MISO, and IRQ."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การเชื่อมต่อ SPI (Pinout)",
+                "en": "SPI Wiring Guide"
+            },
+            "steps": {
+                "th": [
+                    "ต่อ <b>MISO, MOSI, SCK</b> เข้ากับขา SPI ของบอร์ด",
+                    "ขา <b>CE</b> และ <b>CSN</b> สามารถกำหนดเป็นขา Digital ใดก็ได้ในโค้ด",
+                    "ขา <b>IRQ</b> ใช้สำหรับขัดจังหวะ (Interrupt) เมื่อมีข้อมูลเข้า (ไม่จำเป็นต้องต่อหากใช้การ Polling)"
+                ],
+                "en": [
+                    "Connect <b>MISO, MOSI, SCK</b> to the corresponding hardware SPI pins on your MCU",
+                    "<b>CE</b> and <b>CSN</b> can be mapped to any available digital pins in your software constructor",
+                    "The <b>IRQ</b> pin triggers an interrupt when data is received (optional for basic polling logic)"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "พื้นฐานการเขียนโปรแกรม RF24",
+                "en": "RF24 Programming Setup"
+            },
+            "steps": {
+                "th": [
+                    "ติดตั้งไลบรารี <b>'RF24'</b> โดย TMRh20",
+                    "เลือก <b>Pipe Address</b> (เช่น 0xF0F0F0F0E1LL) ให้ตรงกันทั้งฝั่งส่งและฝั่งรับ",
+                    "ใช้คำสั่ง <code>radio.write(&data, sizeof(data))</code> เพื่อทำการส่งข้อมูล"
+                ],
+                "en": [
+                    "Install the <b>'RF24'</b> library by TMRh20 from the Library Manager",
+                    "Set a matching <b>Pipe Address</b> (e.g., 0xF0F0F0F0E1LL) for both transmitter and receiver",
+                    "Call <code>radio.write(&data, sizeof(data))</code> to broadcast your payload"
+                ]
+            }
+        }
+    ]
+}

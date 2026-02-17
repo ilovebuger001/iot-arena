@@ -1,0 +1,142 @@
+{
+    "id": "gps-neo6m",
+    "category": "module",
+    "image": "asset/gps-neo6m.png",
+    "title": {
+        "th": "GPS Neo-6M",
+        "en": "GPS Neo-6M Module"
+    },
+    "sub_title": {
+        "th": "โมดูลรับสัญญาณพิกัดดาวเทียม",
+        "en": "Satellite Positioning Module"
+    },
+    "description": {
+        "th": "โมดูล GPS ยอดนิยมสำหรับระบุพิกัดละติจูดและลองจิจูดจากดาวเทียม สื่อสารผ่าน Serial (UART)",
+        "en": "A popular GPS module for identifying latitude and longitude coordinates from satellites, using Serial (UART) communication."
+    },
+    "specs": [
+        {
+            "label": "Frequency",
+            "value": "L1 (1575.42 MHz)"
+        },
+        {
+            "label": "Accuracy",
+            "value": "2.5m CEP"
+        },
+        {
+            "label": "Interface",
+            "value": "UART (9600 baud)"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เครื่องติดตามรถยนต์",
+            "โดรนอัตโนมัติ"
+        ],
+        "en": [
+            "Vehicle Tracking",
+            "Autonomous Drones"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบบันทึกเส้นทางจักรยาน (Bike Logger)",
+                "desc": "บันทึกพิกัดทุกๆ 5 วินาทีลงใน SD Card เพื่อนำไปเปิดดูเส้นทางย้อนหลังใน Google Maps"
+            },
+            {
+                "title": "นาฬิกาเทียบเวลามาตรฐาน (GPS Clock)",
+                "desc": "ดึงข้อมูลเวลาที่แม่นยำสูงจากดาวเทียมมาแสดงผลบนหน้าจอ โดยไม่ต้องใช้โมดูล RTC"
+            }
+        ],
+        "en": [
+            {
+                "title": "Bike Path Logger",
+                "desc": "Record coordinates every 5 seconds to an SD card for later visualization on Google Maps or Earth."
+            },
+            {
+                "title": "High-Precision GPS Clock",
+                "desc": "Extract hyper-accurate time data from satellites to drive a clock display without needing an RTC module."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "NEO-6M เป็นโมดูล GPS ราคาประหยัดที่ทำงานได้ดีในที่โล่งแจ้ง \n\nข้อจำกัด: สัญญาณดาวเทียม GPS ไม่สามารถทะลุอาคารคอนกรีตได้ ดังนั้น 'ห้ามทดสอบในบ้าน' เพราะจะไม่มีทางจับสัญญาณได้ (No Fix) ต้องออกไปที่ระเบียงหรือดาดฟ้าที่เห็นท้องฟ้าชัดเจน \n\nCold Start: การเปิดใช้งานครั้งแรกอาจใช้เวลานานถึง 5-10 นาทีในการดาวน์โหลดข้อมูลวงโคจร",
+        "en": "The NEO-6M is a standard GPS module. \n\nCRITICAL: GPS signals cannot penetrate concrete roofs. You MUST test this module OUTDOORS with a clear view of the sky. \n\nTime-to-First-Fix (TTFF): A cold start can take up to 10 minutes. Once the backup battery charges and ephemeris data is stored, it will lock in seconds (Warm Start)."
+    },
+    "technical_specs": [
+        {
+            "label": "Protocol",
+            "value": "NMEA 0183"
+        },
+        {
+            "label": "Baud Rate",
+            "value": "9600 Default"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        },
+        {
+            "label": "Antenna",
+            "value": "Ceramic Passive"
+        },
+        {
+            "label": "Accuracy",
+            "value": "~2.5m"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿150 - ฿250",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=gps%20neo-6m"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+gps+module"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ไฟกระพริบ = จับสัญญาณได้แล้ว, ไฟไม่ติด/ติดค้าง = กำลังหาสัญญาณ",
+            "ใช้ Serial ภายใน (SoftwareSerial) กับขา 3, 4 แทนขา 0, 1 เพื่อให้ยัง Upload โค้ดได้"
+        ],
+        "en": [
+            "Blinking LED = Satellite Fix obtained. Solid/No LED = Searching.",
+            "Use SoftwareSerial on pins 3/4 (TX/RX) so you don't block the main hardware USB serial."
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 4 ขาหลัก: VCC (3.3-5V), GND, TX (ส่งข้อมูล), และ RX (รับข้อมูล) เชื่อมต่อผ่าน Serial UART",
+        "en": "Features 4 main pins: VCC (3.3-5V), GND, TX (Data Transmit), and RX (Data Receive). Connects via Serial UART interface."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การต่อสายและทดสอบ",
+                "en": "Wiring & Testing"
+            },
+            "steps": {
+                "th": [
+                    "<b>Wiring:</b> VCC->5V, GND->GND, TX->Pin 3, RX->Pin 4 (บน Arduino)",
+                    "<b>Library:</b> ติดตั้ง <code>TinyGPS++</code> และ <code>SoftwareSerial</code>",
+                    "<b>Outdoors:</b> นำบอร์ดออกไปวางกลางแจ้ง รอจนไฟสีฟ้ากระพริบ",
+                    "<b>Code:</b> ใช้ตัวอย่าง 'DeviceExample' ในไลบรารี ปรับ Baud rate เป็น 9600"
+                ],
+                "en": [
+                    "<b>Wiring:</b> VCC=5V, GND=GND, TX=D3, RX=D4 (Cross-over not needed for SoftwareSerial usually, but check docs).",
+                    "<b>Library:</b> Install <code>TinyGPS++</code> by Mikal Hart.",
+                    "<b>Position:</b> Place antenna FLAT facing the sky. Wait for the blink.",
+                    "<b>Code:</b> Load 'FullExample', set baud to 9600. Check Serial Monitor."
+                ]
+            }
+        }
+    ]
+}

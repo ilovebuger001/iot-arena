@@ -1,0 +1,138 @@
+{
+    "id": "soil-moisture",
+    "category": "sensor",
+    "image": "asset/soil-moisture.png",
+    "title": {
+        "th": "Soil Moisture Sensor",
+        "en": "Soil Moisture Sensor"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์วัดความชื้นในดิน",
+        "en": "Analog Soil Moisture Sensor"
+    },
+    "description": {
+        "th": "ใช้สำหรับวัดระดับน้ำหรือความชื้นในดิน โดยการวัดความต้านทานไฟฟ้าหรือความจุไฟฟ้า",
+        "en": "Used to measure the water content or moisture levels in soil through electrical resistance or capacitance."
+    },
+    "specs": [
+        {
+            "label": "Output",
+            "value": "Analog & Digital"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        },
+        {
+            "label": "Probe",
+            "value": "Anti-corrosion coating"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "รดน้ำต้นไม้อัตโนมัติ",
+            "Smart Farm"
+        ],
+        "en": [
+            "Automatic Plant Watering",
+            "Smart Farm Monitoring"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบรดน้ำสวนผักอัจฉริยะ",
+                "desc": "เมื่อดินแห้ง เซนเซอร์จะส่งสัญญาณให้รีเลย์เปิดปั๊มน้ำจนกว่าความชื้นจะถึงจุดที่กำหนด"
+            },
+            {
+                "title": "เครื่องเฝ้าสังเกตการณ์สุขภาพพืชในกระถาง",
+                "desc": "เฝ้าดูความชื้นผ่านแอปพลิเคชัน เพื่อส่งการแจ้งเตือนหากลืมรดน้ำต้นไม้เป็นเวลานาน"
+            }
+        ],
+        "en": [
+            {
+                "title": "Smart Vegetable Garden",
+                "desc": "Trigger a relay to activate water pumps when soil moisture drops below a pre-set threshold."
+            },
+            {
+                "title": "Potted Plant Health Watch",
+                "desc": "Monitor moisture levels via an app and send push notifications if the plant requires watering."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "เซนเซอร์วัดความชื้นในดินมี 2 ประเภทหลัก: แบบ Resistive วัดความต้านทานไฟฟ้าซึ่งมักเกิดสนิมได้ง่าย และแบบ Capacitive วัดค่าความจุไฟฟ้าซึ่งทนทานกว่ามาก \n\nปัญหาที่พบบ่อยในแบบ Resistive คือปรากฏการณ์การกัดกร่อนเมื่อจ่ายไฟแช่ไว้นานๆ ดังนั้นแนะนำให้ใช้แบบ Capacitive v1.2 ขึ้นไปสำหรับงาน Smart Farm จริงจัง",
+        "en": "Soil Moisture sensors typically come in two flavors: Resistive and Capacitive. The cheap, fork-shaped Resistive probes measure conductivity but suffer from rapid corrosion (electrolysis) in wet soil. The Capacitive sensors (usually black, flat boards) measure dielectric changes and are corrosion-resistant.\n\nFor any long-term project, invest in the **Capacitive v1.2** model. It outputs an analog voltage inversely proportional to moisture level."
+    },
+    "technical_specs": [
+        {
+            "label": "Output",
+            "value": "Analog (0-3V approx)"
+        },
+        {
+            "label": "Input Voltage",
+            "value": "3.3V - 5V"
+        },
+        {
+            "label": "Life Span",
+            "value": "Resistive: Weeks / Capacitive: Years"
+        },
+        {
+            "label": "Interface",
+            "value": "Analog Pin (A0)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿15 - ฿50",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=soil%20moisture%20sensor"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=soil+moisture+capacitive"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 4 ขา: VCC, GND, DO (Digital Threshold-based), และ AO (Analog Sensor Value)",
+        "en": "Features 4 pins: VCC, GND, DO (Digital Output via comparator), and AO (Raw Analog signal)."
+    },
+    "tips": {
+        "th": [
+            "แนะนำให้ใช้แบบ Capacitive (สีดำ) เพราะทนทานกว่าแบบ Resistive (สีเงิน) มาก",
+            "ค่าที่ได้เป็น Analog ต้องนำไป Calibrate เอง"
+        ],
+        "en": [
+            "We highly recommend Capacitive (Black) over Resistive (Silver/Gold) sensors",
+            "The output is a raw Analog value; you must calibrate 'Dry' vs 'Wet' ranges manually"
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>เลือกเซนเซอร์:</b> ถ้าเป็นไปได้ ให้เลือกใช้แบบ <b>Capacitive v1.2</b>",
+                    "<b>การ Wiring:</b> ต่อ VCC (3.3V/5V), GND, และขา AOUT เข้าขา Analog (A0) ของบอร์ด",
+                    "<b>การ Calibrate:</b> เขียนโค้ดอ่านค่า Analog วางเซนเซอร์ไว้ในอากาศ (จดค่า 'Dry') และจุ่มในน้ำแก้ว (จดค่า 'Wet')",
+                    "<b>การแปลงค่า:</b> ใช้ฟังก์ชัน <code>map(val, dry, wet, 0, 100)</code> เพื่อแปลงเป็น % ความชื้น"
+                ],
+                "en": [
+                    "<b>Selection:</b> Choose the <b>Capacitive v1.2</b> sensor (black PCB) for longevity.",
+                    "<b>Wiring:</b> VCC, GND, and Aout to an Analog Pin (e.g., A0, VP, or 36 on ESP32).",
+                    "<b>Calibration:</b> Read raw values in air (Dry ~3000-4095 depending on resolution) and in a cup of water (Wet ~1000-1500).",
+                    "<b>Mapping:</b> Use the <code>map()</code> function to convert these raw limits into a 0-100% scale in your code."
+                ]
+            }
+        }
+    ]
+}

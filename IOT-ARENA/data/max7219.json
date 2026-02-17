@@ -1,0 +1,162 @@
+{
+    "id": "max7219",
+    "category": "display",
+    "image": "asset/max7219.png",
+    "title": {
+        "th": "MAX7219 8x8 Matrix",
+        "en": "MAX7219 8x8 LED Matrix"
+    },
+    "sub_title": {
+        "th": "หน้าจอ LED ดอทเมทริกซ์",
+        "en": "LED Dot Matrix Display"
+    },
+    "description": {
+        "th": "หน้าจอ LED ขนาด 8x8 ที่สามารถต่อขยาย (Daisy Chain) เพื่อทำเป็นป้ายไฟวิ่งได้",
+        "en": "An 8x8 LED matrix driven by the MAX7219 chip, which can be daisy-chained for rolling text displays."
+    },
+    "specs": [
+        {
+            "label": "Matrix Size",
+            "value": "8x8 Red LEDs"
+        },
+        {
+            "label": "Interface",
+            "value": "SPI Interface"
+        },
+        {
+            "label": "Cascadable",
+            "value": "Yes (Daisy Chain)"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "ป้ายข้อความวิ่ง",
+            "แสดงอีโมจิ"
+        ],
+        "en": [
+            "Scrolling Marquees",
+            "Emoji Displays"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "นาฬิกาดิจิทัลป้ายไฟวิ่ง",
+                "desc": "แสดงเวลาสลับกับข้อความหรือแจ้งเตือนจากอินเทอร์เน็ต (เช่น จำนวนผู้ติดตาม)"
+            },
+            {
+                "title": "หน้าปัดหุ่นยนต์แสดงอารมณ์",
+                "desc": "สร้างรูปดวงตาที่สามารถกระพริบหรือเปลี่ยนรูปทรงตามสถานะของหุ่นยนต์"
+            }
+        ],
+        "en": [
+            {
+                "title": "Smart Ticker Display",
+                "desc": "Display scrolling stocks, time, or social media follower counts in a retro dot-matrix style."
+            },
+            {
+                "title": "Robot Emotional Face",
+                "desc": "Create animated eyes or expression patterns that change based on robot interactions."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "MAX7219 เป็นชิปควบคุม LED แบบ Matrix หรือ 7-segment ที่ฉลาดมาก สามารถคุมไฟได้ถึง 64 ดวง (8x8) โดยใช้สายสัญญาณแค่ 3 เส้น และยังสามารถต่อพ่วง (Daisy Chain) ไปยังโมดูลถัดไปได้เรื่อยๆ เหมือนรถไฟ ทำให้เราทำป้ายไฟวิ่งยาวๆ ได้โดยไม่เปลืองขา Arduino",
+        "en": "The MAX7219 is a serial input/output common-cathode display driver that interfaces microprocessors to 7-segment numeric LED displays, bar-graph displays, or 64 individual LEDs. It includes an on-chip BCD code-B decoder, multiplex scan circuitry, segment and digit drivers, and an 8x8 static RAM that stores each digit."
+    },
+    "technical_specs": [
+        {
+            "label": "Driver",
+            "value": "MAX7219"
+        },
+        {
+            "label": "Matrix",
+            "value": "8x8 Red LEDs (Common Cathode)"
+        },
+        {
+            "label": "Voltage",
+            "value": "4.0V - 5.5V"
+        },
+        {
+            "label": "Interface",
+            "value": "SPI (3-wire)"
+        },
+        {
+            "label": "Speed",
+            "value": "10MHz max"
+        },
+        {
+            "label": "Cascading",
+            "value": "Yes (Unlimited)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿40 - ฿80",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=max7219%20dot%20matrix"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+max7219"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "การต่อหลายตัวพร้อมกันอาจต้องการแหล่งจ่ายไฟ 5V แยกนอกบอร์ด",
+            "หากตัวหนังสือแสดงกลับด้าน ให้แก้ไขที่การตั้งค่าโมดูลในไลบรารี (FC16, PAROLA, ฯลฯ)"
+        ],
+        "en": [
+            "Multiple chained matrices require external 5V power",
+            "If text appears mirrored or rotated, adjust the module type in your library config (e.g., FC16_HW)"
+        ]
+    },
+    "pinout_desc": {
+        "th": "เชื่อมต่อแบบ SPI รวม 5 ขา: VCC (5V), GND, DIN (Data In), CS (Load), และ CLK (Clock) ต่อพ่วงได้ทางขา DOUT",
+        "en": "5-pin SPI interface: VCC (5V), GND, DIN (Data In), CS (Load), and CLK (Clock). Daisy-chainable via DOUT pin."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การต่อพ่วง",
+                "en": "Daisy Chaining Units"
+            },
+            "steps": {
+                "th": [
+                    "ต่อขา <b>VCC, GND, DIN, CS, CLK</b> เข้ากับบอร์ด",
+                    "ส่วนการต่อพ่วง ให้ต่อขา <b>DOUT</b> ของตัวแรกเข้ากับ <b>DIN</b> ของตัวถัดไป",
+                    "แนะให้ใช้สายไฟเส้นใหญ่สำหรับไฟเลี้ยงหากต่อมากกว่า 4 ตัวเพื่อป้องกันไฟตก"
+                ],
+                "en": [
+                    "Standard wiring involves <b>VCC, GND, DIN, CS, and CLK</b> pins connected to hardware SPI",
+                    "To extend the display, connect <b>DOUT</b> of the primary module to <b>DIN</b> of the secondary",
+                    "Use thicker gauge wires for the VCC line when chaining more than 4 units to prevent dimming"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การจัดวางฮาร์ดแวร์",
+                "en": "Hardware Orientation"
+            },
+            "steps": {
+                "th": [
+                    "ไลบรารี <b>'MD_Parola'</b> และ <b>'MD_MAX72XX'</b> เป็นที่นิยมที่สุดสำหรับการทำเอฟเฟกต์ไฟวิ่ง",
+                    "ต้องระบุชนิดของโมดูลให้ถูก (เช่น <code>FC16_HW</code>) เพื่อให้ตัวหนังสือเรียงตัวถูกต้อง",
+                    "สามารถปรับความสว่าง (Intensity) ได้ผ่านโค้ดตั้งแต่ 0 ถึง 15"
+                ],
+                "en": [
+                    "The <b>'MD_Parola'</b> library is recommended for sophisticated scrolling animations and effects",
+                    "Define the hardware type (e.g., <code>FC16_HW</code>) during initialization to match your module layout",
+                    "Digital brightness control is available; use <code>setIntensity(0-15)</code> to save power"
+                ]
+            }
+        }
+    ]
+}

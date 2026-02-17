@@ -1,0 +1,162 @@
+{
+    "id": "esp32-cam",
+    "category": "mcu",
+    "image": "asset/esp32-cam.png",
+    "title": {
+        "th": "ESP32-CAM",
+        "en": "ESP32-CAM Module"
+    },
+    "sub_title": {
+        "th": "ไมโครคอนโทรลเลอร์พร้อมกล้อง",
+        "en": "WiFi + BT MCU with OV2640"
+    },
+    "description": {
+        "th": "บอร์ด ESP32 ขนาดเล็กที่มาพร้อมกับโมดูลกล้อง OV2640 และช่องใส่ MicroSD Card เหมาะสำหรับการทำสตรีมมิ่ง",
+        "en": "A small-sized camera module based on ESP32, integrating an OV2640 camera and microSD slot for vision tasks."
+    },
+    "specs": [
+        {
+            "label": "MCU",
+            "value": "ESP32-S"
+        },
+        {
+            "label": "Camera",
+            "value": "OV2640 (2MP)"
+        },
+        {
+            "label": "RAM",
+            "value": "4MB PSRAM (for buffering)"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "สตรีมภาพผ่านเว็บ",
+            "จดจำใบหน้า"
+        ],
+        "en": [
+            "Web Video Streaming",
+            "Face Recognition AI"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "กริ่งประตูอัจฉริยะ (Video Doorbell)",
+                "desc": "เมื่อมีคนกดปุ่ม ให้กล้องถ่ายภาพและส่งเข้าแอปพลิเคชัน LINE หรือบันทึกลง SD Card"
+            },
+            {
+                "title": "ระบบสตรีมมิ่งเฝ้าประตูปิด-เปิด",
+                "desc": "เฝ้าดูความเรียบร้อยของบ้านผ่านเว็บเบราว์เซอร์ได้จากทุกที่ทั่วโลก"
+            }
+        ],
+        "en": [
+            {
+                "title": "Smart Video Doorbell",
+                "desc": "Capture photo alerts when a button is pressed and send them to LINE Notify or local storage."
+            },
+            {
+                "title": "Remote Surveillance Streamer",
+                "desc": "Set up a low-cost web server to view live video feeds of your home from any web browser."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "ESP32-CAM เป็นบอร์ดที่คุ้มค่าที่สุดสำหรับการทำกล้องวงจรปิดไร้สาย ใช้ชิป ESP32-S ความเร็วสูง พร้อมแรม PSRAM 4MB ทำให้สามารถสตรีมภาพความละเอียดสูง (UXGA) ผ่าน WiFi ได้ \n\nข้อจำกัด: ไม่มีพอร์ต USB ต้องใช้ตัวแปลงภายนอกในการโปรแกรม และขา GPIO ส่วนใหญ่ถูกใช้ไปกับกล้องและ SD Card ทำให้เหลือขาใช้งานอิสระน้อยมาก (เพียง 1-2 ขา)",
+        "en": "The ESP32-CAM is a low-cost development board based on the ESP32-S module, optimized for video streaming applications. It includes an OV2640 camera and a microSD card slot.\n\nKey Limitation: It lacks a built-in USB-to-Serial converter, requiring an external FTDI adapter for programming. Also, the camera interface consumes almost all GPIO pins, leaving very few for external sensors."
+    },
+    "technical_specs": [
+        {
+            "label": "MCU",
+            "value": "ESP32-S (240MHz)"
+        },
+        {
+            "label": "RAM",
+            "value": "520KB + 4MB PSRAM"
+        },
+        {
+            "label": "Flash",
+            "value": "4 MB"
+        },
+        {
+            "label": "Camera",
+            "value": "OV2640 (2MP)"
+        },
+        {
+            "label": "Storage",
+            "value": "MicroSD Slot"
+        },
+        {
+            "label": "WiFi/BT",
+            "value": "802.11b/g/n + BT 4.2"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿200 - ฿300",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=esp32-cam"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=esp32+camera"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ต้องการไฟ 5V ที่เสถียรมาก มิฉะนั้นภาพอาจจะล้มหรือ WiFi หลุด",
+            "หากอัปโหลดโค้ดไม่ได้ ให้เช็คว่าได้ต่อขา IO0 ลง GND (Flash Mode) แล้วหรือยัง"
+        ],
+        "en": [
+            "Requires a very stable 5V supply to avoid brownouts during WiFi/Camera use",
+            "To enter programming mode, you MUST short IO0 to GND before powering on or resetting."
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วยขา GPIO 10 ขา, รองรับไฟเลี้ยง 5V หรือ 3.3V แข็งแรง และมีขาไฟเลี้ยง Flash ในตัว",
+        "en": "Features 10 GPIOs, 5V or 3.3V power input, and specialized Flash LED power pins."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การโปรแกรมผ่าน FTDI",
+                "en": "Programming with FTDI"
+            },
+            "steps": {
+                "th": [
+                    "บอร์ดไม่มีพอร์ต USB ในตัว ต้องใช้ <b>USB-to-Serial (FTDI)</b> ในการอัปโหลดโค้ด",
+                    "ต่อสาย: <b>VCC->5V, GND->GND, TX->U0R, RX->U0T</b>",
+                    "<b>สำคัญ:</b> ต้องจัมเปอร์ขา <b>IO0</b> เข้ากับ <b>GND</b> เพื่อเข้าโหมดอัปโหลด (Flash Mode)"
+                ],
+                "en": [
+                    "Board lacks an onboard USB port; use an <b>FTDI Adapter</b> (3.3V/5V) for programming",
+                    "Wire it up: <b>TX to U0R</b> and <b>RX to U0T</b>; provide 5V power for stability",
+                    "<b>CRITICAL:</b> Connect <b>IO0 to GND</b> to enter Flash Mode before uploading your sketch"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การตั้งค่าโมเดลกล้อง",
+                "en": "Camera Model Config"
+            },
+            "steps": {
+                "th": [
+                    "ในตัวอย่าง CameraWebServer ต้องเลือกบอร์ดเป็น <code>CAMERA_MODEL_AI_THINKER</code>",
+                    "ตรวจสอบว่าใส่โมดูลกล้อง (Ribbon Cable) เข้ากับสล็อตจนสุดและล็อคแน่น",
+                    "สามารถใช้ <b>Flash LED</b> บนบอร์ดเป็นไฟส่องสว่างตอนกลางคืนได้ผ่านโปรแกรม"
+                ],
+                "en": [
+                    "In the CameraWebServer example, select <code>CAMERA_MODEL_AI_THINKER</code> in the code",
+                    "Ensure the camera ribbon cable is fully seated and locked into the FPC connector",
+                    "The onboard <b>Flash LED</b> can be controlled via code to illuminate dark scenes during capture"
+                ]
+            }
+        }
+    ]
+}

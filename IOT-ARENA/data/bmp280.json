@@ -1,0 +1,154 @@
+{
+  "id": "bmp280",
+  "category": "sensor",
+  "image": "asset/bmp280.png",
+  "title": {
+    "th": "BMP280 Barometric Pressure",
+    "en": "BMP280 Pressure & Temp"
+  },
+  "sub_title": {
+    "th": "เซนเซอร์วัดความดันอากาศและระดับความสูง",
+    "en": "Barometric Pressure & Altimeter"
+  },
+  "description": {
+    "th": "BMP280 เป็นเซนเซอร์วัดความดันบรรยากาศที่มีความแม่นยำสูงมาก สามารถนำไปใช้คำนวณหาระดับความสูงจากระดับน้ำทะเล (Altimeter) ได้ด้วยความละเอียดระดับ 1 เมตร นิยมใช้ในโดรนเพื่อรักษาระดับความสูงและใช้ในสถานีวัดอากาศ",
+    "en": "The BMP280 is a high-precision barometric pressure sensor. Because pressure changes with altitude, you can use it as an altimeter with ±1 meter accuracy. It is widely used in flight controllers for altitude hold and in advanced weather monitoring stations."
+  },
+  "specs": [
+    {
+      "label": "Pressure Range",
+      "value": "300 - 1100 hPa"
+    },
+    {
+      "label": "Temp Accuracy",
+      "value": "±1.0°C"
+    },
+    {
+      "label": "Voltage",
+      "value": "1.8V - 3.6V (3.3V Logic)"
+    },
+    {
+      "label": "Interface",
+      "value": "I2C or SPI"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "สถานีวัดอากาศ",
+      "โดรนรักษาระดับความสูง",
+      "ระบบพยากรณ์อากาศ",
+      "นาฬิกาอุตุนิยมวิทยา"
+    ],
+    "en": [
+      "Weather Station",
+      "Drone Altitude Hold",
+      "Weather Forecasting",
+      "Meteorological Clock"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "ระบบวัดเพดานบินโดรน",
+        "desc": "ใช้รักษาระดับความสูงของโดรนให้นิ่งขึ้นเมื่อเปรียบเทียบกับการใช้ GPS เพียงอย่างเดียว"
+      },
+      {
+        "title": "สถานีวัดอากาศระดับพรีเมียม",
+        "desc": "ใช้คู่กับ DHT11 เพื่อให้ได้ข้อมูลครบทั้ง อุณหภูมิ, ความชื้น และ ความกดอากาศ"
+      }
+    ],
+    "en": [
+      {
+        "title": "Drone Altimeter",
+        "desc": "Improve altitude-hold stability in drones compared to using GPS-based height alone."
+      },
+      {
+        "title": "Advanced Weather Station",
+        "desc": "Combine with a DHT11 to collect a complete dataset: Temp, Humidity, and Barometric Pressure."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "BMP280 เป็นน้องเล็กของ BME280 โดยตัดฟังก์ชันวัดความชื้นออกไป เหลือเพียงวัดความดันอากาศและอุณหภูมิ ข้อดีคือราคาถูกกว่ามาก เหมาะสำหรับงานที่เน้นวัดความสูง (Altimeter) เช่น โดรน หรือบอลลูนตรวจอากาศ \n\nความละเอียดในการวัดความดันสูงพอที่จะตรวจจับการเปลี่ยนแปลงระดับความสูงแค่ 1 เมตรได้ การเชื่อมต่อทำได้ทั้ง I2C และ SPI เหมือนรุ่นพี่",
+    "en": "The BMP280 is the budget-friendly sibling of the BME280. It removes the humidity sensor but keeps the high-precision pressure and temperature capabilities. It is widely used in drone flight controllers to maintain altitude stability.\n\nLike the BME280, it commonly faces the I2C address confusion (0x76 vs 0x77) and logic level voltage (3.3V vs 5V) issues depending on the specific breakout board you buy."
+  },
+  "technical_specs": [
+    {
+      "label": "Temp Range",
+      "value": "-40 to 85°C"
+    },
+    {
+      "label": "Pressure Range",
+      "value": "300-1100 hPa"
+    },
+    {
+      "label": "Pressure Accuracy",
+      "value": "±1 hPa"
+    },
+    {
+      "label": "Altitude Noise",
+      "value": "0.25m (RMS)"
+    },
+    {
+      "label": "Interface",
+      "value": "I2C / SPI"
+    },
+    {
+      "label": "Logic Voltage",
+      "value": "3.3V (Mostly)"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿40 - ฿80",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=bmp280"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=bmp280"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "ไม่วัดความชื้น (ถ้าต้องการความชื้นให้ซื้อ BME280)",
+      "ใช้ไลบรารีตัวเดียวกับ BME280 ได้ในบางกรณี แต่แยกกันดีกว่า"
+    ],
+    "en": [
+      "Does NOT measure humidity (Buy BME280 for that)",
+      "Ensure you pick the specific 'Adafruit BMP280' library"
+    ]
+  },
+  "pinout_desc": {
+    "th": "เชื่อมต่อแบบ I2C: VCC (1.8-3.6V), GND, SCL, SDA (บอร์ดโมดูลส่วนใหญ่มี Regulator 3.3V ในตัว)",
+    "en": "I2C Interface: VCC (1.8-3.6V), GND, SCL, SDA. Most breakout boards include a 3.3V regulator."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "<b>ขา VCC:</b> ต่อไฟ 3.3V (หากบอร์ดไม่มี Regulator 5V ห้ามจ่าย 5V เด็ดขาด)",
+          "<b>ขา I2C:</b> ต่อ SDA, SCL เข้าขา SDA/SCL ของบอร์ด Arduino/ESP32",
+          "<b>ไลบรารี:</b> ติดตั้ง <b>'Adafruit BMP280 Library'</b>",
+          "<b>Address:</b> บอร์ดจีนส่วนใหญ่ใช้ 0x76 หากโค้ดตัวอย่างรันไม่ได้ ให้แก้ <code>bmp.begin()</code> เป็น <code>bmp.begin(0x76)</code> หรือใช้ I2C Scanner หา Address ก่อน"
+        ],
+        "en": [
+          "<b>Power:</b> Connect VCC to 3.3V. Only connect to 5V if your module distinctly has a 3-pin regulator on it.",
+          "<b>Wiring:</b> SDA -> SDA, SCL -> SCL.",
+          "<b>Library:</b> Use <b>'Adafruit BMP280 Library'</b>.",
+          "<b>Troubleshooting:</b> If 'Sensor not found' error occurs, the I2C address is likely wrong. Try initializing with <code>bmp.begin(0x76)</code> instead of the default."
+        ]
+      }
+    }
+  ]
+}

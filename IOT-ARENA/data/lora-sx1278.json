@@ -1,0 +1,162 @@
+{
+    "id": "lora-sx1278",
+    "category": "module",
+    "image": "asset/lora-sx1278.png",
+    "title": {
+        "th": "LoRa SX1278",
+        "en": "LoRa SX1278 Module"
+    },
+    "sub_title": {
+        "th": "การสื่อสารไร้สายระยะไกลพิเศษ",
+        "en": "Long Range Radio Module"
+    },
+    "description": {
+        "th": "เทคโนโลยี LoRa ช่วยให้สามารถส่งข้อมูลได้ไกลหลายกิโลเมตรโดยใช้พลังงานต่ำมาก เหมาะสำหรับพื้นที่ห่างไกล",
+        "en": "LoRa technology enables long-range data transmission (kilometers) with very low power consumption, ideal for rural areas."
+    },
+    "specs": [
+        {
+            "label": "Frequency",
+            "value": "433 MHz (Southeast Asia)"
+        },
+        {
+            "label": "Sensitivity",
+            "value": "-148 dBm"
+        },
+        {
+            "label": "Interface",
+            "value": "SPI"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "Smart Agriculture",
+            "สมาร์ทซิตี้"
+        ],
+        "en": [
+            "Smart Agriculture",
+            "Smart City Monitoring"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบวัดน้ำขังในทุ่งนา",
+                "desc": "ส่งข้อมูลระดับน้ำจากกลางทุ่งนาที่ไม่มีสัญญาณ WiFi กลับมาที่บ้านในระยะ 2-3 กิโลเมตร"
+            },
+            {
+                "title": "ปุ่มแจ้งเหตุฉุกเฉินระยะไกล",
+                "desc": "ตัวส่งสัญญาณขนาดพกพาสำหรับแจ้งเหตุจากพื้นที่หุบเขาที่ไม่มีคลื่นโทรศัพท์"
+            }
+        ],
+        "en": [
+            {
+                "title": "Smart Paddy Field Monitor",
+                "desc": "Transmit water level data from remote farms where WiFi doesn't reach, covering 2-3km range with ease."
+            },
+            {
+                "title": "Rural Emergency Panic Button",
+                "desc": "A battery-powered portable device for sending distress signals from deep rural or mountainous regions."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "LoRa (Long Range) เป็นเทคโนโลยีการสื่อสารไร้สายที่ใช้เทคนิค Chirp Spread Spectrum (CSS) ทำให้สามารถส่งข้อมูลได้ไกลถึง 15 กิโลเมตรในที่โล่ง โดยใช้พลังงานต่ำมาก แลกมาด้วย Data Rate ที่ต่ำ (ไม่กี่ Kbps/วินาที) \n\nจุดเด่นของ SX1278 คือความไวในการรับสัญญาณที่สูงถึง -148dBm ทำให้สามารถรับสัญญาณที่อ่อนแรงมากๆ ได้ เหมาะสำหรับงานเกษตร IoT ในสวนที่ไม่มี WiFi หรือไฟฟ้าเข้าถึง",
+        "en": "LoRa (Long Range) creates a physical layer that enables long-range communication with low power consumption. By using Chirp Spread Spectrum, the SX1278 is immune to interference and can decode signals even below the noise floor (-148dBm sensitivity). This makes it perfect for non-line-of-sight communication in urban or rural environments where WiFi or Bluetooth would fail."
+    },
+    "technical_specs": [
+        {
+            "label": "Chip",
+            "value": "Semtech SX1278"
+        },
+        {
+            "label": "Band",
+            "value": "433MHz (Asia/EU)"
+        },
+        {
+            "label": "Sensitivity",
+            "value": "-148 dBm"
+        },
+        {
+            "label": "Tx Power",
+            "value": "+20 dBm (100mW)"
+        },
+        {
+            "label": "Range",
+            "value": "2-15km"
+        },
+        {
+            "label": "Voltage",
+            "value": "1.8V - 3.7V"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿120 - ฿200",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=sx1278%20lora"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+lora+module"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ห้ามเปิดวงจรโดยไม่ต่อเสาอากาศ เพราะอาจทำให้ชิปเสียหาย",
+            "การสื่อสาร LoRa ต้องการบอร์ดอย่างน้อย 2 ตัว (ตัวส่งและตัวรับ)"
+        ],
+        "en": [
+            "Never power on the module without an antenna connected—the reflected energy can fry the RF transmitter",
+            "LoRa communication is point-to-point (P2P); you need at least two modules to establish a link."
+        ]
+    },
+    "pinout_desc": {
+        "th": "เชื่อมต่อแบบ SPI รวม 11 ขา: VCC (3.3V เท่านั้น!), GND, SCK, MISO, MOSI, NSS, และขา DIO0-DIO5 สำหรับ Interrupt",
+        "en": "11-pin SPI interface: VCC (3.3V STRICT!), GND, SCK, MISO, MOSI, NSS, and DIO0-DIO5 for interrupt signals."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "พื้นฐานการเชื่อมต่อ SPI",
+                "en": "SPI Wiring Deep-dive"
+            },
+            "steps": {
+                "th": [
+                    "ต่อสาย 6 เส้น: <b>VCC(3.3V), GND, SCK, MISO, MOSI, NSS(CS)</b>",
+                    "ขา <b>DIO0</b> สำคัญมากสำหรับการตรวจจับว่าได้รับข้อมูลแล้วหรือส่งเสร็จแล้ว",
+                    "<b>คำเตือน:</b> โมดูลนี้ใช้ไฟ 3.3V เท่านั้น ห้ามต่อขา 5V จาก Arduino เข้าขาไฟเลี้ยงเด็ดขาด"
+                ],
+                "en": [
+                    "Connect 6-pins: <b>VCC(3.3V), GND, SCK, MISO, MOSI, and NSS(CS)</b> to your board",
+                    "The <b>DIO0</b> pin is essential; it acts as an interrupt callback when a packet is received or sent",
+                    "<b>WARNING:</b> The SX1278 is strictly 3.3V. Using 5V power or logic without a shifter will damage it"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การตั้งค่าระยะทางการส่ง",
+                "en": "Range & Frequency Setup"
+            },
+            "steps": {
+                "th": [
+                    "ใช้ไลบรารี <b>'LoRa'</b> โดย Sandeep Mistry เพื่อเริ่มงานง่ายที่สุด",
+                    "ตั้งค่า <b>Spreading Factor (SF)</b> ให้สูงขึ้น (สูงสุด 12) เพื่อเพิ่มระยะทางแลกกับความเร็วที่ช้าลง",
+                    "ตรวจสอบความถี่ (Frequency) ให้ตรงกับกฎหมายของพื้นที่ (เอเชียตะวันออกเฉียงใต้มักใช้ 433 MHz)"
+                ],
+                "en": [
+                    "Use the <b>'LoRa'</b> library by Sandeep Mistry for the simplest Arduino integration",
+                    "Increase the <b>Spreading Factor (SF)</b> up to 12 for maximum range at the cost of lower data rates",
+                    "Ensure your center frequency matches regional regulations (433MHz is common for SEA/Industrial use)"
+                ]
+            }
+        }
+    ]
+}

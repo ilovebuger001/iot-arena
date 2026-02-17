@@ -1,0 +1,218 @@
+{
+  "id": "arduino-uno",
+  "category": "mcu",
+  "image": "asset/arduino-uno.png",
+  "title": {
+    "th": "Arduino Uno R3",
+    "en": "Arduino Uno R3"
+  },
+  "sub_title": {
+    "th": "บอร์ดมาตรฐานระดับโลกสำหรับการเรียนรู้",
+    "en": "The World Standard Learning Board"
+  },
+  "description": {
+    "th": "Arduino Uno R3 เป็นบอร์ดไมโครคอนโทรลเลอร์ที่ใช้ชิป ATmega328P ซึ่งได้รับความนิยมสูงสุดตลอดกาล จุดเด่นคือความทนทาน (Robust) และการออกแบบที่ใช้งานง่ายด้วย Pin Header แบบตัวเมียที่รองรับการเสียบสายจัมเปอร์ได้ทันที บอร์ดนี้เป็นจุดเริ่มต้นที่สมบูรณ์แบบสำหรับนักเรียนและผู้เริ่มต้น เนื่องจากมีไลบรารีโค้ดและอุปกรณ์เสริม (Shields) สนับสนุนมากที่สุดในโลก",
+    "en": "The Arduino Uno R3 is a microcontroller board based on the ATmega328P. It is the most documented and used board in the world. Known for its robustness and simple design, it features female headers that allow for easy jumper wire connections without soldering. This board is the perfect starting point for students and hobbyists due to its massive ecosystem of shields, libraries, and online tutorials."
+  },
+  "specs": [
+    {
+      "label": "MCU",
+      "value": "ATmega328P (8-bit)"
+    },
+    {
+      "label": "Clock Speed",
+      "value": "16 MHz"
+    },
+    {
+      "label": "Operating Voltage",
+      "value": "5V"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "7-12V (Recommended)"
+    },
+    {
+      "label": "Digital I/O",
+      "value": "14 (6 provide PWM output)"
+    },
+    {
+      "label": "Analog Input",
+      "value": "6 (10-bit resolution)"
+    },
+    {
+      "label": "Flash Memory",
+      "value": "32 KB"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "การเรียนรู้เขียนโค้ด",
+      "หุ่นยนต์เบื้องต้น",
+      "โปรเจกต์โรงเรียน",
+      "ระบบควบคุมอัตโนมัติ"
+    ],
+    "en": [
+      "Learning to Code",
+      "Beginner Robotics",
+      "School Projects",
+      "Automation Control"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "ระบบควบคุมไฟจราจรจำลอง",
+        "desc": "ใช้พื้นฐาน Digital Output เพื่อฝึกการหน่วงเวลา (Delay) และการลำดับขั้นตอนการทำงาน"
+      },
+      {
+        "title": "ตัวช่วยเครื่องรดน้ำต้นไม้",
+        "desc": "ใช้ร่วมกับเซนเซอร์วัดดินและโมดูลรีเลย์ เพื่อสร้างระบบรดน้ำอัตโนมัติเบื้องต้นที่ทนทาน"
+      }
+    ],
+    "en": [
+      {
+        "title": "Traffic Light Simulator",
+        "desc": "Uses basic Digital Output to practice timing delays and sequential logic."
+      },
+      {
+        "title": "Basic Automated Plant Waterer",
+        "desc": "Combine with a soil sensor and relay module to build a robust entry-level irrigation system."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "Arduino Uno R3 ขับเคลื่อนด้วยชิป ATmega328P ซึ่งมีสถาปัตยกรรมแบบ AVR 8-bit แม้จะไม่เร็วเท่าชิป 32-bit สมัยใหม่ แต่มีความเสถียรสูงมากและทนทานต่อสัญญาณรบกวน สิ่งที่ทำให้ Uno เป็นตำนานคือ 'Form Factor' หรือตำแหน่งขาที่กลายมาเป็นมาตรฐานอุตสาหกรรม ทำให้มีผู้ผลิต Shields (บอร์ดเสริม) ออกมานับพันรุ่น \n\nนอกจากนี้ บนบอร์ดยังมีชิปตัวที่สอง (มักเป็น ATmega16U2 ในรุ่นแท้ หรือ CH340 ในรุ่น Clone) ทำหน้าที่แปลงสัญญาณ USB เป็น Serial เพื่อให้คอมพิวเตอร์คุยกับไมโครคอนโทรลเลอร์ได้ง่ายดาย",
+    "en": "The Arduino Uno R3 is powered by the ATmega328P, an 8-bit AVR microcontroller. While it lacks the raw speed of modern 32-bit chips, its simplicity and noise immunity make it incredibly reliable. Its widely adopted 'Uno' pinout standard has spawned an ecosystem of thousands of plug-and-play shields.\n\nA secondary dedicated chip (ATmega16U2 on official boards, CH340 on clones) handles USB-to-Serial communication, ensuring seamless code uploading and serial monitoring without external drivers."
+  },
+  "technical_specs": [
+    {
+      "label": "Microcontroller",
+      "value": "ATmega328P"
+    },
+    {
+      "label": "Operating Voltage",
+      "value": "5V"
+    },
+    {
+      "label": "Input Voltage (Rec.)",
+      "value": "7-12V"
+    },
+    {
+      "label": "Digital I/O Pins",
+      "value": "14 (6 PWM)"
+    },
+    {
+      "label": "Analog Input Pins",
+      "value": "6"
+    },
+    {
+      "label": "DC Current per I/O",
+      "value": "20 mA"
+    },
+    {
+      "label": "Flash Memory",
+      "value": "32 KB"
+    },
+    {
+      "label": "SRAM",
+      "value": "2 KB"
+    },
+    {
+      "label": "EEPROM",
+      "value": "1 KB"
+    },
+    {
+      "label": "Clock Speed",
+      "value": "16 MHz"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "$5 - $25",
+    "links": [
+      {
+        "title": "Arduino Official",
+        "url": "https://store.arduino.cc/products/arduino-uno-r3"
+      },
+      {
+        "title": "Amazon",
+        "url": "https://www.amazon.com/s?k=arduino+uno+r3"
+      },
+      {
+        "title": "AliExpress",
+        "url": "https://www.aliexpress.com/w/wholesale-arduino-uno-r3.html"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "สำหรับมือใหม่ ควรเริ่มจากตัวอย่าง Blink ก่อนเสมอ",
+      "หากต้องการ WiFi ควรเลือก ESP32 แทน"
+    ],
+    "en": [
+      "Start with the Blink example if you are a beginner",
+      "If you need WiFi, consider the ESP32 instead"
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วย Digital I/O 14 ขา (PWM 6 ขา), Analog Input 6 ขา, และขาไฟเลี้ยง 5V, 3.3V, VIN สถาปัตยกรรม 5V Standard",
+    "en": "Standard 5V layout with 14 Digital I/O (6 PWM), 6 Analog Inputs, and dedicated Power pins (5V, 3.3V, VIN)."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "โครงสร้างทางฮาร์ดแวร์และความปลอดภัย",
+        "en": "Hardware Architecture & Safety"
+      },
+      "steps": {
+        "th": [
+          "ใช้พอร์ต <b>USB Type-B</b> สำหรับรับส่งข้อมูลและจ่ายไฟจากคอมพิวเตอร์ (5V)",
+          "ช่อง <b>DC Jack</b> รองรับแรงดัน 7-12V (แนะนำ 9V) เพื่อผ่านวงจร Regulator บนบอร์ด",
+          "<b>ข้อควรระวัง:</b> ห้ามจ่ายไฟเกิน 12V เข้าที่ช่อง DC หรือ VIN เพราะอาจทำลายชิปควบคุมแรงดันได้",
+          "ขา 5V และ 3.3V ใช้สำหรับจ่ายไฟให้อุปกรณ์ภายนอก ระวังการลัดวงจรระหว่าง 5V และ GND"
+        ],
+        "en": [
+          "Use <b>USB Type-B</b> port for both serial communication and 5V power from your PC",
+          "The <b>DC Jack</b> accepts 7-12V (9V recommended) via the onboard voltage regulator",
+          "<b>WARNING:</b> Exceeding 12V on the DC jack or VIN pin can permanently damage the regulator",
+          "Use 5V and 3.3V pins to power sensors, but never short them to GND"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "การตั้งค่าซอฟต์แวร์ครั้งแรก",
+        "en": "Initial Software Setup"
+      },
+      "steps": {
+        "th": [
+          "เปิด <b>Arduino IDE</b> และเลือกบอร์ดเป็น <b>'Arduino Uno'</b> ในเมนู Tools > Board",
+          "ตรวจสอบ <b>Port</b> ที่เชื่อมต่อ โดยมักจะแสดงชื่อ 'Arduino Uno' ต่อท้ายเลขพอร์ต",
+          "ลองใช้ตัวอย่างไฟล์ <b>Blink</b> (File > Examples > 01.Basics > Blink) เพื่อทดสอบการอัปโหลด"
+        ],
+        "en": [
+          "Open <b>Arduino IDE</b> and select <b>'Arduino Uno'</b> from Tools > Board menu",
+          "Select the correct <b>Port</b> (usually identified by 'Arduino Uno' in parentheses)",
+          "Upload the <b>Blink</b> example (File > Examples > 01.Basics > Blink) to confirm connectivity"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "พื้นฐานขา Digital และ Analog",
+        "en": "Digital & Analog Foundries"
+      },
+      "steps": {
+        "th": [
+          "ขา <b>0-13</b> เป็น Digital I/O โดยขาที่มีสัญลักษณ์ <b>~</b> รองรับ PWM (จำลองอนาล็อก)",
+          "ขา <b>A0-A5</b> เป็น Analog Input สำหรับอ่านค่าแรงดัน 0-5V (แปลงเป็นเลข 0-1023)",
+          "ขา <b>A4 (SDA)</b> และ <b>A5 (SCL)</b> ใช้สำหรับการสื่อสารแบบ I2C กับหน้าจอหรือเซนเซอร์"
+        ],
+        "en": [
+          "Pins <b>0-13</b> are Digital I/Os; pins marked with <b>~</b> support PWM output",
+          "Pins <b>A0-A5</b> are 10-bit Analog Inputs (reads 0-5V as values 0-1023)",
+          "Pins <b>A4 (SDA)</b> and <b>A5 (SCL)</b> are dedicated to I2C communication for modules"
+        ]
+      }
+    }
+  ]
+}

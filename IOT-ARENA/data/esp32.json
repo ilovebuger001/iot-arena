@@ -1,0 +1,218 @@
+{
+  "id": "esp32",
+  "category": "mcu",
+  "image": "asset/esp32.png",
+  "title": {
+    "th": "ESP32 DevKit V1",
+    "en": "ESP32 DevKit V1"
+  },
+  "sub_title": {
+    "th": "ไมโครคอนโทรลเลอร์ Dual-Core พร้อม WiFi และ Bluetooth",
+    "en": "Dual-Core MCU with Integrated WiFi & Dual-mode BT"
+  },
+  "description": {
+    "th": "ESP32 เป็นระบบบนชิป (SoC) ที่พัฒนาโดย Espressif Systems ซึ่งกลายเป็นมาตรฐานใหม่ของวงการ IoT ด้วยความสามารถที่เหนือกว่า Arduino ทั่วไปอย่างมาก มีหน่วยประมวลผลสองคอร์ (Dual-core) ทำให้สามารถแยกงานเชื่อมต่อ WiFi ไว้ที่คอร์หนึ่ง และงานควบคุมหลักไว้อีกคอร์หนึ่งได้ รองรับทั้ง WiFi, Bluetooth Classic และ Bluetooth Low Energy (BLE) นอกจากนี้ยังมีเซนเซอร์แบบสัมผัส (Touch Sensor) และเซนเซอร์วัดแม่เหล็ก (Hall Effect) ติดมาในตัวชิปด้วย",
+    "en": "The ESP32 is a powerful System on Chip (SoC) series developed by Espressif Systems. It has become the industry standard for IoT due to its high performance and low cost. Featuring a dual-core Xtensa® 32-bit LX6 microprocessor, it allows for true multitasking—handling WiFi stacks on one core while executing user code on the other. It includes built-in WiFi, Bluetooth Classic, and BLE, alongside hardware accelerators for encryption, capacitive touch sensors, and Hall effect sensors."
+  },
+  "specs": [
+    {
+      "label": "Processor",
+      "value": "Xtensa® Dual-Core 32-bit LX6 (240MHz)"
+    },
+    {
+      "label": "SRAM",
+      "value": "520 KB Internal"
+    },
+    {
+      "label": "Flash",
+      "value": "4 MB External (Typical)"
+    },
+    {
+      "label": "WiFi",
+      "value": "802.11 b/g/n (up to 150 Mbps)"
+    },
+    {
+      "label": "Bluetooth",
+      "value": "v4.2 BR/EDR and BLE"
+    },
+    {
+      "label": "GPIO",
+      "value": "34 Pins (ADC, DAC, I2C, SPI, UART, PWM)"
+    },
+    {
+      "label": "Voltage",
+      "value": "2.2V to 3.6V (3.3V Logic)"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "สมาร์ทโฮม",
+      "เกตเวย์ IoT",
+      "ระบบรักษาความปลอดภัย",
+      "หุ่นยนต์",
+      "สถานีวัดอากาศ"
+    ],
+    "en": [
+      "Smart Home",
+      "IoT Gateway",
+      "Security Systems",
+      "Robotics",
+      "Weather Station"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "ระบบตรวจสอบสภาพอากาศออนไลน์",
+        "desc": "ใช้ WiFi ในตัวส่งข้อมูลจาก BME280 ไปยัง Dashboard เช่น Blynk หรือ LINE Notify"
+      },
+      {
+        "title": "เครื่องตรวจจับใบหน้าเบื้องต้น",
+        "desc": "ใช้พลังการประมวลผล Dual-core ร่วมกับโมดูลกล้อง (ESP32-CAM) เพื่อทำระบบรักษาความปลอดภัย"
+      }
+    ],
+    "en": [
+      {
+        "title": "Cloud Weather Station",
+        "desc": "Leverage built-in WiFi to stream sensor data to dashboards like Blynk or Google Sheets."
+      },
+      {
+        "title": "Face Detection System",
+        "desc": "Utilize dual-core power and ESP32-CAM to build entry-level AI security features."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "ESP32 ใช้สถาปัตยกรรม Xtensa® LX6 แบบ Dual-core อันทรงพลัง โดยแยกการทำงานเป็น Protocol CPU (PRO_CPU) สำหรับจัดการ WiFi/Bluetooth และ Application CPU (APP_CPU) สำหรับรันโค้ดของผู้ใช้ ทำให้การเชื่อมต่อเน็ตไม่รบกวนการทำงานหลัก \n\nนอกจากนี้ยังมี ULP (Ultra Low Power) Coprocessor ที่สามารถอ่านค่าเซนเซอร์ได้แม้ในขณะที่ CPU หลักหลับ (Deep Sleep) ช่วยประหยัดพลังงานได้อย่างมหาศาล รองรับทั้ง ADC 12-bit, DAC, Touch Sensor และ Hall Sensor ในตัว",
+    "en": "The ESP32 features a powerful dual-core Xtensa® LX6 architecture. It splits tasks between the Protocol CPU (PRO_CPU), which handles WiFi/Bluetooth stacks, and the Application CPU (APP_CPU) for user code, ensuring stable connectivity and performance.\n\nIt also includes a ULP (Ultra Low Power) Coprocessor that can monitor sensors while the main cores are in Deep Sleep, offering incredible power efficiency. The chip is packed with peripherals like 12-bit ADCs, DACs, capacitive touch sensors, and a Hall effect sensor."
+  },
+  "technical_specs": [
+    {
+      "label": "Processor",
+      "value": "Dual-Core 32-bit LX6"
+    },
+    {
+      "label": "Clock Speed",
+      "value": "Up to 240 MHz"
+    },
+    {
+      "label": "Flash Memory",
+      "value": "4 MB (External SPI)"
+    },
+    {
+      "label": "SRAM",
+      "value": "520 KB"
+    },
+    {
+      "label": "WiFi",
+      "value": "802.11 b/g/n (Station/AP)"
+    },
+    {
+      "label": "Bluetooth",
+      "value": "v4.2 BR/EDR & BLE"
+    },
+    {
+      "label": "GPIO Pins",
+      "value": "34 (Input-only on some)"
+    },
+    {
+      "label": "ADC",
+      "value": "18 Channels (12-bit)"
+    },
+    {
+      "label": "DAC",
+      "value": "2 Channels (8-bit)"
+    },
+    {
+      "label": "Interfaces",
+      "value": "UART, SPI, I2C, CAN, I2S"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "$4 - $8",
+    "links": [
+      {
+        "title": "AliExpress",
+        "url": "https://www.aliexpress.com/w/wholesale-esp32-devkit-v1.html"
+      },
+      {
+        "title": "Amazon",
+        "url": "https://www.amazon.com/s?k=esp32+development+board"
+      },
+      {
+        "title": "DigiKey",
+        "url": "https://www.digikey.com/en/products/filter/evaluation-boards-extended/embedded-mcu-dsp/793"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "ขา GPIO 6-11 ไม่ควรใช้งาน เพราะเชื่อมต่อกับ Flash ภายใน",
+      "ใช้ Deep Sleep เพื่อประหยัดพลังงานในโหมดแบตเตอรี่"
+    ],
+    "en": [
+      "Avoid GPIOs 6-11 as they are connected to internal Flash",
+      "Use Deep Sleep mode for battery-powered projects"
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วยขา GPIO 34 ขา, รองรับ ADC 18 ช่อง (12-bit), DAC 2 ช่อง, I2C, SPI, UART และ Capacitive Touch ในตัว",
+    "en": "Features 34 GPIOs, 18-channel 12-bit ADC, 2-channel DAC, I2C, SPI, UART, and integrated Capacitive Touch sensors."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "การเตรียมบอร์ดใน Arduino IDE",
+        "en": "Board Prep in Arduino IDE"
+      },
+      "steps": {
+        "th": [
+          "เพิ่ม URL ของ <b>esp32 package</b> ใน Preferences ของ IDE",
+          "ติดตั้ง <b>'esp32 by Espressif'</b> ผ่าน Boards Manager",
+          "เลือกบอร์ดเป็น <b>'ESP32 Dev Module'</b> เพื่อเริ่มเขียนโค้ด"
+        ],
+        "en": [
+          "Add the <b>ESP32 package URL</b> in the IDE Preferences",
+          "Install <b>'esp32 by Espressif'</b> via the Boards Manager",
+          "Select <b>'ESP32 Dev Module'</b> to start coding"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "โครงสร้างการเชื่อมต่อ",
+        "en": "Wiring Guide & Powering"
+      },
+      "steps": {
+        "th": [
+          "จ่ายไฟผ่านพอร์ต <b>Micro USB</b> สำหรับการพัฒนา (5V)",
+          "หากใช้แหล่งจ่ายภายนอก ให้ต่อเข้าที่ขา <b>VIN</b> (5V) หรือ <b>3V3</b> (หากมีไฟ 3.3V ที่เสถียร)",
+          "<b>ข้อควรระวัง:</b> ขา GPIO ของ ESP32 รองรับแรงดัน 3.3V เท่านั้น ห้ามต่อระบบ 5V เข้าขา Input โดยตรง"
+        ],
+        "en": [
+          "Power via <b>Micro USB</b> port for development (5V source)",
+          "Use <b>VIN</b> pin for 5V external supply or <b>3V3</b> for 3.3V regulated supply",
+          "<b>CAUTION:</b> GPIOs are 3.3V logic only. Do NOT interface with 5V sensors directly without a level shifter"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "ตัวอย่างโค้ด Hello World",
+        "en": "Hello World Code (WiFi Scan)"
+      },
+      "steps": {
+        "th": [
+          "ใช้ไลบรารี <code>WiFi.h</code> ที่ติดตั้งมาให้พร้อมกับบอร์ด",
+          "เรียกฟังก์ชัน <code>WiFi.scanNetworks()</code> ในฟังก์ชัน setup เพื่อหาเครือข่ายรอบตัว",
+          "ผลลัพธ์จะแสดงผลผ่าน <b>Serial Monitor</b> ที่ Baud Rate 115200"
+        ],
+        "en": [
+          "Include the built-in <code>WiFi.h</code> library",
+          "Use <code>WiFi.scanNetworks()</code> in the setup block to discover nearby SSIDs",
+          "Monitor output via <b>Serial Monitor</b> set to 115200 Baud"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "relay-1ch",
+  "category": "actuator",
+  "image": "asset/relay-1ch.jpg",
+  "title": {
+    "th": "1-Channel Relay",
+    "en": "1-Channel Relay Module"
+  },
+  "sub_title": {
+    "th": "โมดูลสวิตช์ควบคุมไฟฟ้าแรงสูง",
+    "en": "High-Voltage Control Switch"
+  },
+  "description": {
+    "th": "รีเลย์เป็นสวิตช์แม่เหล็กไฟฟ้าที่ช่วยให้ไมโครคอนโทรลเลอร์ (ใช้ไฟต่ำ 3.3-5V) สามารถควบคุมอุปกรณ์ไฟฟ้าแรงสูง (เช่น ไฟบ้าน 220V) ได้อย่างปลอดภัยโดยการแยกวงจรไฟฟ้าออกจากกัน",
+    "en": "A relay is an electromechanical switch. It allows a low-power microcontroller (3.3-5V) to safely control high-power devices (like 220V household appliances) by keeping the two circuits electrically isolated."
+  },
+  "specs": [
+    {
+      "label": "Max Load",
+      "value": "10A @ 250V AC / 10A @ 30V DC"
+    },
+    {
+      "label": "Trigger Voltage",
+      "value": "5V (Active Low or High)"
+    },
+    {
+      "label": "Configuration",
+      "value": "SPDT (NO, NC, COM)"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "เปิด-ปิดไฟบ้าน 220V",
+      "ควบคุมปั๊มน้ำ",
+      "สมาร์ทโฮม",
+      "ระบบรดน้ำอัตโนมัติ"
+    ],
+    "en": [
+      "Control 220V Lights",
+      "Water Pump Switch",
+      "Smart Home",
+      "Automated Irrigation"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "สวิตช์เปิด-ปิดไฟผ่าน WiFi",
+        "desc": "ใช้ ESP8266 สั่งงานรีเลย์เพื่อควบคุมหลอดไฟบ้านผ่านสมาร์ทโฟนหรือเสียง"
+      },
+      {
+        "title": "ระบบรดน้ำอัตโนมัติ",
+        "desc": "ใช้รีเลย์ควบคุมปั๊มน้ำขนาดเล็ให้ทำงานเมื่อระดับความชื้นในดินต่ำกว่าที่กำหนด"
+      }
+    ],
+    "en": [
+      {
+        "title": "WiFi Light Switch",
+        "desc": "Pair with an ESP8266 to toggle household lighting via a smartphone app or voice assistant."
+      },
+      {
+        "title": "Smart Water Sprinkler",
+        "desc": "Execute relay logic to turn on water pumps when soil moisture sensors detect dry conditions."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "รีเลย์ (Relay) คือสวิตช์แม่เหล็กไฟฟ้าที่ใช้ไฟกระแสต่ำ (เช่น 5V จาก Arduino) ไปควบคุมไฟกระแสสูง (เช่น 220V AC) โดยที่วงจรทั้งสองแยกขาดจากกัน \n\nข้อควรระวัง: รีเลย์แบบนี้มีชิ้นส่วนเคลื่อนไปมา จึงมีเสียงถ็อกแท็กและมีอายุการใช้งานจำกัด หากต้องการปิด-เปิดบ่อยๆ ควรใช้ Solid State Relay (SSR) แทน",
+    "en": "A Relay is an electromechanical switch that uses a low-voltage signal (e.g., 5V) to control a high-power circuit (e.g., 220V AC) while keeping them electrically isolated.\n\nNote: Because it relies on moving mechanical contacts, it makes a clicking sound and wears out over time. It is NOT suitable for fast switching or PWM dimming; use a Solid State Relay (SSR) for those tasks."
+  },
+  "technical_specs": [
+    {
+      "label": "Contact Rating",
+      "value": "10A 250VAC / 10A 30VDC"
+    },
+    {
+      "label": "Coil Voltage",
+      "value": "5V DC"
+    },
+    {
+      "label": "Logic",
+      "value": "Active Low / High (Jumper)"
+    },
+    {
+      "label": "Isolation",
+      "value": "Optocoupler (Optional)"
+    },
+    {
+      "label": "Switch Time",
+      "value": "< 10ms"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿20 - ฿35",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=relay%20module%201%20channel"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=arduino+relay+module"
+      }
+    ]
+  },
+  "pinout_desc": {
+    "th": "ฝั่งควบคุม 3 ขา: VCC, GND, และ IN (สัญญาณคอนโทรล) ฝั่ง Output (AC/DC): COM, NO (เปิดเมื่อสั่ง High/Low), และ NC (ปิดเมื่อสั่ง High/Low)",
+    "en": "Control side (3 pins): VCC, GND, and IN (Signal). Output side (Standard AC/DC): COM, NO (Normally Open), and NC (Normally Closed)."
+  },
+  "tips": {
+    "th": [
+      "ระวังไฟดูด! หากต่อกับไฟบ้าน 220V ต้องตัดไฟทุกครั้งก่อนจับ",
+      "ขา High/Low Trigger Jumper ใช้เลือกได้ว่าจะให้ทำงานเมื่อส่งไฟบวกหรือลงกราวด์"
+    ],
+    "en": [
+      "DANGER: 220V MAINS can kill. Always unplug/cut power before touching wiring.",
+      "Check the High/Low Trigger jumper to match your logic preference."
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "<b>Control Side:</b> ต่อ VCC (5V), GND, และ IN เข้ากับ Digital Pin ของบอร์ด",
+          "<b>Load Side:</b> ตัดสายไฟบ้าน (L) 1 เส้น เอาปลายข้างหนึ่งเข้าช่อง <b>COM</b> และอีกข้างเข้า <b>NO</b> (Normally Open)",
+          "<b>Logic:</b> สั่ง <code>digitalWrite(pin, LOW);</code> เพื่อเปิดไฟ (หากเป็น Active Low) หรือ HIGH เพื่อปิด",
+          "<b>Safety:</b> ใส่เคสหรือพันเทปพันสายไฟให้มิดชิด ไม่ให้มือเผลอไปโดนขาใต้บอร์ด"
+        ],
+        "en": [
+          "<b>1. Control Side:</b> Connect VCC (5V), GND, and IN to a Digital Pin.",
+          "<b>2. Load Side:</b> Cut ONE wire of your appliance chord (Live). Connect one end to <b>COM</b> and the other to <b>NO</b>.",
+          "<b>3. Coding:</b> Send <code>digitalWrite(pin, LOW);</code> to close the circuit (turn ON) for most Active Low modules.",
+          "<b>4. Safety:</b> INSULATE everything. The bottom solder joints carry 220V when active. Use an enclosure."
+        ]
+      }
+    }
+  ]
+}

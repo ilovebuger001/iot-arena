@@ -1,0 +1,144 @@
+{
+  "id": "ir-obstacle",
+  "category": "sensor",
+  "image": "asset/ir-obstacle.png",
+  "title": {
+    "th": "IR Obstacle Avoidance",
+    "en": "IR Obstacle Avoidance"
+  },
+  "sub_title": {
+    "th": "เซนเซอร์อินฟราเรดตรวจจับสิ่งกีดขวาง",
+    "en": "Infrared Proximity Sensor"
+  },
+  "description": {
+    "th": "ใช้แสงอินฟราเรดในการตรวจจับวัตถุในระยะใกล้ โดยตัวส่ง (LED ใส) จะปล่อยแสงออกไป และหากมีวัตถุสะท้อน แสงจะกลับมาที่ตัวรับ (LED ดำ) เหมาะสำหรับหุ่นยนต์หลบหลีกสิ่งกีดขวาง",
+    "en": "Uses infrared light to detect nearby objects. An IR transmitter (clear LED) emits light, and if an object is present, it reflects back to the IR receiver (black LED). Widely used in obstacle-avoiding robots."
+  },
+  "specs": [
+    {
+      "label": "Detection Range",
+      "value": "2cm - 30cm (Adjustable)"
+    },
+    {
+      "label": "Detection Angle",
+      "value": "35°"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.3V - 5V"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "หุ่นยนต์หลบสิ่งกีดขวาง",
+      "ระบบนับจำนวนชิ้นงาน",
+      "เครื่องตรวจจับขอบโต๊ะ",
+      "ระบบตรวจจับรถยนต์"
+    ],
+    "en": [
+      "Obstacle-avoiding Robot",
+      "Object Counting System",
+      "Table Edge Detection",
+      "Vehicle Detection"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "หุ่นยนต์ซูโม่หลบขอบสนาม",
+        "desc": "ใช้ติดตั้งใต้หุ่นยนต์เพื่อตรวจจับพื้นสีขาว/ดำ เพื่อป้องกันหุ่นยนต์ตกจากสนามแข่ง"
+      },
+      {
+        "title": "ระบบเปิดพัดลมไร้สัมผัส",
+        "desc": "ตรวจจับวัตถุหรือมือที่เคลื่อนไหวตัดหน้าเซนเซอร์ในระยะประชิดเพื่อสลับสถานะเปิด/ปิด"
+      }
+    ],
+    "en": [
+      {
+        "title": "Sumo Robot Edge Detector",
+        "desc": "Mount underneath a robot to sense the white/black ring borders and prevent falling off the arena."
+      },
+      {
+        "title": "Touchless Trigger Switch",
+        "desc": "Detect hand gestures at close range to toggle power or switch states without physical contact."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "IR Obstacle Sensor ใช้หลักการสะท้อนแสงอินฟราเรด โดยมี LED ตัวส่ง (สีใส) และ Photodiode ตัวรับ (สีดำ) หากมีวัตถุอยู่ข้างหน้า แสงจะสะท้อนกลับมาเข้าตัวรับ \n\nจุดอ่อนคือ 'สีของวัตถุ' มีผลต่อระยะทาง วัตถุสีดำ (ดูดกลืนแสง) จะตรวจจับได้ยากกว่าวัตถุสีขาว และแสงแดดจ้าจะรบกวนการทำงาน (Blind sensor) จึงเหมาะกับการใช้งานในร่มเท่านั้น",
+    "en": "This generic module uses an IR emitter and receiver pair to detect proximity. When the emitted IR light hits an object, it bounces back to the receiver.\n\nWeakness: Detection range varies wildly with surface color. Black surfaces absorb IR and might be invisible to the sensor. Also, direct sunlight contains IR and will saturate the receiver, rendering it useless outdoors."
+  },
+  "technical_specs": [
+    {
+      "label": "Range",
+      "value": "2 - 30 cm (Adjustable)"
+    },
+    {
+      "label": "Beam Angle",
+      "value": "35°"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.3V - 5V"
+    },
+    {
+      "label": "Output",
+      "value": "Digital (Low = Detect)"
+    },
+    {
+      "label": "Chip",
+      "value": "LM393 Comparator"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿20 - ฿40",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=ir%20obstacle%20sensor"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=arduino+ir+obstacle"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "ใช้ไขควงหมุน Potentiometer เพื่อปรับระยะตรวจจับ",
+      "เจอวัตถุ = ไฟติด (Output LOW), ไม่เจอ = ไฟดับ (Output HIGH)"
+    ],
+    "en": [
+      "Use a screwdriver to tune the Potentiometer for distance",
+      "Object Detected = LED ON (Output LOW)"
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วย 3 ขา: VCC, GND, และ OUT (เป็น Digital Low เมื่อตรวจพบสิ่งกีดขวาง)",
+    "en": "Features 3 pins: VCC, GND, and OUT (Digital signal, output goes LOW when an obstacle is detected)."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "<b>Wiring:</b> ต่อ VCC, GND, OUT เข้ากับ Digital Pin",
+          "<b>จูนระยะ:</b> วางมือในระยะที่ต้องการให้ตรวจจับ (เช่น 10 ซม.) แล้วหมุน Potentiometer จนไฟ Status บนบอร์ด 'เพิ่งจะติด'",
+          "<b>แก้ปัญหา:</b> หากไฟติดค้างตลอดเวลา แสดงว่าไวเกินไป (หมุนลด) หรือโดนแสงแดดรบกวน"
+        ],
+        "en": [
+          "<b>Wiring:</b> Connect VCC, GND, and OUT to a Digital Pin.",
+          "<b>Calibration:</b> Place an object at your desired specific distance. Turn the potentiometer until the onboard LED *just* turns on.",
+          "<b>Troubleshooting:</b> If the LED stays on strictly, decrease sensitivity. If it never triggers on black objects, that is a physical limitation of IR."
+        ]
+      }
+    }
+  ]
+}

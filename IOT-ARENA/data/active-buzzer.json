@@ -1,0 +1,142 @@
+{
+    "id": "active-buzzer",
+    "category": "actuator",
+    "image": "asset/active-buzzer.png",
+    "title": {
+        "th": "Active Buzzer",
+        "en": "Active Buzzer"
+    },
+    "sub_title": {
+        "th": "ลำโพงบัซเซอร์เสียงคงที่",
+        "en": "Fixed Frequency Buzzer"
+    },
+    "description": {
+        "th": "บัซเซอร์ที่มีวงจรกำเนิดเสียงภายใน เพียงจ่ายไฟให้ก็จะส่งเสียง 'ติ๊ด' ทันที",
+        "en": "A buzzer with an internal drive circuit. It emits a fixed-frequency sound as soon as power is applied."
+    },
+    "specs": [
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        },
+        {
+            "label": "Frequency",
+            "value": "2.3kHz ± 300Hz"
+        },
+        {
+            "label": "Current",
+            "value": "< 30mA"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "ระบบรักษาความปลอดภัย",
+            "อุปกรณ์แจ้งเตือนสั้นๆ"
+        ],
+        "en": [
+            "Security Alarms",
+            "Short Warning Alerts"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "การแจ้งเตือนถอยรถ",
+                "desc": "ใช้คู่กับ Ultrasonic เพื่อส่งเสียงติ๊ดๆ ถี่ขึ้นเมื่อเข้าใกล้สิ่งกีดขวาง"
+            },
+            {
+                "title": "กริ่งประตูไร้สาย",
+                "desc": "ส่งเสียงแจ้งเตือนสั้นๆ เมื่อมีคนกดปุ่มหรือเซนเซอร์ตรวจจับการเคลื่อนไหว"
+            }
+        ],
+        "en": [
+            {
+                "title": "Parking Assist System",
+                "desc": "Pair with Ultrasonic distance sensors to emit increasingly rapid beeps as a vehicle nears obstacles."
+            },
+            {
+                "title": "Simple Doorbell",
+                "desc": "Emit a clear alert sound when a push button or PIR motion sensor is triggered."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "Active Buzzer มีวงจรกำเนิดความถี่ (Oscillator) ในตัว เพียงจ่ายไฟ DC เข้าไปก็จะส่งเสียง 'ติ๊ด' ที่ความถี่คงที่ทันที (ประมาณ 2.5kHz) ไม่ต้องใช้ PWM \n\nข้อดีคือใช้ง่ายมาก แค่สั่ง HIGH/LOW แต่ข้อเสียคือเปลี่ยนโทนเสียงไม่ได้ (ทำได้แค่เปิด/ปิด หรือเปิดเป็นจังหวะ) วิธีสังเกตคือด้านล่างจะเทเรซิ่นปิดทึบสีดำ",
+        "en": "The Active Buzzer has a built-in oscillator. Applying DC voltage instantly generates a sound at a fixed frequency (~2.5kHz). You do not need to generate a PWM signal.\n\nPros: Extremely easy to use (Just set Pin HIGH). Cons: You cannot change the pitch/tone. Identification Tip: Look at the bottom; active buzzers usually have a sealed black resin backing."
+    },
+    "technical_specs": [
+        {
+            "label": "Type",
+            "value": "Magnetic / Piezo with Oscillator"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        },
+        {
+            "label": "Frequency",
+            "value": "Fixed (~2300Hz)"
+        },
+        {
+            "label": "Current",
+            "value": "< 25mA"
+        },
+        {
+            "label": "Control",
+            "value": "Digital High/Low"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿10 - ฿25",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=active%20buzzer"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+active+buzzer"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ขาที่ยาวกว่าคือขั้วบวก (+), ขาสั้นคือขั้วลบ (-)",
+        "en": "The longer pin is Positive (+), the shorter pin is Negative (-)."
+    },
+    "tips": {
+        "th": [
+            "อย่าลืมแกะสติกเกอร์ที่ปิดหน้าลำโพงออกเพื่อความดังสูงสุด",
+            "ขาสั้น = ลบ, ขายาว = บวก (ต่อผิดจะไม่ดัง)"
+        ],
+        "en": [
+            "Remove the 'Remove Seal' sticker for maximum volume",
+            "Long leg is Positive (+), Short leg is Negative (-)"
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>Wiring:</b> ต่อขาลบเข้า GND, ขาบวกเข้า Digital Pin (เช่น D8)",
+                    "<b>Code:</b> ใช้คำสั่ง <code>pinMode(8, OUTPUT);</code> ใน setup()",
+                    "<b>Action:</b> สั่ง <code>digitalWrite(8, HIGH);</code> เพื่อส่งเสียง และ <code>LOW</code> เพื่อหยุด",
+                    "<b>Alarm:</b> ทำเสียงติ๊ด-ติ๊ด โดยสั่ง HIGH -> delay(100) -> LOW -> delay(100) วนลูป"
+                ],
+                "en": [
+                    "<b>Wiring:</b> Connect Negative to GND, Positive to a Digital Pin (e.g., D8).",
+                    "<b>Setup:</b> Set the pin mode: <code>pinMode(8, OUTPUT);</code>.",
+                    "<b>Basic Use:</b> <code>digitalWrite(8, HIGH);</code> turns it on. <code>LOW</code> turns it off.",
+                    "<b>Pattern:</b> Create an alarm by toggling High/Low with <code>delay(100)</code> in between."
+                ]
+            }
+        }
+    ]
+}

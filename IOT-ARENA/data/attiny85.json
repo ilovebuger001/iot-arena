@@ -1,0 +1,162 @@
+{
+    "id": "attiny85",
+    "category": "mcu",
+    "image": "asset/attiny85.png",
+    "title": {
+        "th": "ATtiny85 (Digispark)",
+        "en": "ATtiny85 / Digispark"
+    },
+    "sub_title": {
+        "th": "ไมโครคอนโทรลเลอร์ 8-พิน ขนาดจิ๋ว",
+        "en": "8-pin Ultra-small MCU"
+    },
+    "description": {
+        "th": "ชิปไมโครคอนโทรลเลอร์ขนาดจิ๋วที่มีเพียง 8 ขา แต่มีความสามารถสูงและโปรแกรมผ่าน Arduino ได้",
+        "en": "An ultra-small 8-pin microcontroller that's surprisingly powerful and compatible with the Arduino IDE."
+    },
+    "specs": [
+        {
+            "label": "Pins",
+            "value": "6 I/O Pins"
+        },
+        {
+            "label": "Flash",
+            "value": "8 KB"
+        },
+        {
+            "label": "Core",
+            "value": "8-bit AVR"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เครื่องวัดพกพาจิ๋ว",
+            "แทนที่วงจรลอจิกขนาดเล็ก"
+        ],
+        "en": [
+            "Miniature Gauges",
+            "Simple Logic Replacement"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "นาฬิกาจิ๋ว OLED (Mini Watch)",
+                "desc": "ใช้ ATtiny85 ควบคุมจอ OLED ขนาด 0.91 นิ้ว เพื่อแสดงเวลาหรือข้อมูลเซนเซอร์ในพื้นที่จำกัด"
+            },
+            {
+                "title": "กุญแจรหัสผ่าน USB (Rubber Ducky)",
+                "desc": "โปรแกรมให้บอร์ดพอกดปุ่มแล้วจะพิมพ์รหัสผ่านหรือคำสั่งลงคอมพิวเตอร์โดยอัตโนมัติ (เฉพาะรุ่น Digispark)"
+            }
+        ],
+        "en": [
+            {
+                "title": "Tiny OLED Watch",
+                "desc": "Drive a 0.91\" OLED display using ATtiny85 for ultra-compact data visualization or timekeeping."
+            },
+            {
+                "title": "USB Keystroke Injector",
+                "desc": "Emulate a USB keyboard to automate password entry or system commands with a single button press (Digispark models)."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "ATtiny85 เป็นไมโครคอนโทรลเลอร์ AVR 8-บิต ขนาด 8 ขา ที่มีความสามารถเหลือเชื่อ สามารถรันโค้ด Arduino ได้เกือบทุกอย่าง (ยกเว้น Serial Monitor ที่ต้องใช้เทคนิคพิเศษ) บอร์ดรุ่น Digispark เป็นรุ่นที่ฮิตที่สุดเพราะเสียบช่อง USB ได้เลยโดยไม่ต้องใช้สาย \n\nข้อควรระวัง: Digispark จะรอประมาณ 5 วินาทีตอนเสียบเพื่อดูว่าเราจะอัปโหลดโค้ดไหม ถ้าไม่ มันถึงจะเริ่มรันโปรแกรม ทำให้การทำงานล่าช้าไปบ้าง",
+        "en": "The ATtiny85 packs the power of an Arduino into an 8-pin chip. It is perfect for projects where space is at a premium, such as wearable electronics or shrinking a breadboard prototype into a final product.\n\nProgramming Note: The Digispark implementation uses a 'Micronucleus' bootloader that requires you to hit 'Upload' in the IDE *before* plugging the board into USB. It simulates a USB device purely in software!"
+    },
+    "technical_specs": [
+        {
+            "label": "MCU",
+            "value": "ATtiny85"
+        },
+        {
+            "label": "Flash",
+            "value": "8 KB (6KB usable)"
+        },
+        {
+            "label": "SRAM",
+            "value": "512 Bytes"
+        },
+        {
+            "label": "EEPROM",
+            "value": "512 Bytes"
+        },
+        {
+            "label": "Clock",
+            "value": "1 MHz / 8 MHz / 16.5 MHz"
+        },
+        {
+            "label": "I/O",
+            "value": "5 usable pins"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿40 - ฿80",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=digispark%20attiny85"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=digispark+attiny85"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "หากใช้ Digispark จะต้องรอตัว Bootloader ประมาณ 5 วินาทีก่อนโปรแกรมเริ่มรัน",
+            "ขา Reset (Pin 1) หากไม่ได้เบิร์นฟิวส์พิเศษ จะใช้เป็น I/O ไม่ได้"
+        ],
+        "en": [
+            "Digispark boards have a 5-second bootloader delay before the user code runs",
+            "The Reset pin (Physical Pin 1) cannot be used as an I/O pin unless you burn special high-voltage fuses."
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 8 ขา (DIP): VCC (Pin 8), GND (Pin 4), และ GPIO 5 ขา (PB0-PB4) รองรับ ADC 4 ช่อง และ 2x PWM",
+        "en": "8-pin DIP package: VCC (Pin 8), GND (Pin 4), and 5 GPIOs (PB0-PB4). Supports 4x ADC channels and 2x PWM outputs."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การโปรแกรมด้วย Arduino as ISP",
+                "en": "Programming via Arduino ISP"
+            },
+            "steps": {
+                "th": [
+                    "ใช้บอร์ด Arduino Uno เป็นตัวโปรแกรม (Programmer) โดยอัปโหลดโค้ด <b>ArduinoISP</b>",
+                    "ต่อสาย 6 เส้น: <b>VCC, GND, 10->Reset, 11->MOSI, 12->MISO, 13->SCK</b>",
+                    "ต้องติดตั้งแพ็กเกจ <b>'ATTinyCore'</b> โดย Spence Konde เพื่อประสิทธิภาพสูงสุด"
+                ],
+                "en": [
+                    "Use an Arduino Uno as a proxy programmer by uploading the <b>ArduinoISP</b> example sketch",
+                    "Wire it up: <b>VCC, GND, pin 10 to Reset, 11 to MOSI, 12 to MISO, and 13 to SCK</b>",
+                    "The <b>'ATTinyCore'</b> by Spence Konde is the world standard for programming these chips via IDE"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "ข้อจำกัดของพิน I/O",
+                "en": "I/O Pin Mapping"
+            },
+            "steps": {
+                "th": [
+                    "พินในโค้ด (0-5) ไม่ตรงกับเลขพินกายภาพ (Physical Pins 1-8)",
+                    "พิน 0 และ 1 รองรับการสื่อสารแบบ <b>PWM / I2C</b> (SDA/SCL)",
+                    "หลีกเลี่ยงการใช้พิน 3 และ 4 หากใช้รุ่น Digispark เพราะเชื่อมต่อกับวงจร USB"
+                ],
+                "en": [
+                    "Software pin numbers (0 through 5) do NOT match the physical chip leg numbers (1 through 8)",
+                    "Pins 0 and 1 are dedicated to <b>PWM and I2C</b> (SDA/SCL) functions",
+                    "Avoid using pins 3 and 4 on Digispark modules during development as they share the USB data lines"
+                ]
+            }
+        }
+    ]
+}

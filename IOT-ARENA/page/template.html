@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="th" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details - IOT-ARENA</title>
+    <script>
+        (function() {
+            // Theme Management
+            const theme = localStorage.getItem('theme') || 'auto';
+            let visualTheme = theme;
+            if (theme === 'auto') {
+                visualTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-bs-theme', visualTheme);
+
+            // Language (to avoid button flash)
+            const savedLang = localStorage.getItem('lang');
+            let lang = savedLang;
+            if (!lang) {
+                const browserLang = navigator.language || navigator.userLanguage;
+                lang = (browserLang && browserLang.toLowerCase().startsWith('th')) ? 'th' : 'en';
+            }
+            document.documentElement.setAttribute('data-lang', lang);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../style.css?v=3.0">
+</head>
+<body>
+    <nav class="navbar border-bottom sticky-top bg-body">
+        <div class="container d-flex align-items-center justify-content-between">
+            <!-- Brand Section -->
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand d-flex align-items-center gap-2 m-0" href="../index.html">
+                    <img src="../asset/Logo.png" alt="IOT-ARENA" class="navbar-logo">
+                    <span class="brand-text">IOT-ARENA</span>
+                </a>
+            </div>
+                
+            <!-- Desktop Inline Nav Links -->
+            <div class="d-none d-lg-flex align-items-center gap-2 desktop-nav-links">
+                <a href="../index.html" class="desktop-nav-link" id="desktopNavHome"><i class="bi bi-house-door-fill"></i> Home</a>
+                <a href="../index.html#about" class="desktop-nav-link" id="desktopNavAbout"><i class="bi bi-info-circle-fill"></i> About</a>
+                <a href="../index.html#contact" class="desktop-nav-link" id="desktopNavContact"><i class="bi bi-envelope-fill"></i> Contact</a>
+            </div>
+
+            <!-- Right Side: Search + Menu -->
+            <div class="d-flex align-items-center gap-2 ms-auto">
+                <!-- Desktop Search -->
+                <div class="search-container d-none d-lg-block" style="width: 280px;">
+                    <div class="search-box-wrapper">
+                        <i class="bi bi-search"></i>
+                        <span class="search-autocomplete-ghost" id="searchGhostDesktop"></span>
+                        <input type="text" id="deviceSearchDesktop" class="form-control shadow-none" placeholder="Search..." oninput="handleSearch('deviceSearchDesktop')" onkeydown="handleSearchKeydown(event, 'deviceSearchDesktop')" autocomplete="off">
+                    </div>
+                    <div id="searchSuggestionsDesktop" class="search-suggestions-box shadow-sm d-none"></div>
+                </div>
+
+                <!-- Desktop Settings Popup (Lang + Theme) -->
+                <div class="dropdown d-none d-lg-block">
+                    <button class="btn btn-sm nav-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <i class="bi bi-gear-fill"></i> <span id="navMenuLabel">Menu</span>
+                    </button>
+                    <ul class="dropdown-menu nav-settings-popup shadow-lg dropdown-menu-end">
+                        <li class="px-3 pt-2 pb-1"><span class="menu-label mb-0" id="desktopMenuLabelPrefs">PREFERENCES</span></li>
+                        <li class="px-3 pb-3">
+                            <div class="preferences-card p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="lang-switcher">
+                                        <button class="lang-btn" id="btnLangTH" onclick="changeLang('th')">TH</button>
+                                        <button class="lang-btn" id="btnLangEN" onclick="changeLang('en')">EN</button>
+                                    </div>
+                                    <button class="theme-toggle-btn" id="btnThemeDesktop"></button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Menu Toggler -->
+                <button class="btn btn-sm d-lg-none navbar-toggler-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarControls" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="collapse d-lg-flex align-items-center gap-3" id="navbarControls">
+            <div class="d-lg-none mobile-nav-container p-4">
+                <div class="menu-section">
+                    <span class="menu-label" id="menuLabelPages">PAGES</span>
+                    <div class="mobile-nav-links">
+                        <a href="index.html" class="mobile-nav-link" style="--i:1">
+                            <i class="bi bi-house-door-fill"></i>
+                            <span id="navHome">Home</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="menu-section mt-4">
+                    <span class="menu-label" id="menuLabelPrefs">PREFERENCES</span>
+                    <div class="preferences-card p-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="lang-switcher">
+                                <button class="lang-btn" id="btnLangTH" onclick="changeLang('th')">TH</button>
+                                <button class="lang-btn" id="btnLangEN" onclick="changeLang('en')">EN</button>
+                            </div>
+                            <button class="theme-toggle-btn" id="btnThemeMobile"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 flex-grow-1">
+        <div class="row">
+            <aside class="col-md-3 mb-4">
+                <div class="sidebar-wrapper shadow-sm">
+                    <div class="sidebar-label" id="menuLabel"></div>
+                    <div class="sidebar-links-container">
+                        <a href="../index.html" class="sidebar-link">
+                            <span class="cat-icon-wrapper"><i class="bi bi-arrow-left-circle"></i></span>
+                            <span id="backBtnText"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Search Section -->
+                <div class="mobile-search-bar-outer d-lg-none mt-3">
+                    <div class="search-container mx-auto">
+                        <div class="search-box-wrapper">
+                            <i class="bi bi-search"></i>
+                            <span class="search-autocomplete-ghost" id="searchGhostMobile"></span>
+                            <input type="text" id="deviceSearchMobile" class="form-control shadow-none" placeholder="Search..." oninput="handleSearch('deviceSearchMobile')" onkeydown="handleSearchKeydown(event, 'deviceSearchMobile')" autocomplete="off">
+                        </div>
+                        <div id="searchSuggestionsMobile" class="search-suggestions-box shadow-sm d-none"></div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="col-md-9 page-animate">
+                <!-- Hero Section -->
+                <div class="detail-hero">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-5 text-center">
+                            <div class="detail-hero-img">
+                                <img src="" id="deviceImg" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="d-flex align-items-center gap-3 flex-wrap mb-2">
+                                <h1 class="fw-bold m-0" id="deviceTitle"></h1>
+                                <span class="category-badge" id="deviceCategoryBadge"></span>
+                            </div>
+                            <p class="text-muted mb-3" id="deviceSubTitle"></p>
+                            <div class="detail-highlight-cards" id="highlightCards"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="detail-section">
+                    <div class="detail-section-header">
+                        <i class="bi bi-info-circle-fill"></i>
+                        <h5 class="m-0" id="descLabel"></h5>
+                    </div>
+                    <div class="detail-section-body">
+                        <p id="deviceDesc" class="mb-0"></p>
+                    </div>
+                </div>
+
+                <!-- Pinout Section -->
+                <div class="detail-section" id="pinoutSection" style="display:none">
+                    <div class="detail-section-header">
+                        <i class="bi bi-cpu"></i>
+                        <h5 class="m-0" id="pinoutLabel">Pinout</h5>
+                    </div>
+                    <div class="detail-section-body">
+                        <div class="pinout-image-wrapper">
+                            <img src="" id="pinoutImg" class="img-fluid" style="max-height: 500px; width: auto;" onerror="handleImageError(this)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use Cases -->
+                <div class="detail-section" id="useCasesSection" style="display:none">
+                    <div class="detail-section-header">
+                        <i class="bi bi-lightbulb-fill"></i>
+                        <h5 class="m-0" id="useCasesLabel"></h5>
+                    </div>
+                    <div class="detail-section-body">
+                        <div class="use-cases-grid" id="useCasesContainer"></div>
+                    </div>
+                </div>
+
+                <!-- Situational Applications -->
+                <div class="detail-section" id="appsSection" style="display:none">
+                    <div class="detail-section-header">
+                        <i class="bi bi-projector-fill"></i>
+                        <h5 class="m-0" id="appsLabel"></h5>
+                    </div>
+                    <div class="detail-section-body">
+                        <div id="appsContainer"></div>
+                    </div>
+                </div>
+
+                <!-- Deep Dive -->
+                <div class="detail-section" id="deepDiveSection" style="display:none">
+                    <div class="detail-section-header">
+                        <i class="bi bi-book-half"></i>
+                        <h5 class="m-0" id="deepDiveLabel"></h5>
+                    </div>
+                    <div class="detail-section-body">
+                        <div id="deepDiveContent" class="deep-dive-content"></div>
+                    </div>
+                </div>
+
+                <!-- Purchase Info -->
+                <div class="detail-section" id="buySection" style="display:none">
+                    <div class="detail-section-header">
+                        <i class="bi bi-cart3"></i>
+                        <h5 class="m-0" id="buyLabel"></h5>
+                    </div>
+                    <div class="detail-section-body">
+                        <div id="buyContent"></div>
+                    </div>
+                </div>
+
+                <!-- Tips -->
+                <div class="detail-section" id="tipsSection" style="display:none">
+                    <div class="detail-section-header">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        <h5 class="m-0" id="tipsLabel"></h5>
+                    </div>
+                    <div class="detail-section-body">
+                        <div id="tipsContainer"></div>
+                    </div>
+                </div>
+
+                <!-- Specs -->
+                <div class="detail-section">
+                    <div class="detail-section-header">
+                        <i class="bi bi-cpu-fill"></i>
+                        <h5 class="m-0" id="specsLabel"></h5>
+                    </div>
+                    <div class="detail-section-body p-0">
+                        <table class="specs-table" id="specsTable"></table>
+                    </div>
+                </div>
+
+                <!-- Wiring Guides -->
+                <div id="guidesContainer"></div>
+            </main>
+        </div>
+    </div>
+
+    <footer class="premium-footer">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <!-- Column 1: Brand & Desc -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="footer-brand mb-3">
+                        <img src="../asset/Logo.png" alt="IOT-ARENA" class="footer-logo-img">
+                        <span class="footer-brand-text">IOT-ARENA</span>
+                    </div>
+                    <p id="footerDesc" class="footer-description text-muted mb-4"></p>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-3 col-md-6">
+                    <h6 id="footerLinksTitle" class="footer-title fw-bold mb-3"></h6>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Social -->
+                <div class="col-lg-4 col-md-6">
+                    <h6 id="footerFollowTitle" class="footer-title fw-bold mb-3"></h6>
+                    <div class="footer-socials d-flex gap-3">
+                        <a href="https://github.com/ilovebuger001" target="_blank" class="social-icon-btn github"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom pt-4 border-top">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p id="footerCopyright" class="mb-0 small text-muted"></p>
+                    </div>
+                    <div class="col-md-6 text-md-end mt-2 mt-md-0">
+                        <div class="footer-badge">
+                            <i class="bi bi-shield-check-fill text-success me-1"></i>
+                            <span class="small fw-medium">Open Source Wiki v1.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js?v=3.4"></script>
+</body>
+</html>

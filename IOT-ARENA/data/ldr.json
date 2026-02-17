@@ -1,0 +1,142 @@
+{
+    "id": "ldr",
+    "category": "sensor",
+    "image": "asset/ldr.png",
+    "title": {
+        "th": "LDR (Photoresistor)",
+        "en": "LDR (Photoresistor)"
+    },
+    "sub_title": {
+        "th": "ตัวต้านทานแปรค่าตามแสง",
+        "en": "Light Dependent Resistor"
+    },
+    "description": {
+        "th": "เซนเซอร์วัดความเข้มแสงอย่างง่าย โดยค่าความต้านทานจะเปลี่ยนไปตามแสงที่มาตกกระทบ",
+        "en": "A simple light sensor where the resistance decreases as the incident light intensity increases."
+    },
+    "specs": [
+        {
+            "label": "Type",
+            "value": "Cadmium Sulfide (CdS)"
+        },
+        {
+            "label": "Output",
+            "value": "Analog (via Voltage Divider)"
+        },
+        {
+            "label": "Sensitivity",
+            "value": "Visible Light Spectrum"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เปิด-ปิดไฟอัตโนมัติ",
+            "เครื่องวัดแสงเบื้องต้น"
+        ],
+        "en": [
+            "Automatic Street Lights",
+            "Light Intensity Monitor"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "โคมไฟเปิดอัตโนมัติเมื่อมืด",
+                "desc": "ใช้ควบคุมไฟทางเดินหรือไฟหน้าบ้านให้สว่างขึ้นเองเมื่อดวงอาทิตย์ตกดิน"
+            },
+            {
+                "title": "เซนเซอร์นับวัตถุที่บังแสง",
+                "desc": "ใช้ระบุว่ามีพัสดุผ่านสายพานหรือไม่ โดยดูเงาที่ทอดลงบนเซนเซอร์"
+            }
+        ],
+        "en": [
+            {
+                "title": "Auto Night-Light",
+                "desc": "Automatically power up garden or porch lights as the sun sets and ambient light fades."
+            },
+            {
+                "title": "Conveyor Object Counter",
+                "desc": "Detect and count objects passing through an assembly line by monitoring light shadow interruptions."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "LDR (Light Dependent Resistor) หรือ Photoresistor ทำจากสารแคดเมียมซัลไฟด์ (CdS) ซึ่งอิเล็กตรอนจะหลุดออกจากพันธะเมื่อได้รับพลังงานแสง ทำให้ความต้านทานลดลงอย่างมากเมื่อมีแสงจ้า \n\nข้อควรจำคือ LDR ไม่ใช่เซนเซอร์ที่แม่นยำ (Linear) และมีการตอบสนองช้า (Slow response time) จึงเหมาะสำหรับงานตรวจจับกลางวัน/กลางคืนง่ายๆ มากกว่าการวัดความเข้มแสง Lux ที่แม่นยำ",
+        "en": "An LDR (Light Dependent Resistor) changes its internal resistance based on light intensity. Made from Cadmium Sulfide (CdS), its resistance drops dramatically in bright light and soars in darkness.\n\nIt is an analog device and inherently non-linear. While great for detecting 'Day vs Night', it is poor for precise Lux measurements compared to digital sensors like BH1750."
+    },
+    "technical_specs": [
+        {
+            "label": "Light Resistance",
+            "value": "200Ω - 20kΩ (approx @10 Lux)"
+        },
+        {
+            "label": "Dark Resistance",
+            "value": "> 1MΩ"
+        },
+        {
+            "label": "Response Time",
+            "value": "20-30ms"
+        },
+        {
+            "label": "Max Voltage",
+            "value": "150V DC"
+        },
+        {
+            "label": "Spectrum",
+            "value": "Peak ~540nm (Visible Light)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿5 - ฿15",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=ldr"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=ldr+sensor"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ต้องต่อแบบ Voltage Divider (แบ่งแรงดัน) คู่กับตัวต้านทาน 10k ถึงจะอ่านค่าได้",
+            "ขาไม่มีขั้วบวก/ลบ ต่อด้านไหนก็ได้"
+        ],
+        "en": [
+            "Cannot be used directly; requires a Voltage Divider circuit with a 10k resistor",
+            "It is a resistor, so it has no polarity (no +/- pins)"
+        ]
+    },
+    "pinout_desc": {
+        "th": "หากเป็นโมดูล 3/4 ขา: VCC, GND, DO (Digital Out), AO (Analog Out) หรือต่อแบบ Voltage Divider หากใช้ LDR ตัวเปล่า",
+        "en": "For 3/4-pin modules: VCC, GND, DO (Digital Out), and AO (Analog Out). If using a bare LDR, a voltage divider circuit is required."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>เตรียมอุปกรณ์:</b> LDR 1 ตัว, ตัวต้านทาน 10k หรือ 4.7k 1 ตัว",
+                    "<b>การ Wiring:</b> ต่อขาหนึ่งของ LDR เข้าไฟ 5V, ขาอีกข้างต่อเข้ากับขา Analog (A0) และที่จุดเดียวกันนี้ให้ต่อตัวต้านทานลง Ground (Pull-down Config)",
+                    "<b>การอ่านค่า:</b> ใช้คำสั่ง <code>analogRead(A0)</code>",
+                    "<b>ผลลัพธ์:</b> แสงจ้า = ค่าสูง (~1000), มืดสนิท = ค่าต่ำ (~0)"
+                ],
+                "en": [
+                    "<b>Hardware:</b> 1x LDR, 1x 10k Resistor.",
+                    "<b>Wiring (Divider):</b> Connect LDR leg 1 to 5V. Connect LDR leg 2 to Analog Pin (A0). Also connect a 10k Resistor from A0 to Ground.",
+                    "<b>Code:</b> Use <code>analogRead(A0)</code>.",
+                    "<b>Logic:</b> Bright light = High value (~1000). Darkness = Low value (~0)."
+                ]
+            }
+        }
+    ]
+}

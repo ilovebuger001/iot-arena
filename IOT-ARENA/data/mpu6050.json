@@ -1,0 +1,186 @@
+{
+  "id": "mpu6050",
+  "category": "sensor",
+  "image": "asset/mpu6050.jpg",
+  "title": {
+    "th": "MPU-6050",
+    "en": "MPU-6050 Accelerometer & Gyro"
+  },
+  "sub_title": {
+    "th": "เซนเซอร์วัดความเร่งและความเร็วเชิงมุม 6 แกน",
+    "en": "6-Axis Motion Tracking Sensor"
+  },
+  "description": {
+    "th": "MPU-6050 เป็นโมดูลที่รวมเซนเซอร์วัดความเร่งและเซนเซอร์วัดความเร็วเชิงมุมเข้าด้วยกันในชิปเดียว สามารถวัดการเอียง การหมุน และการเคลื่อนที่ได้ 3 แกน มีวงจรประมวลผลในตัวเพื่อช่วยคำนวณค่าที่ซับซ้อน นิยมใช้ในโดรนและระบบรักษาสมดุลหุ่นยนต์",
+    "en": "The MPU-6050 is a serious piece of little motion processing technology. By combining a 3-axis gyroscope and a 3-axis accelerometer on the same silicon die, it can track motion in 6 degrees of freedom. It features an onboard Digital Motion Processor (DMP) that handles complex calculation algorithms, making it a favorite for drones, self-balancing robots, and gaming controllers."
+  },
+  "specs": [
+    {
+      "label": "Gyro Range",
+      "value": "±250, ±500, ±1000, ±2000 °/sec"
+    },
+    {
+      "label": "Accel Range",
+      "value": "±2g, ±4g, ±8g, ±16g"
+    },
+    {
+      "label": "Interface",
+      "value": "I2C (Addr: 0x68)"
+    },
+    {
+      "label": "Voltage",
+      "value": "3.3V - 5V"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "โดรนรักษาสมดุล",
+      "หุ่นยนต์ทรงตัว",
+      "จอยเกมส์ DIY",
+      "ระบบติดตามการเคลื่อนไหว"
+    ],
+    "en": [
+      "Drone Stabilization",
+      "Self-balancing Robot",
+      "DIY Game Controller",
+      "Motion Tracking"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "หุ่นยนต์สมดุลสองล้อ",
+        "desc": "ใช้ค่าจาก Gyro และ Accel ร่วมกับอัลกอริทึม PID เพื่อควบคุมมอเตอร์ให้หุ่นยนต์ตั้งตรง"
+      },
+      {
+        "title": "ถุงมืออัจฉริยะ (VR Glove)",
+        "desc": "ตรวจจับทิศทางการขยับมือเพื่อนำไปเป็นอินพุตควบคุมคอมพิวเตอร์หรือหุ่นยนต์ทางไกล"
+      }
+    ],
+    "en": [
+      {
+        "title": "Self-Balancing Robot",
+        "desc": "Combine Gyro and Accel data with a PID algorithm to keep a two-wheeled robot upright."
+      },
+      {
+        "title": "VR Motion Glove",
+        "desc": "Track hand gestures and orientation to provide input for VR systems or remote robotic control."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "MPU-6050 ไม่ใช่แค่เซนเซอร์วัดความเอียงธรรมดา แต่มันมี 'DMP' (Digital Motion Processor) ในตัวที่ช่วยคำนวณท่าทาง (Orientation) ที่ซับซ้อนได้เองโดยไม่ต้องใช้ CPU ของ Arduino เลย ลดภาระการเขียนโค้ด Quaternion ที่ยุ่งยากลงได้มาก \n\nจุดเด่น: ความแม่นยำสูง ราคาถูก และมีไลบรารีรองรับเยอะมาก \nจุดด้อย: Protocol I2C อาจมีปัญหากับสายยาวๆ และต้องระวัง Address 0x68/0x69 ชนกัน",
+    "en": "The MPU-6050 stands out with its onboard Digital Motion Processor (DMP). This engine performs complex 6-axis algorithms (Sensor Fusion) internally, outputting clean Quaternion data to the MCU, saving valuable processing cycles.\n\nKey Strength: High precision at a low cost.\nWeakness: The I2C bus is sensitive to cable length and noise."
+  },
+  "technical_specs": [
+    {
+      "label": "Chip",
+      "value": "MPU-6050"
+    },
+    {
+      "label": "Gyroscope",
+      "value": "±250, ±500, ±1000, ±2000dps"
+    },
+    {
+      "label": "Accelerometer",
+      "value": "±2g, ±4g, ±8g, ±16g"
+    },
+    {
+      "label": "Communication",
+      "value": "I2C (400kHz)"
+    },
+    {
+      "label": "Voltage",
+      "value": "3V - 5V (Onboard Regulator)"
+    },
+    {
+      "label": "ADC",
+      "value": "16-bit Built-in"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿30 - ฿60",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=mpu6050"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=mpu6050"
+      }
+    ]
+  },
+  "pinout_desc": {
+    "th": "เชื่อมต่อแบบ I2C: VCC (3.3-5V), GND, SCL, SDA และขา AD0 (เลือก Address), INT (Interrupt)",
+    "en": "I2C Interface: VCC (3.3-5V), GND, SCL, SDA, AD0 (Address selection), and INT (Interrupt pin)."
+  },
+  "tips": {
+    "th": [
+      "ใช้ DMP ภายในชิปเพื่อลดภาระการคำนวณของ MCU",
+      "ควรสอบเทียบ (Calibrate) ก่อนใช้งานทุกครั้ง"
+    ],
+    "en": [
+      "Use the onboard DMP to offload processing from the MCU",
+      "Always calibrate before use for accurate readings"
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "การเชื่อมต่อ I2C Bus",
+        "en": "I2C Configuration"
+      },
+      "steps": {
+        "th": [
+          "ต่อ <b>VCC</b> (3.3V แนะนำ), <b>GND</b>, <b>SDA</b>, และ <b>SCL</b> เข้ากับบอร์ดไมโครคอนโทรลเลอร์",
+          "Address ของชิปคือ <b>0x68</b> หากต่อขา AD0 ลง Ground และจะเป็น <b>0x69</b> หากต่อขา AD0 เข้าไฟบวก",
+          "ขา INT ใช้สำหรับส่งสัญญาณขัดจังหวะเมื่อมีข้อมูลใหม่พร้อมให้อ่าน (จำเป็นสำหรับโหมด DMP)"
+        ],
+        "en": [
+          "Connect <b>VCC</b> (3.3V preferred), <b>GND</b>, <b>SDA</b>, and <b>SCL</b> to your MCU's I2C bus",
+          "The I2C address is <b>0x68</b> by default (AD0 to GND); if AD0 is HIGH, the address shifts to <b>0x69</b>",
+          "The INT pin provides a hardware interrupt signal when new data is ready—crucial for DMP mode"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "การสอบเทียบและค่า Offset",
+        "en": "Calibration & Offsets"
+      },
+      "steps": {
+        "th": [
+          "วางเซนเซอร์บนพื้นผิวที่ราบเรียบและนิ่งที่สุดก่อนทำการ Calibrate",
+          "บันทึกค่า <b>Offset</b> ของขา X, Y, Z ทั้งส่วนของ Accel และ Gyro เพื่อนำไปหักลบออกจากค่าที่อ่านได้จริง",
+          "ใช้ไลบรารีช่วยหาค่า Offset อัตโนมัติ (เช่น <code>mpu.calibrateGyro()</code>) เพื่อความแม่นยำ"
+        ],
+        "en": [
+          "Place the sensor on a perfectly flat, stationary surface before performing calibration",
+          "Calculate <b>Offset values</b> for X, Y, and Z axes (both Accel & Gyro) to zero out static error",
+          "Use auto-calibration functions like <code>mpu.calibrateGyro()</code> provided by modern libraries"
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "ข้อควรระวังเรื่องสัญญาณรบกวน",
+        "en": "Noise & Filtering"
+      },
+      "steps": {
+        "th": [
+          "ข้อมูลดิบจะมีความผันผวนสูง (Jitter) ควรใช้ <b>Complementary Filter</b> หรือ <b>Kalman Filter</b> ในโค้ด",
+          "หลีกเลี่ยงการวางเซนเซอร์ใกล้กับแหล่งกำเนิดสนามแม่เหล็กหรือมอเตอร์ที่มีการสั่นสะเทือนสูง"
+        ],
+        "en": [
+          "Raw data is highly susceptible to jittering; implementing a <b>Complementary Filter</b> is essential for smooth motion",
+          "Avoid mounting the sensor near vibration sources (e.g., high-speed motors) or strong magnetic fields"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+    "id": "orangepi-zero",
+    "category": "mcu",
+    "image": "asset/orangepi-zero.png",
+    "title": {
+        "th": "Orange Pi Zero",
+        "en": "Orange Pi Zero"
+    },
+    "sub_title": {
+        "th": "บอร์ด Linux ขนาดจิ๋วราคาประหยัด",
+        "en": "Mini SBC with WiFi"
+    },
+    "description": {
+        "th": "คอมพิวเตอร์บอร์ดเดี่ยวที่มีขนาดเท่ากล่องไม้ขีด มาพร้อม WiFi และพอร์ต LAN ในราคาประหยัด",
+        "en": "A matchbox-sized single board computer featuring a quad-core processor, WiFi, and Ethernet."
+    },
+    "specs": [
+        {
+            "label": "Processor",
+            "value": "H2 Quad-core Cortex-A7"
+        },
+        {
+            "label": "RAM",
+            "value": "256MB / 512MB"
+        },
+        {
+            "label": "WiFi",
+            "value": "2.4GHz 802.11 b/g/n"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เซิร์ฟเวอร์ขนาดเล็ก",
+            "กล้องวงจรปิด IP"
+        ],
+        "en": [
+            "Mini Web Server",
+            "DIY IP Camera"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบโฆษณาผ่านหน้าจอ",
+                "desc": "ใช้รันบราวเซอร์เพื่อแสดงหน้าเว็บโฆษณาหรือเมนูอาหารแบบอัตโนมัติเมื่อเปิดเครื่อง"
+            },
+            {
+                "title": "ตัวช่วยบล็อกโฆษณาในบ้าน",
+                "desc": "ติดตั้งเป็น DNS Server เพื่อกรองโฆษณาและรักษาความเป็นส่วนตัวให้กับอุปกรณ์ทุกเครื่องในบ้าน"
+            }
+        ],
+        "en": [
+            {
+                "title": "Low-Cost Digital Signage",
+                "desc": "Run a lightweight browser in kiosk mode to display ads or digital menus automatically upon boot."
+            },
+            {
+                "title": "Home-wide Ad Blocker (Pi-hole)",
+                "desc": "Deploy as a tiny DNS filter to block advertisements and trackers for every device on your local network."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "Orange Pi Zero คือคอมพิวเตอร์บอร์ดเดี่ยวราคาประหยัดที่จิ๋วแต่แจ๋ว มันรัน Linux (Armbian) ได้เต็มรูปแบบ ทำให้เราสามารถรัน Python script, ทำ Web Server หรือ MQTT Broker ได้ในราคาถูกกว่า Raspberry Pi มาก \n\nข้อควรระวัง: 1. ไม่มีพอร์ต HDMI (ต้องต่อจอผ่านขา Analog TV Out หรือใช้ SSH เท่านั้น) 2. ชิปร้อนเร็วมาก ควรติด Heatsink เสมอ",
+        "en": "The Orange Pi Zero operates as a full-fledged Linux computer in a tiny form factor. It is perfect for headless applications like Pi-hole, MQTT brokers, or print servers.\n\nKey Limitations: It lacks an onboard HDMI port (video out is possible via messy analog wiring, but SSH is preferred). Also, the H2+ processor runs hot, so a heatsink is mandatory for long-term stability."
+    },
+    "technical_specs": [
+        {
+            "label": "CPU",
+            "value": "Allwinner H2+ Quad-core"
+        },
+        {
+            "label": "RAM",
+            "value": "256MB / 512MB DDR3"
+        },
+        {
+            "label": "Network",
+            "value": "10/100M Ethernet + WiFi"
+        },
+        {
+            "label": "USB",
+            "value": "1x USB 2.0 Host + 1x OTG"
+        },
+        {
+            "label": "Storage",
+            "value": "MicroSD Card Slot"
+        },
+        {
+            "label": "OS",
+            "value": "Armbian / Debian / Ubuntu"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿600 - ฿900",
+        "links": [
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=orange%20pi%20zero"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=orange+pi+zero"
+            },
+            {
+                "title": "AliExpress",
+                "url": "https://www.aliexpress.com/w/wholesale-orange-pi-zero.html"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 26-pin Expansion Header (คล้าย Raspberry Pi) และ 13-pin Function Header สำหรับ USB, IR, และ Audio",
+        "en": "Features a 26-pin Expansion Header (Pi-compatible) and a 13-pin Function Header for USB, IR, and Audio output."
+    },
+    "tips": {
+        "th": [
+            "บอร์ดอาจจะร้อนจัดขณะทำงาน แนะนำให้ติดซิงค์ระบายความร้อน",
+            "หาก WiFi เดิมไม่นิ่ง แนะนำให้ลองติดตั้ง Armbian OS รุ่นล่าสุด"
+        ],
+        "en": [
+            "Can get quite hot; a heatsink is highly recommended",
+            "For better WiFi stability, consider using the latest community Armbian OS build instead of the default stock image."
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การติดตั้ง OS ลง SD Card",
+                "en": "Installing the OS"
+            },
+            "steps": {
+                "th": [
+                    "ดาวน์โหลดอิมเมจไฟล์ (เช่น <b>Armbian</b> หรือ <b>Debian</b>) จากเว็บไซต์ทางการ",
+                    "ใช้โปรแกรม <b>BalenaEtcher</b> เพื่อเบิร์นอิมเมจลงใน MicroSD Card (แนะนำ Class 10)",
+                    "เสียบการ์ดเข้าบอร์ดและจ่ายไฟผ่าน Micro USB (5V 2A อย่างน้อย)"
+                ],
+                "en": [
+                    "Download a supported Linux image (<b>Armbian</b> is highly recommended) from the official site",
+                    "Flash the image to a high-speed MicroSD card (Class 10 minimum) using <b>BalenaEtcher</b>",
+                    "Insert the card and provide a stable 5V 2A power supply via the Micro USB port"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การเชื่อมต่อแบบไร้จอ",
+                "en": "Headless SSH Setup"
+            },
+            "steps": {
+                "th": [
+                    "เสียบสาย LAN เพื่อรับ IP อัตโนมัติ หรือใช้สาย Serial TTL เพื่อตั้งค่า WiFi ครั้งแรก",
+                    "ใช้โปรแกรม <b>Putty</b> หรือ Terminal เพื่อ SSH เข้าไปที่ IP ของบอร์ด",
+                    "User/Password เริ่มต้นของ Armbian มักจะเป็น <code>root</code> / <code>1234</code>"
+                ],
+                "en": [
+                    "Connect via Ethernet for auto-IP or use a USB-to-Serial debug cable for the first setup",
+                    "Use <b>SSH (Putty or Terminal)</b> to login to the board's IP address remotely",
+                    "Default Armbian credentials are typically <code>root</code> for user and <code>1234</code> for password"
+                ]
+            }
+        }
+    ]
+}

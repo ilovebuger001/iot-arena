@@ -1,0 +1,172 @@
+{
+  "id": "i2c-lcd",
+  "category": "display",
+  "image": "asset/i2c-lcd.jpg",
+  "title": {
+    "th": "I2C LCD 16x2",
+    "en": "I2C LCD 16x2"
+  },
+  "sub_title": {
+    "th": "หน้าจอแสดงผลข้อความผ่านบัส I2C",
+    "en": "Alphanumeric Display via I2C Bus"
+  },
+  "description": {
+    "th": "หน้าจอ LCD ขนาด 16 ตัวอักษร 2 แถวที่ติดตั้งโมดูล PCF8574 I2C ไว้ด้านหลัง ช่วยเปลี่ยนการเชื่อมต่อจากแบบขนาน (Parallel) ที่ต้องใช้สายถึง 16 เส้น ให้เหลือเพียงสายสัญญาณ 2 เส้น (SDA/SCL) และสายไฟ 2 เส้น (VCC/GND) ทำให้ประหยัดขาของไมโครคอนโทรลเลอร์ไปได้มาก",
+    "en": "A standard 16x2 character LCD integrated with a PCF8574 I2C expander module. This conversion shifts the interface from a 16-pin parallel connection to a simple 4-wire interface (VCC, GND, SDA, SCL). This drastically saves GPIO pins on your MCU, making it ideal for projects with limited connectivity."
+  },
+  "specs": [
+    {
+      "label": "Format",
+      "value": "16 Characters x 2 Lines"
+    },
+    {
+      "label": "Interface",
+      "value": "I2C (Address: 0x27 or 0x3F typical)"
+    },
+    {
+      "label": "Supply Voltage",
+      "value": "5V DC"
+    },
+    {
+      "label": "Backlight",
+      "value": "Blue or Green (Software Controllable)"
+    },
+    {
+      "label": "Expansion Chip",
+      "value": "PCF8574"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "แสดงค่าเซนเซอร์แบบเรียลไทม์",
+      "เมนูตั้งค่าอุปกรณ์",
+      "นาฬิกาดิจิทัล",
+      "ระบบล็อคด้วยรหัสผ่าน"
+    ],
+    "en": [
+      "Real-time Sensor Display",
+      "Device Settings Menu",
+      "Digital Clock",
+      "Password Lock System"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "จอแสดงผลอุณหภูมิและความชื้น",
+        "desc": "ใช้พ่วงกับเซนเซอร์ DHT11 เพื่อแสดงค่าอากาศปัจจุบันแบบอัตโนมัติโดยไม่ต้องเปิดคอมพิวเตอร์"
+      },
+      {
+        "title": "เครื่องกดรหัสผ่านอิเล็กทรอนิกส์",
+        "desc": "แสดงเครื่องหมาย '*' เมื่อมีการกดปุ่ม และแสดงข้อความ 'Access Granted' หากรหัสถูกต้อง"
+      }
+    ],
+    "en": [
+      {
+        "title": "Environment Monitor Display",
+        "desc": "Pair with a DHT11 sensor to show real-time temperature and humidity without a computer."
+      },
+      {
+        "title": "Electronic Passcode Screen",
+        "desc": "Display '*' characters during entry and show 'Access Granted' feedback for correct codes."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "จอ LCD 16x2 ทั่วไป (HD44780) ต้องใช้สายไฟถึง 12-16 เส้นในการเชื่อมต่อ แต่โมดูลนี้มีชิป PCF8574 (I2C Expander) ติดตั้งมาด้านหลัง ทำให้เหลือแค่สาย SDA และ SCL \n\nปัญหาที่พบบ่อย: จอไม่ติดเพราะ Contrast ไม่ถูกต้อง (ต้องหมุน VR สีฟ้าด้านหลัง) หรือ I2C Address ไม่ตรงกับโค้ด (ส่วนใหญ่เป็น 0x27 หรือ 0x3F)",
+    "en": "Standard 16x2 LCDs (HD44780) require a parallel interface with 12+ wires. This module integrates a PCF8574 I/O expander, reducing standard wiring to just 2 data lines (I2C).\n\nTroubleshooting: If you see boxes or nothing at all, adjust the blue potentiometer on the back for contrast. Also, verify the I2C address (usually 0x27 or 0x3F) with a scanner sketch."
+  },
+  "technical_specs": [
+    {
+      "label": "Resolution",
+      "value": "16 Characters x 2 Rows"
+    },
+    {
+      "label": "Interface",
+      "value": "I2C (SDA, SCL)"
+    },
+    {
+      "label": "Voltage",
+      "value": "5V DC"
+    },
+    {
+      "label": "Backlight",
+      "value": "Yellow-Green / Blue"
+    },
+    {
+      "label": "Controller",
+      "value": "HD44780 + PCF8574"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿60 - ฿90",
+    "links": [
+      {
+        "title": "Store (TH)",
+        "url": "https://www.thaieasyelec.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=lcd%2016x2%20i2c"
+      },
+      {
+        "title": "Lazada",
+        "url": "https://www.lazada.co.th/catalog/?q=arduino+lcd+i2c"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "ใช้ไขควงปรับ VR สีฟ้าด้านหลังหากมองไม่เห็นตัวอักษร",
+      "ห้ามต่อไฟ 3.3V เพราะจอจะมืดมากและทำงานไม่เสถียร"
+    ],
+    "en": [
+      "Use a screwdriver to tune the blue potentiometer on the back if characters are invisible.",
+      "Do NOT power with 3.3V; the contrast will be too low to read."
+    ]
+  },
+  "pinout_desc": {
+    "th": "เชื่อมต่อผ่านโมดูล I2C ด้านหลัง: VCC (5V), GND, SDA, SCL (ปรับความสว่างหน้าจอได้ด้วยตัวต้านทานปรับค่าได้ด้านหลัง)",
+    "en": "Connects via the I2C backpack: VCC (5V), GND, SDA, SCL. Features an onboard potentiometer for contrast adjustment."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "การค้นหา Address และตั้งค่า",
+        "en": "Address Searching & Setup"
+      },
+      "steps": {
+        "th": [
+          "<b>Wiring:</b> VCC->5V, GND->GND, SDA->A4, SCL->A5 (Uno)",
+          "<b>Scan:</b> อัปโหลดโค้ด <code>I2C Scanner</code> เพื่อหา Address (เช่น 0x27)",
+          "<b>Code:</b> ใช้ <code>LiquidCrystal_I2C lcd(0x27, 16, 2);</code> เพื่อเริ่มใช้งาน",
+          "<b>Contrast:</b> สั่ง <code>lcd.print(\"Hello\");</code> แล้วหมุน VR จนกว่าจะเห็นคำว่า Hello ชัดเจน"
+        ],
+        "en": [
+          "<b>Wiring:</b> VCC to 5V. SDA/SCL to MCU I2C pins.",
+          "<b>Scan:</b> Run an <b>I2C Scanner</b> sketch to confirm if address is 0x27 or 0x3F.",
+          "<b>Init:</b> Initialize with <code>LiquidCrystal_I2C lcd(0x27, 16, 2);</code>",
+          "<b>Tune:</b> Print test text, then rotate the blue potentiometer until the text is sharp."
+        ]
+      }
+    },
+    {
+      "title": {
+        "th": "การสร้างตัวอักษรพิเศษ",
+        "en": "Creating Custom Characters"
+      },
+      "steps": {
+        "th": [
+          "สร้าง Array byte ขนาด 8 ตัว แทนพิกเซล 5x8 จุด",
+          "ใช้คำสั่ง <code>lcd.createChar(0, heartIcon);</code> เพื่อบันทึก",
+          "ใช้ <code>lcd.write(0);</code> เพื่อแสดงผลไอคอนนั้นบนหน้าจอ"
+        ],
+        "en": [
+          "Define a byte array (8 hex values) representing the 5x8 pixel bitmap.",
+          "Register it using <code>lcd.createChar(id, bitmap);</code> (IDs 0-7 allowed).",
+          "Display it using <code>lcd.write(id);</code> to show custom icons like hearts or batteries."
+        ]
+      }
+    }
+  ]
+}

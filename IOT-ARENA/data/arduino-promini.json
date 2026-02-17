@@ -1,0 +1,150 @@
+{
+    "id": "arduino-promini",
+    "category": "mcu",
+    "image": "asset/arduino-promini.png",
+    "title": {
+        "th": "Arduino Pro Mini",
+        "en": "Arduino Pro Mini"
+    },
+    "sub_title": {
+        "th": "บอร์ด Arduino ขนาดเล็กจิ๋ว",
+        "en": "Ultra Compact Arduino"
+    },
+    "description": {
+        "th": "บอร์ด Arduino ขนาดเล็กที่ตัดส่วน USB ออกเพื่อลดขนาดและพลังงาน เหมาะสำหรับงานที่ติดตั้งถาวร",
+        "en": "The smallest Arduino variant, stripped of its USB-to-Serial chip to save space and power for permanent installs."
+    },
+    "specs": [
+        {
+            "label": "MCU",
+            "value": "ATmega328P"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V or 5V variants"
+        },
+        {
+            "label": "GPIO",
+            "value": "14 Digital, 8 Analog"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เครื่องวัดพกพา",
+            "ฝังในโมเดล"
+        ],
+        "en": [
+            "Wearables",
+            "Embedded Electronics"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "เซนเซอร์วัดดินไร้สาย (Battery Powered)",
+                "desc": "ใช้ Pro Mini 3.3V ร่วมกับ NRF24L01 เพื่อส่งค่าความชื้นในดิน โดยเน้นประหยัดไฟสูงสุด"
+            },
+            {
+                "title": "รีโมทคอนโทรลจิ๋ว",
+                "desc": "ฝังลงในกล่องขนาดเล็กเพื่อใช้เป็นสวิตช์ควบคุมไร้สายสำหรับงานแสดงโมเดลหรือของเล่น"
+            }
+        ],
+        "en": [
+            {
+                "title": "Wireless Battery-Powered Sensor",
+                "desc": "Use the 3.3V Pro Mini with NRF24L01 to transmit soil data while maintaining ultra-low power consumption."
+            },
+            {
+                "title": "Miniature Remote Control",
+                "desc": "Embed into small enclosures to create custom wireless switches for dioramas or model toys."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "Arduino Pro Mini เป็นบอร์ดที่ออกแบบมาเพื่อการใช้งานแบบฝังตัว (Embedded) อย่างแท้จริง โดยตัดชิปแปลงสัญญาณ USB-to-Serial ออกไป ทำให้มีขนาดเล็กมากและราคาถูก แต่แลกมาด้วยความยุ่งยากในการโปรแกรมที่ต้องใช้อุปกรณ์เสริม (FTDI Breakout) \n\nจุดเด่นคือเรื่องการประหยัดพลังงาน หากเราทำการดัดแปลงบอร์ดโดยการถอด Voltage Regulator และ Power LED ออก บอร์ดนี้จะสามารถทำงานได้นานหลายปีด้วยถ่านกระดุมเพียงก้อนเดียวในโหมด Sleep เหมาะสำหรับทำเซนเซอร์ไร้สายที่ติดตั้งในจุดที่เข้าถึงยาก",
+        "en": "The Arduino Pro Mini is designed for advanced users who require a small, low-power solution for permanent installations. By removing the onboard USB-to-Serial converter, the board achieves a significantly smaller footprint and lower power consumption compared to the Uno or Nano.\n\nTo program it, you'll need an external FTDI adapter. Its true power lies in its efficiency; with minor modifications (removing the regulator and LED), it becomes one of the best choices for battery-operated IoT nodes, capable of running for years on coin cells in deep sleep mode."
+    },
+    "technical_specs": [
+        {
+            "label": "Clock Speed",
+            "value": "8 MHz (3.3V) / 16 MHz (5V)"
+        },
+        {
+            "label": "Flash Memory",
+            "value": "32 KB (2 KB used by bootloader)"
+        },
+        {
+            "label": "SRAM",
+            "value": "2 KB"
+        },
+        {
+            "label": "EEPROM",
+            "value": "1 KB"
+        },
+        {
+            "label": "Input Voltage",
+            "value": "3.35-12V (3.3V model) / 5-12V (5V model)"
+        },
+        {
+            "label": "Max Current per I/O",
+            "value": "40 mA"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿80 - ฿150",
+        "links": [
+            {
+                "title": "SparkFun (Original)",
+                "url": "https://www.sparkfun.com/products/11113"
+            },
+            {
+                "title": "ThaiEasyElec",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+pro+mini"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ต้องใช้สาย FTDI หรือตัวแปลง USB-to-Serial ภายนอกในการโปรแกรม",
+            "ระวังการสั่งซื้อ เพราะมีรุ่น 3.3V (8MHz) และ 5V (16MHz) ซึ่งใช้แรงดันต่างกัน"
+        ],
+        "en": [
+            "Requires an external FTDI or USB-to-Serial adapter for code uploads",
+            "Double check your variant: the 3.3V version runs at 8MHz, while the 5V version runs at 16MHz."
+        ]
+    },
+    "pinout_desc": {
+        "th": "บอร์ดขนาดจิ๋วที่ไม่มีพอร์ต USB ในตัว (ต้องใช้ FTDI), มีขา Digital 14 ขา, Analog 8 ขา เหมาะสำหรับงานประหยัดพลังงาน",
+        "en": "Ultralight board without onboard USB (requires FTDI). Features 14 Digital I/O and 8 Analog Inputs. Ideal for low-power projects."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>เตรียมอุปกรณ์:</b><br>บอร์ด Pro Mini, ตัวแปลง USB-to-TTL (FTDI), และสายจัมเปอร์",
+                    "<b>การเชื่อมต่อ (Wiring):</b><br>ต่อขาให้ตรงกัน: <i>VCC-VCC, GND-GND, RX-TX, TX-RX, DTR-DTR</i>",
+                    "<b>ตรวจสอบรุ่น:</b><br>ดูที่ด้านหลังบอร์ดว่าติ๊กที่ 3.3V หรือ 5V และปรับสวิตช์ที่ตัวแปลง FTDI ให้ตรงกัน",
+                    "<b>ตั้งค่า IDE:</b><br>เลือก <i>Tools > Board > <b>Arduino Pro or Pro Mini</b></i>",
+                    "<b>เลือก Processor:</b><br>เลือกเมนู <i>Tools > Processor</i> ให้ตรงรุ่น (เช่น 'ATmega328P (5V, 16 MHz)')",
+                    "<b>อัปโหลด:</b><br>กด Upload หากไม่มีขา DTR บนตัวแปลง คุณต้องกดปุ่ม Reset บนบอร์ดทันทีที่ IDE ขึ้นคำว่า 'Uploading...'"
+                ],
+                "en": [
+                    "<b>Hardware Needed:</b><br>Pro Mini board, USB-to-TTL (FTDI) adapter, jumper wires.",
+                    "<b>Wiring:</b><br>Connect: <i>VCC-VCC, GND-GND, RX-TX, TX-RX, DTR-DTR</i>.",
+                    "<b>Voltage Check:</b><br>Check if your board is 3.3V or 5V and set the jumper on your FTDI adapter to match.",
+                    "<b>IDE Setup:</b><br>Select <i>Tools > Board > <b>Arduino Pro or Pro Mini</b></i>.",
+                    "<b>Processor:</b><br>Set <i>Tools > Processor</i> to match your board (e.g., 'ATmega328P (5V, 16 MHz)').",
+                    "<b>Upload:</b><br>Hit Upload. If your adapter lacks DTR, press Reset on the board manually when 'Uploading...' appears."
+                ]
+            }
+        }
+    ]
+}

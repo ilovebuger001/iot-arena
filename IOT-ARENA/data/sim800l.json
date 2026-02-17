@@ -1,0 +1,158 @@
+{
+    "id": "sim800l",
+    "category": "module",
+    "image": "asset/sim800l.png",
+    "title": {
+        "th": "SIM800L GPRS/GSM",
+        "en": "SIM800L GPRS/GSM Module"
+    },
+    "sub_title": {
+        "th": "โมดูลโทรศัพท์มือถือและอินเทอร์เน็ต",
+        "en": "Cellular Connectivity Module"
+    },
+    "description": {
+        "th": "โมดูลขนาดเล็กที่ทำให้โปรเจกต์ของคุณสามารถโทรออก รับสาย ส่ง SMS และเชื่อมต่ออินเทอร์เน็ต 2G ได้",
+        "en": "A tiny GSM/GPRS module that allows your project to make calls, send SMS, and connect to 2G internet."
+    },
+    "specs": [
+        {
+            "label": "Network",
+            "value": "Quad-band (850/900/1800/1900MHz)"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.4V to 4.4V (Peak 2A)"
+        },
+        {
+            "label": "Interface",
+            "value": "UART"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เครื่องแจ้งเตือนผ่าน SMS",
+            "เกตเวย์ระยะไกล"
+        ],
+        "en": [
+            "SMS Alert System",
+            "Remote IoT Gateway"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบแจ้งเตือนตู้เซฟถูกเปิดผ่าน SMS",
+                "desc": "ส่งข้อความแจ้งเตือนเข้ามือถือทันทีเมื่อเซนเซอร์ตรวจพบการสั่นสะเทือนหรือการเปิดประตู"
+            },
+            {
+                "title": "ระบบปิด-เปิดไฟระยะไกลผ่านการโทร",
+                "desc": "ใช้วิธีเช็คเบอร์ที่โทรเข้ามา (Missed Call) เพื่อสั่งเปิดรีเลย์โดยไม่ต้องเสียค่าบริการ"
+            }
+        ],
+        "en": [
+            {
+                "title": "Safe Security SMS Alert",
+                "desc": "Send an instant emergency SMS to your phone if a vibration or door opening is detected indoors."
+            },
+            {
+                "title": "Remote Relay via Missed Call",
+                "desc": "Trigger heavy loads by checking the caller ID of incoming calls—control your home for free."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "SIM800L เป็นโมดูล GSM/GPRS ขนาดจิ๋วที่ราคาประหยัดที่สุด แต่ใช้งานยากที่สุดสำหรับมือใหม่ \n\nปัญหาอันดับ 1: เรื่องไฟเลี้ยง โมดูลนี้ต้องการแรงดัน 3.7V-4.2V (ห้ามเกิน 4.4V) และกระแส Peak สูงถึง 2A (ช่วงที่ค้นหาสัญญาณ) หากใช้ไฟจาก USB หรือ Arduino 5V โมดูลจะรีบูตตัวเองตลอดเวลา ต้องใช้แหล่งจ่ายไฟแยกหรือแบตเตอรี่ Li-ion เท่านั้น",
+        "en": "The SIM800L is the cheapest way to get cellular connectivity, but it's notorious for power issues. It requires exactly 3.7V-4.2V and can pull up to 2A bursts during transmission.\n\nCRITICAL: Do NOT power this directly from an Arduino or standard USB. Use a dedicated 2A Buck Converter set to 4.1V or a Li-Ion battery. Also, use a Logic Level Shifter for the RX pin if connecting to a 5V Arduino."
+    },
+    "technical_specs": [
+        {
+            "label": "Network",
+            "value": "2G (Quad-Band)"
+        },
+        {
+            "label": "Supply",
+            "value": "3.8V - 4.2V (2A Peak)"
+        },
+        {
+            "label": "Logic",
+            "value": "2.8V (Need Divider)"
+        },
+        {
+            "label": "Interface",
+            "value": "UART (Serial)"
+        },
+        {
+            "label": "SIM Type",
+            "value": "Micro SIM"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿120 - ฿180",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=sim800l"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+sim800l"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วยขา: VCC (3.4-4.4V *สำคัญมาก), GND, TXD, RXD (2.8V Logic), และ RST แนะนำให้ใช้แหล่งจ่ายไฟแยก",
+        "en": "Features pins: VCC (3.4-4.4V *STRICT), GND, TXD, RXD (2.8V Logic), and RST. Independent high-current power supply is highly recommended."
+    },
+    "tips": {
+        "th": [
+            "ใช้ Capacitor 1000uF ต่อคร่อม VCC/GND เพื่อกันไฟตก",
+            "ซิมการ์ดต้องหันด้านตัดออกข้างนอก และคว่ำหน้าลง"
+        ],
+        "en": [
+            "Add a 1000uF capacitor closer to VCC/GND pins to handle current spikes.",
+            "Insert Micro SIM with the notch facing out and gold contacts facing down."
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การจัดการพลังงาน",
+                "en": "Powering the SIM800L"
+            },
+            "steps": {
+                "th": [
+                    "ใช้แหล่งจ่ายไฟปรับค่าได้ (Buck Converter) ตั้งไว้ที่ <b>4.1V</b> (เสถียรที่สุด)",
+                    "ต่อ <b>GND</b> ร่วมกับ Arduino เสมอ ไม่งั้นสื่อสารกันไม่ได้",
+                    "ขา <b>RX</b> ของโมดูลรับไฟได้แค่ 2.8V ควรต่อ Voltage Divider (10k/20k) หากใช้กับ Arduino 5V"
+                ],
+                "en": [
+                    "Use a LM2596 Buck Converter set to <b>4.1V</b>. Do not trust '5V' sources.",
+                    "Connect <b>Common Ground</b> between the Power Supply, SIM800L, and Arduino.",
+                    "Use a resistor divider on the <b>module's RX pin</b> to drop Arduino's 5V signal down to ~2.8V."
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "ชุดคำสั่ง AT Command เบื้องต้น",
+                "en": "Essential AT Commands"
+            },
+            "steps": {
+                "th": [
+                    "ส่ง <code>AT</code> = ตรวจสอบการเชื่อมต่อ (ต้องตอบ OK)",
+                    "ส่ง <code>AT+CSQ</code> = เช็คสัญญาณ (ควรได้ค่า 10-31, หากต่ำกว่า 10 สายอากาศไม่ดี)",
+                    "ส่ง <code>AT+CMGF=1</code> = ตั้งค่าเป็น Text Mode เพื่อส่ง SMS"
+                ],
+                "en": [
+                    "<code>AT</code> -> OK (Basic check)",
+                    "<code>AT+CSQ</code> -> Signal Strength (Value 0-31; <10 is unusable)",
+                    "<code>AT+CMGF=1</code> -> Set SMS Text Mode (Required before sending messages)"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,162 @@
+{
+    "id": "arduino-leonardo",
+    "category": "mcu",
+    "image": "asset/arduino-leonardo.png",
+    "title": {
+        "th": "Arduino Leonardo",
+        "en": "Arduino Leonardo"
+    },
+    "sub_title": {
+        "th": "บอร์ด Arduino ที่จำลองเป็นเมาส์/คีย์บอร์ดได้",
+        "en": "USB HID Capable Arduino"
+    },
+    "description": {
+        "th": "ใช้ชิป ATmega32u4 ที่มีความสามารถในการจำลองเป็นเมาส์หรือคีย์บอร์ด (HID) เมื่อต่อกับคอมพิวเตอร์",
+        "en": "An Arduino board using the ATmega32u4, allowing it to act as a native USB Mouse or Keyboard (HID)."
+    },
+    "specs": [
+        {
+            "label": "MCU",
+            "value": "ATmega32u4"
+        },
+        {
+            "label": "USB",
+            "value": "Micro USB (Native)"
+        },
+        {
+            "label": "SRAM",
+            "value": "2.5 KB"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "จอยสติ๊กกำหนดเอง",
+            "ปุ่มลัดมาโคร"
+        ],
+        "en": [
+            "Custom Joysticks",
+            "Macro Keypads"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "คีย์บอร์ดมาโคร (Macro Pad)",
+                "desc": "สร้างแผงปุ่มสำหรับตัดต่อวิดีโอหรือเล่นเกมที่สามารถส่งคำสั่งคีย์บอร์ดที่ซับซ้อนได้"
+            },
+            {
+                "title": "กุญแจรักษาความปลอดภัย (Auto Login)",
+                "desc": "จำลองเป็นคีย์บอร์ดเพื่อพิมพ์รหัสผ่านเมื่อมีการเสียบเข้าคอมพิวเตอร์และกดปุ่มที่กำหนด"
+            }
+        ],
+        "en": [
+            {
+                "title": "Video Editing Macro Pad",
+                "desc": "Build a custom button layout that sends complex keyboard shortcuts to speed up your workflow."
+            },
+            {
+                "title": "Hardware Password Vault",
+                "desc": "Emulate a keyboard to automatically type encrypted passwords when the board is plugged in and triggered."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "Arduino Leonardo ใช้ชิป ATmega32u4 ซึ่งต่างจาก Uno ตรงที่มี USB Communication ในตัวชิปเลย (ไม่ต้องใช้ชิปแยก) ทำให้คอมพิวเตอร์มองเห็นบอร์ดนี้เป็นอุปกรณ์ HID (Human Interface Device) ได้จริงๆ เช่น เมาส์ หรือ คีย์บอร์ด เหมาะสำหรับทำจอยเกม หรือตัวช่วยกดปุ่มอัตโนมัติ \n\nข้อควรระวัง: การที่ USB รวมอยู่ในชิปหลัก หมายความว่าถ้าโค้ดของเรารวน (Crash) หรือเข้า Sleep Mode พอร์ต USB บนคอมพ์จะหายไปด้วย ทำให้ Upload โค้ดใหม่ยากขึ้น (ต้องกดปุ่ม Reset จังหวะที่แม่นยำ)",
+        "en": "The Leonardo differs from other Arduino boards in that the ATmega32u4 has built-in USB communication, eliminating the need for a secondary processor. This allows the Leonardo to appear to a connected computer as a mouse and keyboard, in addition to a virtual (CDC) serial / COM port.\n\nWarning: Since the USB handling is done by the main sketch, blocking code or crashes can 'brick' the USB port, requiring a manual reset timing trick to upload new code."
+    },
+    "technical_specs": [
+        {
+            "label": "MCU",
+            "value": "ATmega32u4"
+        },
+        {
+            "label": "Clock Speed",
+            "value": "16 MHz"
+        },
+        {
+            "label": "Flash Memory",
+            "value": "32 KB (4KB for bootloader)"
+        },
+        {
+            "label": "SRAM",
+            "value": "2.5 KB"
+        },
+        {
+            "label": "EEPROM",
+            "value": "1 KB"
+        },
+        {
+            "label": "Input Voltage",
+            "value": "7-12V (Recommended)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿250 - ฿450",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=arduino+leonardo"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+leonardo"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "Serial Monitor อาจจะรีเซ็ตแปลกๆ เพราะใช้ Native USB Comms",
+            " Leonardo ไม่มีชิปสื่อสารแยก ดังนั้นการ Reset บอร์ดจะทำให้พอร์ต COM หายไปชั่วคราว"
+        ],
+        "en": [
+            "Serial Monitor behavior varies due to native USB-CDC integration",
+            "Leonardo lacks a secondary USB chip; resetting the MCU will cause the COM port to temporarily disappear from your PC."
+        ]
+    },
+    "pinout_desc": {
+        "th": "มี Digital I/O 20 ขา (PWM 7 ขา) และ Analog Input 12 ขา รองรับ USB HID ในตัว (จำลองเป็นเมาส์/คีย์บอร์ดได้)",
+        "en": "Features 20 Digital I/O (7 PWM) and 12 Analog Inputs. Supports native USB HID for keyboard/mouse emulation."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การเขียนโปรแกรม HID",
+                "en": "USB HID Emulation"
+            },
+            "steps": {
+                "th": [
+                    "ใช้ไลบรารี <code>Keyboard.h</code> หรือ <code>Mouse.h</code> ที่มีมาให้",
+                    "ใช้คำสั่ง <code>Keyboard.print()</code> เพื่อส่งตัวอักษร หรือ <code>Mouse.move()</code> เพื่อเลื่อนเมาส์",
+                    "<b>คำเตือน:</b> ควรใส่เงื่อนไขปุ่มกดก่อนเริ่มส่งคำสั่ง มิฉะนั้นคอมพิวเตอร์อาจถูกควบคุมจนงานเสียหาย"
+                ],
+                "en": [
+                    "Include the standard <code>Keyboard.h</code> or <code>Mouse.h</code> libraries in your sketch",
+                    "Use <code>Keyboard.print(\"Hello\")</code> to type or <code>Mouse.move(x, y)</code> to control the cursor",
+                    "<b>WARNING:</b> Always include a safety switch/delay before sending HID commands to prevent losing control of your PC."
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "พิน Digital และ PWM",
+                "en": "Digital & PWM Mapping"
+            },
+            "steps": {
+                "th": [
+                    "Leonardo มีขา PWM ทั้งหมด 7 ขา (3, 5, 6, 9, 10, 11, 13)",
+                    "พิน <b>SDA (ขา 2)</b> และ <b>SCL (ขา 3)</b> แยกออกมาต่างหากจากขา Analog",
+                    "รองรับการต่อสาย Micro USB โดยตรง ไม่ต้องใช้หัว USB ขนาดใหญ่แบบ Uno"
+                ],
+                "en": [
+                    "Leonardo features 7 PWM pins (3, 5, 6, 9, 10, 11, and 13) for fluid motor/LED control",
+                    "Hardware I2C is located on <b>Pin 2 (SDA) and Pin 3 (SCL)</b>, which is different from standard Uno pinout",
+                    "The native Micro USB port simplifies connectivity for compact modern enclosures."
+                ]
+            }
+        }
+    ]
+}

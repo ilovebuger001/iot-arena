@@ -1,0 +1,172 @@
+{
+  "id": "esp8266",
+  "category": "mcu",
+  "image": "asset/esp8266.jpg",
+  "title": {
+    "th": "NodeMCU ESP8266",
+    "en": "NodeMCU ESP8266"
+  },
+  "sub_title": {
+    "th": "ตำนานชิป WiFi สำหรับงาน IoT",
+    "en": "The Legendary WiFi Chip for IoT"
+  },
+  "description": {
+    "th": "ESP8266 เป็นชิปที่สร้างแรงสั่นสะเทือนให้วงการ IoT เนื่องจากมี WiFi ในตัวแต่ราคาถูกกว่าบอร์ด Arduino รุ่นเก่ามาก รุ่น NodeMCU V2/V3 นำชิปนี้มาติดตั้งบนบอร์ดที่พร้อมใช้งาน มีวงจรจัดการพลังงานและชิปสื่อสาร USB-to-Serial ในตัว ทำให้เสียบสาย USB แล้วเขียนโค้ดได้ทันที นิยมมากในงานสมาร์ทโฮม",
+    "en": "The ESP8266 took the IoT world by storm by offering a built-in WiFi stack at a fraction of the cost of previous modules. The NodeMCU development board integrates this chip with a USB-to-Serial converter and voltage regulator, making it breadboard-friendly and plug-and-play. It is the go-to choice for simple WiFi-connected sensors and home automation."
+  },
+  "specs": [
+    {
+      "label": "SoC",
+      "value": "Tensilica L106 (80MHz)"
+    },
+    {
+      "label": "WiFi",
+      "value": "802.11 b/g/n (2.4 GHz)"
+    },
+    {
+      "label": "Operating Voltage",
+      "value": "3.3V (Logic Level)"
+    },
+    {
+      "label": "Flash Memory",
+      "value": "4 MB (Typical)"
+    },
+    {
+      "label": "Analog Input",
+      "value": "1 Pin (Max 1.0V/3.3V depending on board)"
+    },
+    {
+      "label": "GPIO",
+      "value": "11 Pins"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "สมาร์ทโฮม",
+      "เซนเซอร์ส่งข้อมูลผ่าน WiFi",
+      "ระบบแจ้งเตือน LINE/Telegram",
+      "ควบคุมรีเลย์ผ่านเว็บ"
+    ],
+    "en": [
+      "Smart Home",
+      "WiFi Sensor Node",
+      "LINE/Telegram Alerts",
+      "Web-controlled Relay"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "ระบบแจ้งเตือนน้ำท่วมผ่าน LINE",
+        "desc": "ใช้ร่วมกับเซนเซอร์วัดระดับน้ำ เพื่อส่งข้อความแจ้งเตือนเข้ามือถือทันทีเมื่อน้ำถึงระดับที่กำหนด"
+      },
+      {
+        "title": "สวิตช์ไฟ WiFi",
+        "desc": "ใช้ควบคุมรีเลย์เพื่อเปิด-ปิดไฟผ่านเว็บเบราว์เซอร์หรือแอปพลิเคชันอย่างสะดวก"
+      }
+    ],
+    "en": [
+      {
+        "title": "LINE Notify Flood Alert",
+        "desc": "Pair with a water level sensor to send instant mobile notifications when water reaches a certain threshold."
+      },
+      {
+        "title": "WiFi Light Switch",
+        "desc": "Control a relay to toggle lights via a web browser or mobile app interface."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "NodeMCU (ESP8266) ขับเคลื่อนด้วยชิป Tensilica L106 32-bit ที่ความเร็ว 80 MHz ซึ่งเร็วกว่า Arduino ถึง 5 เท่า จุดเด่นคือ WiFi Stack ที่ฝังมาในตัว ทำให้สามารถเชื่อมต่ออินเทอร์เน็ตได้ทันทีโดยไม่ต้องใช้อุปกรณ์เสริม \n\nอย่างไรก็ตาม ข้อจำกัดคือมีขา GPIO ให้ใช้งานน้อย (ประมาณ 9-11 ขาที่ใช้ได้จริง) และมีขา Analog เพียง 1 ขา (A0) ที่รับแรงดันได้จำกัด (1.0V ที่ตัวชิป หรือ 3.3V บนบอร์ด NodeMCU เนื่องจากมีตัวแบ่งแรงดัน)",
+    "en": "The NodeMCU (ESP8266) features a 32-bit Tensilica L106 core running at 80 MHz, offering significantly more processing power than standard Arduinos. Its integrated WiFi stack allows for seamless IoT connectivity.\n\nLimitations include a lower GPIO count compared to the ESP32 and a single 10-bit Analog Input (A0). While the raw chip accepts max 1.0V on A0, the NodeMCU board includes a voltage divider to support 3.3V input range."
+  },
+  "technical_specs": [
+    {
+      "label": "SoC",
+      "value": "Tensilica L106 32-bit"
+    },
+    {
+      "label": "Clock Speed",
+      "value": "80 MHz (Overclock 160 MHz)"
+    },
+    {
+      "label": "Flash Memory",
+      "value": "4 MB (External)"
+    },
+    {
+      "label": "RAM",
+      "value": "32 KB + 80 KB User Data"
+    },
+    {
+      "label": "WiFi",
+      "value": "802.11 b/g/n (2.4 GHz)"
+    },
+    {
+      "label": "Operating Voltage",
+      "value": "3.3V (Not 5V Tolerant)"
+    },
+    {
+      "label": "GPIO",
+      "value": "11 Usable Pins"
+    },
+    {
+      "label": "Analog Input",
+      "value": "1 (10-bit resolution)"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿90 - ฿160",
+    "links": [
+      {
+        "title": "Cytron Thailand",
+        "url": "https://www.cytron.io/p-nodemcu-v3-lua-wifi-module-esp8266-12e"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=nodemcu"
+      },
+      {
+        "title": "Element14",
+        "url": "https://th.element14.com/"
+      }
+    ]
+  },
+  "tips": {
+    "th": [
+      "GPIO16 ใช้สำหรับ Deep Sleep Wake-up เท่านั้น",
+      "หลีกเลี่ยงการใช้ delay() เพราะจะทำให้ WiFi หลุด"
+    ],
+    "en": [
+      "GPIO16 is only used for Deep Sleep wake-up",
+      "Avoid using delay() as it blocks the WiFi stack"
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วย GPIO 17 ขา รองรับ I2C, SPI, UART และมี Analog Input (ADC) 1 ช่อง (1.0V Max) มาพร้อม WiFi ในตัว",
+    "en": "Features 17 GPIOs supporting I2C, SPI, UART, and 1 Analog Input (ADC) limited to 1.0V. Built-in WiFi connectivity."
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "<b>ติดตั้ง Driver:</b><br>NodeMCU ส่วนใหญ่ใช้ชิป <b>CH340</b> หรือ <b>CP2102</b> ให้พลิกดูหลังบอร์ดและดาวน์โหลด Driver ให้ตรงรุ่น",
+          "<b>เพิ่ม Board Manager:</b><br>ใน IDE ไปที่ <i>Preferences</i> เพิ่ม URL: <code>http://arduino.esp8266.com/stable/package_esp8266com_index.json</code>",
+          "<b>ติดตั้ง Package:</b><br>ค้นหา <b>'esp8266'</b> ใน Boards Manager แล้วกด Install",
+          "<b>เลือกบอร์ด:</b><br>เลือก <b>'NodeMCU 1.0 (ESP-12E Module)'</b>",
+          "<b>อัปโหลด:</b><br>เลือก Port ที่ถูกต้อง หากอัปโหลดไม่ผ่าน ให้ลองกดปุ่ม FLASH ค้างไว้ก่อนเสียบสาย USB เพื่อเข้าโหมด Bootloader"
+        ],
+        "en": [
+          "<b>Drivers:</b><br>Check if your board writes <i>CP2102</i> or <i>CH340</i> on the black chip near USB port, and install that driver.",
+          "<b>Manager URL:</b><br>Add the ESP8266 community URL to your Arduino IDE Preferences.",
+          "<b>Install Core:</b><br>Search for and install <b>'esp8266'</b> in the Boards Manager.",
+          "<b>Board Select:</b><br>Choose <b>'NodeMCU 1.0 (ESP-12E Module)'</b>.",
+          "<b>Upload Trick:</b><br>If upload fails, try holding the <b>FLASH</b> button while connecting the USB cable to enter bootloader mode."
+        ]
+      }
+    }
+  ]
+}

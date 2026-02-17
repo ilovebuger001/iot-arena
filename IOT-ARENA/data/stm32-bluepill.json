@@ -1,0 +1,158 @@
+{
+    "id": "stm32-bluepill",
+    "category": "mcu",
+    "image": "asset/stm32-bluepill.png",
+    "title": {
+        "th": "STM32 Blue Pill",
+        "en": "STM32F103C8T6 (Blue Pill)"
+    },
+    "sub_title": {
+        "th": "บอร์ด ARM Cortex-M3 ประสิทธิภาพสูง",
+        "en": "High Performance ARM MCU"
+    },
+    "description": {
+        "th": "บอร์ดไมโครคอนโทรลเลอร์ 32-บิต ที่มีความเร็วสูงและขา GPIO จำนวนมาก ในราคาที่เข้าถึงได้",
+        "en": "A powerful 32-bit development board featuring an ARM Cortex-M3 core, known for its high speed and I/O count."
+    },
+    "specs": [
+        {
+            "label": "Core",
+            "value": "Cortex-M3 (72 MHz)"
+        },
+        {
+            "label": "Flash",
+            "value": "64 / 128 KB"
+        },
+        {
+            "label": "Logic",
+            "value": "3.3V (Some 5V Tolerant)"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "ระบบควบคุม CNC",
+            "เครื่องดนตรีดิจิทัล USB"
+        ],
+        "en": [
+            "CNC Controllers",
+            "USB Digital Instruments"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบควบคุม Flight Controller (Drone)",
+                "desc": "ใช้พลังประมวลผล 32-บิต เพื่อคำนวณการทรงตัวของโดรนที่ต้องการความแม่นยำสูง"
+            },
+            {
+                "title": "อุปกรณ์จำลองคีย์บอร์ด/เมาส์",
+                "desc": "ใช้พอร์ต USB ในตัวเพื่อทำเป็น Macro Keypad หรือจอยสติ๊กสำหรับเล่นเกม"
+            }
+        ],
+        "en": [
+            {
+                "title": "DIY Drone Flight Controller",
+                "desc": "Harness 32-bit processing power for high-speed sensor fusion and stabilization loops."
+            },
+            {
+                "title": "USB HID Custom Controller",
+                "desc": "Utilize the native USB interface to create custom macro keypads, mice, or gaming joysticks."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "STM32 Blue Pill เป็นบอร์ดขุมพลัง ARM Cortex-M3 ที่ราคาถูกอย่างเหลือเชื่อ แต่ให้สมรรถนะระดับ 32-บิต มี DMA ช่วยโอนถ่ายข้อมูลโดยไม่กวน CPU และมี Timer ความละเอียดสูง เหมาะสำหรับงานคำนวณซับซ้อน \n\nข้อควรระวังคือการเริ่มต้นใช้งานอาจยากกว่า Arduino เล็กน้อย ต้องติดตั้ง Core เพิ่มเติม และต้องแน่ใจว่าได้ชิปแท้ เพราะชิป Clone บางตัวอาจมีปัญหาเรื่อง Flash Memory หรือ USB Bootloader",
+        "en": "The STM32 Blue Pill brings the power of the ARM Cortex-M3 architecture to the hobbyist market at a price point rivaling 8-bit boards. Features like DMA (Direct Memory Access) allow for high-speed data transfer without CPU intervention, making it ideal for tasks like driving large LED matrices or sampling audio.\n\nWhile powerful, the learning curve is steeper than Arduino. Users must manage 3.3V logic levels and ensure they are using the correct core in the Arduino IDE. Clone chips are common and may require workarounds for successful flashing."
+    },
+    "technical_specs": [
+        {
+            "label": "MCU",
+            "value": "STM32F103C8T6 (ARM Cortex-M3)"
+        },
+        {
+            "label": "Clock Speed",
+            "value": "72 MHz"
+        },
+        {
+            "label": "Flash Memory",
+            "value": "64 KB (Often 128KB on real chips)"
+        },
+        {
+            "label": "SRAM",
+            "value": "20 KB"
+        },
+        {
+            "label": "Operating Voltage",
+            "value": "3.3V (Most pins 5V Tolerant)"
+        },
+        {
+            "label": "ADC",
+            "value": "2x 12-bit ADC (10 channels)"
+        },
+        {
+            "label": "Timers",
+            "value": "3x 16-bit, 1x PWM Timer"
+        },
+        {
+            "label": "USB",
+            "value": "USB 2.0 Full Speed"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿100 - ฿180",
+        "links": [
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/"
+            },
+            {
+                "title": "AliExpress",
+                "url": "https://www.aliexpress.com/w/wholesale-stm32f103c8t6.html"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วยขา GPIO 32 ขา (ส่วนใหญ่เป็น 5V Tolerant), 2x ADC (12-bit), 3x UART, 2x I2C และ 2x SPI ขับเคลื่อนด้วย Cortex-M3",
+        "en": "Features 32 GPIOs (mostly 5V tolerant), 2x 12-bit ADCs, 3x UART, 2x I2C, and 2x SPI interfaces. Powered by ARM Cortex-M3."
+    },
+    "tips": {
+        "th": [
+            "ต้องใช้ตัวโปรแกรม ST-Link หรือ USB-to-Serial ในการเบิร์นโค้ด",
+            "ระวังชิปปลอมที่อาจจะมีหน่วยความจำหรือความเสถียรไม่เท่าชิป STM แท้"
+        ],
+        "en": [
+            "Requires an ST-Link or USB-to-Serial converter for programming",
+            "Beware of clone chips (GD32/CS32) which might have slight timing differences or memory inconsistencies compared to genuine ST silicon."
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>อุปกรณ์:</b><br>บอร์ด Blue Pill และ <b>ST-Link V2</b> (USB Dongle สีต่างๆ)",
+                    "<b>การ Wiring:</b><br>ต่อสาย 3.3V, GND, SWDIO, SWCLK จาก ST-Link เข้าที่ขาตรงกันที่ปลายบอร์ด",
+                    "<b>ติดตั้ง Board Manager:</b><br>ใน IDE ไปที่ <i>File > Preferences</i> เพิ่ม URL: <code>https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json</code>",
+                    "<b>ติดตั้ง Package:</b><br>ค้นหาและติดตั้ง <b>'STM32 MCU based boards'</b> ใน Boards Manager",
+                    "<b>เลือกบอร์ด:</b><br>เลือก <b>'Generic STM32F1 series'</b> > <b>'BluePill F103C8'</b>",
+                    "<b>อัปโหลด:</b><br>เปลี่ยน Upload Method เป็น <b>'STLink'</b> แล้วกด Upload ได้เลย (ไม่ต้องกดปุ่ม Reset)"
+                ],
+                "en": [
+                    "<b>Hardware:</b><br>Blue Pill board and an <b>ST-Link V2</b> programmer.",
+                    "<b>Connection:</b><br>Connect 3.3V, GND, SWDIO, and SWCLK wires from the ST-Link to the board's header.",
+                    "<b>URL Setup:</b><br>Add the STM32duino URL to Arduino IDE Preferences.",
+                    "<b>Package Installation:</b><br>Install <b>'STM32 MCU based boards'</b> via Boards Manager.",
+                    "<b>Select Board:</b><br>Choose <b>'Generic STM32F1 series'</b> -> <b>'BluePill F103C8'</b>.",
+                    "<b>Flash:</b><br>Set Upload Method to <b>'STLink'</b> and hit Upload. No button pressing required."
+                ]
+            }
+        }
+    ]
+}

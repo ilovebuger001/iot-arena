@@ -1,0 +1,164 @@
+{
+    "id": "pcf8574",
+    "category": "module",
+    "image": "asset/pcf8574.png",
+    "title": {
+        "th": "PCF8574 I/O Expander",
+        "en": "PCF8574 I/O Expander"
+    },
+    "sub_title": {
+        "th": "โมดูลขยายพอร์ต Digital",
+        "en": "I2C to 8-bit Parallel Port"
+    },
+    "description": {
+        "th": "โมดูลที่ช่วยเพิ่มขา Digital ได้ 8 ขา โดยใช้เพียงสาย I2C 2 เส้น นิยมใช้ต่อกับหน้าจอ LCD",
+        "en": "An I2C bus to 8-bit parallel port expander, commonly used to interface with character LCDs."
+    },
+    "specs": [
+        {
+            "label": "I/O Ports",
+            "value": "8 Bi-directional"
+        },
+        {
+            "label": "Protocol",
+            "value": "I2C Interface"
+        },
+        {
+            "label": "Voltage",
+            "value": "2.5V - 6V"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "ขยายพอร์ตให้ Arduino",
+            "เชื่อมต่อ LCD 20x4"
+        ],
+        "en": [
+            "GPIO Expansion",
+            "I2C LCD Interface"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบปุ่มกดขนาดใหญ่ (Keypad)",
+                "desc": "ใช้ขยายขาเพื่อรับอินพุตจากปุ่มกด 4x4 matrix โดยประหยัดขาสัญญาณไปได้มาก"
+            },
+            {
+                "title": "แผงควบคุมไฟ LED จำนวนมาก",
+                "desc": "ใช้ควบคุมสถานะไฟหน้าแผงควบคุมถึง 8 ดวง (หรือ 64 ดวงหากพ่วงต่อหลายโมดูล)"
+            }
+        ],
+        "en": [
+            {
+                "title": "Large Keypad Matrix Reader",
+                "desc": "Expand your MCU's reach to read 4x4 keypads using only the two I2C wires."
+            },
+            {
+                "title": "LED Dashboard Controller",
+                "desc": "Drive up to 8 status LEDs per module (expandable up to 64 LEDs by daisy-chaining modules)."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "PCF8574 เป็นชิปขยายขา Digital I/O (I/O Expander) ผ่านทาง I2C Bus ซึ่งช่วยแก้ปัญหาขาของ Arduino ไม่พอใช้ โดยเฉพาะเมื่อต้องต่อจอ LCD ที่ปกติใช้สายเยอะมาก (6 เส้น) ให้เหลือเพียง 2 เส้น (SDA, SCL) นอกจากนี้ยังสามารถใช้ขับ LED หรืออ่านค่าจากปุ่มกดแบบ Matrix 4x4 ได้ด้วย",
+        "en": "The PCF8574 is an 8-bit remote I/O expander for the I2C bus. It provides general-purpose remote I/O expansion for most microcontroller families via the two-line bidirectional bus (I2C). It features an 8-bit quasi-bidirectional I/O port (P0–P7) and is most famous for its use in 'I2C LCD Backpacks' to reduce wiring clutter."
+    },
+    "technical_specs": [
+        {
+            "label": "Chip",
+            "value": "PCF8574 / PCF8574T"
+        },
+        {
+            "label": "Protocol",
+            "value": "I2C (Address 0x20-0x27)"
+        },
+        {
+            "label": "Voltage",
+            "value": "2.5V - 6.0V"
+        },
+        {
+            "label": "Current Sink",
+            "value": "25mA (Drive LEDs well)"
+        },
+        {
+            "label": "Current Source",
+            "value": "300µA (Too weak for LEDs)"
+        },
+        {
+            "label": "Speed",
+            "value": "100kHz I2C"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿20 - ฿40",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=pcf8574"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+io+expander"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ขาของ PCF8574 เป็นแบบ Quasi-bidirectional (ทำงานเป็นทั้ง Input และ Output โดยไม่ต้องสลับโหมด)",
+            "กระแสในแนว Sink แรงกว่าแนว Source — แนะนำให้ต่อ LED แบบ Sink",
+            "เช็ค Address ด้วย I2C Scanner เสมอเพื่อให้แน่ใจว่าอุปกรณ์เชื่อมต่อถูกต้อง"
+        ],
+        "en": [
+            "The expander pins are Quasi-bidirectional, meaning they function as both inputs and outputs without explicit mode switching",
+            "Pins are stronger at <b>Sinking</b> current (pulling to GND) than Sourcing—connect LEDs to VCC and use the pin as GND",
+            "Always utilize an I2C Scanner sketch to verify communication before writing your final firmware"
+        ]
+    },
+    "pinout_desc": {
+        "th": "เชื่อมต่อแบบ I2C: VCC, GND, SCL, SDA มีขา P0-P7 สำหรับ I/O เพิ่มเติม และขา A0-A2 สำหรับตั้ง Address",
+        "en": "I2C Interface: VCC, GND, SCL, SDA. Provides P0-P7 for I/O expansion and A0-A2 for address selection."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การกำหนด I2C Address",
+                "en": "Addressing via A0-A2 Jumpers"
+            },
+            "steps": {
+                "th": [
+                    "ขา <b>A0, A1, A2</b> ใช้กำหนด Address พื้นฐาน (0x20 ถึง 0x27 สำหรับ PCF8574 standard)",
+                    "หากขาลอย (Floating) หรือต่อไฟบวก จะเท่ากับบิต 1; หากต่อลง Ground จะเท่ากับบิต 0",
+                    "สามารถพ่วงต่อโมดูลนี้ได้ถึง 8 ตัวบนบัสเดียวกันโดยไม่ชนกัน"
+                ],
+                "en": [
+                    "Pins <b>A0, A1, and A2</b> define the base I2C address (usually 0x20 to 0x27 for the standard chip)",
+                    "Floating or pulling these pins HIGH sets the address bit to 1; grounding them sets it to 0",
+                    "Daisy-chain up to 8 modules on a single I2C bus by assigning unique jumper configurations"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "พื้นฐานซอฟต์แวร์",
+                "en": "Software Fundamentals"
+            },
+            "steps": {
+                "th": [
+                    "ติดตั้งไลบรารี <b>'PCF8574'</b> โดย Rob Tillaart เพื่อให้ใช้งานได้ง่ายเหมือนคำสั่ง Arduino มาตรฐาน",
+                    "การอ่านค่าขาทำได้ผ่าน <code>pcf.read8()</code> เพื่อรับสถานะทั้ง 8 ขาพร้อมกันในรูปแบบ 1 ไบต์",
+                    "การสั่งงานทำได้ผ่าน <code>pcf.write8(value)</code> เพื่อกำหนดสถานะขาทั้งหมดพร้อมกัน"
+                ],
+                "en": [
+                    "Install the <b>'PCF8574'</b> library by Rob Tillaart for simple pin-by-pin or byte-wide access",
+                    "Fetch the state of all 8 pins at once using <code>pcf.read8()</code>; it returns a single byte representing all inputs",
+                    "Batch update all pins simultaneously using <code>pcf.write8(raw_byte)</code> for high-speed switching"
+                ]
+            }
+        }
+    ]
+}

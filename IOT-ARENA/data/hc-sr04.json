@@ -1,0 +1,166 @@
+{
+  "id": "hc-sr04",
+  "category": "sensor",
+  "image": "asset/hc-sr04.png",
+  "title": {
+    "th": "HC-SR04",
+    "en": "HC-SR04 Ultrasonic"
+  },
+  "sub_title": {
+    "th": "เซนเซอร์วัดระยะทางด้วยความเร็วเสียง",
+    "en": "Distance Measurement via Sound Velocity"
+  },
+  "description": {
+    "th": "เซนเซอร์รุ่นนี้ใช้หลักการเดียวกับค้างคาวหรือเรือดำน้ำ โดยการส่งคลื่นเสียงความถี่สูง 40,000 Hz ออกไปกระทบวัตถุแล้วรอรับเสียงสะท้อนกลับมา จากนั้นนำเวลาที่ได้มาคำนวณหาระยะทางผ่านสูตรความเร็วเสียง (340 เมตร/วินาที) ให้ค่าที่แม่นยำในช่วง 2-400 ซม. โดยไม่ได้รับผลกระทบจากแสงแดดหรือสีของวัตถุ",
+    "en": "The HC-SR04 ultrasonic sensor uses sonar to determine distance to an object, similar to how bats or submarines operate. It emits an ultrasonic burst at 40,000 Hz and measures the time it takes for the echo to return. By calculating the duration and the speed of sound (340m/s), it determines the distance with high accuracy (2cm to 400cm), unaffected by sunlight or material color."
+  },
+  "specs": [
+    {
+      "label": "Operating Voltage",
+      "value": "5V DC"
+    },
+    {
+      "label": "Current",
+      "value": "15mA (Working)"
+    },
+    {
+      "label": "Measuring Range",
+      "value": "2cm - 400cm"
+    },
+    {
+      "label": "Effectual Angle",
+      "value": "< 15°"
+    },
+    {
+      "label": "Resolution",
+      "value": "0.3 cm"
+    },
+    {
+      "label": "Trigger Pulse",
+      "value": "10µs TTL pulse"
+    }
+  ],
+  "use_cases": {
+    "th": [
+      "หุ่นยนต์หลบสิ่งกีดขวาง",
+      "ระบบจอดรถอัจฉริยะ",
+      "วัดระดับน้ำในถัง",
+      "ประตูอัตโนมัติ"
+    ],
+    "en": [
+      "Obstacle-avoiding Robot",
+      "Smart Parking System",
+      "Tank Water Level",
+      "Automatic Door"
+    ]
+  },
+  "applications": {
+    "th": [
+      {
+        "title": "ถังขยะอัจฉริยะแบบไร้สัมผัส",
+        "desc": "ตรวจจับมือที่ยื่นเข้ามาใกล้เพื่อสั่งเปิดฝาถังขยะโดยไม่ต้องสัมผัส (ใช้คู่กับ Servo)"
+      },
+      {
+        "title": "ระบบวัดระดับน้ำในถังเก็บ",
+        "desc": "ใช้ติดตั้งที่ฝาถังเพื่อวัดระยะจากบนลงล่าง และคำนวณปริมาณน้ำเป็นเปอร์เซ็นต์"
+      }
+    ],
+    "en": [
+      {
+        "title": "Touchless Smart Bin",
+        "desc": "Detect hands approaching to trigger a servo and open the lid automatically."
+      },
+      {
+        "title": "Tank Water Level Meter",
+        "desc": "Mount at the top of a tank to measure the air gap and calculate water percentage."
+      }
+    ]
+  },
+  "deep_dive": {
+    "th": "HC-SR04 ทำงานโดยการส่งคลื่นเสียงความถี่สูง 40kHz ออกไป (Ping) และจับเวลาจนกว่าเสียงจะสะท้อนกลับมา (Echo) จากนั้นนำเวลาที่ได้มาคำนวณหาระยะทางโดยใช้ความเร็วเสียง (340 m/s) สูตรคำนวณคือ Distance = (Time x 0.034) / 2 \n\nข้อควรระวังคือเซนเซอร์นี้แพ้พื้นผิวที่นุ่ม/ดูดซับเสียง (เช่น ผ้า ตุ๊กตา) หรือวัตถุที่มีมุมเอียงมากๆ เพราะเสียงจะไม่สะท้อนกลับมาที่ตัวรับ และต้องใช้ไฟเลี้ยง 5V เท่านั้นเพื่อให้ได้กำลังส่งคลื่นเสียงที่แรงพอ",
+    "en": "The HC-SR04 operates on the Sonar principle. It emits a 40kHz ultrasonic burst and listens for the echo. The distance is calculated based on the flight time of the sound wave. Math: Distance = (Time_us * 0.034) / 2.\n\nLimitations: It struggles with soft/absorbent surfaces (cloth, sponge) which don't reflect sound well, and angled surfaces that deflect the echo away from the receiver. It strictly requires 5V to generate a strong enough ultrasonic pulse."
+  },
+  "technical_specs": [
+    {
+      "label": "Range",
+      "value": "2cm - 400cm"
+    },
+    {
+      "label": "Accuracy",
+      "value": "±3mm"
+    },
+    {
+      "label": "Blind Spot",
+      "value": "< 2cm"
+    },
+    {
+      "label": "Operating Voltage",
+      "value": "5V DC (Strictly)"
+    },
+    {
+      "label": "Logic Level",
+      "value": "5V (Use resistor divider for 3.3V MCUs)"
+    },
+    {
+      "label": "Field of View",
+      "value": "15°"
+    }
+  ],
+  "purchase_info": {
+    "price_range": "฿25 - ฿50",
+    "links": [
+      {
+        "title": "ArduinoAll",
+        "url": "https://www.arduinoall.com/"
+      },
+      {
+        "title": "Shopee",
+        "url": "https://shopee.co.th/search?keyword=hc-sr04"
+      },
+      {
+        "title": "AliExpress",
+        "url": "https://www.aliexpress.com/w/wholesale-hc-sr04.html"
+      }
+    ]
+  },
+  "pinout_desc": {
+    "th": "ประกอบด้วย 4 ขา: VCC (5V), Trig (ส่งสัญญาณ), Echo (รับสัญญาณ), และ GND",
+    "en": "Features 4 pins: VCC (5V), Trig (Trigger pulse), Echo (Receive pulse), and GND."
+  },
+  "tips": {
+    "th": [
+      "วัตถุที่อยู่ใกล้กว่า 2 ซม. จะได้ค่าผิดพลาด",
+      "พื้นผิวนุ่มเช่นผ้าจะดูดซับเสียงทำให้อ่านค่าไม่ได้",
+      "หากใช้กับ ESP32 (3.3V) ต้องแบ่งแรงดันขา Echo"
+    ],
+    "en": [
+      "Objects closer than 2cm will give inaccurate readings",
+      "Soft surfaces like fabric absorb sound and may not return an echo",
+      "Use a voltage divider on the Echo pin when interfacing with 3.3V boards (ESP32)"
+    ]
+  },
+  "guides": [
+    {
+      "title": {
+        "th": "คู่มือการตั้งค่า",
+        "en": "Setup Guide"
+      },
+      "steps": {
+        "th": [
+          "ขา VCC: ต่อเข้ากับไฟ 5V เท่านั้น (ห้ามใช้ 3.3V เพราะกำลังส่งจะไม่พอ)",
+          "ขา GND: ต่อลง Ground",
+          "ขา Trig/Echo: ต่อเข้าขา Digital (เช่น Trig->D2, Echo->D3)",
+          "สำหรับ ESP32/STM32: ระวัง! ขา Echo ส่งไฟ 5V กลับมา ให้ใช้ตัวต้านทาน 1k และ 2k ต่ออนุกรมทำเป็น Voltage Divider เพื่อลดแรงดันลงเหลือ ~3.3V ก่อนเข้าขา MCU",
+          "การเขียนโค้ด: แนะนำไลบรารี 'NewPing' ดีกว่าเขียน pulseIn เอง เพราะมีระบบ Timeout ป้องกันโค้ดค้าง"
+        ],
+        "en": [
+          "VCC: Must connect to 5V. (3.3V is insufficient for the ultrasonic burst).",
+          "GND: Connect to Ground.",
+          "Trig/Echo: Connect to Digital pins (e.g., Trig->D2, Echo->D3).",
+          "Voltage Warning: The Echo pin outputs 5V. If using ESP32/Pico (3.3V), use a voltage divider (2:1 ratio) on the Echo line to protect your board.",
+          "Coding: Use the 'NewPing' library. It handles timeouts gracefully so your robot doesn't freeze when no echo is returned."
+        ]
+      }
+    }
+  ]
+}

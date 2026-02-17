@@ -1,0 +1,142 @@
+{
+    "id": "passive-buzzer",
+    "category": "actuator",
+    "image": "asset/passive-buzzer.png",
+    "title": {
+        "th": "Passive Buzzer",
+        "en": "Passive Buzzer"
+    },
+    "sub_title": {
+        "th": "ลำโพงบัซเซอร์แบบสร้างเสียงได้หลายโทน",
+        "en": "Tone-generating Buzzer"
+    },
+    "description": {
+        "th": "บัซเซอร์ที่ต้องการสัญญาณ PWM เพื่อสร้างเสียงเพลงหรือโทนเสียงที่แตกต่างกัน",
+        "en": "A buzzer that requires a PWM signal to generate music notes or different sound frequencies."
+    },
+    "specs": [
+        {
+            "label": "Type",
+            "value": "Electromagnetic / Piezo"
+        },
+        {
+            "label": "Frequency",
+            "value": "Variable by Input"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เสียงเตือนเพลง",
+            "อุปกรณ์ดนตรีดิจิทัล"
+        ],
+        "en": [
+            "Melody Alerts",
+            "Digital Synthesizers"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "เครื่องดนตรี 8 บิต (Midi Player)",
+                "desc": "เขียนฟังก์ชันเพื่อเล่นไฟล์เพลงแบบโมโนแบนด์ (เช่น เพลงมาริโอ้)"
+            },
+            {
+                "title": "ระบบแจ้งเตือนแบบมีอารมณ์",
+                "desc": "ใช้เสียงโทนสูงสำหรับแจ้งเตือนสำเร็จ และโทนต่ำสำหรับแจ้งเตือนข้อผิดพลาด"
+            }
+        ],
+        "en": [
+            {
+                "title": "8-Bit Retro Music Player",
+                "desc": "Program a melody player that cycles through frequencies to play monophonic game themes (like Mario)."
+            },
+            {
+                "title": "Contextual Audio Alerts",
+                "desc": "Differentiate states using sound: an ascending scale for success and a descending low tone for errors."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "Passive Buzzer ไม่มีวงจรกำเนิดเสียงในตัว ทำงานเหมือนลำโพงจิ๋ว ต้องอาศัยสัญญาณความถี่จาก Microcontroller เพื่อขยับแผ่น Piezo ให้เกิดเสียง \n\nข้อดีคือสามารถ 'สร้างโน้ตดนตรี' ได้ครบทุกคีย์ ทำให้ใช้เล่นเพลงได้ แต่ข้อควรระวังคือห้ามจ่ายไฟ DC ค้างไว้นานๆ เพราะจะทำให้ขดลวดไหม้หรือแผ่น Piezo เสื่อม (ต้องมีช่วงหยุดหรือสั่นตลอด)",
+        "en": "The Passive Buzzer has no internal oscillator. It acts like a tiny speaker that requires an external AC-like signal (PWM) to vibrate. \n\nFeature: You can control the pitch to play melodies (Do, Re, Mi...). \nWarning: Do not apply constant DC voltage (HIGH) for long periods; it won't make sound and might overheat the internal coil. You must use the `tone()` function."
+    },
+    "technical_specs": [
+        {
+            "label": "Type",
+            "value": "Piezoelectric (External Drive)"
+        },
+        {
+            "label": "Voltage",
+            "value": "3.3V - 5V"
+        },
+        {
+            "label": "Frequency Range",
+            "value": "20Hz - 20kHz (Dependent on Code)"
+        },
+        {
+            "label": "Resistance",
+            "value": "16Ω / 42Ω"
+        },
+        {
+            "label": "Control",
+            "value": "PWM / Tone Function"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿10 - ฿25",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=passive%20buzzer"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+passive+buzzer"
+            }
+        ]
+    },
+    "tips": {
+        "th": [
+            "ต้องใช้คำสั่ง tone() เท่านั้น (digitalWrite จะเงียบกริบ)",
+            "ด้านล่างมักจะเป็นแผ่น PCB เขียวโชว์วงจร (ต่างจาก Active ที่เทดำ)"
+        ],
+        "en": [
+            "Must use tone() function (digitalWrite only makes a 'click')",
+            "Usually has exposed Green PCB on the bottom (Active ones are sealed black)"
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 3 ขา: VCC, GND, และ I/O (ต้องป้อนสัญญาณ PWM หรือความถี่เพื่อสร้างโทนเสียงต่างๆ)",
+        "en": "Features 3 pins: VCC, GND, and I/O. Requires a PWM or frequency signal to generate different tones."
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>Wiring:</b> ต่อขาลบเข้า GND, ขาบวกเข้า PWM Pin (หรือขา Digital ใดๆ ก็ได้สำหรับคำสั่ง tone)",
+                    "<b>Melody:</b> ใช้คำสั่ง <code>tone(pin, 1000, 500);</code> (เสียง 1000Hz นาน 0.5วิ)",
+                    "<b>Stop:</b> สำคัญมาก! ต้องสั่ง <code>noTone(pin);</code> เมื่อต้องการหยุดเสียง ไม่งั้นอาจค้าง",
+                    "<b>Music:</b> หาโค้ด 'Melody Example' ใน Arduino IDE เพื่อลองเล่นเพลง Mario"
+                ],
+                "en": [
+                    "<b>Wiring:</b> Connect Negative to GND, Positive to any Digital Pin.",
+                    "<b>Play Sound:</b> Use <code>tone(pin, FrequencyHz, DurationMs);</code> e.g., <code>tone(8, 262, 200);</code> for Middle C.",
+                    "<b>Silence:</b> Always call <code>noTone(pin);</code> to stop the signal cleanly.",
+                    "<b>Fun:</b> Open <b>File > Examples > Digital > ToneMelody</b> to play a tune."
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,112 @@
+{
+    "id": "vl53l0x",
+    "category": "sensor",
+    "image": "asset/vl53l0x.png",
+    "title": {
+        "th": "VL53L0X Lidar ToF",
+        "en": "VL53L0X Lidar ToF Sensor"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์วัดระยะด้วยเลเซอร์",
+        "en": "Laser Distance Sensor"
+    },
+    "description": {
+        "th": "เซนเซอร์วัดระยะแบบ Time-of-Flight (ToF) โดยใช้เลเซอร์ ให้ความแม่นยำสูงกว่าอุลตร้าโซนิกและทำงานได้ดีในที่มืด",
+        "en": "A Time-of-Flight (ToF) laser-ranging sensor that is much more accurate than ultrasonic sensors and works well in dark environments."
+    },
+    "specs": [
+        {
+            "label": "Range",
+            "value": "Up to 2 meters"
+        },
+        {
+            "label": "Infrared",
+            "value": "940nm VCSEL"
+        },
+        {
+            "label": "Protocol",
+            "value": "I2C (0x29)"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "หุ่นยนต์หลบสิ่งกีดขวาง",
+            "วัดความสูงของบุคคล"
+        ],
+        "en": [
+            "Obstacle Avoidance",
+            "Height Measurement"
+        ]
+    },
+    "applications": {
+        "th": [],
+        "en": []
+    },
+    "tips": {
+        "th": [
+            "อย่าแตะหน้าเลนส์ด้วยมือเปล่า เพราะรอยนิ้วมืออาจลดความแม่นยำ"
+        ],
+        "en": [
+            "Avoid touching the sensor lens to maintain accuracy"
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 4 ขาหลัก: VIN (2.6-5.5V), GND, SCL, และ SDA (โมดูลบางรุ่นอาจมีขา XSHUT สำหรับเปิด/ปิด)",
+        "en": "Features 4 main pins: VIN (2.6-5.5V), GND, SCL, and SDA. Some modules also include an XSHUT pin for power control."
+    },
+    "deep_dive": {
+        "th": "VL53L0X ใช้เทคโนโลยี Time-of-Flight (ToF) โดยยิงแสงเลเซอร์อินฟราเรด (VeCSEL) ที่มองไม่เห็นออกไปแล้วจับเวลาที่แสงสะท้อนกลับมา ทำให้วัดระยะทางได้แม่นยำกว่าเซนเซอร์ Ultrasonic และไม่ขึ้นกับสีหรือความสะท้อนแสงของวัตถุมากนัก",
+        "en": "The VL53L0X is a Time-of-Flight (ToF) laser-ranging module. It contains a tiny invisible laser source and a matching sensor. The VL53L0X can detect the 'time of flight', or how long the light has taken to bounce back to the sensor. This allows it to measure distance regardless of the target's color or reflectance."
+    },
+    "technical_specs": [
+        {
+            "label": "Max Range",
+            "value": "200 cm (Indoor)"
+        },
+        {
+            "label": "Emitter",
+            "value": "940 nm Invisible Laser (Class 1)"
+        },
+        {
+            "label": "Interface",
+            "value": "I2C (Address 0x29)"
+        },
+        {
+            "label": "Operating Voltage",
+            "value": "2.6V - 3.5V (Module usually 3.3-5V)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿70 - ฿120",
+        "links": [
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=vl53l0x"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=vl53l0x"
+            }
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การใช้งาน I2C",
+                "en": "I2C Setup"
+            },
+            "steps": {
+                "th": [
+                    "ต่อขา VCC, GND, SDA, SCL เข้ากับ Microcontroller",
+                    "สามารถเปลี่ยน I2C Address ได้ผ่าน Software หากใช้หลายตัว",
+                    "ขา XSHUT ใช้สำหรับ Reset เซนเซอร์ (Active Low)"
+                ],
+                "en": [
+                    "Connect VCC, GND, SDA, and SCL to the Microcontroller",
+                    "I2C Address can be changed via software to support multiple sensors",
+                    "The XSHUT pin is used to reset the sensor (Active Low)"
+                ]
+            }
+        }
+    ]
+}

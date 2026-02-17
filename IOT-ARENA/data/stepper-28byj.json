@@ -1,0 +1,142 @@
+{
+    "id": "stepper-28byj",
+    "category": "actuator",
+    "image": "asset/stepper-28byj.png",
+    "title": {
+        "th": "Stepper 28BYJ-48 + ULN2003",
+        "en": "Stepper Motor 28BYJ-48"
+    },
+    "sub_title": {
+        "th": "สเต็ปเปอร์มอเตอร์ขนาดเล็กพร้อมไดรเวอร์",
+        "en": "Geared Stepper with Driver"
+    },
+    "description": {
+        "th": "มอเตอร์ที่หมุนได้แม่นยำเป็นองศา นิยมใช้คู่กับบอร์ดไดรเวอร์ ULN2003 ในชุดทดลอง",
+        "en": "A precision geared stepper motor often bundled with the ULN2003 driver board for hobbyist projects."
+    },
+    "specs": [
+        {
+            "label": "Voltage",
+            "value": "5V DC"
+        },
+        {
+            "label": "Stride Angle",
+            "value": "5.625° / 64"
+        },
+        {
+            "label": "Reduction",
+            "value": "1:64"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "พัดลมหมุนส่าย",
+            "ม่านอัตโนมัติ"
+        ],
+        "en": [
+            "Oscillating Fans",
+            "Auto-curtain Openers"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "กรงนกอัตโนมัติ",
+                "desc": "ใช้หมุนกลไกเพื่อปล่อยอาหารในปริมาณที่แม่นยำตามเวลาที่กำหนด"
+            },
+            {
+                "title": "ฐานกล้องหมุนติดตาม (Pan-Tilt)",
+                "desc": "ใช้หมุนฐานกล้อง CCTV ขนาดเล็กเพื่อให้สามารถกวาดดูรอบพื้นที่ได้อย่างช้าๆ และมั่นคง"
+            }
+        ],
+        "en": [
+            {
+                "title": "Automatic Pet Feeder",
+                "desc": "Rotate a dispensing mechanism to release a precise amount of food at scheduled intervals."
+            },
+            {
+                "title": "Pan-Tilt Camera Mount",
+                "desc": "Drive a small surveillance camera base to slowly and steadily scan an entire room."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "28BYJ-48 เป็นสเต็ปเปอร์มอเตอร์แบบ Unipolar ที่มีเกียร์ทดรอบภายใน 1:64 ทำให้มีแรงบิดสูง (หมุนพัดลมหรือกล้องได้สบายๆ) แต่หมุนได้ช้า \n\nจุดเด่นคือความแม่นยำสูง สามารถสั่งให้หมุนทีละองศาได้ เหมาะกับงานที่ต้องการตำแหน่งที่แน่นอน เช่น การหมุนแผง Solar Cell ตามแสงแดด ต้องใช้งานคู่กับบอร์ดขับ ULN2003 เสมอ",
+        "en": "The 28BYJ-48 is a Unipolar Stepper Motor with an internal 1:64 reduction gear set. This gearing provides high torque at low speeds, making it ideal for precise positioning tasks like opening blinds or rotating display stands.\n\nNote: It is much slower than a DC motor and cannot spin freely. You must pulse the coils in a specific sequence (Wave, Full-step, or Half-step) via the ULN2003 driver."
+    },
+    "technical_specs": [
+        {
+            "label": "Voltage",
+            "value": "5V DC"
+        },
+        {
+            "label": "Steps/Rev",
+            "value": "~2048 (Half-step)"
+        },
+        {
+            "label": "Reduction Ratio",
+            "value": "1:64"
+        },
+        {
+            "label": "Torque",
+            "value": "> 34.3mN.m"
+        },
+        {
+            "label": "Driver",
+            "value": "ULN2003 (Darlington Array)"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿50 - ฿80",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=28byj-48%20uln2003"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=arduino+stepper+motor"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "เชื่อมต่อผ่านบอร์ด ULN2003: ขา IN1-IN4 ต่อเข้า GPIO, และขั้วไฟเลี้ยง 5-12V สำหรับมอเตอร์",
+        "en": "Connects via the ULN2003 driver: IN1-IN4 to GPIO, and VCC/GND (5-12V) for the motor coils."
+    },
+    "tips": {
+        "th": [
+            "สายสีแดงคือ Common Power (5V) ต้องได้รับไฟเสมอ",
+            "ถ้าจะให้หมุนเร็วขึ้น ให้ใช้ไฟแยก 5-9V จ่ายเข้าบนบอร์ด ULN2003 (ห้ามเอาไฟจาก Arduino โดยตรงเพราะจะดึงกระแสเกิน)"
+        ],
+        "en": [
+            "Red wire is Common Power (5V).",
+            "For higher torque/speed, power the ULN2003 driver with an external 5V-9V supply, sharing the GND."
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>Wiring:</b> เสียบปลั๊กมอเตอร์เข้าบอร์ด ULN2003",
+                    "<b>Connection:</b> ต่อ IN1, IN2, IN3, IN4 เข้า Digital Pins 8, 9, 10, 11 (ต้องเรียงลำดับให้ถูก)",
+                    "<b>Power:</b> ต่อไฟ 5V และ GND ภายนอกเข้าที่ขั้วไฟของบอร์ดไดรเวอร์",
+                    "<b>Code:</b> ใช้ไลบรารี <code>Stepper.h</code> ตามตัวอย่าง <code>stepper_oneRevolution</code>"
+                ],
+                "en": [
+                    "<b>Connect:</b> Plug the motor into the ULN2003 board header.",
+                    "<b>Wiring:</b> Connect Driver IN1-IN4 to Arduino Digital Pins 8-11 sequentially.",
+                    "<b>Power:</b> Supply 5V to the Driver board (+) and (-) pins.",
+                    "<b>Code:</b> Open <b>File > Examples > Stepper > stepper_oneRevolution</b>. Change stepsPerRevolution to 2048."
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="th" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOT-ARENA</title>
+    <script>
+        (function() {
+            // Theme Management
+            const theme = localStorage.getItem('theme') || 'auto';
+            let visualTheme = theme;
+            if (theme === 'auto') {
+                visualTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-bs-theme', visualTheme);
+
+            // Language (to avoid button flash)
+            const savedLang = localStorage.getItem('lang');
+            let lang = savedLang;
+            if (!lang) {
+                const browserLang = navigator.language || navigator.userLanguage;
+                lang = (browserLang && browserLang.toLowerCase().startsWith('th')) ? 'th' : 'en';
+            }
+            document.documentElement.setAttribute('data-lang', lang);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css?v=3.0">
+</head>
+<body>
+
+
+    <nav class="navbar border-bottom sticky-top bg-body">
+        <div class="container d-flex align-items-center justify-content-between">
+            <!-- Brand Section -->
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand d-flex align-items-center gap-2 m-0" href="index.html">
+                    <img src="asset/Logo.png" alt="IOT-ARENA" class="navbar-logo">
+                    <span class="brand-text">IOT-ARENA</span>
+                </a>
+            </div>
+
+            <!-- Desktop Inline Nav Links -->
+            <div class="d-none d-lg-flex align-items-center gap-2 desktop-nav-links">
+                <a href="index.html" class="desktop-nav-link" id="desktopNavHome"><i class="bi bi-house-door-fill"></i> Home</a>
+                <a href="#about" class="desktop-nav-link" id="desktopNavAbout"><i class="bi bi-info-circle-fill"></i> About</a>
+                <a href="#contact" class="desktop-nav-link" id="desktopNavContact"><i class="bi bi-envelope-fill"></i> Contact</a>
+            </div>
+
+            <!-- Right Side: Search + Menu -->
+            <div class="d-flex align-items-center gap-2 ms-auto">
+                <!-- Desktop Search -->
+                <div class="search-container d-none d-lg-block" style="width: 280px;">
+                    <div class="search-box-wrapper">
+                        <i class="bi bi-search"></i>
+                        <span class="search-autocomplete-ghost" id="searchGhostDesktop"></span>
+                        <input type="text" id="deviceSearchDesktop" class="form-control shadow-none" placeholder="Search..." oninput="handleSearch('deviceSearchDesktop')" onkeydown="handleSearchKeydown(event, 'deviceSearchDesktop')" autocomplete="off">
+                    </div>
+                    <div id="searchSuggestionsDesktop" class="search-suggestions-box shadow-sm d-none"></div>
+                </div>
+
+                <!-- Desktop Settings Popup (Lang + Theme) -->
+                <div class="dropdown d-none d-lg-block">
+                    <button class="btn btn-sm nav-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <i class="bi bi-gear-fill"></i> <span id="navMenuLabel">Menu</span>
+                    </button>
+                    <ul class="dropdown-menu nav-settings-popup shadow-lg dropdown-menu-end">
+                        <li class="px-3 pt-2 pb-1"><span class="menu-label mb-0" id="desktopMenuLabelPrefs">PREFERENCES</span></li>
+                        <li class="px-3 pb-3">
+                            <div class="preferences-card p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="lang-switcher">
+                                        <button class="lang-btn" id="btnLangTH" onclick="changeLang('th')">TH</button>
+                                        <button class="lang-btn" id="btnLangEN" onclick="changeLang('en')">EN</button>
+                                    </div>
+                                    <button class="theme-toggle-btn" id="btnThemeDesktop"></button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Menu Toggler -->
+                <button class="btn btn-sm d-lg-none navbar-toggler-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarControls" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="collapse d-lg-flex align-items-center gap-3" id="navbarControls">
+            <div class="d-lg-none mobile-nav-container p-4">
+                <div class="menu-section">
+                    <span class="menu-label" id="menuLabelPages">PAGES</span>
+                    <div class="mobile-nav-links">
+                        <a href="index.html" class="mobile-nav-link" style="--i:1">
+                            <i class="bi bi-house-door-fill"></i>
+                            <span id="navHome">Home</span>
+                        </a>
+                        <a href="#about" class="mobile-nav-link" style="--i:2">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <span id="navAbout">About</span>
+                        </a>
+                        <a href="#contact" class="mobile-nav-link" style="--i:3">
+                            <i class="bi bi-envelope-fill"></i>
+                            <span id="navContact">Contact</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="menu-section mt-4">
+                    <span class="menu-label" id="menuLabelPrefs">PREFERENCES</span>
+                    <div class="preferences-card p-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="lang-switcher">
+                                <button class="lang-btn" id="btnLangTH" onclick="changeLang('th')">TH</button>
+                                <button class="lang-btn" id="btnLangEN" onclick="changeLang('en')">EN</button>
+                            </div>
+                            <button class="theme-toggle-btn" id="btnThemeMobile"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Home Hero Section -->
+    <section class="home-hero page-animate">
+        <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center">
+            <div class="hero-brand-icon mb-4">
+                <i class="bi bi-cpu-fill"></i>
+            </div>
+            <h1 class="display-4 fw-bold mb-3" id="heroTitle"></h1>
+            <p class="lead mb-5 hero-intro px-md-5" id="heroIntro"></p>
+            
+            <!-- Hero Feature Cards -->
+            <div class="row g-4 w-100 justify-content-center hero-cards-row">
+                <div class="col-6 col-md-3">
+                    <div class="hero-feature-card">
+                        <div class="hero-card-icon"><i class="bi bi-search"></i></div>
+                        <span id="heroL1" class="fw-bold small"></span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="hero-feature-card">
+                        <div class="hero-card-icon"><i class="bi bi-diagram-3-fill"></i></div>
+                        <span id="heroL2" class="fw-bold small"></span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="hero-feature-card">
+                        <div class="hero-card-icon"><i class="bi bi-grid-fill"></i></div>
+                        <span id="heroL3" class="fw-bold small"></span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="hero-feature-card">
+                        <div class="hero-card-icon"><i class="bi bi-translate"></i></div>
+                        <span id="heroL4" class="fw-bold small"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-5">
+                <button class="btn btn-light btn-lg rounded-1 px-5 fw-bold hero-cta-btn" onclick="scrollToContent()">
+                    <span id="heroBtn"></span> <i class="bi bi-arrow-down ms-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mt-4 flex-grow-1" id="mainContent">
+        <div class="row">
+            <aside class="col-md-3 mb-4">
+                <div class="sidebar-wrapper shadow-sm" id="dynamicSidebar"></div>
+                
+                <!-- Mobile Search Section -->
+                <div class="mobile-search-bar-outer d-lg-none mt-3">
+                    <div class="search-container mx-auto">
+                        <div class="search-box-wrapper">
+                            <i class="bi bi-search"></i>
+                            <span class="search-autocomplete-ghost" id="searchGhostMobile"></span>
+                            <input type="text" id="deviceSearchMobile" class="form-control shadow-none" placeholder="Search..." oninput="handleSearch('deviceSearchMobile')" onkeydown="handleSearchKeydown(event, 'deviceSearchMobile')" autocomplete="off">
+                        </div>
+                        <div id="searchSuggestionsMobile" class="search-suggestions-box shadow-sm d-none"></div>
+                    </div>
+                </div>
+            </aside>
+            <main class="col-md-9">
+                <div class="row row-cols-2 row-cols-md-3 g-4 page-animate" id="deviceGrid"></div>
+                <div class="row mt-5">
+                </div>
+            </main>
+            <div class="col-12 d-flex justify-content-center">
+                <nav id="paginationContainer"></nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-heading">
+                <i class="bi bi-info-circle-fill"></i>
+                <h2 id="aboutTitle">เกี่ยวกับเรา</h2>
+            </div>
+            <p class="about-desc" id="aboutDesc">IOT-ARENA คือแพลตฟอร์มวิกิ IoT แบบโอเพนซอร์ส ที่รวบรวมข้อมูลไมโครคอนโทรลเลอร์ เซนเซอร์ โมดูล และอุปกรณ์ IoT ต่าง ๆ พร้อมคู่มือการต่อวงจรที่เข้าใจง่าย สร้างขึ้นเพื่อเป็นแหล่งเรียนรู้สำหรับทุกคนที่สนใจ IoT</p>
+            <div class="section-heading mt-4">
+                <i class="bi bi-people-fill"></i>
+                <h3 id="teamTitle">ทีมพัฒนา</h3>
+            </div>
+            <div class="dev-team-panel">
+                <div class="dev-team-members">
+                    <div class="member-item"><i class="bi bi-person-fill"></i> นายวทัญญู อาจสุรินทร์</div>
+                    <div class="member-item"><i class="bi bi-person-fill"></i> นายธนกฤต การสมโชค</div>
+                    <div class="member-item"><i class="bi bi-person-fill"></i> นายธนภัทร ทองกร</div>
+                    <div class="member-item"><i class="bi bi-person-fill"></i> นายนัฐกานต์ ประทีป</div>
+                    <div class="member-item"><i class="bi bi-person-fill"></i> นายพงศพัศ แสงทอง</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-heading">
+                <i class="bi bi-envelope-fill"></i>
+                <h2 id="contactTitle">ติดต่อเรา</h2>
+            </div>
+            <p class="contact-desc" id="contactDesc">หากมีคำถาม ข้อเสนอแนะ หรือต้องการร่วมพัฒนา สามารถติดต่อเราได้ผ่านช่องทางด้านล่าง</p>
+            <div class="contact-cards">
+                <a href="https://github.com/ilovebuger001" target="_blank" class="contact-card">
+                    <i class="bi bi-github"></i>
+                    <div>
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">ilovebuger001</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="premium-footer">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <!-- Column 1: Brand & Desc -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="footer-brand mb-3">
+                        <img src="asset/Logo.png" alt="IOT-ARENA" class="footer-logo-img">
+                        <span class="brand-text">IOT-ARENA</span>
+                    </div>
+                    <p id="footerDesc" class="footer-description text-muted mb-4"></p>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-3 col-md-6">
+                    <h6 id="footerLinksTitle" class="footer-title fw-bold mb-3"></h6>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Social -->
+                <div class="col-lg-4 col-md-6">
+                    <h6 id="footerFollowTitle" class="footer-title fw-bold mb-3"></h6>
+                    <div class="footer-socials d-flex gap-3">
+                        <a href="https://github.com/ilovebuger001" target="_blank" class="social-icon-btn github"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom pt-4 border-top">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p id="footerCopyright" class="mb-0 small text-muted"></p>
+                    </div>
+                    <div class="col-md-6 text-md-end mt-2 mt-md-0">
+                        <div class="footer-badge">
+                            <i class="bi bi-shield-check-fill text-success me-1"></i>
+                            <span class="small fw-medium">Open Source Wiki v1.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js?v=3.4"></script>
+</body>
+</html>

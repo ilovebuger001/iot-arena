@@ -1,0 +1,154 @@
+{
+    "id": "hc-sr501",
+    "category": "sensor",
+    "image": "asset/hc-sr501.jpg",
+    "title": {
+        "th": "HC-SR501 PIR Motion",
+        "en": "HC-SR501 PIR Motion"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์ตรวจจับความเคลื่อนไหว",
+        "en": "Passive Infrared Motion Sensor"
+    },
+    "description": {
+        "th": "PIR ย่อมาจาก Passive Infrared ทำงานโดยการตรวจจับการเปลี่ยนแปลงของรังสีอินฟราเรดจากร่างกายมนุษย์หรือสัตว์ที่เคลื่อนผ่านหน้าเซนเซอร์ นิยมใช้ในระบบเปิด-ปิดไฟอัตโนมัติและระบบกันขโมย มีเลนส์ Fresnel เพื่อช่วยขยายขอบเขตการตรวจจับ",
+        "en": "PIR stands for Passive Infrared. It works by detecting changes in infrared radiation emitted by humans or animals moving within its range. It is the standard sensor for automatic lighting and security alarms. The white dome (Fresnel lens) focuses the infrared energy onto the sensor element."
+    },
+    "specs": [
+        {
+            "label": "Detection Range",
+            "value": "3 - 7 Meters (Adjustable)"
+        },
+        {
+            "label": "Delay Time",
+            "value": "5s - 300s (Adjustable)"
+        },
+        {
+            "label": "Voltage",
+            "value": "4.5V - 20V"
+        },
+        {
+            "label": "Output",
+            "value": "Digital (High 3.3V / Low 0V)"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "ระบบเปิด-ปิดไฟอัตโนมัติ",
+            "ระบบกันขโมย",
+            "ระบบนับจำนวนคน",
+            "สมาร์ทโฮม"
+        ],
+        "en": [
+            "Auto Light Switch",
+            "Security Alarm",
+            "People Counter",
+            "Smart Home"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "ระบบเปิดไฟทางเดินอัตโนมัติ",
+                "desc": "ใช้เปิดไฟ LED เมื่อตรวจพบคนเดินผ่าน และปิดไฟอัตโนมัติเมื่อไม่มีการเคลื่อนไหวเพื่อประหยัดพลังงาน"
+            },
+            {
+                "title": "กับดักแมว/สัตว์เลี้ยง",
+                "desc": "ตรวจจับสัตว์เลี้ยงที่เข้ามาในพื้นที่ห้ามเข้า และส่งสัญญาณเสียงแจ้งเตือน"
+            }
+        ],
+        "en": [
+            {
+                "title": "Auto Hallway Lighting",
+                "desc": "Turn on LED lights when motion is detected and turn them off after a delay to save energy."
+            },
+            {
+                "title": "Pet Intrusion Alert",
+                "desc": "Detect pets entering restricted areas and trigger a buzzer or notification."
+            }
+        ]
+    },
+    "deep_dive": {
+        "th": "หลักการทำงานของ PIR คือการวัดความเปลี่ยนแปลงของรังสีอินฟราเรดที่ตัดผ่านช่องรับแสงแบบคู่ภายในตัวเซนเซอร์ ฝาครอบพลาสติกสีขาว (Fresnel Lens) ทำหน้าที่แบ่งพื้นที่ตรวจจับออกเป็นโซนๆ เมื่อคนเดินผ่าน ร่างกายจะแผ่รังสีอินฟราเรดไปกระตุ้นเซนเซอร์ทีละโซน ทำให้เกิดสัญญาณไฟฟ้า \n\nจุดเด่นของ HC-SR501 คือสามารถปรับระยะ และเวลาหน่วง ได้ที่ตัวบอร์ดเลย ทำให้สามารถนำไปต่อกับ Relay เพื่อทำไฟแสงสว่างอัตโนมัติได้โดยไม่ต้องใช้ Arduino หรือเขียนโค้ดแม้แต่บรรทัดเดียว",
+        "en": "The PIR sensor looks for changes in infrared energy. It uses a pyroelectric sensor split into two slots. The white dome is a Fresnel lens that creates detection zones. When a warm body moves from one zone to another, the sensor detects the differential change.\n\nThe HC-SR501 is versatile because it works standalone. You can adjust sensitivity and delay time directly on the board. This allows you to wire it directly to a relay module for 'dumb' automatic lighting without needing a microcontroller."
+    },
+    "technical_specs": [
+        {
+            "label": "Range",
+            "value": "3 - 7 Meters"
+        },
+        {
+            "label": "View Angle",
+            "value": "110° Cone"
+        },
+        {
+            "label": "Delay Time",
+            "value": "5s - 5mins (Adjustable)"
+        },
+        {
+            "label": "Operating Voltage",
+            "value": "4.5V - 20V"
+        },
+        {
+            "label": "Output Logic",
+            "value": "3.3V (High) / 0V (Low)"
+        },
+        {
+            "label": "Quiescent Mode",
+            "value": "50uA"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿35 - ฿60",
+        "links": [
+            {
+                "title": "Store (TH)",
+                "url": "https://www.thaieasyelec.com/"
+            },
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=pir%20sensor"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=hc-sr501"
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 3 ขา: VCC (5-20V), OUT (3.3V Digital Output), และ GND ขา Out จะเป็น High เมื่อตรวจพบการเคลื่อนไหว",
+        "en": "Features 3 pins: VCC (5-20V), OUT (3.3V Digital Output), and GND. The OUT pin stays HIGH when motion is detected."
+    },
+    "tips": {
+        "th": [
+            "หลังเปิดเครื่องต้องรอ 30-60 วินาทีเพื่อให้เซนเซอร์สอบเทียบตัวเอง",
+            "ห้ามหันหน้าเซนเซอร์ไปที่หน้าต่างที่มีแสงแดดส่อง หรือหน้าแอร์คอมเพรสเซอร์"
+        ],
+        "en": [
+            "Wait 30-60 seconds after power-on for the sensor to self-calibrate",
+            "Avoid facing windows (sunlight) or AC vents (rapid temp change)"
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "คู่มือการตั้งค่า",
+                "en": "Setup Guide"
+            },
+            "steps": {
+                "th": [
+                    "<b>ขา VCC:</b> รองรับไฟกว้างตั้งแต่ 5V ถึง 12V (แนะนำ 5V)",
+                    "<b>ขา OUT:</b> ต่อเข้าขา Digital ของ MCU (ระวัง! มันจ่ายไฟออกมา 3.3V High เสมอ ไม่ใช่ 5V)",
+                    "<b>การจูน (สำคัญ):</b> หมุน Pot 'Sensitivity' (ซ้าย) เพื่อปรับระยะ และ 'Time' (ขวา) เพื่อปรับเวลาหน่วง เริ่มจากหมุนทวนเข็มสุดทั้งคู่เพื่อทดสอบง่ายๆ",
+                    "<b>Jumper:</b> ย้าย Jumper มาที่ตำแหน่ง <b>H (Repeat Trigger)</b> เพื่อให้ไฟไม่ดับถ้าคนยังเต้นอยู่ในห้อง"
+                ],
+                "en": [
+                    "<b>Power:</b> Connect VCC to 5V (It has an onboard regulator, so 5V-12V works).",
+                    "<b>Output:</b> Connect OUT to a Digital Pin. The logic High level is 3.3V.",
+                    "<b>Tuning:</b> Turn the Sensitivity and Time potentiometers fully counter-clockwise (min setting) for testing.",
+                    "<b>Trigger Mode:</b> Set the yellow jumper to <b>'H' (Repeat Trigger)</b>. This ensures the output stays HIGH as long as motion is detected, preventing lights from flickering off."
+                ]
+            }
+        }
+    ]
+}

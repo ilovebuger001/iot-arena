@@ -1,0 +1,150 @@
+{
+    "id": "tcs3200",
+    "category": "sensor",
+    "image": "asset/tcs3200.png",
+    "title": {
+        "th": "TCS3200 Color Sensor",
+        "en": "TCS3200 Color Sensor"
+    },
+    "sub_title": {
+        "th": "เซนเซอร์ตรวจจับสีแบบความถี่",
+        "en": "Color Recognition Sensor"
+    },
+    "description": {
+        "th": "เซนเซอร์ที่แปลงความเข้มของแสงสี RGB เป็นความถี่ดิจิทัล เพื่อให้บอร์ดประมวลผลว่าเป็นสีอะไร",
+        "en": "A sensor that converts light intensity of RGB colors into digital frequencies for board-level color recognition."
+    },
+    "specs": [
+        {
+            "label": "LEDs",
+            "value": "4 White LEDs"
+        },
+        {
+            "label": "Filter",
+            "value": "RGB + Clear"
+        },
+        {
+            "label": "Interface",
+            "value": "Frequency Output"
+        }
+    ],
+    "use_cases": {
+        "th": [
+            "เครื่องแยกชิ้นงานตามสี",
+            "ตรวจสอบคุณภาพสี"
+        ],
+        "en": [
+            "Color Sorting Machines",
+            "Color Quality QC"
+        ]
+    },
+    "applications": {
+        "th": [
+            {
+                "title": "หุ่นยนต์แยกสีลูกบอล",
+                "desc": "ใช้ TCS3200 ตรวจสอบสีของวัตถุที่ผ่านหน้าเครื่อง และใช้เซอร์โวมอเตอร์ผลักลงถังที่ถูกต้อง"
+            },
+            {
+                "title": "เครื่องอ่านแถบสีต้านทาน",
+                "desc": "ช่วยระบุค่าความต้านทานจากการวัดสีของแถบบนตัวต้านทานโดยอัตโนมัติ"
+            }
+        ],
+        "en": [
+            {
+                "title": "Color Ball Sorter",
+                "desc": "Identify colored objects on a conveyor and use a servo to sort them into corresponding bins."
+            },
+            {
+                "title": "Resistor Band Reader",
+                "desc": "Automate the identification of resistor values by scanning their color-coded stripes."
+            }
+        ]
+    },
+    "pinout_desc": {
+        "th": "ประกอบด้วย 8 ขา: VCC, GND, S0-S1 (เลือกสเกลความถี่), S2-S3 (เลือกสี), และ OUT (สัญญาณความถี่)",
+        "en": "Features 8 pins: VCC, GND, S0-S1 (Frequency scaling), S2-S3 (Color filter selection), and OUT (Frequency output signal)."
+    },
+    "tips": {
+        "th": [
+            "ควรมีที่บังแสงภายนอกเพื่อไม่ให้ค่าสีเพี้ยน",
+            "ใช้การตั้งค่า Scaling ที่ 20% เพื่อความแม่นยำสูงสุดสำหรับ Arduino"
+        ],
+        "en": [
+            "Shield the sensor from external light for better accuracy",
+            "Set Frequency Scaling to 20% (S0=HIGH, S1=LOW) for the most stable results on standard MCUs like Arduino."
+        ]
+    },
+    "deep_dive": {
+        "th": "TCS3200 ประกอบด้วย Photodiodes เรียงเป็นตาราง 8x8 โดยแบ่งเป็นกลุ่มกรองแสงสีแดง, เขียว, น้ำเงิน และไม่กรองแสง เมื่อแสงตกกระทบ จะแปลงความเข้มแสงเป็นสัญญาณความถี่ (Square Wave) ยิ่งแสงเข้ม ความถี่ยิ่งสูง",
+        "en": "The TCS3200 uses an 8x8 array of photodiodes with color filters (Red, Green, Blue, Clear). It converts light intensity to a square wave frequency directly proportional to the light intensity. By selecting different filters, the MCU can determine the RGB composition of the object."
+    },
+    "technical_specs": [
+        {
+            "label": "Supply Voltage",
+            "value": "2.7V - 5.5V"
+        },
+        {
+            "label": "Output",
+            "value": "Programmable Frequency"
+        },
+        {
+            "label": "Non-linearity",
+            "value": "0.2% at 50kHz"
+        },
+        {
+            "label": "Temp Coefficient",
+            "value": "200 ppm/°C"
+        }
+    ],
+    "purchase_info": {
+        "price_range": "฿50 - ฿80",
+        "links": [
+            {
+                "title": "Shopee",
+                "url": "https://shopee.co.th/search?keyword=tcs3200"
+            },
+            {
+                "title": "Lazada",
+                "url": "https://www.lazada.co.th/catalog/?q=tcs3200"
+            }
+        ]
+    },
+    "guides": [
+        {
+            "title": {
+                "th": "การตั้งค่า Scaling และ Filter",
+                "en": "Scaling & Filter Logic"
+            },
+            "steps": {
+                "th": [
+                    "ใช้พิน <b>S0, S1</b> เพื่อเลือกความถี่ขาออก",
+                    "ใช้พิน <b>S2, S3</b> เพื่อเลือกว่าจะอ่านค่าสี Red, Green หรือ Blue",
+                    "เซนเซอร์จะส่งความถี่ออกมาที่พิน <b>OUT</b> ซึ่งต้องใช้ <code>pulseIn()</code> ในการอ่าน"
+                ],
+                "en": [
+                    "Configure <b>S0 and S1</b> pins to scale the output frequency (20% is recommended for compatibility)",
+                    "Toggle <b>S2 and S3</b> to select which color filter (Red, Green, Blue, or Clear) is active",
+                    "The reading is available on the <b>OUT</b> pin as a frequency; measure it using the <code>pulseIn()</code> function"
+                ]
+            }
+        },
+        {
+            "title": {
+                "th": "การสอบเทียบสีขาว",
+                "en": "White Balance Calibration"
+            },
+            "steps": {
+                "th": [
+                    "หาวัตถุสีขาวบริสุทธิ์มาวางหน้าเซนเซอร์เพื่อหาค่า R, G, B สูงสุด",
+                    "นำค่าที่ได้มาหาอัตราส่วนให้กลายเป็นช่วง 0-255",
+                    "ควรสอบเทียบใหม่ทุกครั้งที่มีการเปลี่ยนสภาพแสงในห้อง"
+                ],
+                "en": [
+                    "Place a pure white object in front of the sensor to record baseline R, G, and B frequency values",
+                    "Scale these readings (Apply map/constraints) to derive standardized 0-255 RGB values",
+                    "Re-calibrate whenever the ambient room lighting conditions change significantly"
+                ]
+            }
+        }
+    ]
+}
